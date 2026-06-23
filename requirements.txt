@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+lxml
+sentence-transformers
+numpy
+google-generativeai
+python-dotenv
