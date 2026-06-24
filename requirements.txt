@@ -5,3 +5,5 @@ sentence-transformers
 numpy
 google-generativeai
 python-dotenv
+supabase
+tqdm
