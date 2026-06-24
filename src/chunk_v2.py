@@ -1,4 +1,8 @@
-"""Section-aware, table-safe chunker for all ingested SEC filings."""
+"""Section-aware, table-safe chunker for all ingested SEC filings.
+
+Replaces src/chunk.py (Day 3). The numpy flat-file approach (data/embeddings.npy)
+is fully retired — embeddings now live in Supabase (pgvector).
+"""
 
 import json
 import logging
