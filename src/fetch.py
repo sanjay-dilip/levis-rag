@@ -96,7 +96,7 @@ def extract_plain_text(html: str, dest: Path) -> str:
         Extracted plain text string.
     """
     soup = BeautifulSoup(html, "lxml")
-    text = soup.get_text(separator="\n", strip=True)
+    text = soup.get_text(separator="\n\n", strip=True)
 
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(text, encoding="utf-8")
