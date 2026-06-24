@@ -4,7 +4,7 @@ A RAG-powered tool for evidence-tiered analysis of Levi Strauss & Co.'s
 SEC filings and strategic narrative. Built as a portfolio project 
 demonstrating applied AI engineering judgment.
 
-**Status: Prototype in progress (Days 1–3 of 5-week build)**
+**Status: Prototype in progress (Days 1–4 of 5-week build)**
 
 ---
 
@@ -26,7 +26,8 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 ## Current state
 
 - [x] EDGAR 10-K fetch and plain-text extraction (FY2025)
-- [ ] Chunking and embeddings
+- [x] Chunking — 137 overlapping chunks (~600 words each, ~50-word overlap)
+- [x] Embeddings — (137, 384) matrix via all-MiniLM-L6-v2, saved to `data/embeddings.npy`
 - [ ] Retrieval and cited answer generation (Gemini Flash)
 - [ ] Evidentiary tier tagging
 - [ ] FastAPI backend + tool router
@@ -46,6 +47,20 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 | Backend (prod) | FastAPI |
 | Frontend (prod) | Next.js + Tailwind on Vercel |
 | Data source | SEC EDGAR (public, no API key required) |
+
+---
+
+## Pipeline
+
+Run each script in order to reproduce the data artifacts:
+
+```bash
+python src/fetch.py    # Download 10-K from EDGAR → data/extracted/fy2025_10k.txt
+python src/chunk.py   # Split into ~600-word chunks → data/chunks.json
+python src/embed.py   # Encode chunks → data/embeddings.npy
+```
+
+`embed.py` downloads ~80 MB on first run (all-MiniLM-L6-v2 model weights).
 
 ---
 
