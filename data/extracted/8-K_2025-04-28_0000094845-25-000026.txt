@@ -1,0 +1,138 @@
+levi-20250423
+FALSE
+0000094845
+0000094845
+2025-04-28
+2025-04-28
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+WASHINGTON, DC 20549
+_________________
+FORM
+8-K
+_________________
+CURRENT REPORT
+PURSUANT TO SECTION 13 OR 15(d) OF THE
+SECURITIES EXCHANGE ACT OF 1934
+Date of Report (Date of earliest event reported):
+April 23, 2025
+_________________
+LEVI STRAUSS & CO.
+(Exact name of registrant as specified in its charter)
+Delaware
+001-06631
+94-0905160
+(State or Other Jurisdiction of
+Incorporation)
+(Commission
+File Number)
+(I.R.S. Employer
+Identification No.)
+1155 Battery Street
+San Francisco
+,
+California
+94111
+(Address of principal executive offices) (Zip Code)
+(
+415
+)
+501-6000
+(Registrant’s telephone number, including area code)
+Not Applicable
+(Former name or former address, if changed since last report)
+_________________
+Check the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following provisions (See General Instruction A.2. below):
+¨
+Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+¨
+Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)
+¨
+Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))
+¨
+Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240. 13e-4(c))
+Securities registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading symbol(s)
+Name of each exchange on which registered
+Class A Common Stock, $0.001 par value per share
+LEVI
+New York Stock Exchange
+Indicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405 of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (§240.12b-2 of this chapter).
+Emerging growth company
+¨
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.
+¨
+ITEM 5.07.
+Submission of Matters to a Vote of Security Holders
+On April 23, 2025, the Company held its 2025 Annual Meeting of Shareholders (the “Annual Meeting”). At the Annual Meeting, the Company’s shareholders voted on five proposals, each of which is described in more detail in the Company’s definitive proxy statement on Schedule 14A, as filed with the U.S. Securities and Exchange Commission on March 12, 2025 (the “Proxy Statement”).
+The following is a brief description of each matter voted upon and the number of votes cast for and against each matter and, if applicable, the number of abstentions and broker non-votes with respect to each matter.
+Proposal 1. Shareholders elected each of the four nominees for Class III directors to serve until the Company’s 2028 Annual Meeting of Shareholders and until his or her respective successor has been duly elected and qualified.
+The voting results were as follows:
+Name
+Votes For
+Votes Withheld
+Broker Non-Votes
+Troy Alstead
+2,747,695,204
+29,741,105
+16,504,027
+Robert Eckert
+2,737,751,510
+39,684,799
+16,504,027
+Michelle Gass
+2,768,417,492
+9,018,817
+16,504,027
+David Marberger
+2,765,017,276
+12,419,033
+16,504,027
+Proposal 2. Shareholders approved, on an advisory basis, the compensation of the Company’s named executive officers as set forth in the Proxy Statement. The voting results were as follows:
+Votes For
+Votes Against
+Abstentions
+Broker Non-Votes
+2,772,266,686
+5,001,835
+167,788
+16,504,027
+Proposal 3. Shareholders approved, on an advisory basis, a one year frequency for future shareholder advisory votes on executive compensation. The voting results were as follows:
+1 Year
+2 Years
+3 Years
+Abstentions
+Broker Non-Votes
+2,766,744,220
+7,261,730
+1,620,749
+1,809,610
+16,504,027
+Proposal 4. Shareholders ratified the selection by the Audit Committee of the Board of PricewaterhouseCoopers LLP as the Company’s independent registered public accounting firm for the fiscal year ending November 30, 2025. The voting results were as follows:
+Votes For
+Votes Against
+Abstentions
+2,786,067,550
+7,726,830
+145,956
+Proposal 5. Shareholders voted against the shareholder proposal requesting the Company cease DEI efforts. The voting results were as follows:
+Votes For
+Votes Against
+Abstentions
+Broker Non-Votes
+5,671,529
+2,771,499,827
+264,953
+16,504,027
+SIGNATURES
+Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+LEVI STRAUSS & CO.
+DATE:
+April 28, 2025
+By:
+/s/ DAVID JEDRZEJEK
+Name:
+David Jedrzejek
+Title:
+Senior Vice President and General Counsel

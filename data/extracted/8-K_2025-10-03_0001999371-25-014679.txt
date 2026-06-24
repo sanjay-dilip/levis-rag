@@ -1,0 +1,116 @@
+false
+0000094845
+0000094845
+2025-10-02
+2025-10-02
+iso4217:USD
+xbrli:shares
+iso4217:USD
+xbrli:shares
+UNITED
+STATES
+SECURITIES
+AND EXCHANGE COMMISSION
+WASHINGTON,
+DC 20549
+_________________
+FORM
+8-K
+_________________
+CURRENT
+REPORT
+PURSUANT
+TO SECTION 13 OR 15(d) OF THE
+SECURITIES
+EXCHANGE ACT OF 1934
+Date
+of Report (Date of earliest event reported):
+October 2, 2025
+_________________
+LEVI STRAUSS & CO.
+(Exact
+name of registrant as specified in its charter)
+Delaware
+001-06631
+94-0905160
+(State or Other Jurisdiction of
+Incorporation)
+(Commission
+File Number)
+(I.R.S. Employer
+Identification No.)
+1155 Battery Street
+San Francisco
+,
+California
+94111
+(Address of principal executive offices) (Zip Code)
+(415)
+501-6000
+(Registrant’s telephone number, including area code)
+Not Applicable
+(Former name or former address, if changed since last report)
+_________________
+Check the
+appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any
+of the following provisions (See General Instruction A.2. below):
+☐
+Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+☐
+Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)
+☐
+Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))
+☐
+Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240. 13e-4(c))
+Securities
+registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading symbol(s)
+Name of each exchange on which registered
+Class A Common Stock, $0.001 par value per share
+LEVI
+New York Stock Exchange
+Indicate
+by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405
+of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (§240.12b-2 of this chapter).
+Emerging growth company
+☐
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying
+with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐
+Item
+    5.02.
+Departure
+    of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of Certain Officers.
+On
+October 2, 2025, having reached the mandatory retirement age, Spencer Fleischer, a Class I director, retired from Levi Strauss &
+Co’s. (the “Company”) Board of Directors (the “Board”). The Company’s corporate governance guidelines
+provide that a director is deemed to have resigned automatically upon the director’s 72nd birthday unless the Nominating, Governance
+and Corporate Citizenship Committee of the Board (the “NGCC Committee”) or the Board, upon recommendation from the NGCC Committee,
+waives this requirement. Mr. Fleischer has served on the Company’s Board since 2013 and most recently served as the chair of the
+Compensation and Human Capital Committee and a member of the Finance Committee. Effective upon Mr. Fleisher’s retirement, Troy
+Alstead was named the Chair of the Company’s Compensation and Human Capital Committee. Mr. Fleischer’s retirement is not
+the result of any disagreement with the Company on any matter relating to the Company’s operations, policies or practices.
+Following
+Mr. Fleischer’s departure, the Board consists of twelve directors.
+Item 9.01
+Financial Statement and Exhibits.
+(d)
+Exhibits
+104
+The cover page from this Current
+    Report on Form 8-K, formatted in Inline XBRL.
+SIGNATURES
+Pursuant
+to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by
+the undersigned hereunto duly authorized.
+LEVI STRAUSS & CO.
+Date:
+October 3, 2025
+By:
+/s/
+    David Jedrzejek
+Name:
+David Jedrzejek
+Title:
+Senior Vice President and
+    General Counsel

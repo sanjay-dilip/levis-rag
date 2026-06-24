@@ -1,0 +1,146 @@
+Current Report
+false
+0000094845
+0000094845
+2026-04-03
+2026-04-03
+iso4217:USD
+xbrli:shares
+iso4217:USD
+xbrli:shares
+UNITED
+STATES
+SECURITIES
+AND EXCHANGE COMMISSION
+WASHINGTON,
+DC 20549
+_________________
+FORM
+8-K
+_________________
+CURRENT
+REPORT
+PURSUANT
+TO SECTION 13 OR 15(d) OF THE
+SECURITIES
+EXCHANGE ACT OF 1934
+Date
+of Report (Date of earliest event reported):
+April 3, 2026
+_________________
+LEVI STRAUSS & CO.
+(Exact
+name of registrant as specified in its charter)
+Delaware
+001-06631
+94-0905160
+(State
+                                            or Other Jurisdiction of
+Incorporation)
+(Commission
+File
+    Number)
+(I.R.S.
+                                            Employer
+Identification
+    No.)
+1155 Battery Street
+San Francisco
+,
+California
+94111
+(Address
+of principal executive offices) (Zip Code)
+(415)
+501-6000
+(Registrant’s
+telephone number, including area code)
+Not Applicable
+(Former
+name or former address, if changed since last report)
+_________________
+Check the
+appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any
+of the following provisions (See General Instruction A.2. below):
+☐
+Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+☐
+Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)
+☐
+Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))
+☐
+Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240. 13e-4(c))
+Securities
+registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading symbol(s)
+Name of each exchange on which registered
+Class
+    A Common Stock, $0.001 par value per share
+LEVI
+New
+    York Stock Exchange
+Indicate
+by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405
+of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (§240.12b-2 of this chapter).
+Emerging growth company
+☐
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying
+with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐
+ITEM 5.02
+Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of
+Certain Officers.
+On April
+7, 2026, Levi Strauss & Co. (the “Company”) announced that Harmit Singh, the Company’s Executive Vice President
+and Chief Financial and Growth Officer, will transition to the role of Special Advisor to the Company. The Company has retained an executive
+search firm to identify potential candidates for the Chief Financial Officer role. Until such time as his successor commences in the role
+as Chief Financial Officer, but no later than November 30, 2026 (the “Transition Date”), Mr. Singh will continue to serve
+as the Company’s Executive Vice President and Chief Financial and Growth Officer.
+To facilitate
+the transition and enable continuity, the Company and Mr. Singh have entered into a transition and separation agreement dated April 3,
+2026 (the “Separation Agreement”) which will allow the Company to leverage Mr. Singh’s long tenure and Company expertise
+as Special Advisor beginning on the Transition Date and continuing through November 30, 2026 (such date, the “Separation Date,”
+and such period, the “Term”). During the Term, Mr. Singh will provide advisory and transition-related services as may reasonably
+be requested by the Company and will continue to receive his current base salary and remain eligible to earn an annual incentive award
+for the Company’s 2026 fiscal year, without proration, subject to the terms and conditions of the annual incentive plan.
+Upon
+the Separation Date, in lieu of receiving severance provided under the Senior Executive Severance Plan, Mr. Singh will be entitled to
+receive $3 million in cash severance, which will be payable in installments over 78 weeks, subsidized COBRA continuation coverage for
+78 weeks, and certain other benefits and perquisites consistent with those provided to in-service executives through the end of 2027.
+All payments
+and benefits under the Separation Agreement are subject to Mr. Singh’s execution and non-revocation of a general release agreement.
+Mr. Singh’s
+transition is not the result of any disagreements with the Company on any matter relating to the Company’s accounting principles
+or practices, financial statement disclosures or policies.
+The foregoing
+summary is qualified in its entirety by reference to the complete text of the Separation Agreement which will be filed with the Company’s
+Quarterly Report on Form 10-Q for the quarter ending May 31, 2026.
+ITEM 7.01
+Regulation FD Disclosure
+The Company issued the press
+release attached hereto as Exhibit 99.1 with respect to the matters set forth in Item 5.02 above. The information in Item 7.01 of this
+Current Report on Form 8-K is being furnished and shall not be deemed “filed” for the purposes of Section 18 of the Securities
+Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities of that section, and shall
+not be deemed incorporated by reference into any filing made under the Securities Act of 1933, as amended, or the Exchange Act, except
+as otherwise expressly stated in such filing.
+ITEM 9.01
+Financial Statement and Exhibits.
+(d)
+Exhibits
+99.1
+Press Release, dated April 7, 2026
+104
+The cover page from this Current Report on Form 8-K, formatted in Inline XBRL
+SIGNATURES
+Pursuant
+to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by
+the undersigned hereunto duly authorized.
+LEVI STRAUSS & CO.
+Date:
+April 7, 2026
+By:
+/s/ David Jedrzejek
+Name:
+David Jedrzejek
+Title:
+Senior Vice President and General Counsel

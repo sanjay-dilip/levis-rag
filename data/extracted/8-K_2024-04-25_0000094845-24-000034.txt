@@ -1,0 +1,127 @@
+levi-20240424
+FALSE
+0000094845
+0000094845
+2024-04-24
+2024-04-24
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+WASHINGTON, DC 20549
+_________________
+FORM
+8-K
+_________________
+CURRENT REPORT
+PURSUANT TO SECTION 13 OR 15(d) OF THE
+SECURITIES EXCHANGE ACT OF 1934
+Date of Report (Date of earliest event reported):
+April 24, 2024
+_________________
+LEVI STRAUSS & CO.
+(Exact name of registrant as specified in its charter)
+Delaware
+001-06631
+94-0905160
+(State or Other Jurisdiction of
+Incorporation)
+(Commission
+File Number)
+(I.R.S. Employer
+Identification No.)
+1155 Battery Street
+San Francisco
+,
+California
+94111
+(Address of principal executive offices) (Zip Code)
+(
+415
+)
+501-6000
+(Registrant’s telephone number, including area code)
+Not Applicable
+(Former name or former address, if changed since last report)
+_________________
+Check the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following provisions (See General Instruction A.2. below):
+¨
+Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+¨
+Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)
+¨
+Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))
+¨
+Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240. 13e-4(c))
+Securities registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading symbol(s)
+Name of each exchange on which registered
+Class A Common Stock, $0.001 par value per share
+LEVI
+New York Stock Exchange
+Indicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405 of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (§240.12b-2 of this chapter).
+Emerging growth company
+¨
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.
+¨
+ITEM 5.07.
+Submission of Matters to a Vote of Security Holders
+On April 24, 2024, the Company held its 2024 Annual Meeting of Shareholders (the “Annual Meeting”). At the Annual Meeting, the Company’s shareholders voted on four proposals, each of which is described in more detail in the Company’s definitive proxy statement on Schedule 14A, as filed with the U.S. Securities and Exchange Commission on March 14, 2024 (the “Proxy Statement”).
+The following is a brief description of each matter voted upon and the number of votes cast for and against each matter and, if applicable, the number of abstentions and broker non-votes with respect to each matter.
+Proposal 1. Shareholders elected each of the four nominees for Class II directors to serve until the Company’s 2027 Annual Meeting of Shareholders and until his or her respective successor has been duly elected and qualified.
+The voting results were as follows:
+Name
+Votes For
+Votes Withheld
+Broker Non-Votes
+David A. Friedman
+2,691,306,111
+58,994,305
+13,735,376
+Yael Garten
+2,721,423,694
+28,876,722
+13,735,376
+Jenny Ming
+2,681,359,187
+68,941,229
+13,735,376
+Joshua E. Prime
+2,738,059,062
+12,241,354
+13,735,376
+Proposal 2. Shareholders approved, on an advisory basis, the compensation of the Company’s named executive officers as set forth in the Proxy Statement. The voting results were as follows:
+Votes For
+Votes Against
+Abstentions
+Broker Non-Votes
+2,515,270,276
+24,578,666
+210,451,474
+13,735,376
+Proposal 3. Shareholders ratified the selection by the Audit Committee of the Board of PricewaterhouseCoopers LLP as the Company’s independent registered public accounting firm for the fiscal year ending December 1, 2024. The voting results were as follows:
+Votes For
+Votes Against
+Abstentions
+2,756,229,972
+7,674,727
+131,093
+Proposal 4. Shareholders voted against the shareholder proposal requesting a corporate financial sustainability report. The voting results were as follows:
+Votes For
+Votes Against
+Abstentions
+Broker Non-Votes
+16,414,614
+2,721,204,022
+12,681,780
+13,735,376
+SIGNATURES
+Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+LEVI STRAUSS & CO.
+DATE:
+April 25, 2024
+By:
+/s/ DAVID JEDRZEJEK
+Name:
+David Jedrzejek
+Title:
+Senior Vice President and General Counsel

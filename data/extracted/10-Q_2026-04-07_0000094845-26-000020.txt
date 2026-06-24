@@ -1,0 +1,5449 @@
+lvis-20260301
+0000094845
+Large accelerated filer
+3/1
+2026
+Q1
+FALSE
+David Jedrzejek
+Senior Vice President and General Counsel
+2/5/2027
+364
+xbrli:shares
+iso4217:USD
+iso4217:USD
+xbrli:shares
+lvis:segment
+xbrli:pure
+0000094845
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:CommonClassAMember
+2026-03-31
+0000094845
+us-gaap:CommonClassBMember
+2026-03-31
+0000094845
+2026-03-01
+0000094845
+2025-11-30
+0000094845
+us-gaap:CommonClassAMember
+2026-03-01
+0000094845
+us-gaap:CommonClassAMember
+2025-11-30
+0000094845
+us-gaap:CommonClassBMember
+2026-03-01
+0000094845
+us-gaap:CommonClassBMember
+2025-11-30
+0000094845
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:CommonStockMember
+2025-11-30
+0000094845
+us-gaap:AdditionalPaidInCapitalMember
+2025-11-30
+0000094845
+us-gaap:RetainedEarningsMember
+2025-11-30
+0000094845
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2025-11-30
+0000094845
+us-gaap:RetainedEarningsMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:CommonStockMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:AdditionalPaidInCapitalMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:CommonStockMember
+2026-03-01
+0000094845
+us-gaap:AdditionalPaidInCapitalMember
+2026-03-01
+0000094845
+us-gaap:RetainedEarningsMember
+2026-03-01
+0000094845
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2026-03-01
+0000094845
+us-gaap:CommonStockMember
+2024-12-01
+0000094845
+us-gaap:AdditionalPaidInCapitalMember
+2024-12-01
+0000094845
+us-gaap:RetainedEarningsMember
+2024-12-01
+0000094845
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2024-12-01
+0000094845
+2024-12-01
+0000094845
+us-gaap:RetainedEarningsMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:CommonStockMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:AdditionalPaidInCapitalMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:CommonStockMember
+2025-03-02
+0000094845
+us-gaap:AdditionalPaidInCapitalMember
+2025-03-02
+0000094845
+us-gaap:RetainedEarningsMember
+2025-03-02
+0000094845
+us-gaap:AccumulatedOtherComprehensiveIncomeMember
+2025-03-02
+0000094845
+2025-03-02
+0000094845
+lvis:AcceleratedShareRepurchaseAgreementMember
+2026-01-30
+2026-01-30
+0000094845
+lvis:AcceleratedShareRepurchaseAgreementMember
+2026-01-30
+0000094845
+lvis:AcceleratedShareRepurchaseAgreementMember
+us-gaap:RetainedEarningsMember
+2026-01-30
+2026-01-30
+0000094845
+lvis:AcceleratedShareRepurchaseAgreementMember
+us-gaap:AdditionalPaidInCapitalMember
+2026-01-30
+2026-01-30
+0000094845
+us-gaap:DisposalGroupHeldForSaleOrDisposedOfBySaleNotDiscontinuedOperationsMember
+lvis:DockersMember
+2025-06-01
+0000094845
+us-gaap:DisposalGroupHeldForSaleOrDisposedOfBySaleNotDiscontinuedOperationsMember
+lvis:DockersMember
+srt:MinimumMember
+2025-03-03
+2025-06-01
+0000094845
+us-gaap:DisposalGroupHeldForSaleOrDisposedOfBySaleNotDiscontinuedOperationsMember
+lvis:DockersMember
+srt:MaximumMember
+2025-03-03
+2025-06-01
+0000094845
+us-gaap:DisposalGroupHeldForSaleOrDisposedOfBySaleNotDiscontinuedOperationsMember
+lvis:DockersMember
+2025-07-31
+2025-07-31
+0000094845
+us-gaap:DisposalGroupHeldForSaleOrDisposedOfBySaleNotDiscontinuedOperationsMember
+lvis:DockersMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:DisposalGroupHeldForSaleOrDisposedOfBySaleNotDiscontinuedOperationsMember
+lvis:DockersMember
+2026-03-01
+0000094845
+us-gaap:DisposalGroupHeldForSaleOrDisposedOfBySaleNotDiscontinuedOperationsMember
+lvis:DockersMember
+2025-11-30
+0000094845
+us-gaap:DisposalGroupHeldForSaleOrDisposedOfBySaleNotDiscontinuedOperationsMember
+lvis:DockersMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+2026-03-01
+0000094845
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+us-gaap:FairValueInputsLevel1Member
+2026-03-01
+0000094845
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+us-gaap:FairValueInputsLevel2Member
+2026-03-01
+0000094845
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+2025-11-30
+0000094845
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+us-gaap:FairValueInputsLevel1Member
+2025-11-30
+0000094845
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+us-gaap:FairValueInputsLevel2Member
+2025-11-30
+0000094845
+lvis:A4.000SeniorNotesDue2030Member
+us-gaap:SeniorNotesMember
+2026-03-01
+0000094845
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+lvis:A4.000SeniorNotesDue2030Member
+us-gaap:SeniorNotesMember
+2026-03-01
+0000094845
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+lvis:A4.000SeniorNotesDue2030Member
+us-gaap:SeniorNotesMember
+2026-03-01
+0000094845
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+lvis:A4.000SeniorNotesDue2030Member
+us-gaap:SeniorNotesMember
+2025-11-30
+0000094845
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+lvis:A4.000SeniorNotesDue2030Member
+us-gaap:SeniorNotesMember
+2025-11-30
+0000094845
+lvis:A350SeniorNotesDue2031Member
+us-gaap:SeniorNotesMember
+2026-03-01
+0000094845
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+lvis:A350SeniorNotesDue2031Member
+us-gaap:SeniorNotesMember
+2026-03-01
+0000094845
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+lvis:A350SeniorNotesDue2031Member
+us-gaap:SeniorNotesMember
+2026-03-01
+0000094845
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+lvis:A350SeniorNotesDue2031Member
+us-gaap:SeniorNotesMember
+2025-11-30
+0000094845
+us-gaap:EstimateOfFairValueFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+lvis:A350SeniorNotesDue2031Member
+us-gaap:SeniorNotesMember
+2025-11-30
+0000094845
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+2026-03-01
+0000094845
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:FairValueMeasurementsRecurringMember
+2025-11-30
+0000094845
+us-gaap:LongMember
+2026-03-01
+0000094845
+us-gaap:ShortMember
+2026-03-01
+0000094845
+us-gaap:OtherAssetsMember
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:ForeignExchangeContractMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:CashFlowHedgingMember
+2026-03-01
+0000094845
+us-gaap:OtherAssetsMember
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:ForeignExchangeForwardMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:CashFlowHedgingMember
+2026-03-01
+0000094845
+us-gaap:OtherAssetsMember
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:ForeignExchangeContractMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:CashFlowHedgingMember
+2025-11-30
+0000094845
+us-gaap:OtherAssetsMember
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:ForeignExchangeForwardMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:CashFlowHedgingMember
+2025-11-30
+0000094845
+us-gaap:OtherLiabilitiesMember
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:ForeignExchangeForwardMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:CashFlowHedgingMember
+2026-03-01
+0000094845
+us-gaap:OtherLiabilitiesMember
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:ForeignExchangeForwardMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:CashFlowHedgingMember
+2025-11-30
+0000094845
+us-gaap:OtherLiabilitiesMember
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:ForeignExchangeContractMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:CashFlowHedgingMember
+2025-11-30
+0000094845
+us-gaap:ForeignExchangeContractMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:CashFlowHedgingMember
+2026-03-01
+0000094845
+us-gaap:ForeignExchangeContractMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:DesignatedAsHedgingInstrumentMember
+us-gaap:CashFlowHedgingMember
+2025-11-30
+0000094845
+us-gaap:ForeignExchangeForwardMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:OtherAssetsMember
+us-gaap:NondesignatedMember
+2026-03-01
+0000094845
+us-gaap:ForeignExchangeForwardMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:OtherAssetsMember
+us-gaap:NondesignatedMember
+2025-11-30
+0000094845
+us-gaap:ForeignExchangeForwardMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:OtherLiabilitiesMember
+us-gaap:NondesignatedMember
+2026-03-01
+0000094845
+us-gaap:ForeignExchangeForwardMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:OtherLiabilitiesMember
+us-gaap:NondesignatedMember
+2025-11-30
+0000094845
+us-gaap:ForeignExchangeForwardMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:NondesignatedMember
+2026-03-01
+0000094845
+us-gaap:ForeignExchangeForwardMember
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:NondesignatedMember
+2025-11-30
+0000094845
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:DesignatedAsHedgingInstrumentMember
+lvis:A4.000SeniorNotesDue2030Member
+us-gaap:SeniorNotesMember
+2026-03-01
+0000094845
+us-gaap:CarryingReportedAmountFairValueDisclosureMember
+us-gaap:DesignatedAsHedgingInstrumentMember
+lvis:A4.000SeniorNotesDue2030Member
+us-gaap:SeniorNotesMember
+2025-11-30
+0000094845
+us-gaap:ForeignExchangeContractMember
+2026-03-01
+0000094845
+us-gaap:ForeignExchangeContractMember
+2025-11-30
+0000094845
+us-gaap:ForeignExchangeContractMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:ForeignExchangeContractMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:ForeignExchangeForwardMember
+2026-03-01
+0000094845
+us-gaap:ForeignExchangeForwardMember
+2025-11-30
+0000094845
+us-gaap:ForeignExchangeForwardMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:ForeignExchangeForwardMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:A425YenDenominatedEurobondsDue2016Member
+us-gaap:BondsMember
+2026-03-01
+0000094845
+lvis:A425YenDenominatedEurobondsDue2016Member
+us-gaap:BondsMember
+2025-11-30
+0000094845
+lvis:A425YenDenominatedEurobondsDue2016Member
+us-gaap:BondsMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:A425YenDenominatedEurobondsDue2016Member
+us-gaap:BondsMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:EuroSeniorNotesMember
+us-gaap:SeniorNotesMember
+2026-03-01
+0000094845
+lvis:EuroSeniorNotesMember
+us-gaap:SeniorNotesMember
+2025-11-30
+0000094845
+lvis:EuroSeniorNotesMember
+us-gaap:SeniorNotesMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:EuroSeniorNotesMember
+us-gaap:SeniorNotesMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:RevenueFromContractWithCustomerMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:RevenueFromContractWithCustomerMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:CostOfSalesMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:CostOfSalesMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:ForeignExchangeContractMember
+us-gaap:OtherIncomeMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:ForeignExchangeContractMember
+us-gaap:OtherIncomeMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:A4.000SeniorNotesDue2030Member
+us-gaap:SeniorNotesMember
+2025-11-30
+0000094845
+lvis:A350SeniorNotesDue2031Member
+us-gaap:SeniorNotesMember
+2025-11-30
+0000094845
+us-gaap:BorrowingsMember
+2026-03-01
+0000094845
+us-gaap:BorrowingsMember
+2025-11-30
+0000094845
+us-gaap:RevolvingCreditFacilityMember
+us-gaap:LineOfCreditMember
+2026-03-01
+0000094845
+us-gaap:EmployeeSeveranceMember
+lvis:ProjectFuelMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:ProjectFuelMember
+2026-03-01
+0000094845
+us-gaap:EmployeeSeveranceMember
+lvis:ProjectFuelMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:ConsultingFeesAndOtherMember
+lvis:ProjectFuelMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:EmployeeSeveranceMember
+lvis:ProjectFuelMember
+2025-11-30
+0000094845
+us-gaap:EmployeeSeveranceMember
+lvis:ProjectFuelMember
+2026-03-01
+0000094845
+us-gaap:ContractTerminationMember
+lvis:ProjectFuelMember
+2025-11-30
+0000094845
+us-gaap:ContractTerminationMember
+lvis:ProjectFuelMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:ContractTerminationMember
+lvis:ProjectFuelMember
+2026-03-01
+0000094845
+lvis:ProjectFuelMember
+2025-11-30
+0000094845
+lvis:ProjectFuelMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:DiscontinuedOperationsHeldforsaleMember
+lvis:DockersMember
+lvis:ProjectFuelMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:EmployeeSeveranceMember
+lvis:ProjectFuelMember
+2024-12-01
+0000094845
+us-gaap:EmployeeSeveranceMember
+lvis:ProjectFuelMember
+2025-03-02
+0000094845
+us-gaap:ContractTerminationMember
+lvis:ProjectFuelMember
+2024-12-01
+0000094845
+us-gaap:ContractTerminationMember
+lvis:ProjectFuelMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:ContractTerminationMember
+lvis:ProjectFuelMember
+2025-03-02
+0000094845
+lvis:ProjectFuelMember
+2024-12-01
+0000094845
+lvis:ProjectFuelMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:ProjectFuelMember
+2025-03-02
+0000094845
+us-gaap:DiscontinuedOperationsHeldforsaleMember
+lvis:DockersMember
+lvis:ProjectFuelMember
+2024-12-02
+2025-03-02
+0000094845
+srt:MinimumMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:SubsequentEventMember
+2026-04-07
+0000094845
+us-gaap:SubsequentEventMember
+2026-03-02
+2026-04-07
+0000094845
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2025-11-30
+0000094845
+us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember
+2025-11-30
+0000094845
+us-gaap:AccumulatedTranslationAdjustmentMember
+2025-11-30
+0000094845
+us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember
+2025-11-30
+0000094845
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:AccumulatedTranslationAdjustmentMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2026-03-01
+0000094845
+us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember
+2026-03-01
+0000094845
+us-gaap:AccumulatedTranslationAdjustmentMember
+2026-03-01
+0000094845
+us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember
+2026-03-01
+0000094845
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2024-12-01
+0000094845
+us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember
+2024-12-01
+0000094845
+us-gaap:AccumulatedTranslationAdjustmentMember
+2024-12-01
+0000094845
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:AccumulatedTranslationAdjustmentMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember
+2025-03-02
+0000094845
+us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember
+2025-03-02
+0000094845
+us-gaap:AccumulatedTranslationAdjustmentMember
+2025-03-02
+0000094845
+lvis:AmericasSegmentMember
+us-gaap:SalesChannelThroughIntermediaryMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:EuropeSegmentMember
+us-gaap:SalesChannelThroughIntermediaryMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:AsiaSegmentMember
+us-gaap:SalesChannelThroughIntermediaryMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:OtherBrandsSegmentMember
+us-gaap:SalesChannelThroughIntermediaryMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:SalesChannelThroughIntermediaryMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:AmericasSegmentMember
+us-gaap:SalesChannelDirectlyToConsumerMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:EuropeSegmentMember
+us-gaap:SalesChannelDirectlyToConsumerMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:AsiaSegmentMember
+us-gaap:SalesChannelDirectlyToConsumerMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:OtherBrandsSegmentMember
+us-gaap:SalesChannelDirectlyToConsumerMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:SalesChannelDirectlyToConsumerMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:AmericasSegmentMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:EuropeSegmentMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:AsiaSegmentMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:OtherBrandsSegmentMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:AmericasSegmentMember
+us-gaap:SalesChannelThroughIntermediaryMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:EuropeSegmentMember
+us-gaap:SalesChannelThroughIntermediaryMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:AsiaSegmentMember
+us-gaap:SalesChannelThroughIntermediaryMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:OtherBrandsSegmentMember
+us-gaap:SalesChannelThroughIntermediaryMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:SalesChannelThroughIntermediaryMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:AmericasSegmentMember
+us-gaap:SalesChannelDirectlyToConsumerMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:EuropeSegmentMember
+us-gaap:SalesChannelDirectlyToConsumerMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:AsiaSegmentMember
+us-gaap:SalesChannelDirectlyToConsumerMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:OtherBrandsSegmentMember
+us-gaap:SalesChannelDirectlyToConsumerMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:SalesChannelDirectlyToConsumerMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:AmericasSegmentMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:EuropeSegmentMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:AsiaSegmentMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:OtherBrandsSegmentMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:LeviStraussFoundationMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:LeviStraussFoundationMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:AmericasSegmentMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:EuropeSegmentMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:AsiaSegmentMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:OperatingSegmentsMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:MaterialReconcilingItemsMember
+lvis:BeyondYogaMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:CorporateNonSegmentMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:AmericasSegmentMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:EuropeSegmentMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:AsiaSegmentMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:OperatingSegmentsMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:MaterialReconcilingItemsMember
+lvis:BeyondYogaMember
+2024-12-02
+2025-03-02
+0000094845
+lvis:AmericasSegmentMember
+2023-11-27
+2024-02-25
+0000094845
+us-gaap:CorporateNonSegmentMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:MaterialReconcilingItemsMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:MaterialReconcilingItemsMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:SegmentContinuingOperationsMember
+2025-12-01
+2026-03-01
+0000094845
+us-gaap:SegmentContinuingOperationsMember
+2024-12-02
+2025-03-02
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:AmericasSegmentMember
+2026-03-01
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:EuropeSegmentMember
+2026-03-01
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:AsiaSegmentMember
+2026-03-01
+0000094845
+us-gaap:OperatingSegmentsMember
+2026-03-01
+0000094845
+us-gaap:MaterialReconcilingItemsMember
+2026-03-01
+0000094845
+us-gaap:MaterialReconcilingItemsMember
+lvis:BeyondYogaMember
+2026-03-01
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:AmericasSegmentMember
+2025-03-02
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:EuropeSegmentMember
+2025-03-02
+0000094845
+us-gaap:OperatingSegmentsMember
+lvis:AsiaSegmentMember
+2025-03-02
+0000094845
+us-gaap:OperatingSegmentsMember
+2025-03-02
+0000094845
+us-gaap:MaterialReconcilingItemsMember
+2025-03-02
+0000094845
+us-gaap:MaterialReconcilingItemsMember
+lvis:BeyondYogaMember
+2025-11-30
+0000094845
+lvis:DavidJedrzejekMember
+2025-12-01
+2026-03-01
+0000094845
+lvis:DavidJedrzejekMember
+2026-03-01
+Table of Contents
+UNITED STATES SECURITIES AND EXCHANGE COMMISSION
+Washington, D.C. 20549
+_________________
+Form
+10-Q
+(Mark One)
+☑
+QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
+For the Quarterly Period Ended
+March 1, 2026
+or
+☐
+TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
+Commission file number:
+001-06631
+_________________
+LEVI STRAUSS & CO
+.
+(Exact Name of Registrant as Specified in Its Charter)
+Delaware
+94-0905160
+(State or Other Jurisdiction of
+Incorporation or Organization)
+(I.R.S. Employer
+Identification No.)
+1155 Battery Street
+,
+San Francisco
+,
+California
+94111
+(Address of Principal Executive Offices) (Zip Code)
+(
+415
+)
+501-6000
+(Registrant’s Telephone Number, Including Area Code)
+None
+(Former Name, Former Address and Former Fiscal Year, if Changed Since Last Report)
+_________________
+Securities registered pursuant to Section 12(b) of the Securities Exchange Act of 1934:
+Title of each class
+Trading symbol(s)
+Name of each exchange on which registered
+Class A Common Stock, $0.001 par value per share
+LEVI
+New York Stock Exchange
+Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.
+Yes
+þ
+No
+¨
+Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted and posted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit and post such files).
+Yes
+þ
+No
+¨
+Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See definition of "Large accelerated filer," "accelerated filer," "smaller reporting company," and "emerging growth company" in Rule 12b-2 of the Exchange Act. (Check one):
+Large accelerated filer
+þ
+Accelerated filer
+¨
+Emerging growth company
+☐
+Non-accelerated filer
+¨
+Smaller reporting company
+☐
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.
+¨
+Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Act).    Yes
+¨
+No
+þ
+As of March 31, 2026, the registrant had
+98,176,901
+shares of Class A common stock, $0.001 par value per share and
+286,419,350
+shares of Class B common stock, $0.001 par value per share, outstanding.
+Table of Contents
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+INDEX TO FORM 10-Q
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+Page
+Number
+PART I — FINANCIAL INFORMATION
+Item 1.
+Consolidated Financial Statements (unaudited):
+Consolidated Balance Sheets as of March 1, 2026 and November 30, 2025
+3
+Consolidated Statements of Income for the Three Months Ended March 1, 2026 and March 2, 2025
+4
+Consolidated Statements of Comprehensive Income (Loss) for the Three Months Ended March 1, 2026 and March 2, 2025
+5
+Consolidated Statements of Stockholders’ Equity for the Three Months Ended March 1, 2026 and March 2, 2025
+6
+Consolidated Statements of Cash Flows for the Three Months Ended March 1, 2026 and March 2, 2025
+7
+Notes to Consolidated Financial Statements
+8
+Item 2.
+Management’s Discussion and Analysis of Financial Condition and Results of Operations
+26
+Item 3.
+Quantitative and Qualitative Disclosures About Market Risk
+55
+Item 4.
+Controls and Procedures
+55
+PART II — OTHER INFORMATION
+Item 1.
+Legal Proceedings
+56
+Item 1A.
+Risk Factors
+56
+Item 2.
+Unregistered Sales of Equity Securities and Use of Proceeds
+56
+Item 3.
+Defaults Upon Senior Securities
+56
+Item 4.
+Mine Safety Disclosures
+56
+Item 5.
+Other Information
+57
+Item 6.
+Exhibits
+58
+SIGNATURE
+59
+WHERE YOU CAN FIND MORE INFORMATION
+Investors and others should note that we announce material financial information to our investors using our corporate website, press releases, SEC filings and public conference calls and webcasts (including our Investor Relations page at http://investors.levistrauss.com). We also use the following social media channels as a means of disclosing information about our company, products, planned financial and other announcements, attendance at upcoming investor and industry conferences and other matters, as well as for complying with our disclosure obligations under Regulation FD promulgated under the Securities Exchange Act of 1934, as amended.
+•
+our X account (previously Twitter account) (https://X.com/LeviStraussCo);
+•
+our company blog (https://www.levistrauss.com/unzipped-blog/);
+•
+our Facebook page (https://www.facebook.com/levistraussco/);
+•
+our LinkedIn page (https://www.linkedin.com/company/levi-strauss-&-co-);
+•
+our Instagram page (https://www.instagram.com/levistraussco/); and
+•
+our YouTube channel (https://www.youtube.com/user/levistraussvideo).
+The information we post through these channels may be deemed material. Accordingly, investors should monitor these channels in addition to following our press releases, SEC filings and public conference calls and webcasts. This list may be updated from time to time. The information we post through these channels is not a part of this Quarterly Report.
+Table of Contents
+PART I — FINANCIAL INFORMATION
+Item 1.
+CONSOLIDATED FINANCIAL STATEMENTS
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+CONSOLIDATED BALANCE SHEETS
+(Unaudited)
+March 1,
+2026
+November 30,
+2025
+(Dollars in millions)
+ASSETS
+Current Assets:
+Cash and cash equivalents
+$
+716.6
+$
+757.9
+Short-term investments in marketable securities
+95.4
+90.9
+Trade receivables, net
+728.9
+774.7
+Inventories
+1,120.6
+1,237.7
+Other current assets
+248.0
+238.5
+Current assets held for sale
+—
+54.0
+Total current assets
+2,909.5
+3,153.7
+Property, plant and equipment, net
+669.1
+681.8
+Goodwill
+282.4
+280.6
+Other intangible assets, net
+193.6
+194.4
+Deferred tax assets, net
+826.6
+830.1
+Operating lease right-of-use assets, net
+1,154.4
+1,148.2
+Other non-current assets
+539.2
+538.7
+Non-current assets held for sale
+—
+21.3
+Total assets
+$
+6,574.8
+$
+6,848.8
+LIABILITIES AND STOCKHOLDERS’ EQUITY
+Current Liabilities:
+Accounts payable
+$
+487.6
+$
+597.6
+Accrued salaries, wages and employee benefits
+201.5
+244.7
+Accrued sales returns and allowances
+202.8
+226.1
+Short-term operating lease liabilities
+266.7
+260.7
+Other accrued liabilities
+686.7
+703.4
+Total current liabilities
+1,845.3
+2,032.5
+Long-term debt
+1,049.4
+1,039.2
+Long-term operating lease liabilities
+1,000.5
+1,005.6
+Long-term employee related benefits
+241.2
+252.7
+Other long-term liabilities
+231.8
+240.2
+Total liabilities
+4,368.2
+4,570.2
+Commitments and contingencies
+Stockholders’ Equity:
+Common stock — $
+0.001
+par value;
+1,200,000,000
+Class A shares authorized,
+98,057,678
+shares and
+103,620,225
+shares issued and outstanding as of March 1, 2026 and November 30, 2025, respectively; and
+422,000,000
+Class B shares authorized,
+286,514,706
+shares and
+286,756,831
+shares issued and outstanding, as of March 1, 2026 and November 30, 2025, respectively
+0.4
+0.4
+Additional paid-in capital
+729.5
+788.1
+Retained earnings
+1,863.4
+1,897.3
+Accumulated other comprehensive loss
+(
+386.7
+)
+(
+407.2
+)
+Total stockholders’ equity
+2,206.6
+2,278.6
+Total liabilities and stockholders’ equity
+$
+6,574.8
+$
+6,848.8
+The accompanying notes are an integral part of these consolidated financial statements.
+3
+Table of Contents
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+CONSOLIDATED STATEMENTS OF INCOME
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions, except per share amounts)
+(Unaudited)
+Net revenues
+$
+1,742.5
+$
+1,526.8
+Cost of goods sold
+664.2
+579.2
+Gross profit
+1,078.3
+947.6
+Selling, general and administrative expenses
+871.7
+749.3
+Restructuring charges, net
+7.9
+6.7
+Operating income
+198.7
+191.6
+Interest expense
+(
+13.1
+)
+(
+10.9
+)
+Other income (expense), net
+42.6
+(
+4.1
+)
+Income from continuing operations before income taxes
+228.2
+176.6
+Income tax expense
+51.1
+36.4
+Net income from continuing operations
+177.1
+140.2
+Net income (loss) from discontinued operations, net of taxes
+(
+1.3
+)
+(
+5.2
+)
+Net income
+$
+175.8
+$
+135.0
+Earnings (loss) per common share:
+Continuing operations - Basic
+$
+0.45
+$
+0.35
+Discontinued operations - Basic
+—
+(
+0.01
+)
+Net income - Basic
+$
+0.45
+$
+0.34
+Continuing operations - Diluted
+$
+0.45
+$
+0.35
+Discontinued operations - Diluted
+—
+(
+0.01
+)
+Net income - Diluted
+$
+0.45
+$
+0.34
+Weighted-average common shares outstanding:
+Basic
+389,907,760
+396,576,662
+Diluted
+394,196,801
+400,046,382
+The accompanying notes are an integral part of these consolidated financial statements.
+4
+Table of Contents
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+(Unaudited)
+Net income
+$
+175.8
+$
+135.0
+Other comprehensive income (loss), before related income taxes:
+Pension and postretirement benefits
+(
+1.4
+)
+1.8
+Derivative instruments (losses) gains
+(
+16.3
+)
+14.5
+Foreign currency translation gains (losses)
+44.2
+(
+6.8
+)
+Total other comprehensive income, before related income taxes
+26.5
+9.5
+Income tax expense related to items of other comprehensive income
+(
+6.0
+)
+(
+2.2
+)
+Comprehensive income, net of taxes
+$
+196.3
+$
+142.3
+The accompanying notes are an integral part of these consolidated financial statements.
+5
+Table of Contents
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+CONSOLIDATED STATEMENTS OF STOCKHOLDERS’ EQUITY
+Three Months Ended March 1, 2026
+Class A
+& Class B
+Common
+Stock
+(In Shares)
+Class A
+& Class B
+Common
+Stock
+Additional
+Paid-In Capital
+Retained
+Earnings
+Accumulated Other
+Comprehensive Loss
+Total
+Stockholders’ Equity
+(Shares & Dollars in millions)
+(Unaudited)
+Balance at November 30, 2025
+390.4
+$
+0.4
+$
+788.1
+$
+1,897.3
+$
+(
+407.2
+)
+$
+2,278.6
+Net income
+—
+—
+—
+175.8
+—
+175.8
+Other comprehensive income, net of tax
+—
+—
+—
+—
+20.5
+20.5
+Stock-based compensation and dividends, net
+1.9
+—
+15.8
+—
+—
+15.8
+Employee stock purchase plan
+0.1
+—
+1.8
+—
+—
+1.8
+Accelerated share repurchase, including excise tax
+(
+7.8
+)
+—
+(
+45.1
+)
+(
+155.9
+)
+—
+(
+201.0
+)
+Tax withholdings on equity awards
+—
+—
+(
+31.1
+)
+—
+—
+(
+31.1
+)
+Cash dividends declared ($
+0.14
+per share)
+—
+—
+—
+(
+53.8
+)
+—
+(
+53.8
+)
+Balance at March 1, 2026
+384.6
+$
+0.4
+$
+729.5
+$
+1,863.4
+$
+(
+386.7
+)
+$
+2,206.6
+Three Months Ended March 2, 2025
+Class A
+& Class B
+Common
+Stock
+(In Shares)
+Class A
+& Class B
+Common
+Stock
+Additional
+Paid-In Capital
+Retained
+Earnings
+Accumulated Other
+Comprehensive Loss
+Total
+Stockholders’ Equity
+(Shares & Dollars in millions)
+(Unaudited)
+Balance at December 01, 2024
+395.4
+$
+0.4
+$
+732.6
+$
+1,672.0
+$
+(
+434.5
+)
+$
+1,970.5
+Net income
+—
+—
+—
+135.0
+—
+135.0
+Other comprehensive income, net of tax
+—
+—
+—
+—
+7.3
+7.3
+Stock-based compensation and dividends, net
+1.4
+—
+19.3
+—
+—
+19.3
+Employee stock purchase plan
+0.1
+—
+2.1
+—
+—
+2.1
+Repurchase of common stock
+(
+1.6
+)
+—
+—
+(
+30.0
+)
+—
+(
+30.0
+)
+Tax withholdings on equity awards
+—
+—
+(
+18.3
+)
+—
+—
+(
+18.3
+)
+Cash dividends declared ($
+0.13
+per share)
+—
+—
+—
+(
+51.4
+)
+—
+(
+51.4
+)
+Balance at March 2, 2025
+395.3
+$
+0.4
+$
+735.7
+$
+1,725.6
+$
+(
+427.2
+)
+$
+2,034.5
+The accompanying notes are an integral part of these consolidated financial statements.
+6
+Table of Contents
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+CONSOLIDATED STATEMENTS OF CASH FLOWS
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+(Unaudited)
+Cash Flows from Operating Activities:
+Net income
+$
+175.8
+$
+135.0
+Adjustments to reconcile net income to net cash provided by operating activities:
+Depreciation and amortization
+55.6
+49.2
+Goodwill impairment
+—
+2.5
+Gain on sale of business, prior to costs to sell
+(
+35.1
+)
+—
+Stock-based compensation
+15.8
+19.3
+Deferred income taxes
+10.5
+(
+5.7
+)
+Other, net
+(
+7.6
+)
+17.0
+Net change in operating assets and liabilities
+(
+3.5
+)
+(
+164.8
+)
+Net cash provided by operating activities
+211.5
+52.5
+Cash Flows from Investing Activities:
+Proceeds from sale of business
+96.3
+—
+Purchases of property, plant and equipment
+(
+59.4
+)
+(
+66.6
+)
+Payments to acquire short-term investments
+(
+26.8
+)
+(
+4.0
+)
+Proceeds from sale, maturity and collection of short-term investments
+22.7
+—
+Other investing activities, net
+(
+6.5
+)
+(
+0.5
+)
+Net cash provided by (used for) investing activities
+26.3
+(
+71.1
+)
+Cash Flows from Financing Activities:
+Accelerated share repurchase
+(
+200.0
+)
+—
+Repurchase of common stock
+—
+(
+30.0
+)
+Tax withholdings on equity awards
+(
+31.1
+)
+(
+18.3
+)
+Dividends to stockholders
+(
+53.8
+)
+(
+51.4
+)
+Other financing activities, net
+0.8
+2.2
+Net cash used for financing activities
+(
+284.1
+)
+(
+97.5
+)
+Effect of exchange rate changes on cash and cash equivalents and restricted cash
+5.0
+0.5
+Net increase (decrease) in cash and cash equivalents and restricted cash
+(
+41.3
+)
+(
+115.6
+)
+Beginning cash and cash equivalents
+757.9
+690.0
+Ending cash and cash equivalents
+$
+716.6
+$
+574.4
+Noncash Investing Activity:
+Property, plant and equipment acquired and not yet paid at end of period
+$
+27.6
+$
+36.3
+Supplemental Disclosure of Cash Flow Information:
+Cash paid for income taxes during the period, net of refunds
+28.1
+18.7
+____________
+Consolidated statements of cash flows include the cash flows from continuing and discontinued operations.
+The accompanying notes are an integral part of these consolidated financial statements.
+7
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+NOTE 1:
+SIGNIFICANT ACCOUNTING POLICIES
+Nature of Operations
+Levi Strauss & Co. (the “Company”) is one of the world’s largest brand-name apparel companies. The Company designs, markets and sells – directly or through third parties and licensees – products that include jeans, casual and dress pants, activewear, tops, shorts, skirts, dresses, jackets, and related accessories, for men, women and children around the world under the Levi’s
+®
+, Levi Strauss Signature™ and Beyond Yoga
+®
+brands.
+In the fourth quarter of 2024 we announced we were undertaking an evaluation of strategic alternatives to the global Dockers
+®
+business, including a sale or other strategic transactions. During the second quarter of 2025, the Company entered into a definitive agreement to sell its Dockers
+®
+business. On July 31, 2025 the Company sold the Dockers
+®
+intellectual property and operations in the U.S. and Canada. The Company sold the remaining Dockers
+®
+operations in multiple closings during the first quarter of 2026, with the final closing on February 27, 2026. Dockers
+®
+net assets were classified as held for sale in the consolidated balance sheets for all periods presented. Additionally, the Company classified the Dockers
+®
+business as discontinued operations in its consolidated statements of income for all periods presented. See Note 2 “Discontinued Operations”. The Dockers
+®
+business is a separate operating segment historically presented in our financial statements under the caption of Other Brands.
+The Company operates its business according to
+three
+reportable segments: Americas, Europe, and Asia, collectively comprising the Company's Levi's Brands business, which includes the Levi's
+®
+and Levi Strauss Signature™ brands. The Beyond Yoga
+®
+business, which is managed separately, does not meet the quantitative thresholds for reportable segments but is presented separately to increase transparency of performance.
+Basis of Presentation and Principles of Consolidation
+The interim consolidated financial statements of the Company and its wholly-owned and majority-owned foreign and domestic subsidiaries, including the notes, have been prepared in accordance with the rules and regulations of the Securities and Exchange Commission (the “SEC”) applicable to interim period financial statements and do not include all of the information and disclosures required by generally accepted accounting principles in the United States (“U.S. GAAP”) for complete financial statements. In the opinion of management, all adjustments necessary for a fair statement of the financial position and the results of operations for the periods presented have been included. The unaudited consolidated financial statements should be read in conjunction with the audited consolidated financial statements of the Company for the year ended November 30, 2025, included in the Company’s Annual Report on Form 10-K for the year ended November 30, 2025 (“2025 Annual Report on Form 10-K”).
+The unaudited consolidated financial statements include the accounts of the Company and its subsidiaries. All significant intercompany balances and transactions have been eliminated.
+The results of operations for the three months ended March 1, 2026 may not be indicative of the results to be expected for any other interim period or the year ending November 29, 2026.
+The Company’s fiscal year ends on the Sunday that is closest to November 30 of that year, although the fiscal years of certain foreign subsidiaries end on November 30. Each quarter of both fiscal years 2026 and 2025 consists of 13 weeks. All references to years and quarters relate to fiscal years and quarters rather than calendar years and quarters.
+Use of Estimates
+The preparation of financial statements in conformity with U.S. GAAP requires management to make estimates and assumptions that affect the amounts reported in the consolidated financial statements and the related notes to the consolidated financial statements. Estimates are based upon historical factors, current circumstances and the experience and judgment of the Company’s management. Management evaluates its estimates and assumptions on an ongoing basis and may employ outside experts to assist in its evaluations. Changes in such estimates, based on more accurate future information, or different assumptions or conditions, may affect amounts reported in future periods.
+8
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+Long-Lived Assets
+The Company reviews its long-lived assets for impairment whenever events or changes in circumstances indicate the carrying amount of an asset may be impaired. Impairment losses are measured and recorded for the excess of carrying value over its fair value, estimated based on expected future cash flows and other quantitative and qualitative factors. Property, plant and equipment, net includes accumulated depreciation of $
+1.4
+billion as of both March 1, 2026 and November 30, 2025.
+Prepaid Expenses
+Prepaid expenses were $
+156.1
+million and $
+138.0
+million as of March 1, 2026 and November 30, 2025, respectively.
+Share Repurchases
+On January 30, 2026, the Company entered into an accelerated share repurchase transaction with a third-party financial institution (“the ASR Agreement”) to repurchase an aggregate of $
+200.0
+million of the Company’s Class A common stock as part of its share repurchase program. At inception, the Company made an initial payment of $
+200.0
+million and received and immediately retired
+7.8
+million shares of its Class A common stock, representing
+80
+% of the dollar amount of the transaction based on the January 29, 2026 closing share price. The initial shares received, which had an aggregate cost of $
+160.0
+million, were retired and recorded as a reduction of Retained Earnings, with the remainder of $
+40.0
+million recorded as a reduction of additional paid-in capital. The total number of shares the Company will ultimately repurchase will be based on the volume-weighted average price per share of the Company's Class A common stock over the term of the ASR Agreement, less an agreed upon discount, and subject to customary adjustments pursuant to the terms and conditions of the ASR Agreement. Final settlement of the transactions under the ASR Agreement is expected to occur no later than the third quarter of 2026.
+During the three months ended March 2, 2025, the Company repurchased
+1.6
+million for $
+30.0
+million, plus broker's commissions, in the open market. This equates to an average repurchase price of approximately $
+18.45
+per share for the three months ended March 2, 2025.
+The Company accounts for share repurchases by charging the excess of the repurchase price over the repurchased Class A common stock’s par value entirely to retained earnings. All repurchased shares are retired and become authorized but unissued shares. The Company accrues for the shares purchased under the share repurchase plan based on the trade date. The Company may terminate or limit the share repurchase program at any time.
+Assets Held for Sale and Discontinued Operations
+Assets and liabilities of a business that meet the accounting requirements to be classified as held for sale are separated in a disposal group. Disposal group net assets are recorded at the lower of their carrying amount or estimated fair value less expected costs to sell. After being classified as held for sale, assets are not depreciated or amortized.
+Assets and liabilities of a disposal group that meet the accounting requirements to be classified as discontinued operations are presented separately for all current and prior periods in the consolidated balance sheets. The results of discontinued operations are reported in “Net income (loss) from discontinued operations, net of taxes” in the consolidated statements of income for the current and prior periods beginning in the period in which the business meets the held for sale criteria. Net income (loss) from discontinued operations includes direct costs attributable to the business held for sale, and an estimate of costs from corporate functions dedicated to the business, but excludes corporate expenses composed of selling, general and administrative expenses not attributable to any of the operating segments. See Note 2 “Discontinued Operations”.
+Unless otherwise indicated, the information in the notes to the consolidated financial statements refers only to the Company’s continuing operations.
+Revenue Recognition
+Effective in the first quarter of 2026, the Company revised its operating policies and procedures for e-commerce transactions. This change results in revenue being recognized upon shipment rather than upon delivery to the customer, in line with the timing of the transfer of control. The impact of the change was not material to the current period consolidated financial statements.
+9
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+Reclassification
+Certain amounts on the consolidated balance sheets, consolidated statements of income and statements of cash flows have been conformed to the March 1, 2026 presentation.
+Recently Issued Accounting Standards
+There have been no developments to recently issued accounting standards, including the expected dates of adoption and estimated effects on the Company’s consolidated financial statements and footnote disclosures, from those disclosed in the 2025 Annual Report on Form 10-K. The Company will adopt ASU 2023-09,
+Improvements to Income Tax Disclosures,
+in the Annual Report on Form 10-K for the fiscal year ending November 29, 2026. This new guidance is designed to enhance the transparency and decision usefulness of income tax disclosures, primarily through enhanced disclosures related to the rate reconciliation and income taxes paid. The Company is currently assessing the impact that adopting this new accounting standard will have on its consolidated financial statements and related disclosures.
+NOTE 2:
+DISCONTINUED OPERATIONS
+In the fourth quarter of 2024 the Company announced it had initiated a formal review of strategic alternatives to the global Dockers
+®
+brand, which could include a sale or other strategic transactions. During the first quarter of 2025, the Company commenced a sale process of its Dockers
+®
+business and the Company determined that the Dockers
+®
+business met held for sale and discontinued operations accounting criteria. During the second quarter of 2025, the Company entered into a definitive agreement to sell its Dockers
+®
+business for an initial transaction value of $
+311
+million, subject to customary adjustments and closing conditions, with the potential to reach up to $
+391
+million through an $
+80
+million earnout opportunity in future years based on the performance of the Dockers
+®
+business. On July 31, 2025 the Company sold the Dockers
+®
+intellectual property and operations in the U.S. and Canada for gross proceeds of $
+194.7
+million, resulting in a gain on sale of $
+139.0
+million, net of direct costs to sell. The Company sold the remaining Dockers
+®
+operations in multiple closings during the first quarter of 2026, with the final closing on February 27, 2026, for gross proceeds of $
+96.3
+million, resulting in a gain on sale of $
+20.5
+million, net of direct costs to sell.
+Under the terms of a transition services agreement, the Company provided certain post-closing accounting, tax, digital technology and supply chain services for Dockers
+®
+operations in the U.S. and Canada for a transitional period ending in the first quarter of 2026. Fees earned under the transition services agreement were included in “Selling, general and administrative expenses” in the consolidated statements of income.
+The following table reconciles the gross proceeds with the gain on sale of the remaining Dockers
+®
+operations included in “Net income (loss) from discontinued operations, net of taxes”.
+Three Months Ended
+March 1,
+2026
+(Dollars in millions)
+Gross proceeds
+$
+96.3
+Less direct costs to sell
+14.6
+Less carrying amount of Dockers
+®
+remaining operations
+61.2
+Gain on sale of Dockers
+®
+remaining operations
+$
+20.5
+Prior to the sale of Dockers operations in the first quarter of 2026, Dockers
+®
+net assets were classified as held for sale in the consolidated balance sheets for all periods presented. The Dockers
+®
+net assets were classified as current and non-current. Additionally, the Company classified the Dockers
+®
+business as discontinued operations in its consolidated statements of income for all periods presented.
+10
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+The following table presents the assets and liabilities held for sale:
+November 30,
+2025
+(Dollars in millions)
+Current Assets:
+Inventories
+$
+54.0
+Total current assets held for sale
+54.0
+Property, plant and equipment, net
+6.9
+Operating lease right-of-use assets, net
+14.4
+Total non-current assets held for sale
+21.3
+Total assets held for sale
+$
+75.3
+Current Liabilities:
+Short-term operating lease liabilities
+$
+3.9
+Total current liabilities held for sale
+3.9
+Long-term operating lease liabilities
+6.1
+Total long-term liabilities held for sale
+6.1
+Total liabilities held for sale
+$
+10.0
+The following table presents the results of discontinued operations:
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+Net revenues
+$
+31.1
+$
+67.4
+Cost of goods sold
+15.0
+31.0
+Gross profit
+16.1
+36.4
+Selling, general and administrative expenses
+24.7
+41.5
+Restructuring charges, net
+8.4
+1.8
+Operating loss
+(
+17.0
+)
+(
+6.9
+)
+Other expense
+(
+2.9
+)
+—
+Income (loss) from discontinued operations before gain on sale and income taxes
+(
+19.9
+)
+(
+6.9
+)
+Gain on sale of Dockers
+®
+remaining operations before income taxes
+20.5
+—
+Total income (loss) from discontinued operations before income taxes
+0.6
+(
+6.9
+)
+Income tax expense (benefit)
+1.9
+(
+1.7
+)
+Net income (loss) from discontinued operations, net of taxes
+$
+(
+1.3
+)
+$
+(
+5.2
+)
+Cash flows related to discontinued operations are included in the consolidated statements of cash flows. The gain on sale of Dockers
+®
+remaining operations of $
+35.1
+million, prior to costs to sell, was an adjustment to reconcile net income to net cash provided by operating activities and the proceeds from sale of $
+96.3
+million were included in cash flows from investing activities. There were no other significant operating noncash items or investing activities cash flows from discontinued operations during the three months ended March 1, 2026 and March 2, 2025.
+11
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+NOTE 3:
+FAIR VALUE OF FINANCIAL INSTRUMENTS
+The following table presents the Company’s financial instruments that are carried at fair value:
+March 1, 2026
+November 30, 2025
+Fair Value Estimated
+Using
+Fair Value Estimated
+Using
+Fair Value
+Level 1 Inputs
+(1)
+Level 2 Inputs
+(2)
+Fair Value
+Level 1 Inputs
+(1)
+Level 2 Inputs
+(2)
+(Dollars in millions)
+Financial assets carried at fair value
+Rabbi trust assets
+$
+108.0
+$
+108.0
+$
+—
+$
+107.7
+$
+107.7
+$
+—
+Short-term investments in marketable securities
+95.4
+—
+95.4
+90.9
+—
+90.9
+Derivative instruments
+(3)
+4.9
+—
+4.9
+6.8
+—
+6.8
+Total
+$
+208.3
+$
+108.0
+$
+100.3
+$
+205.4
+$
+107.7
+$
+97.7
+Financial liabilities carried at fair value
+Derivative instruments
+(3)
+$
+15.9
+$
+—
+$
+15.9
+$
+13.4
+$
+—
+$
+13.4
+_____________
+(1)
+Fair values estimated using Level 1 inputs are inputs which consist of quoted prices in active markets for identical assets or liabilities that the Company has the ability to access at the measurement date. Rabbi trust assets consist of marketable securities.
+(2)
+Fair values estimated using Level 2 inputs are inputs, other than quoted prices, that are observable for the asset or liability, either directly or indirectly, and include among other things, quoted prices for similar assets or liabilities in markets that are active or inactive as well as inputs other than quoted prices that are observable. Short-term investments in marketable securities consist of fixed income securities. For forward foreign exchange contracts, inputs include foreign currency exchange and interest rates and, where applicable, credit default swap prices.
+(3)
+The Company’s cash flow hedges are subject to International Swaps and Derivatives Association, Inc. master agreements. These agreements permit the net settlement of these contracts on a per-institution basis. Refer to Note 4 for more information.
+The following table presents the carrying value, including related accrued interest, and estimated fair value of the Company’s financial instruments that are carried at adjusted historical cost:
+March 1, 2026
+November 30, 2025
+Carrying
+Value
+Estimated Fair
+Value
+Carrying
+Value
+Estimated Fair
+Value
+(Dollars in millions)
+Financial liabilities carried at adjusted historical cost
+4.000
+% senior notes due 2030
+(1)
+$
+554.4
+$
+562.1
+$
+550.8
+$
+559.7
+3.50
+% senior notes due 2031
+(1)
+496.1
+463.0
+500.3
+467.8
+Short-term borrowings
+1.0
+1.0
+—
+—
+Total
+$
+1,051.5
+$
+1,026.1
+$
+1,051.1
+$
+1,027.5
+_____________
+(1)
+Fair values are estimated using Level 2 inputs and incorporate mid-market price quotes. Level 2 inputs are inputs other than quoted prices, that are observable for the liability, either directly or indirectly and include among other things, quoted prices for similar liabilities in markets that are active or inactive as well as inputs other than quoted prices that are observable.
+12
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+NOTE 4:
+DERIVATIVE INSTRUMENTS AND HEDGING ACTIVITIES
+As of March 1, 2026, the Company had forward foreign exchange contracts derivatives to buy $
+497.1
+million and to sell $
+426.6
+million in various foreign currencies. These contracts are at various exchange rates and expire at various dates through February 2027.
+The table below provides data about the carrying values of derivative instruments and non-derivative instruments:
+March 1, 2026
+November 30, 2025
+Assets
+(Liabilities)
+Derivative
+Net Carrying
+Value
+Assets
+(Liabilities)
+Derivative
+Net Carrying
+Value
+Carrying
+Value
+Carrying
+Value
+Carrying
+Value
+Carrying
+Value
+(Dollars in millions)
+Derivatives designated as hedging instruments
+Foreign exchange risk cash flow hedges
+(1)
+$
+2.4
+$
+—
+$
+2.4
+$
+5.9
+$
+—
+$
+5.9
+Foreign exchange risk cash flow hedges
+(2)
+—
+(
+14.1
+)
+(
+14.1
+)
+—
+(
+11.8
+)
+(
+11.8
+)
+Total
+$
+2.4
+$
+(
+14.1
+)
+$
+5.9
+$
+(
+11.8
+)
+Derivatives not designated as hedging instruments
+Forward foreign exchange contracts
+(1)
+$
+4.9
+$
+(
+2.4
+)
+$
+2.5
+$
+6.8
+$
+(
+5.9
+)
+$
+0.9
+Forward foreign exchange contracts
+(2)
+14.1
+(
+15.9
+)
+(
+1.8
+)
+11.8
+(
+13.4
+)
+(
+1.6
+)
+Total
+$
+19.0
+$
+(
+18.3
+)
+$
+18.6
+$
+(
+19.3
+)
+Non-derivatives designated as hedging instruments
+4.000
+% Euro senior notes due 2030
+$
+—
+$
+(
+560.4
+)
+$
+—
+$
+(
+550.8
+)
+_____________
+(1)
+Included in “Other current assets” or “Other non-current assets” on the Company’s consolidated balance sheets.
+(2)
+Included in “Other accrued liabilities” or “Other long-term liabilities” on the Company’s consolidated balance sheets.
+The Company’s over-the-counter forward foreign exchange contracts are subject to International Swaps and Derivatives Association, Inc. master agreements. These agreements permit the net settlement of these contracts on a per-institution basis; however, the Company records the fair value on a gross basis on its consolidated balance sheets based on maturity dates, including those subject to master netting arrangements.
+13
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+The table below presents the gross and net amounts of these contracts recognized on the Company’s consolidated balance sheets by type of financial instrument:
+March 1, 2026
+November 30, 2025
+Gross Amounts of Assets / (Liabilities)
+Presented in the Balance Sheet
+Gross Amounts
+Not Offset in the Balance Sheet
+Net Amounts
+of Assets / (Liabilities)
+Gross Amounts of Assets / (Liabilities)
+Presented in the Balance Sheet
+Gross Amounts
+Not Offset in the Balance Sheet
+Net Amounts
+of Assets / (Liabilities)
+(Dollars in millions)
+Foreign exchange risk contracts and forward foreign exchange contracts
+Financial assets
+$
+21.4
+$
+(
+8.0
+)
+$
+13.4
+$
+24.5
+$
+(
+12.8
+)
+$
+11.7
+Financial liabilities
+(
+32.4
+)
+8.0
+(
+24.4
+)
+(
+31.1
+)
+12.8
+(
+18.3
+)
+Total
+$
+(
+11.0
+)
+$
+(
+6.6
+)
+The table below provides data about the amount of gains and losses related to derivative instruments and non-derivative instruments designated as cash flow and net investment hedges included in “Accumulated other comprehensive loss” (“AOCL”) on the Company’s consolidated balance sheets, and in “Other income (expense), net” in the Company’s consolidated statements of income:
+Amount of (Loss) Gain
+Recognized in AOCL
+(Effective Portion)
+Amount of (Loss) Gain Reclassified from
+AOCL into Net Income
+(1)
+As of
+March 1, 2026
+As of
+November 30, 2025
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+Foreign exchange risk contracts
+$
+(
+29.5
+)
+$
+(
+22.8
+)
+$
+(
+5.1
+)
+$
+(
+2.4
+)
+Realized forward foreign exchange swaps
+(2)
+4.6
+4.6
+—
+—
+Yen-denominated Eurobonds
+(
+19.8
+)
+(
+19.8
+)
+—
+—
+Euro-denominated senior notes
+(
+73.3
+)
+(
+63.7
+)
+—
+—
+Cumulative income taxes
+29.8
+25.3
+—
+—
+Total
+$
+(
+88.2
+)
+$
+(
+76.4
+)
+_____________
+(1)
+Amounts reclassified from AOCL were classified as net revenues or costs of goods sold on the consolidated statements of income.
+(2)
+Prior to 2006, the Company used foreign exchange currency swaps to hedge the net investment in its foreign operations. For hedges that qualified for hedge accounting, the net gains were included in AOCL and are not reclassified to earnings until the related net investment position has been liquidated.
+There was no hedge ineffectiveness for the three months ended March 1, 2026. Within the next 12 months, a $
+26.7
+million loss from cash flow hedges is expected to be reclassified from AOCL into net income.
+14
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+The table below presents the effects of the Company’s cash flow hedges of foreign exchange risk contracts on the consolidated statements of income:
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+Amount of Gain (Loss) on Cash Flow Hedge Activity:
+Net revenues
+$
+1.2
+$
+(
+1.5
+)
+Cost of goods sold
+$
+(
+6.3
+)
+$
+(
+0.9
+)
+The table below provides data about the amount of gains and losses related to derivatives not designated as hedging instruments included in “Other income (expense), net” in the Company’s consolidated statements of income:
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+Forward foreign exchange contracts:
+Realized gain (loss)
+(1)
+$
+5.2
+$
+(
+5.3
+)
+Unrealized gain (loss)
+0.4
+(
+5.5
+)
+Total
+$
+5.6
+$
+(
+10.8
+)
+_____________
+(1)
+The realized gain (loss) is included in “Other, net” under cash flows from operating activities on the Company’s consolidated statements of cash flows.
+NOTE 5:
+OTHER ACCRUED LIABILITIES
+The following table presents the Company’s other accrued liabilities:
+March 1,
+2026
+November 30,
+2025
+(Dollars in millions)
+Other accrued liabilities
+Accrued non-trade payables
+$
+169.0
+$
+195.5
+Accrued advertising and promotion
+74.8
+56.9
+Accrued income taxes
+72.7
+55.6
+Taxes other than income taxes payable
+64.3
+83.7
+Restructuring liabilities
+53.6
+55.8
+Accrued property, plant and equipment
+27.6
+51.4
+Fair value derivatives
+15.9
+13.4
+Accrued rent
+9.7
+10.2
+Accrued interest payable
+1.4
+12.2
+Other
+197.7
+168.7
+Total other accrued liabilities
+$
+686.7
+$
+703.4
+15
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+NOTE 6:
+SUPPLIER FINANCE PROGRAM
+The Company offers a supplier financing program which enables the Company’s suppliers, at their sole discretion, to sell their receivables (i.e., the Company’s payment obligations to suppliers) to a financial institution on a non-recourse basis in order to be paid earlier than current payment terms provide.
+The Company’s obligations to its suppliers, including amounts due and scheduled payment dates, are not impacted by the supplier’s participation in these arrangements. The Company’s payment terms to the financial institutions, including the timing and amount of payments, are based on the original supplier invoices. The Company’s current payment terms with a majority of its suppliers are typically 90 days. The Company has not pledged any assets and does not provide guarantees under the supplier finance program. As such, the outstanding payment obligations under the Company’s supplier finance program are included within “Accounts Payable” in the Consolidated Balance Sheets. The Company’s outstanding payment obligations under this program were $
+123.8
+million as of March 1, 2026 and $
+136.5
+million as of November 30, 2025.
+NOTE 7:
+DEBT
+The following table presents the Company’s debt:
+March 1,
+2026
+November 30,
+2025
+(Dollars in millions)
+Long-term debt
+4.000
+% senior notes due 2030
+$
+553.3
+$
+543.3
+3.50
+% senior notes due 2031
+496.1
+495.9
+Total long-term debt
+$
+1,049.4
+$
+1,039.2
+Short-term debt
+Short-term borrowings
+1.0
+—
+Total debt
+$
+1,050.4
+$
+1,039.2
+Senior Revolving Credit Facility
+As of March 1, 2026, the Company had
+no
+borrowings under the Credit Facility. The Company’s unused availability under the Credit Facility was $
+831.3
+million at March 1, 2026, as the total availability of $
+850.4
+million was reduced by $
+19.1
+million of letters of credit and other credit usage allocated under the Credit Facility.
+Interest Rates on Borrowings
+The Company’s weighted-average interest rate on average borrowings outstanding during the three months ended March 1, 2026 was
+4.67
+% as compared to
+4.23
+% during the same period of 2025.
+NOTE 8:
+RESTRUCTURING ACTIVITIES
+For the three months ended March 1, 2026, the Company recognized restructuring charges of $
+7.9
+million in connection with our continuing global productivity initiative, consisting primarily of severance and other post-employment benefits, based on separation benefits provided by Company policy or statutory benefit plans. These charges were recorded in “Restructuring charges, net” in the consolidated statements of income. As of March 1, 2026, the restructuring liability was $
+66.5
+million, with $
+53.6
+million and $
+12.9
+million classified as “Other accrued liabilities” and “Other long-term liabilities”, respectively, within the Company’s consolidated balance sheet.
+16
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+For the three months ended March 2, 2025, the Company recognized restructuring charges of $
+6.7
+million in connection with Project Fuel, a multi-year global productivity initiative that was substantially complete as of November 30, 2025, consisting primarily of severance and other post-employment benefits, based on separation benefits provided by Company policy or statutory benefit plans as well as contract termination costs and asset impairments. These charges were recorded in “Restructuring charges, net” in the consolidated statements of income.
+The Company also recognized $
+3.1
+million of restructuring related charges during the three months ended March 2, 2025, consisting primarily of consulting fees which were recorded in “Selling, general and administrative expenses” in the consolidated statements of income.
+The following tables summarize the activities associated with restructuring liabilities for the periods presented. "Net Charges (Reversals)" represents the initial charge related to the restructuring activity as well as revisions of estimates related to severance and employee-related benefits and other, "Payments" consists of cash payments for severance and employee-related benefits and other, and "Foreign Currency Fluctuations" includes foreign currency fluctuations.
+Three Months Ended March 1, 2026
+Liabilities
+Net Charges (Reversals)
+(1)
+Payments
+Foreign Currency Fluctuations
+Liabilities
+November 30,
+2025
+March 1,
+2026
+(Dollars in millions)
+Severance and employee-related benefits
+$
+53.1
+$
+16.0
+$
+(
+16.1
+)
+$
+0.2
+$
+53.2
+Contract termination costs and other
+16.9
+0.2
+(
+3.8
+)
+—
+13.3
+Total
+$
+70.0
+$
+16.2
+$
+(
+19.9
+)
+$
+0.2
+$
+66.5
+_____________
+(1)
+Includes $
+8.4
+million of Dockers
+®
+restructuring costs reported as discontinued operations.
+Three Months Ended March 2, 2025
+Liabilities
+Net Charges (Reversals)
+(1)
+Payments
+Foreign Currency Fluctuations
+Liabilities
+December 1,
+2024
+March 2,
+2025
+(Dollars in millions)
+Severance and employee-related benefits
+$
+83.7
+$
+3.9
+$
+(
+23.5
+)
+$
+(
+0.3
+)
+$
+63.8
+Contract termination costs and other
+20.7
+1.7
+(
+0.5
+)
+(
+0.1
+)
+21.8
+Total
+$
+104.4
+$
+5.6
+$
+(
+24.0
+)
+$
+(
+0.4
+)
+$
+85.6
+_____________
+(1)
+Excludes $
+0.8
+million in stock compensation related charges recorded in Additional paid-in capital and $
+2.1
+million recorded in Property, plant and equipment, net related to impairment charges associated with the closure of distribution centers. Includes $
+1.8
+million of Dockers
+®
+restructuring costs reported as discontinued operations.
+NOTE 9:
+COMMITMENTS AND CONTINGENCIES
+Forward Foreign Exchange Contracts
+The Company uses over-the-counter derivative instruments to manage its exposure to foreign currencies. The Company is exposed to credit loss in the event of nonperformance by the counterparties to the forward foreign exchange contracts. However, the Company believes that its exposures are appropriately diversified across counterparties and that these counterparties are creditworthy financial institutions. See Note 5 for additional information.
+Other Contingencies
+Litigation.
+In the ordinary course of business, the Company has various claims, complaints and pending cases, including
+17
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+contractual matters, facility and employee-related matters, distribution matters, product liability matters, intellectual property matters, bankruptcy preference matters, and tax and administrative matters. The Company establishes loss provisions for these ordinary course claims as well as other matters in which losses are probable and can be reasonably estimated. The Company does not believe any of these pending claims, complaints and legal proceedings will have a material impact on its financial condition, results of operations or cash flows.
+Customs Duty Audits.
+The Company imports both raw materials and finished garments into all of its geographic regions and, as such, is subject to numerous countries’ complex customs laws and regulations with respect to its import and export activity. The Company has various pending audit assessments in connection with these activities. As of March 1, 2026, the Company has recorded certain estimated liabilities for these matters which are not material. The Company does not believe any of the claims for customs duty and related charges will have a material impact on its financial condition, results of operations or cash flows.
+Other Matters
+.  On February 20, 2026, a U.S. Supreme Court ruling invalidated tariffs imposed under the International Emergency Economic Powers Act (“IEEPA”). The Company estimates it has paid approximately $
+80
+million under the IEEPA tariffs. The ruling did not address potential refunds, creating uncertainty regarding the potential recovery of tariffs previously assessed under that statute. As of March 1, 2026, the Company has not recognized an asset related to the potential refund. The Company will continue to evaluate new information and will recognize the refund when the requirements under ASC 450, Contingencies, have been met.
+NOTE 10:
+DIVIDENDS
+Dividends are declared at the discretion of the Board. In January 2026 and 2025, the Company declared cash dividends of $
+0.14
+and $
+0.13
+per share, respectively, to holders of record of its Class A and Class B common stock. During the three months ended March 1, 2026, dividends were paid in the amount of $
+53.8
+million, compared to $
+51.4
+million for the same prior-year period.
+The Company does not have an established dividend policy. The Board reviews the Company’s ability to pay dividends on an ongoing basis and establishes the dividend amount based on the Company’s financial condition, results of operations, capital requirements, current and projected cash flows and other factors, and any restrictions related to the terms of the Company’s debt agreements.
+Subsequent to the Company’s quarter end, the Board declared a cash dividend of $
+0.14
+per share to holders of record of its Class A and Class B common stock at the close of business on April 22, 2026, for a total quarterly dividend of approximately $
+54
+million.
+18
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+NOTE 11:
+ACCUMULATED OTHER COMPREHENSIVE LOSS
+The following is a summary of the components of "Accumulated other comprehensive loss," net of related income taxes:
+Three Months Ended March 1, 2026
+Pension and
+Postretirement
+Benefits
+(1)
+Translation Adjustments
+Unrealized
+(Loss) Gain on
+Marketable
+Securities
+Derivative Instruments
+(2)
+Foreign
+Currency
+Translation
+Total
+(Dollars in millions)
+Accumulated other comprehensive loss at November 30, 2025
+$
+(
+136.9
+)
+$
+(
+76.4
+)
+$
+(
+194.1
+)
+$
+0.2
+$
+(
+407.2
+)
+Other comprehensive (loss) income before reclassifications
+(
+3.5
+)
+(
+16.9
+)
+34.1
+—
+13.7
+Amounts reclassified from accumulated other comprehensive loss
+1.7
+5.1
+—
+—
+6.8
+Net increase (decrease) in other comprehensive (loss) income
+(
+1.8
+)
+(
+11.8
+)
+34.1
+—
+20.5
+Accumulated other comprehensive loss at March 1, 2026
+$
+(
+138.7
+)
+$
+(
+88.2
+)
+$
+(
+160.0
+)
+$
+0.2
+$
+(
+386.7
+)
+___________
+(1)
+Amounts reclassified were recorded in “Other income (expense), net”.
+(2)
+Amounts reclassified were recorded within “Net revenues” and “Cost of goods sold”. For more information, refer to Note 4.
+Three Months Ended March 2, 2025
+Pension and
+Postretirement
+Benefits
+(1)
+Translation Adjustments
+Derivative Instruments
+(2)
+Foreign
+Currency
+Translation
+Total
+(Dollars in millions)
+Accumulated other comprehensive loss at December 01, 2024
+$
+(
+141.2
+)
+$
+(
+9.0
+)
+$
+(
+284.3
+)
+$
+(
+434.5
+)
+Other comprehensive (loss) income before reclassifications
+(
+0.5
+)
+9.0
+(
+5.4
+)
+3.1
+Amounts reclassified from accumulated other comprehensive loss
+1.8
+2.4
+—
+4.2
+Net increase (decrease) in other comprehensive income (loss)
+1.3
+11.4
+(
+5.4
+)
+7.3
+Accumulated other comprehensive loss at March 2, 2025
+$
+(
+139.9
+)
+$
+2.4
+$
+(
+289.7
+)
+$
+(
+427.2
+)
+_____________
+(1)
+Amounts reclassified were recorded in “Other income (expense), net”.
+(2)
+Amounts reclassified were recorded within “Net revenues” and “Cost of goods sold”. For more information, refer to Note 4.
+19
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+NOTE 12:
+NET REVENUES
+Disaggregated Revenue
+The table below provides the Company’s revenues disaggregated by segment and channel.
+Three Months Ended March 1, 2026
+Levi’s Brands
+Americas
+Europe
+Asia
+Beyond Yoga
+®
+Total
+(Dollars in millions)
+Net revenues by channel:
+Wholesale
+$
+455.0
+$
+222.3
+$
+143.2
+$
+10.5
+$
+831.0
+Direct-to-consumer
+400.7
+273.7
+204.3
+32.8
+911.5
+Total net revenues
+$
+855.7
+$
+496.0
+$
+347.5
+$
+43.3
+$
+1,742.5
+Three Months Ended March 2, 2025
+Levi’s Brands
+Americas
+Europe
+Asia
+Beyond Yoga
+®
+Total
+(Dollars in millions)
+Net revenues by channel:
+Wholesale
+$
+422.2
+$
+170.2
+$
+135.0
+$
+11.9
+$
+739.3
+Direct-to-consumer
+360.8
+230.3
+173.1
+23.3
+787.5
+Total net revenues
+$
+783.0
+$
+400.5
+$
+308.1
+$
+35.2
+$
+1,526.8
+The Company did not have any material contract assets or contract liabilities recorded in the consolidated balance sheets as of March 1, 2026 and November 30, 2025
+.
+20
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+NOTE 13:
+OTHER INCOME (EXPENSE), NET
+The following table summarizes significant components of “Other income (expense), net”:
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+Foreign exchange management gains (losses)
+(1)
+$
+5.6
+$
+(
+10.8
+)
+Foreign currency transaction (losses) gain
+(2)
+(
+5.5
+)
+2.2
+Marketable securities losses
+(
+0.7
+)
+(
+5.2
+)
+Legal settlement gain
+(3)
+33.0
+—
+Other, net
+10.2
+9.7
+Total other income (expense), net
+$
+42.6
+$
+(
+4.1
+)
+____________
+(1)
+Gains and losses on forward foreign exchange contracts primarily result from currency fluctuations relative to negotiated contract rates. For the three months ended March 1, 2026, gains were primarily due to currency fluctuations relative to negotiated contract rates on positions to buy the Australian dollar. For the three months ended March 2, 2025, losses were primarily due to currency fluctuations relative to negotiated contract rates on positions to buy the Euro.
+(2)
+Foreign currency transaction gains and losses reflect the impact of currency fluctuations on the Company's foreign currency denominated balances. For the three months ended March 1, 2026, losses were primarily due to the impact of U.S. dollar weakening against the Euro, Australian dollar, and Mexican peso. For the three months ended March 2, 2025, gains were primarily due to the impact of U.S. dollar strengthening against the Euro.
+(3)
+During the three months ended March 1, 2026 the Company recognized a gain related to a trademark infringement legal settlement.
+NOTE 14:
+INCOME TAXES
+The Company’s effective income tax rate was
+22.4
+% for the three months ended March 1, 2026, compared to
+20.6
+% for the same prior-year period. The increase in the effective tax rate in the current quarter was primarily due to a higher effective tax rate on foreign earnings compared with the prior-year period.
+21
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+NOTE 15:
+EARNINGS PER SHARE
+The following table sets forth the computation of the Company’s basic and diluted earnings per share:
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions, except per share amounts)
+Numerator:
+Net income from continuing operations
+$
+177.1
+$
+140.2
+Net income (loss) from discontinued operations, net of taxes
+(
+1.3
+)
+(
+5.2
+)
+Net income
+$
+175.8
+$
+135.0
+Denominator:
+Weighted-average common shares outstanding - basic
+389,907,760
+396,576,662
+Dilutive effect of stock awards
+4,289,041
+3,469,720
+Weighted-average common shares outstanding - diluted
+394,196,801
+400,046,382
+Earnings (loss) per common share:
+Continuing operations - Basic
+$
+0.45
+$
+0.35
+Discontinued operations - Basic
+—
+(
+0.01
+)
+Net income - Basic
+$
+0.45
+$
+0.34
+Continuing operations - Diluted
+$
+0.45
+$
+0.35
+Discontinued operations - Diluted
+—
+(
+0.01
+)
+Net income - Diluted
+$
+0.45
+$
+0.34
+Anti-dilutive securities excluded from calculation of diluted earnings per share
+1,827,299
+3,911,185
+NOTE 16:
+RELATED PARTIES
+Michelle Gass (President and Chief Executive Officer) and David Jedrzejek (Senior Vice President and General Counsel) are members of the Board of Directors of the Levi Strauss Foundation, which is an independent non-profit entity that is not one of our consolidated entities. Mr. Jedrzejek also serves as a Vice Chair of the Levi Strauss Foundation. During the three months ended March 1, 2026, the Company donated $
+7.7
+million to the Levi Strauss Foundation as compared to $
+4.4
+million for the same prior-year period. During the three months ended March 1, 2026, the Company recognized expenses related to their donation commitments of $
+2.6
+million as compared to $
+0.8
+million for the same prior-year periods.
+22
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+NOTE 17:
+BUSINESS SEGMENT INFORMATION
+The Company manages its business according to
+three
+reportable segments: Americas, Europe, and Asia, collectively comprising the Company’s Levi’s Brands business, which includes Levi’s
+®
+and Levi Strauss Signature™ brands. The Beyond Yoga
+®
+business is managed separately and does not meet the quantitative threshold for reportable segments. Corporate expenses are comprised of selling, general and administrative expenses that management does not attribute to any of our operating segments and these expenses primarily relate to corporate administration, information resources, finance and human resources functional and organizational costs. At the end of the first quarter of 2025, the Company determined that the Dockers
+®
+business met held for sale and discontinued operations accounting criteria. During the second quarter of 2025, the Company entered into a definitive agreement to sell its Dockers
+®
+business and on July 31, 2025 the Company sold the Dockers
+®
+intellectual property and operations in the U.S. and Canada. The Company sold the remaining Dockers
+®
+operations in multiple closings during the first quarter of 2026, with the final closing on February 27, 2026. Accordingly, the Company classified the Dockers
+®
+business as discontinued operations in its consolidated statements of income for all periods presented and excluded the business from segment results for all periods presented. See Note 2 “Discontinued Operations”.
+The Company considers its chief executive officer to be its chief operating decision maker. The Company’s chief operating decision maker manages business operations, evaluates performance and allocates resources based on the segments’ net revenues and operating income. The Company reports inventories by segment as that information is used by the chief operating decision maker in assessing segment performance. The Company does not report its other assets by segment as that information is not regularly provided to the chief operating decision maker in assessing segment performance.
+Business segment information for the Company is as follows:
+Three Months Ended March 1, 2026
+Levi’s Brands
+Americas
+Europe
+Asia
+Total
+(Dollars in millions)
+Segment net revenues
+$
+855.7
+$
+496.0
+$
+347.5
+$
+1,699.2
+Beyond Yoga
+®
+net revenues
+43.3
+Total net revenues
+$
+1,742.5
+Segment cost of goods sold
+376.9
+131.7
+128.8
+Segment selling, general, and administrative
+315.6
+235.1
+148.3
+Segment operating income
+$
+163.2
+$
+129.2
+$
+70.4
+$
+362.8
+Beyond Yoga
+®
+operating loss
+(
+0.8
+)
+Restructuring charges, net
+(1)
+(
+7.9
+)
+Corporate expenses
+(
+155.4
+)
+Interest expense
+(
+13.1
+)
+Other income (expense), net
+(2)
+42.6
+Income from continuing operations before income taxes
+$
+228.2
+____________
+(1)     For the three months ended March 1, 2026 restructuring charges, net consisted primarily of severance and post-employment benefit charges.
+(2)     For the three months ended March 1, 2026 other income (expense), net includes a $
+33.0
+million gain on legal settlement.
+23
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+Three Months Ended March 2, 2025
+Levi’s Brands
+Americas
+Europe
+Asia
+Total
+(Dollars in millions)
+Segment net revenues
+$
+783.0
+$
+400.5
+$
+308.1
+$
+1,491.6
+Beyond Yoga
+®
+net revenues
+35.2
+Total net revenues
+$
+1,526.8
+Segment cost of goods sold
+337.2
+117.6
+117.4
+Segment selling, general, and administrative
+276.1
+180.5
+132.8
+Segment operating income
+$
+169.7
+$
+102.4
+$
+57.9
+$
+330.0
+Beyond Yoga
+®
+operating loss
+(
+3.1
+)
+Restructuring charges, net
+(1)
+(
+6.7
+)
+Corporate expenses
+(
+128.6
+)
+Interest expense
+(
+10.9
+)
+Other income (expense), net
+(
+4.1
+)
+Income from continuing operations before income taxes
+$
+176.6
+____________
+(1)
+For the three months ended March 2, 2025 restructuring charges, net consisted primarily of severance, post-employment benefit charges, contract termination costs and asset impairments in connection with Project Fuel.
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+Depreciation and amortization expense:
+Americas
+$
+15.1
+$
+14.6
+Europe
+8.4
+6.9
+Asia
+5.2
+4.4
+Total segment depreciation and amortization expense
+28.7
+25.9
+Beyond Yoga and unallocated
+26.7
+22.2
+Total continuing operations depreciation and amortization expense
+$
+55.4
+$
+48.1
+24
+LEVI STRAUSS & CO. AND SUBSIDIARIES
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS — (continued)
+FOR THE QUARTERLY PERIOD ENDED MARCH 1, 2026
+March 1, 2026
+Levi's Brands
+Americas
+Europe
+Asia
+Segment Total
+Unallocated
+(1)
+Consolidated Total
+(Dollars in millions)
+Assets:
+Inventories
+$
+681.1
+$
+175.9
+$
+186.9
+$
+1,043.9
+$
+76.7
+$
+1,120.6
+All other assets
+5,454.2
+5,454.2
+Total assets
+$
+6,574.8
+____________
+(1)
+Unallocated inventories include $
+40.4
+million of Beyond Yoga inventory.
+November 30, 2025
+Levi's Brands
+Americas
+Europe
+Asia
+Segment Total
+Unallocated
+(1)
+Consolidated Total
+(Dollars in millions)
+Assets:
+Inventories
+$
+761.7
+$
+161.3
+$
+178.1
+$
+1,101.1
+$
+136.6
+$
+1,237.7
+All other assets
+5,611.1
+5,611.1
+Total assets
+$
+6,848.8
+____________
+(1)
+Unallocated inventories include $
+38.5
+million of Beyond Yoga inventory.
+NOTE 18:
+SUPPLEMENTAL DISCLOSURES OF CASH FLOW INFORMATION
+Changes in operating assets and liabilities affecting cash were as follows:
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+Change in operating assets and liabilities:
+Trade receivables
+$
+55.7
+$
+49.2
+Inventories
+140.2
+55.0
+Accounts payable
+(
+114.7
+)
+(
+104.5
+)
+Accrued salaries, wages and employee benefits and long-term employee related benefits
+(
+59.4
+)
+(
+57.5
+)
+Right-of-use operating lease assets and current and non-current operating lease liabilities, net
+(
+7.6
+)
+(
+3.2
+)
+Other current and non-current assets
+5.1
+(
+29.5
+)
+Other current and long-term liabilities
+(
+22.8
+)
+(
+74.3
+)
+Net change in operating assets and liabilities
+$
+(
+3.5
+)
+$
+(
+164.8
+)
+25
+Table of Co
+nte
+nts
+Item 2.
+MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND
+RESULTS OF OPERATIONS
+You should read the following discussion and analysis of our financial condition and results of operations together with our unaudited consolidated financial statements and related notes thereto included in Part I, Item 1 of this Quarterly Report and with our audited financial statements and related notes in our Annual Report on Form 10-K for the year ended November 30, 2025, filed with the Securities and Exchange Commission on January 28, 2026. Some of the information contained in this discussion and analysis or set forth elsewhere in this Quarterly Report, including information with respect to our plans and strategy for our business, includes forward-looking statements that involve risks and uncertainties. See “Special Note Regarding Forward-Looking Statements” and “Risk Factors” for a discussion of forward-looking statements and important factors that could cause actual results to differ materially from the results described in or implied by the forward-looking statements. We use a 52- or 53-week fiscal year, with each fiscal year ending on the Sunday that is closest to November 30 of that year. References to 2026 and 2025 below in this section are references to our fiscal years ending in November 2026 and November 2025, respectively, unless otherwise indicated. See “Financial Information Presentation - Fiscal Year.”
+This Management’s Discussion and Analysis of Financial Condition and Results of Operations is designed to provide a reader of our financial statements with a narrative from the perspective of our management on our financial condition, results of operations, liquidity and certain other factors that may affect our future results.
+To supplement our consolidated financial statements prepared and presented in accordance with generally accepted accounting principles in the United States (“GAAP”), we use certain non-GAAP financial measures throughout this Quarterly Report, as described further below, to provide investors with additional useful information about our financial performance, to enhance the overall understanding of our past performance and future prospects and to allow for greater transparency with respect to important metrics used by our management for financial and operational decision-making. We are presenting these non-GAAP financial measures to assist investors in seeing our financial performance from management’s point of view and because we believe they provide an additional tool for investors to use in comparing our core financial performance over multiple periods with other companies in our industry.
+However, non-GAAP financial measures have limitations in their usefulness to investors because they have no standardized meaning prescribed by GAAP and are not prepared under any comprehensive set of accounting rules or principles. In addition, non-GAAP financial measures may be calculated differently from, and therefore may not be directly comparable to, similarly titled measures used by other companies. As a result, non-GAAP financial measures should be viewed as supplementing, and not as an alternative or substitute for, our consolidated financial statements prepared and presented in accordance with GAAP. For more information on our calculation of non-GAAP measures and reconciliations of these non-GAAP financial measures to the most directly comparable financial measures calculated in accordance with GAAP, see “Non-GAAP Financial Measures.”
+Overview
+We are an iconic American company with a rich history of profitable growth, quality, innovation and corporate citizenship. Our story began in San Francisco, California, in 1853 as a wholesale dry goods business. We created the first riveted blue jean 20 years later. Today we design, market and sell products that include jeans, casual and dress pants, activewear, tops, shorts, skirts, dresses, jackets and related accessories for men, women and children around the world under our Levi’s
+®
+, Levi Strauss Signature™ and Beyond Yoga
+®
+brands. We service our consumers through our global infrastructure which develops, sources and markets our products around the world.
+We recognize wholesale revenue from sales of our products through third-party retailers such as department stores, specialty retailers, third-party e-commerce sites and franchise locations dedicated to our brands. We also sell our products directly to consumers (“DTC”) through a variety of formats, including our own company-operated mainline and outlet stores, company-operated e-commerce sites and select shop-in-shops that we operate within department stores and other third-party retail locations. As of March 1, 2026, our products were sold in approximately 50,000 retail locations in approximately 120 countries, including approximately 3,300 brand-dedicated stores and shop-in-shops. As of March 1, 2026, we had 1,232 company-operated stores located in 38 countries and approximately 520 company-operated shop-in-shops. The remainder of our brand-dedicated stores and shop-in-shops were operated by franchisees and other partners.
+26
+Table of Co
+nte
+nts
+Across all of our brands, pants – including jeans, casual pants, dress pants, shorts, skirts and activewear – represented 67% and 69% of our total units sold in the first three months of 2026 and 2025, respectively. Tops – including shirts, sweaters, jackets, dresses and jumpsuits – represented 29% and 28% of our total units sold in the first three months of 2026 and 2025, respectively. The remainder of our products are accessories. Men’s products generated 59% and 61% of our net revenues in the first three months of 2026 and 2025, respectively. Women’s products generated 40% and 38% of our net revenues in the first
+three months of 2026 and 2025, respectively. The remainder of our products are non-gendered. Products other than denim bottoms – which include tops, accessories and pants excluding jeans – represented 37% and 35% of our net revenues in the first
+three months of 2026 and 2025, respectively.
+Our Europe and Asia businesses, collectively, contributed 48% and 46% of our net revenues in the first three months of 2026 and 2025, respectively. Net revenues from our international business, which includes our Europe and Asia segments, as well as Canada and Latin America from our Americas segment, represented 61% and 57% of our net revenues in the first three months of 2026 and 2025, respectively. Sales of Levi’s
+®
+brand products represented approximately 94% of our net revenues in the first three months of both 2026 and 2025.
+Our wholesale channel generated 48% of our net revenues in the first three months of both 2026 and 2025. Sales to franchise partners, included as a component of our wholesale channel, generated 7% of our net revenues in the first three months of both 2026 and 2025. Our DTC channel generated 52% of our net revenues in the first three months of both 2026 and 2025 with our company operated e-commerce business representing 25% and 24% of DTC channel net revenues in the first three months of 2026 and 2025, respectively, and 13% and 12% of total net revenues in the first three months of 2026 and 2025, respectively.
+Sale of Dockers®
+In the fourth quarter of 2024, the Company announced it had initiated a formal review of strategic alternatives for the Dockers
+®
+brand, which could include a potential sale or other strategic transaction. During the second quarter of 2025 the Company entered into a definitive agreement to sell its Dockers
+®
+business, subject to customary closing conditions. On July 31, 2025 the Company sold the Dockers
+®
+intellectual property and operations in the U.S. and Canada. The Company sold the remaining Dockers
+®
+operations in multiple closings during the first quarter of 2026, with the final closing on February 27, 2026. The Dockers
+®
+business was reported as discontinued operations in the consolidated statements of income for all periods prese
+nted. The current year and prior year metrics included in this Management’s Discussion and Analysis exclude the impact of Dockers
+®
+.
+Other Factors Affecting Our Business
+We believe the other key business and marketplace factors that are impacting our business include the following:
+•
+Reciprocal tariffs previously imposed on products imported into the U.S. from most jurisdictions, along with retaliatory actions by other countries, have created an uncertain environment for global trade. On February 20, 2026 a U.S. Supreme Court ruling invalidated the tariffs imposed by the U.S. government under the International Emergency Economic Powers Act (“IEEPA”) on products imported into the U.S., which introduced the potential for such previously collected tariffs to be refunded by the U.S. government. Through the first quarter of 2026, the Company paid approximately $80 million of these tariffs. The U.S. government subsequently imposed new tariffs under a separate authority prospectively in response to the ruling, all of which have created additional tariff uncertainty. Many of our products are produced in countries, such as Bangladesh, Cambodia, Pakistan, and Vietnam, that were subject to the recently invalidated U.S. IEEPA tariffs, and are subject to new prospective tariffs. There may be additional tariff actions or increases to existing tariffs in the future in response to the recently invalidated tariffs. As a result of these tariff actions, retaliatory actions taken by other countries in response, and ongoing uncertainty regarding U.S. trade policy, the cost of our inventory in the U.S. has increased and may increase further in the future. These increased costs could lead to a significant increase in cost of sales and a significant reduction in gross margin and income from operations. We are monitoring the changing tariffs and trade restrictions, assessing the impact on our business and taking steps to mitigate their impact. However, the duration, magnitude and scope of any additional tariffs, trade restrictions, and retaliatory or other measures are difficult to predict, including related unfavorable impacts to consumer demand, along with the extent (if any) to which we will be able to offset the impacts of such actions through our mitigation efforts. These tariff actions, retaliatory measures, or other trade restrictions could materially and adversely affect our business.
+27
+Table of Co
+nte
+nts
+•
+As part of our effort to optimize our logistics network, we are in the process of transitioning and stabilizing the operation of certain of our global distribution and fulfillment centers to third-party logistics providers. This transition from owner-operated facilities to third-party logistics providers has and may continue to cause interruptions to these centers as we transition or restructure systems, technology and employees. We have and may continue to experience shipping delays, order cancellations and increased costs as a result of this transition and stabilization. We are subject to concentration risks and any disruptions, delays or other events impacting the business of the third-party logistics providers may have a significant impact on our business, including our ability to timely fulfill orders. If we continue to encounter problems with our distribution system, our ability to meet customer and consumer expectations, manage inventory, complete sales and achieve operating efficiencies may be adversely affected.
+•
+Macroeconomic pressures in the U.S. and the global economy such as changes in tariff regimes, inflation, energy prices and recession fears are creating a complex and challenging retail environment for us and our customers as consumers may reduce discretionary spending. These trends historically have impacted and may impact our future financial results, affecting revenue, margins and net income.
+•
+As we continue to execute on our strategic framework to be DTC First, we expect to see greater impact on our margins, as the diversification of our business model across channels, geographies, brands, and categories affects our gross margin. For example, if our sales in higher gross margin channels, geographies, brands and categories grow at a faster rate than in our lower gross margin channels, geographies, brands and categories, we would expect a favorable impact to aggregate gross margin over time. Gross margin in our Europe segment is generally higher than in our Americas and Asia segments. DTC sales generally have higher gross margins than sales through third parties, although DTC sales also typically have higher selling expenses and could have lower profitability. Gross margin on tops is generally lower than our bottoms category. Enhancements to our existing product offerings, or our expansion into new brands and products categories, may also impact our future gross margin.
+•
+The current domestic and international political environment, including volatile trade relations and military and civil conflicts, and most recently heightened military action in the Middle East, have resulted in uncertainty surrounding the future state of the global economy. There is greater uncertainty with respect to potential changes in trade regulations, tariffs, sanctions and export controls which also increase volatility in the global economy. This environment has affected and may continue to affect consumer sentiment and demand and production and distribution lead times, increasing our costs and potentially affecting our ability to meet customer demand. If these disruptions persist, they may require us to modify our current sourcing and logistics practices, which may impact our product costs, and, if not mitigated, could have a material adverse effect on our business and results of operations.
+•
+Foreign currencies continue to be volatile, with the volatility increasing due to the imposition of tariffs and evolving trade policies. Significant fluctuations of the U.S. Dollar against various foreign currencies, including the Euro,  Mexican peso and Australian dollar, has in the past and may in the future adversely impact our financial results, revenue, operating margins and net income.
+•
+Tax legislation continues to evolve globally with new laws and regulations that create uncertainty and may adversely affect our financial results. The Organization for Economic Cooperation and Development reached agreement among over 140 countries to implement a minimum 15% tax rate on certain multinational enterprises, commonly referred to as Pillar Two. Many countries continue to announce changes in their tax laws and regulations based on the Pillar Two framework. The Company does not expect the impact of Pillar Two will be significant to our financial results in the short term. Additionally, U.S Congress enacted the One Big Beautiful Bill Act (“OBBBA”) which includes significant provisions, including extension of the Tax Cuts and Jobs Act and modifications to the international tax framework. We do not expect the OBBBA to have a material impact to our financial results and we will continue to monitor its impacts as the legislative landscape evolves.
+•
+There has been increased focus from our stakeholders, including consumers, employees, investors, regulatory organizations and legislatures on corporate environmental, social, and governance (“ESG”) practices, including corporate practices related to the causes and impacts of climate change and corporate statements, practices or products related to a variety of social issues. We expect that stakeholder expectations and actions with respect to ESG practices and social issues and regulatory requirements will continue to evolve rapidly, which may impact our reputation and financial results.
+These factors contribute to a global market environment of intense competition, constant product innovation and continuing cost pressure, and combine with the continuing global economic conditions to create a challenging commercial and economic environment. We evaluate these factors as we develop and execute our strategies.
+28
+Table of Co
+nte
+nts
+For additional information regarding these risks, as well as other risks we face, see the risk factors discussed in Part I, Item 1A. “Risk Factors” in our Annual Report on Form 10-K for the year ended November 30, 2025 (“2025 Annual Report on Form 10-K”).
+Seasonality of Sales
+We typically achieve our largest quarterly revenues in the fourth quarter. In fiscal year 2025, our net revenues in the first, second, third and fourth quarters represented 24%, 23%, 25%, 28%, respectively, of our total net revenues for the year.
+Our First Quarter 2026 Results
+•
+Net revenues.
+Consolidated net revenues increased 14.1% on a reported basis and 9.2% on an organic net revenues basis compared to the first quarter of 2025 reflecting net revenue growth across all regions and in both DTC and wholesale channels.
+•
+Net income from continuing operations.
+We recognized consolidated net income from continuing operations of $177.1 million, compared to $140.2 million in the first quarter of 2025. The increase was primarily driven by higher net revenues and a legal settlement gain, partially offset by higher selling, general and administrative expenses (“SG&A”). Net income margin from continuing operations was 10.2%, up from 9.2% in the first quarter of 2025. Operating margin was 11.4%, down from 12.5% in the first quarter of 2025.
+•
+Adjusted EBIT.
+Compared to the first quarter of 2025, Adjusted EBIT increased 6.8% to $217.8 million from $204.0 million primarily driven by higher net revenues, partially offset by the impact of tariffs and higher advertising and promotion expense. Adjusted EBIT margin was 12.5%, 90 basis points lower than the first quarter of 2025 on a reported basis, and 140 basis points lower on a constant-currency basis.
+•
+Adjusted net income.
+Compared to the first quarter of 2025, Adjusted net income increased to $166.7 million from $150.0 million due to higher Adjusted EBIT described above.
+•
+Diluted earnings per share from continuing operations.
+We recognized diluted earnings per share from continuing operations of $0.45, compared to $0.35 in the first quarter of 2025 mainly due to the higher Net income from continuing operations described above.
+•
+Adjusted diluted earnings per share.
+Compared to the first quarter of 2025, Adjusted diluted earnings per share increased to $0.42 from $0.38, mainly due to the higher Adjusted net income described above. Currency translation favorably affected Adjusted diluted earnings per share by $0.01.
+For more information on Organic net revenues, Adjusted EBIT, Adjusted EBIT margin, Adjusted net income and Adjusted diluted earnings per share, measures not prepared in accordance with GAAP, and reconciliations of such measures to net revenues, net income from continuing operations, net income margin from continuing operations and diluted earnings per share from continuing operations, see “Non-GAAP Financial Measures.”
+Financial Information Presentation
+Fiscal year
+.
+We use a 52- or 53- week fiscal year, with each fiscal year ending on the Sunday that is closest to November 30 of that year. Certain of our foreign subsidiaries have fiscal years ending November 30. Each fiscal year generally consists of four 13-week quarters, with each quarter ending on the Sunday that is closest to the last day of the last month of that quarter. Fiscal year 2026 is a 52-week year, ending on November 29, 2026 and fiscal year 2025 was a 52-week year, ending on November 30, 2025. Each quarter of fiscal years 2026 and 2025 consists of 13 weeks.
+Segments
+.
+Our Levi’s Brands business, which includes Levi’s
+®
+and Levi Strauss Signature™ brands, is defined by geographical regions into three segments: Americas, Europe and Asia. Our Beyond Yoga
+®
+business, which is managed separately, does not meet the quantitative thresholds for reportable segments but is presented separately to increase transparency of our performance.
+Classification
+.
+Our classification of certain significant revenues and expenses reflects the following:
+•
+Net revenues comprise net sales and licensing revenues. Net sales include sales of products to wholesale customers, including franchised stores, and direct sales to consumers at our company-operated stores and shop-in-shops located within department stores and other third-party locations, as well as company-operated e-commerce sites. Net revenues are recorded net of discounts, allowances for estimated returns and retailer promotions and other incentives. Licensing revenues, which include revenues from the use of our trademarks in connection with the manufacturing, advertising and distribution of trademarked products by third-party licensees, are earned and recognized as products are sold by licensees based on royalty rates as set forth in the applicable licensing agreements.
+29
+Table of Co
+nte
+nts
+•
+Cost of goods sold primarily comprises product costs, labor and related overhead, sourcing costs, inbound freight, internal transfers and the cost of operating our manufacturing facilities, including the related depreciation expense. On both a reported and constant-currency basis, cost of goods sold reflects the transactional currency impact resulting from the purchase of products in a currency other than the functional currency.
+•
+Selling expenses reflected in SG&A include, among other things, all occupancy costs and depreciation associated with our company-operated stores and commissions associated with our company-operated shop-in-shops, as well as costs associated with our e-commerce operations.
+•
+We reflect substantially all distribution costs in SG&A, for both our DTC and wholesale channels, including costs related to receiving and inspection at distribution centers, warehousing, shipping to our customers, handling, and certain other activities associated with our distribution network.
+Discontinued operations
+.
+At the end of the first quarter of 2025 the Dockers
+®
+business was held for sale and reported as discontinued operations in the consolidated statements of income for all periods presented.
+30
+Table of Co
+nte
+nts
+Results of Operations
+The following table summarizes, for the periods indicated, our consolidated statements of income, the changes in these items from period to period and these items expressed as a percentage of net revenues:
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+%
+Increase
+(Decrease)
+March 1,
+2026
+% of Net
+Revenues
+March 2,
+2025
+% of Net
+Revenues
+(Dollars and shares in millions, except per share amounts)
+Net revenues
+$
+1,742.5
+$
+1,526.8
+14.1
+%
+100.0
+%
+100.0
+%
+Cost of goods sold
+664.2
+579.2
+14.7
+%
+38.1
+%
+37.9
+%
+Gross profit
+1,078.3
+947.6
+13.8
+%
+61.9
+%
+62.1
+%
+Selling, general and administrative expenses
+871.7
+749.3
+16.3
+%
+50.0
+%
+49.1
+%
+Restructuring charges, net
+7.9
+6.7
+17.9
+%
+0.5
+%
+0.4
+%
+Operating income
+198.7
+191.6
+3.7
+%
+11.4
+%
+12.5
+%
+Interest expense
+(13.1)
+(10.9)
+20.2
+%
+(0.8)
+%
+(0.7)
+%
+Other income (expense), net
+42.6
+(4.1)
+*
+2.4
+%
+(0.3)
+%
+Income from continuing operations before income taxes
+228.2
+176.6
+29.2
+%
+13.1
+%
+11.6
+%
+Income tax expense
+51.1
+36.4
+40.4
+%
+2.9
+%
+2.4
+%
+Net income from continuing operations
+177.1
+140.2
+26.3
+%
+10.2
+%
+9.2
+%
+Net income (loss) from discontinued operations, net of taxes
+(1.3)
+(5.2)
+(75.0)
+%
+(0.1)
+%
+(0.3)
+%
+Net income
+$
+175.8
+$
+135.0
+30.2
+%
+10.1
+%
+8.8
+%
+Earnings (loss) per common share:
+Continuing operations - Basic
+$
+0.45
+$
+0.35
+*
+*
+*
+Discontinued operations - Basic
+—
+(0.01)
+*
+*
+*
+Net income - Basic
+$
+0.45
+$
+0.34
+*
+*
+*
+Continuing operations - Diluted
+$
+0.45
+$
+0.35
+*
+*
+*
+Discontinued operations - Diluted
+—
+(0.01)
+*
+*
+*
+Net income - Diluted
+$
+0.45
+$
+0.34
+*
+*
+*
+Weighted-average common shares outstanding
+(in millions):
+Basic
+389.9
+396.6
+(1.7)
+%
+*
+*
+Diluted
+394.2
+400.0
+(1.5)
+%
+*
+*
+_____________
+* Not meaningful
+31
+Table of Co
+nte
+nts
+Net revenues
+The following table presents net revenues for the periods indicated and the changes in net revenues on both reported and organic net revenues basis from period to period.
+Three Months Ended
+% Increase (Decrease)
+March 1,
+2026
+March 2,
+2025
+As
+Reported
+Organic Net Revenues
+(Dollars in millions)
+Net revenues:
+Levi’s Brands:
+Americas
+$
+855.7
+$
+783.0
+9.3
+%
+7.1
+%
+Europe
+496.0
+400.5
+23.8
+%
+9.8
+%
+Asia
+347.5
+308.1
+12.8
+%
+12.4
+%
+Total Levi’s Brands net revenues
+1,699.2
+1,491.6
+13.9
+%
+8.9
+%
+Beyond Yoga
+®
+43.3
+35.2
+23.0
+%
+23.0
+%
+Total net revenues
+$
+1,742.5
+$
+1,526.8
+14.1
+%
+9.2
+%
+Net revenues by channel:
+Wholesale
+$
+831.0
+$
+739.3
+12.4
+%
+8.4
+%
+DTC
+911.5
+787.5
+15.7
+%
+10.0
+%
+Total net revenues
+$
+1,742.5
+$
+1,526.8
+14.1
+%
+9.2
+%
+Levi’s Brands net revenues:
+Levi’s
+®
+$
+1,633.5
+$
+1,432.8
+14.0
+%
+8.7
+%
+Levi Strauss Signature
+TM
+65.7
+56.5
+16.3
+%
+15.9
+%
+Denizen
+® (1)
+—
+2.3
+(100.0)
+%
+*
+Total Levi’s Brands net revenues
+$
+1,699.2
+$
+1,491.6
+13.9
+%
+8.9
+%
+______________
+(1)
+The wind down of Denizen
+®
+brand operations was substantially complete as of March 2, 2025.
+* Not meaningful
+Total net revenues increased on both a reported and organic net revenues basis for the three-month period ended March 1, 2026, as compared to the same period in 2025. Currency translation had a favorable impact on total net revenues of approximately $71 million for the three months ended March 1, 2026.
+Americas
+.
+Currency translation had a favorable impact on net revenues of approximately $18 million for the three months ended March 1, 2026. Net revenues in the Americas increased for the three-month period ended March 1, 2026 on both a reported and organic net revenues basis compared to the prior-year period driven by growth in both DTC and wholesale channels.
+The increase in DTC revenues was attributable to growth across all markets, driven primarily by store performance. E-commerce revenues increased primarily due to higher online traffic and higher units per transaction. Wholesale revenues increased primarily due to an increase in average revenues per unit, partially offset by a decrease in volume. DTC and wholesale revenues also benefited from price increases.
+Europe
+.
+Currency translation had a favorable impact on net revenues of approximately $51 million for the three months ended March 1, 2026. Net revenues in Europe increased for the three-month period ended March 1, 2026 on both a reported and organic net revenues basis compared to the prior-year period, reflecting growth in both wholesale and DTC channels.
+Wholesale revenues increased for the three-month period ended March 1, 2026 compared to the prior year period primarily due to higher volumes. Wholesale revenues in the first quarter of 2025 were negatively impacted by decreased shipping in connection with the transition to the distribution center in Dorsten, Germany. The increase in DTC revenues was primarily due to e-commerce revenues and an increase in revenues from outlet stores.
+32
+Table of Co
+nte
+nts
+Asia
+.
+Currency translation did not have a significant impact on net revenues for the three months ended March 1, 2026. Net revenues in Asia increased for the three-month period ended March 1, 2026 compared to the prior year period on both a reported and organic net revenues basis and in both our DTC and wholesale channels.
+The increase in DTC revenues was primarily due to store performance and expansion in our company-operated stores as a result of increased average revenues per unit and higher volumes. We benefited from 38 more company-operated stores in operation in Asia as of March 1, 2026 as compared to March 2, 2025. The increase in wholesale revenues was primarily due to an increase in units sold.
+Beyond Yoga
+®
+.
+Net revenues in Beyond Yoga
+®
+increased on a reported and organic net revenues basis for the three-month period ended March 1, 2026 compared to the prior year period, primarily due to growth in e-commerce net revenues reflecting higher demand. Currency translation did not have an impact on net revenues.
+Net revenues by channel
+Wholesale
+.
+Currency translation had a favorable impact on net revenues of approximately $29 million for the three months ended March 1, 2026. Net revenues in our wholesale channel increased for the three-month period ended March 1, 2026 compared with the prior-year period on a reported and organic net revenues basis primarily due to higher volumes, and benefited from price increases. Wholesale revenues in the first quarter of 2025 were negatively impacted by decreased shipping in connection with the transition to the distribution center in Dorsten, Germany.
+DTC (Direct to Consumer)
+.
+Currency translation had a favorable impact on net revenues of approximately $41 million for the three months ended March 1, 2026. Net revenues in our DTC channel increased on both a reported and organic net revenues basis for the three-month period ended March 1, 2026. The increase was driven by store performance and store expansion. E-commerce revenues increased driven primarily by higher traffic, higher units per transaction and higher average revenues per unit. DTC revenues also benefited from price increases. For the three-month period ended March 1, 2026 net revenues from e-commerce on a reported basis grew 21%. As a percentage of net revenues on a reported basis for the three-month period ended March 1, 2026 DTC comprised 52% of total net revenues.
+Levi’s Brands net revenues
+Levi’s
+®
+.
+Currency translation had a favorable impact on net revenues of approximately $71 million for the three months ended March 1, 2026. Net revenues for the Levi’s
+®
+brand increased on both a reported and organic net revenues basis for the three-month period ended March 1, 2026. The increase was a result of higher revenue in our DTC channel, primarily due to store performance and expansion and higher e-commerce traffic, and an increase in wholesale revenues due to higher volumes. Net revenues for the Levi’s
+®
+brand also benefited from price increases.
+Levi Strauss Signature
+™.
+Currency translation did not have a significant impact on net revenues for the three months ended March 1, 2026. Net revenues for the Levi Strauss Signature™ brand increased on both a reported and organic net revenues basis for the three months ended March 1, 2026 due to more units sold.
+33
+Table of Co
+nte
+nts
+Gross profit
+The following table shows consolidated gross profit and gross margin for the periods indicated and the changes in these items from period to period:
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+%
+Increase
+(Decrease)
+(Dollars in millions)
+Net revenues
+$
+1,742.5
+$
+1,526.8
+14.1
+%
+Cost of goods sold
+664.2
+579.2
+14.7
+%
+Gross profit
+$
+1,078.3
+$
+947.6
+13.8
+%
+Gross margin
+61.9
+%
+62.1
+%
+Currency translation had a favorable impact on gross profit of approximately $47 million for the three months ended March 1, 2026. For the three-month period ended March 1, 2026, the decrease in gross margin was primarily driven by the impact of tariffs, partially offset by price increases and less promotional activity. Additionally, gross margin increased approximately 30 basis points as a result of currency exchange, including transaction impacts, for the three-month period ended March 1, 2026.
+Selling, general and administrative expenses
+The following table shows SG&A for the periods indicated, the changes in these items from period to period and these items expressed as a percentage of net revenues:
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+%
+Increase
+(Decrease)
+March 1,
+2026
+March 2,
+2025
+% of Net
+Revenues
+% of Net
+Revenues
+(Dollars in millions)
+Selling
+$
+383.6
+$
+330.1
+16.2
+%
+22.0
+%
+21.6
+%
+Advertising and promotion
+123.1
+83.4
+47.6
+%
+7.1
+%
+5.5
+%
+Distribution
+123.3
+114.8
+7.4
+%
+7.1
+%
+7.5
+%
+Other
+241.7
+221.0
+9.4
+%
+13.9
+%
+14.5
+%
+Total SG&A
+$
+871.7
+$
+749.3
+16.3
+%
+50.0
+%
+49.1
+%
+Currency translation had an unfavorable impact on SG&A of approximately $30 million for the three months ended March 1, 2026.
+Selling
+.
+Currency translation had an unfavorable impact on selling expenses of approximately $17 million for the three months ended March 1, 2026. Excluding the effects of currency, selling expenses increased for the three-month period ended March 1, 2026 primarily due to higher DTC store expenses in the current year as compared to the prior-year period, including from store expansion.
+Advertising and promotion
+.   Currency translation had an unfavorable impact on advertising and promotion expenses of approximately $3 million for the three months ended March 1, 2026. Excluding the effects of currency, the increase in advertising and promotion expenses was primarily due to increased spending related to the launch of the Behind Every Original campaign, including a commercial during Super Bowl LX which was held at Levi’s
+®
+Stadium.
+Distribution
+.
+Currency translation had an unfavorable impact on distribution expenses of approximately $5 million for the three months ended March 1, 2026. Excluding the effects of currency, the increase in distribution expenses was primarily due to increased volume, largely offset by the impact of owned and operated distribution center closures in the prior year.
+34
+Table of Co
+nte
+nts
+Other
+.
+Other expenses include functional administrative and organization costs, information resources, and marketing organization costs. Currency translation had an unfavorable impact on other expenses of approximately $4 million for the three months ended March 1, 2026. The increase in other SG&A expenses for the three-month period ended March 1, 2026 includes the impact of attorney fees of $9.8 million related to a gain on legal settlement, partially offset by a decrease in incentive compensation.
+Restructuring charges, net
+During the three-month period ended March 1, 2026 we recognized restructuring charges of $7.9 million consisting primarily of severance and other post-employment benefit charges in connection with our continuing global productivity initiative. During the three-month period ended March 2, 2025 we recognized restructuring charges of $6.7 million in connection with Project Fuel, a multi-year global productivity initiative that was substantially complete as of November 30, 2025, consisting primarily of severance and other post-employment benefit charges, contract termination costs and asset impairments.
+Operating income
+The following table shows operating income, restructuring charges and corporate expenses for the periods indicated, the changes in these items from period to period and these items expressed as a percentage of net revenues:
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+%
+Increase
+(Decrease)
+March 1,
+2026
+March 2,
+2025
+% of Net
+Revenues
+% of Net
+Revenues
+(Dollars in millions)
+Operating income:
+Levi’s Brands:
+Americas
+$
+163.2
+$
+169.7
+(3.8)
+%
+19.1
+%
+21.7
+%
+Europe
+129.2
+102.4
+26.2
+%
+26.1
+%
+25.6
+%
+Asia
+70.4
+57.9
+21.5
+%
+20.3
+%
+18.8
+%
+Total Levi’s Brands operating income
+362.8
+330.0
+9.9
+%
+21.4
+%
+22.1
+%
+Beyond Yoga
+®
+operating income (loss)
+(0.8)
+(3.1)
+73.0
+%
+(1.9)
+%
+(8.7)
+%
+Restructuring charges, net
+(7.9)
+(6.7)
+(17.0)
+%
+(0.5)
+%
+v
+(0.4)
+%
+v
+Corporate expenses
+(155.4)
+(128.6)
+(20.8)
+%
+(8.9)
+%
+v
+(8.4)
+%
+v
+Total operating income
+$
+198.7
+$
+191.6
+3.7
+%
+11.4
+%
+v
+12.5
+%
+v
+Operating margin
+11.4
+%
+12.5
+%
+______________
+v
+Percentage of consolidated net revenues
+Currency translation had a favorable impact on total operating income of approximately $17 million for the three months ended March 1, 2026.
+35
+Table of Co
+nte
+nts
+Levi’s Brands operating income
+.
+•
+Americas
+.  Currency translation had a favorable impact on operating income in the segment of approximately $3 million for the three months ended March 1, 2026. The decrease in operating income for the three-month period ended March 1, 2026 was due to higher SG&A, which increased as a percent of revenue, and lower gross margins, partially offset by higher revenues compared to the prior-year period.
+•
+Europe
+.   Currency translation had a favorable impact on operating income in the segment of approximately $16 million for the three months ended March 1, 2026. Excluding the effects of currency, operating income increased for the three-month period ended March 1, 2026 compared with the prior-year period primarily due to higher revenues and gross margins partially offset by higher SG&A which increased as a percent of revenue.
+•
+Asia
+.   Currency translation did not have a significant impact on operating income in the segment for the three months ended March 1, 2026. Excluding the effects of currency, operating income increased for the three-month period ended March 1, 2026 due to an increase in revenues partially offset by higher SG&A.
+Beyond Yoga
+®
+operating loss.
+Currency translation did not have a significant impact on operating income in the segment for the three months ended March 1, 2026. The decrease in operating losses for the three-month period ended March 1, 2026 as compared to the prior year period was due to higher revenues and gross margins, partially offset by higher SG&A.
+Restructuring charges, net.
+Currency translation did not have a significant impact on restructuring charges, net for the three months ended March 1, 2026. During the three-month period ended March 1, 2026 we recognized restructuring charges of $7.9 million consisting primarily of severance and other post-employment benefit charges in connection with our continuing global productivity initiative. During the three-month period ended March 2, 2025 we recognized restructuring charges of $6.7 million in connection with Project Fuel, a multi-year global productivity initiative that was substantially complete as of November 30, 2025, consisting primarily of severance and other post-employment benefit charges, contract termination costs and asset impairments.
+Corporate expenses
+.
+Corporate expenses represent costs that management does not attribute to any of our operating segments. Included in corporate expenses are other corporate staff costs and costs associated with our global inventory sourcing organization, which are reported as a component of consolidated gross margin. Currency translation did not have a significant impact on corporate expenses for the three months ended March 1, 2026.
+The increase in corporate expenses for the three-month period ended March 1, 2026 compared with the prior year period includes the impact of attorney fees related to a gain on legal settlement of $9.8 million and higher global sourcing costs, partially offset by a decrease in incentive compensation.
+Interest expense
+Interest expense was $13.1 million and $10.9 million for the three-month periods ended March 1, 2026 and March 2, 2025, respectively. Our weighted-average interest rate on average borrowings outstanding during the three-month periods ended March 1, 2026 and March 2, 2025 was 4.67% and 4.23%, respectively.
+Other income (expense), net
+For the three-month periods ended March 1, 2026 and March 2, 2025, respectively, we recorded other income of $42.6 million and other expense of $4.1 million, respectively. The increase in other income for the three-month period ended March 1, 2026 was primarily due to the recognition of a legal settlement gain of $33.0 million and foreign exchange management gains of $5.6 million, compared to foreign exchange management losses of $10.8 million in the prior year period. This was partially offset by the recognition of foreign currency transaction losses of $5.5 million, compared to transaction gains of $2.2 million in the prior year.
+Income tax expense (benefit)
+Our effective income tax rate was 22.4% for the three-month period ended March 1, 2026, compared to 20.6% for the same prior-year period. The increase in the effective tax rate in the current quarter was primarily due to a higher effective tax rate on foreign earnings compared with the prior-year period.
+Discontinued operations
+Discontinued operations consists of the operations of our Dockers
+®
+business. See Note 2 to our unaudited consolidated financial statements included in this Quarterly Report for additional information.
+36
+Table of Co
+nte
+nts
+Liquidity and Capital Resources
+Liquidity outlook
+We believe we will have adequate liquidity over the next 12 months and in the longer term to operate our business and to meet our cash requirements. Over the long term, we plan to deploy capital across all four of our capital allocation priorities: (1) to reinvest 3.5-4% of our revenue in capital, including high growth investment opportunities and initiatives, to grow our business organically, (2) to return capital to our stockholders in the form of cash dividends, with a dividend payout ratio target of 25-35% of net income, (3) to pursue high return on investment acquisitions, both organic and inorganic, that support our current strategies, and (4) to repurchase shares with the goal of offsetting dilution or opportunistic buybacks or both, while maintaining an adequate public float of our shares. Our aim is to return 55-65% of our Adjusted free cash flow to stockholders in the form of dividends and share repurchases. We continue to concentrate our capital investments in new stores, distribution capacity and technology to accelerate the profitable growth of our business. For more information on our calculation of Adjusted free cash flow, a non-GAAP financial measure, see “Non-GAAP Financial Measures.”
+Future determinations regarding the declaration and payment of dividends, if any, will be at the discretion of our Board and will depend on then-existing conditions, including our results of operations, payout ratio, capital requirements, financial condition, prospects, contractual arrangements, any limitations on payment of dividends present in our current and future debt agreements and other factors that our Board may deem relevant.
+Cash sources
+We have historically relied primarily on cash flows from operations, borrowings under credit facilities, issuances of notes and other forms of debt financing. We regularly explore financing and debt reduction alternatives, including new credit agreements, unsecured and secured note issuances, equity financing, equipment and real estate financing, securitizations and asset sales.
+Our Credit Agreement provides for an asset-based, senior secured revolving credit facility (“Credit Facility”), in which the borrowing availability is primarily based on the value of our U.S. Levi’s
+®
+trademarks and the levels of accounts receivable and inventory in the U.S. and Canada. The maximum availability under the facility is $1.0 billion, of which $950.0 million is available to us for revolving loans in U.S. Dollars and $50.0 million is available to us for revolving loans either in U.S. Dollars or Canadian Dollars. The facility has an accordion feature which, if exercised, can expand the maximum availability to $1.15 billion.
+As of March 1, 2026, we did not have any borrowings under the Credit Facility. Unused availability under the facility was $831.3 million, and our total availability of $850.4 million (based on collateral levels as defined by the agreement less outstanding borrowings under the Credit Facility) was reduced by $19.1 million from other credit-related instruments. We also had cash and cash equivalents totaling approximately $716.6 million and short-term investments of $95.4 million resulting in a total liquidity position (unused availability and cash and cash equivalents and short-term investments) of approximately $1.6 billion. Of our $716.6 million in cash and cash equivalents, approximately $539.6 million was held by foreign subsidiaries.
+Cash uses
+Our principal cash requirements include working capital, capital expenditures, payments of principal and interest on our debt, payments of taxes, contributions to our pension plans and payments for postretirement health benefit plans, payment of taxes resulting from net settlement of shares issued under our equity incentive plans and, if market conditions warrant, occasional investments in, or acquisitions of, business ventures. In addition, we regularly evaluate our ability to pay dividends or repurchase stock, all consistent with the terms of our debt agreements.
+37
+Table of Co
+nte
+nts
+On January 30, 2026, we entered into an accelerated share repurchase transaction with a third-party financial institution to repurchase an aggregate of $200.0 million of our Class A common stock as part of our share repurchase program (the “ASR Agreement”). At inception, we made an initial payment of $200.0 million and received and immediately retired 7.8 million shares of our Class A common stock, representing 80% of the dollar amount of the transaction based on the January 29, 2026 closing share price. The initial shares received, which had an aggregate cost of $160.0 million, were retired and recorded as a reduction of Retained Earnings, with the remainder of $40.0 million recorded as a reduction of additional paid-in capital. The total number of shares we will ultimately repurchase will be based on the volume-weighted average price per share of our Class A common stock over the term of the ASR Agreement, less an agreed upon discount, and subject to customary adjustments pursuant to the terms and conditions of the ASR Agreement. Final settlement of the transactions under the ASR Agreement is expected to occur no later than the third quarter of 2026. We used a portion of the net proceeds from the sale of Dockers
+®
+remaining operations to fund the upfront payment due under the ASR Agreement. See Note 2 to our unaudited consolidated financial statements included in this Quarterly Report for additional information.
+In April 2026, a cash dividend of $0.14 per share was declared to holders of record of our Class A and Class B common stock at the close of business on April 22, 2026. The cash dividend will be payable on May 6, 2026, for a total quarterly dividend of approximately $54 million.
+Cash flows
+The following table summarizes, for the periods indicated, selected items in our consolidated statements of cash flows:
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+Cash provided by operating activities
+$
+211.5
+$
+52.5
+Cash provided by (used for) investing activities
+26.3
+(71.1)
+Cash used for financing activities
+(284.1)
+(97.5)
+Cash and cash equivalents at period end
+716.6
+574.4
+Cash flows from operating activities
+Cash provided by operating activities was $211.5 million for the three-month period ended March 1, 2026, as compared to $52.5 million for the comparable period in 2025. The increase in cash provided by operating activities was primarily driven by higher collections of receivables and lower spending on inventory, partially offset by higher spending in SG&A.
+Cash flows from investing activities
+Cash provided by investing activities was $26.3 million for the three-month period ended March 1, 2026, as compared to cash used for investing activities of $71.1 million for the comparable period in 2025. The increase in net cash provided by investing activities was primarily due to proceeds of $96.3 million from the divestiture of Dockers
+®
+international business.
+Cash flows from financing activities
+Cash used for financing activities was $284.1 million for the three-month period ended March 1, 2026, as compared to $97.5 million for the comparable period in 2025. Cash used in 2026 primarily reflects an accelerated share repurchase of $200.0 million, dividend payments of $53.8 million, and tax withholdings on equity awards of $31.1 million. Cash used in 2025 primarily reflects dividend payments of $51.4 million, common stock repurchases of $30.0 million, and tax withholdings on equity awards of $18.3 million.
+38
+Table of Co
+nte
+nts
+Indebtedness
+The borrower of substantially all of our debt is Levi Strauss & Co., the parent and U.S. operating company. Of our total debt of $1.1 billion as of March 1, 2026, 99.9% was fixed-rate debt. As of March 1, 2026, our required aggregate debt principal payments on our unsecured long-term debt were $1.1 billion, with payments starting in 2030. Short-term borrowings of $1.0 million at various foreign subsidiaries are expected to be either paid over the next twelve months or refinanced at the end of their applicable terms.
+Our long-term debt agreements contain customary covenants restricting our activities as well as those of our subsidiaries. We were in compliance with all of these covenants as of March 1, 2026.
+39
+Table of Co
+nte
+nts
+Non-GAAP Financial Measures
+Adjusted SG&A, Adjusted SG&A Margin, Adjusted EBIT, Adjusted EBIT Margin, Adjusted EBITDA, Adjusted Net Income, Adjusted Net Income Margin, and Adjusted Diluted Earnings per Share
+In the table below, we define the following non-GAAP measures. Because the results of our Dockers
+®
+business are classified as discontinued operations, those results are not reflected in our non-GAAP measures.
+Most comparable GAAP measure
+Non-GAAP measure
+Non-GAAP measure definition
+Selling, general and administrative expenses (“SG&A”)
+Adjusted SG&A
+SG&A expenses excluding goodwill impairment charges and restructuring related charges and other, net
+SG&A margin
+Adjusted SG&A margin
+Adjusted SG&A as a percentage of net revenues
+Net income from continuing operations
+Adjusted EBIT
+Net income from continuing operations excluding income tax  expense, interest expense, other (income) expense, net, goodwill impairment charges, restructuring charges, net, and restructuring related charges and other, net.
+Net income margin from continuing operations
+Adjusted EBIT margin
+Adjusted EBIT as a percentage of net revenues
+Net income from continuing operations
+Adjusted EBITDA
+Adjusted EBIT excluding depreciation and amortization expense
+Net income from continuing operations
+Adjusted net income
+Net income from continuing operations excluding goodwill impairment charges, restructuring charges, net, restructuring related charges and other, net, and gain on legal settlement adjusted to give effect to the income tax impact of such adjustments.
+Net income margin from continuing operations
+Adjusted net income margin
+Adjusted net income as a percentage of net revenues.
+Diluted earnings per share from continuing operations
+Adjusted diluted earnings per share
+Adjusted net income per weighted-average number of diluted common shares outstanding.
+We believe Adjusted SG&A, Adjusted SG&A margin, Adjusted EBIT, Adjusted EBIT margin, Adjusted EBITDA, Adjusted net income, Adjusted net income margin, and Adjusted diluted earnings per share are useful to investors because they help identify underlying trends in our business that could otherwise be masked by certain expenses that we include in calculating net income from continuing operations but that can vary from company to company depending on its financing, capital structure and the method by which its assets were acquired, and can also vary significantly from period to period. Our management also uses Adjusted EBIT in conjunction with other GAAP financial measures for planning purposes, including as a measure of our core operating results and the effectiveness of our business strategy, and in evaluating our financial performance.
+Adjusted SG&A, Adjusted SG&A margin, Adjusted EBIT, Adjusted EBIT margin, Adjusted EBITDA, Adjusted net income, Adjusted net income margin and Adjusted diluted earnings per share have limitations as analytical tools and should not be considered in isolation or as a substitute for an analysis of our results prepared and presented in accordance with GAAP. Some of these limitations include:
+•
+Adjusted EBIT, Adjusted EBIT margin and Adjusted EBITDA do not reflect income tax payments that reduce cash available to us;
+•
+Adjusted EBIT, Adjusted EBIT margin and Adjusted EBITDA do not reflect interest expense, or the cash requirements necessary to service interest or principal payments on our indebtedness, which reduces cash available to us;
+•
+Adjusted EBIT, Adjusted EBIT margin and Adjusted EBITDA exclude other income (expense), net, which includes realized and unrealized gains and losses on our forward foreign exchange contracts and transaction gains and losses on our foreign exchange balances, although these items affect the amount and timing of cash available to us when these gains and losses are realized;
+•
+all of these non-GAAP financial measures exclude acquisition and integration charges, impairment charges and early terminations and restructuring charges, net and restructuring related charges, severance and other, net which can affect our current and future cash requirements;
+40
+Table of Co
+nte
+nts
+•
+all of these non-GAAP financial measures exclude certain other SG&A expense items, which include severance, transaction and deal related costs, including acquisition and integration costs which can affect our current and future cash requirements;
+•
+the expenses and other items that we exclude in our calculations of all of these non-GAAP financial measures may differ from the expenses and other items, if any, that other companies may exclude from all of these non-GAAP financial measures or similarly titled measures;
+•
+Adjusted EBITDA excludes the recurring, non-cash expenses of depreciation of property and equipment and, although these are non-cash expenses, the assets being depreciated may need to be replaced in the future; and
+•
+Adjusted net income, Adjusted net income margin and Adjusted diluted earnings per share do not include all of the effects of income taxes and changes in income taxes reflected in net income from continuing operations.
+Because of these limitations, all of these non-GAAP financial measures should be considered along with net income from continuing operations and other operating and financial performance measures prepared and presented in accordance with GAAP. The following tables present reconciliations of historic non-GAAP financial measures to their most comparable GAAP financial measure. A reconciliation of forward-looking non-GAAP information to the corresponding GAAP measures cannot be provided without unreasonable efforts due to the challenge in quantifying various items including, but not limited to, the effects of foreign currency fluctuations, taxes and any future restructuring, restructuring-related severance and other charges.
+41
+Table of Co
+nte
+nts
+Adjusted SG&A:
+The following table presents a reconciliation of SG&A, the most directly comparable financial measure calculated in accordance with GAAP, to Adjusted SG&A for each of the periods presented.
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+(Unaudited)
+Most comparable GAAP measure:
+Selling, general and administrative expenses
+$
+871.7
+$
+749.3
+Non-GAAP measure:
+Selling, general and administrative expenses
+$
+871.7
+$
+749.3
+Goodwill impairment charges
+(1)
+—
+(2.5)
+Restructuring related charges and other, net
+(2)
+(11.2)
+(3.2)
+Adjusted SG&A
+$
+860.5
+$
+743.6
+SG&A margin
+50.0
+%
+49.1
+%
+Adjusted SG&A margin
+49.4
+%
+48.7
+%
+_____________
+(1)
+For the three-month period ended March 2, 2025, goodwill impairment charges includes the recognition of a $2.5 million goodwill impairment charge related to our business in Bolivia.
+(2)
+For the three-month period ended March 1, 2026, restructuring related charges and other, net consists primarily of attorney fees related to a gain on legal settlement of $9.8 million.
+For the three-month period ended March 2, 2025, restructuring related charges and other, net primarily relates to consulting costs associated with our restructuring initiative of $2.1 million.
+42
+Table of Co
+nte
+nts
+Adjusted EBIT and Adjusted EBITDA:
+The following table presents a reconciliation of net income from continuing operations, the most directly comparable financial measure calculated in accordance with GAAP, to Adjusted EBIT and Adjusted EBITDA for each of the periods presented.
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+(Unaudited)
+Most comparable GAAP measure:
+Net income from continuing operations
+$
+177.1
+$
+140.2
+Non-GAAP measure:
+Net income from continuing operations
+$
+177.1
+$
+140.2
+Income tax expense
+51.1
+36.4
+Interest expense
+13.1
+10.9
+Other (income) expense, net
+(42.6)
+4.1
+Goodwill impairment charges
+(1)
+—
+2.5
+Restructuring charges, net
+(2)
+7.9
+6.7
+Restructuring related charges and other, net
+(3)
+11.2
+3.2
+Adjusted EBIT
+$
+217.8
+$
+204.0
+Depreciation and amortization
+55.3
+49.1
+Adjusted EBITDA
+$
+273.1
+$
+253.1
+Net income margin from continuing operations
+10.2
+%
+9.2
+%
+Adjusted EBIT margin
+12.5
+%
+13.4
+%
+_____________
+(1)
+For the three-month period ended March 2, 2025, goodwill impairment charges includes the recognition of a $2.5 million goodwill impairment charge related to our business in Bolivia.
+(2)
+For the three-month period ended March 1, 2026, restructuring charges, net consists primarily of severance and post-employment benefit charges.
+For the three-month period ended March 2, 2025, restructuring charges, net includes $6.7 million in connection with Project Fuel consisting primarily of severance, post-employment benefit charges, contract terminations and asset impairments.
+(3)
+For the three-month period ended March 1, 2026, restructuring related charges and other, net consists primarily of attorney fees related to a gain on legal settlement of $9.8 million.
+For the three-month period ended March 2, 2025, restructuring related charges and other, net primarily relates to consulting costs associated with our restructuring initiative of $2.1 million.
+43
+Table of Co
+nte
+nts
+Adjusted Net Income:
+The following table presents a reconciliation of net income from continuing operations, the most directly comparable financial measure calculated in accordance with GAAP, to Adjusted net income for each of the periods presented.
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+(Unaudited)
+Most comparable GAAP measure:
+Net income from continuing operations
+$
+177.1
+$
+140.2
+Non-GAAP measure:
+Net income from continuing operations
+$
+177.1
+$
+140.2
+Goodwill impairment charges
+(1)
+—
+2.5
+Restructuring charges, net
+(2)
+7.9
+6.7
+Restructuring related charges and other, net
+(3)
+11.4
+3.2
+Gain on legal settlement
+(33.0)
+—
+Tax impact of adjustments
+(4)
+3.3
+(2.6)
+Adjusted net income
+$
+166.7
+$
+150.0
+Net income margin from continuing operations
+10.2
+%
+9.2
+%
+Adjusted net income margin
+9.6
+%
+9.8
+%
+_____________
+(1)
+For the three-month period ended March 2, 2025, goodwill impairment charges includes the recognition of a $2.5 million goodwill impairment charge related to our business in Bolivia.
+(2)
+For the three-month period ended March 1, 2026, restructuring charges, net consists primarily of severance and post-employment benefit charges.
+For the three-month period ended March 2, 2025, restructuring charges, net includes $6.7 million in connection with Project Fuel consisting primarily of severance, post-employment benefit charges, contract terminations and asset impairments.
+(3)
+For the three-month period ended March 1, 2026, restructuring related charges and other, net consists primarily of attorney fees related to a gain on legal settlement of $9.8 million.
+For the three-month period ended March 2, 2025, restructuring related charges and other, net primarily relates to consulting costs associated with our restructuring initiative of $2.1 million.
+(4)
+Tax impact calculated using the annual effective tax rate, excluding discrete costs and benefits.
+44
+Table of Co
+nte
+nts
+Adjusted Diluted Earnings per Share:
+The following table presents a reconciliation of diluted earnings per share from continuing operations, the most directly comparable financial measure calculated in accordance with GAAP, to Adjusted diluted earnings per share for each of the periods presented.
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Unaudited)
+Most comparable GAAP measure:
+Diluted earnings per share from continuing operations
+$
+0.45
+$
+0.35
+Non-GAAP measure:
+Diluted earnings per share from continuing operations
+$
+0.45
+$
+0.35
+Goodwill impairment charges
+(1)
+—
+0.01
+Restructuring charges, net
+(2)
+0.02
+0.02
+Restructuring related charges and other, net
+(3)
+0.02
+0.01
+Gain on legal settlement
+(0.08)
+—
+Tax impact of adjustments
+(4)
+0.01
+(0.01)
+Adjusted diluted earnings per share
+$
+0.42
+$
+0.38
+_____________
+(1)
+For the three-month period ended March 2, 2025, goodwill impairment charges includes the recognition of a $2.5 million goodwill impairment charge related to our business in Bolivia.
+(2)
+For the three-month period ended March 1, 2026, restructuring charges, net consists primarily of severance and post-employment benefit charges.
+For the three-month period ended March 2, 2025, restructuring charges, net includes $6.7 million in connection with Project Fuel consisting primarily of severance, post-employment benefit charges, contract terminations and asset impairments.
+(3)
+For the three-month period ended March 1, 2026, restructuring related charges and other, net consists primarily of attorney fees related to a gain on legal settlement of $9.8 million.
+For the three-month period ended March 2, 2025, restructuring related charges, severance, and other, net primarily relates to consulting costs associated with our restructuring initiative of $2.1 million.
+(4)
+Tax impact calculated using the annual effective tax rate, excluding discrete costs and benefits.
+45
+Table of Co
+nte
+nts
+Adjusted Free Cash Flow:
+Adjusted free cash flow, a non-GAAP financial measure, includes net cash flow from operating activities less purchases of property, plant and equipment from continuing and discontinued operations. This measure therefore includes the results of our Dockers® business, which is classified as discontinued operations. We believe Adjusted free cash flow is an important liquidity measure of the cash that is available after capital expenditures for operational expenses and investment in our business. We believe Adjusted free cash flow is useful to investors because it measures our ability to generate or use cash. Once our business needs and obligations are met, cash can be used to maintain a strong balance sheet, invest in future growth and return capital to stockholders.
+Our use of Adjusted free cash flow has limitations as an analytical tool and should not be considered in isolation or as a substitute for an analysis of our results under GAAP. First, Adjusted free cash flow is not a substitute for net cash flow from operating activities. Second, other companies may calculate Adjusted free cash flow or similarly titled non-GAAP financial measures differently or may use other measures to evaluate their performance, all of which could reduce the usefulness of Adjusted free cash flow as a tool for comparison. Additionally, the utility of Adjusted free cash flow is further limited as it does not reflect our future contractual commitments and does not represent the total increase or decrease in our cash balance for a given period. Because of these and other limitations, Adjusted free cash flow should be considered along with net cash flow from operating activities and other comparable financial measures prepared and presented in accordance with GAAP.
+The following table presents a reconciliation of net cash flow from operating activities, the most directly comparable financial measure calculated in accordance with GAAP, to Adjusted free cash flow for each of the periods presented.
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+(Dollars in millions)
+(Unaudited)
+Most comparable GAAP measure:
+Net cash provided by operating activities
+$
+211.5
+$
+52.5
+Net cash provided by (used for) investing activities
+26.3
+(71.1)
+Net cash used for financing activities
+(284.1)
+(97.5)
+Non-GAAP measure:
+Net cash provided by operating activities
+$
+211.5
+$
+52.5
+Purchases of property, plant and equipment
+(59.4)
+(66.6)
+Adjusted free cash flow
+$
+152.1
+$
+(14.1)
+46
+Table of Co
+nte
+nts
+Organic Net Revenues and Constant-Currency:
+We report our net revenues in accordance with GAAP, as well as on an organic net revenues basis in order to facilitate period-to-period comparisons of our revenues which excludes the impact of fluctuating foreign currency exchange rates from the change in reported net revenues, net revenues derived from business acquisitions or divestitures or wind downs impacting the previous comparable reporting period and the estimated impact of any 53rd week. We report our operating results in accordance with GAAP, as well as on a constant-currency basis in order to facilitate period-to-period comparisons of our results without regard to the impact of fluctuating foreign currency exchange rates. These measures exclude the results of our Dockers
+®
+business, which is classified as discontinued operations.
+The term foreign currency exchange rates refers to the exchange rates we use to translate our operating results for all countries where the functional currency is not the U.S. Dollar into U.S. Dollars. Because we are a global company, foreign currency exchange rates used for translation may have a significant effect on our reported results. In general, our reported financial results are affected positively by a weaker U.S. Dollar and are affected negatively by a stronger U.S. Dollar as compared to the foreign currencies in which we conduct our business. References to our operating results on a constant-currency basis mean our operating results without the impact of foreign currency translation fluctuations.
+We calculate constant-currency amounts by translating local currency amounts in the prior-year period at actual foreign currency exchange rates for the current period. Our constant-currency results do not eliminate the transaction currency impact, which primarily includes the realized and unrealized gains and losses recognized from the measurement and remeasurement of purchases and sales of products in a currency other than the functional currency and of forward foreign exchange contracts.
+We believe disclosure of organic net revenues and Adjusted EBIT constant-currency, Adjusted EBIT Margin constant-currency and Adjusted Net Income constant-currency results is helpful to investors because it facilitates period-to-period comparisons of our results by increasing the transparency of our underlying performance by excluding the impact of fluctuating foreign currency exchange rates. However, organic net revenues and constant-currency results are non-GAAP financial measures and are not meant to be considered in isolation or as a substitute for comparable measures prepared in accordance with GAAP. Organic net revenues and constant-currency results have no standardized meaning prescribed by GAAP, are not prepared under any comprehensive set of accounting rules or principles and should be read in conjunction with our consolidated financial statements prepared in accordance with GAAP. Organic net revenues and constant-currency results have limitations in their usefulness to investors and may be calculated differently from, and therefore may not be directly comparable to, similarly titled measures used by other companies.
+47
+Table of Co
+nte
+nts
+Organic Net Revenues:
+The table below sets forth the calculation of net revenues by segment on an organic net revenues basis for each of the periods presented.
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+% Increase
+(Decrease)
+(Dollars in millions)
+(Unaudited)
+Total net revenues
+(1)
+As reported
+$
+1,742.5
+$
+1,526.8
+14.1
+%
+Impact of foreign currency exchange rates
+—
+70.8
+Net revenues from Denizen
+®
+wind down
+(2)
+—
+(2.3)
+Organic net revenues
+$
+1,742.5
+$
+1,595.3
+9.2
+%
+Americas
+As reported
+$
+855.7
+$
+783.0
+9.3
+%
+Impact of foreign currency exchange rates
+—
+18.4
+Net revenues from Denizen
+®
+wind down
+(2)
+—
+(2.3)
+Organic net revenues - Americas
+$
+855.7
+$
+799.1
+7.1
+%
+Europe
+As reported
+$
+496.0
+$
+400.5
+23.8
+%
+Impact of foreign currency exchange rates
+—
+51.3
+Organic net revenues - Europe
+$
+496.0
+$
+451.8
+9.8
+%
+Asia
+As reported
+$
+347.5
+$
+308.1
+12.8
+%
+Impact of foreign currency exchange rates
+—
+1.1
+Organic net revenues - Asia
+$
+347.5
+$
+309.2
+12.4
+%
+Beyond Yoga
+®
+As reported
+$
+43.3
+$
+35.2
+23.0
+%
+Organic net revenues - Beyond Yoga
+®
+$
+43.3
+$
+35.2
+23.0
+%
+_____________
+(1)
+These measures exclude the results of our Dockers
+®
+business, which is classified as discontinued operations.
+(2)
+Foreign currency did not significantly impact net revenues from Denizen
+®
+wind down for the three months ended March 2, 2025.
+48
+Table of Co
+nte
+nts
+The table below sets forth the calculation of net revenues by channel on an organic net revenues basis for each of the periods presented.
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+% Increase
+(Decrease)
+(Dollars in millions)
+(Unaudited)
+Total net revenues
+(1)
+As reported
+$
+1,742.5
+$
+1,526.8
+14.1
+%
+Impact of foreign currency exchange rates
+—
+70.8
+Net revenues from Denizen
+®
+wind down
+(2)
+—
+(2.3)
+Organic net revenues
+$
+1,742.5
+$
+1,595.3
+9.2
+%
+Wholesale
+As reported
+$
+831.0
+$
+739.3
+12.4
+%
+Impact of foreign currency exchange rates
+—
+29.5
+Net revenues from Denizen
+®
+wind down
+(2)
+—
+(2.3)
+Organic net revenues - Wholesale
+$
+831.0
+$
+766.5
+8.4
+%
+DTC
+As reported
+$
+911.5
+$
+787.5
+15.7
+%
+Impact of foreign currency exchange rates
+—
+41.3
+Organic net revenues - DTC
+$
+911.5
+$
+828.8
+10.0
+%
+_____________
+(1)
+These measures exclude the results of our Dockers
+®
+business, which is classified as discontinued operations.
+(2)
+Foreign currency did not significantly impact net revenues from Denizen
+®
+wind down for the three months ended March 2, 2025.
+49
+Table of Co
+nte
+nts
+The table below sets forth the calculation of net revenues by brand on an organic net revenues basis for each of the periods presented.
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+% Increase
+(Decrease)
+(Dollars in millions)
+(Unaudited)
+Total Levi’s Brands net revenues
+As reported
+$
+1,699.2
+$
+1,491.6
+13.9
+%
+Impact of foreign currency exchange rates
+—
+70.8
+Net revenues from Denizen
+®
+wind down
+(1)
+—
+(2.3)
+Organic net revenues
+$
+1,699.2
+$
+1,560.1
+8.9
+%
+Levi’s
+®
+As reported
+$
+1,633.5
+$
+1,432.8
+14.0
+%
+Impact of foreign currency exchange rates
+—
+70.6
+Organic net revenues - Levi’s
+®
+$
+1,633.5
+$
+1,503.4
+8.7
+%
+Levi Strauss Signature
+TM
+As reported
+$
+65.7
+$
+56.5
+16.3
+%
+Impact of foreign currency exchange rates
+—
+0.2
+Organic net revenues - Levi Strauss Signature
+TM
+$
+65.7
+$
+56.7
+15.9
+%
+Denizen
+®
+As reported
+$
+—
+$
+2.3
+(100.0)
+%
+Impact of foreign currency exchange rates
+—
+—
+Net revenues from Denizen
+®
+wind down
+(1)
+—
+(2.3)
+Organic net revenues - Denizen
+®
+$
+—
+$
+—
+*
+_____________
+(1)
+Foreign currency did not significantly impact net revenues from Denizen
+®
+wind down for the three months ended March 2, 2025.
+* Not meaningful
+50
+Table of Co
+nte
+nts
+Constant-Currency Adjusted EBIT and Constant-Currency Adjusted EBIT margin:
+The table below sets forth the calculation of Adjusted EBIT and Adjusted EBIT margin on a constant-currency basis for each of the periods presented.
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+%
+Increase
+(Decrease)
+(Dollars in millions)
+(Unaudited)
+Adjusted EBIT
+(1)
+$
+217.8
+$
+204.0
+6.8
+%
+Impact of foreign currency exchange rates
+—
+17.3
+*
+Constant-currency Adjusted EBIT
+$
+217.8
+$
+221.3
+(1.6)
+%
+Adjusted EBIT margin
+12.5
+%
+13.4
+%
+(6.7)
+%
+Impact of foreign currency exchange rates
+—
+%
+0.5
+%
+*
+Constant-currency Adjusted EBIT margin
+(2)
+12.5
+%
+13.9
+%
+(10.1)
+%
+_____________
+(1)
+Adjusted EBIT is reconciled from net income from continuing operations which is the most comparable GAAP measure. Refer to Adjusted EBIT and Adjusted EBITDA table for more information.
+(2)
+We define constant-currency Adjusted EBIT margin as constant-currency Adjusted EBIT as a percentage of constant-currency net revenues from continuing operations.
+* Not meaningful
+Constant-Currency Adjusted Net Income and Constant-Currency Adjusted Diluted Earnings per Share:
+The table below sets forth the calculation of Adjusted net income and Adjusted diluted earnings per share on a constant-currency basis for each of the periods presented.
+Three Months Ended
+March 1,
+2026
+March 2,
+2025
+%
+Increase
+(Decrease)
+(Dollars in millions, except per share amounts)
+(Unaudited)
+Adjusted net income
+(1)
+$
+166.7
+$
+150.0
+11.1
+%
+Impact of foreign currency exchange rates
+—
+6.0
+*
+Constant-currency Adjusted net income
+$
+166.7
+$
+156.0
+6.9
+%
+Constant-currency Adjusted net income margin
+(2)
+9.6
+%
+9.8
+%
+Adjusted diluted earnings per share
+$
+0.42
+$
+0.38
+10.5
+%
+Impact of foreign currency exchange rates
+—
+0.01
+*
+Constant-currency Adjusted diluted earnings per share
+$
+0.42
+$
+0.39
+7.7
+%
+_____________
+(1)
+Adjusted net income is reconciled from net income from continuing operations which is the most comparable GAAP measure. Refer to Adjusted net income table for more information.
+(2)
+We define constant-currency Adjusted net income margin as constant-currency Adjusted net income as a percentage of constant-currency net revenues from continuing operations.
+* Not meaningful
+51
+Table of Co
+nte
+nts
+Off-Balance Sheet Arrangements, Guarantees and Other Contingent Obligations
+As of March 1, 2026, there had been no significant changes to our off-balance sheet arrangements or contractual commitments from those disclosed in our 2025 Annual Report on Form 10-K.
+Critical Accounting Policies and Estimates
+The preparation of financial statements in conformity with GAAP requires management to make estimates and assumptions that affect the amounts reported in the consolidated financial statements and the related notes. There have been no significant changes to our critical accounting policies from those disclosed in our 2025 Annual Report on Form 10-K.
+Recently Issued Accounting Standards
+See Note 1 to our unaudited consolidated financial statements included in this Quarterly Report for recently issued accounting standards, including the expected dates of adoption and expected impact to our consolidated financial statements upon adoption.
+52
+Table of Co
+nte
+nts
+SPECIAL NOTE REGARDING FORWARD-LOOKING STATEMENTS
+Certain matters discussed in this Quarterly Report, including (without limitation) statements under "Management’s Discussion and Analysis of Financial Condition and Results of Operations" contain forward-looking statements. Although we believe that, in making any such statements, our expectations are based on reasonable assumptions, any such statement may be influenced by factors that could cause actual outcomes and results to be materially different from those projected.
+These forward-looking statements include statements relating to our anticipated financial performance and business prospects, including debt reduction, currency values and financial impact and foreign exchange counterparty exposures, statements regarding our business strategy and other plans and objectives for our future operations, statements concerning the impacts of macroeconomic conditions and tariffs, statements relating to the impact of pending legal proceedings, adequate liquidity levels, dividends, share repurchases or other capital deployment initiatives and/or statements preceded by, followed by or that include the words "believe", "will", "will be", "will continue", "will likely result", "may", "predicts", "so we can", "when", "anticipate", "intend", "estimate", "expect", "project", "aim", "could", "plans", "seeks" and similar expressions. These forward-looking statements speak only as of the date stated, and we do not undertake any obligation to update or revise publicly any forward-looking statements, whether as a result of new information, future events or otherwise, even if experience or future events make it clear that any expected results expressed or implied by these forward-looking statements will not be realized. Although we believe that the expectations reflected in these forward-looking statements are reasonable, these expectations may not prove to be correct or we may not achieve the financial results, savings or other benefits anticipated in the forward-looking statements. These forward-looking statements are necessarily estimates reflecting the best judgment of our senior management and involve a number of risks and uncertainties, some of which may be beyond our control. These risks and uncertainties, including those disclosed in Part I, Item 1A – Risk Factors of our Annual Report on Form 10-K for the fiscal year ended November 30, 2025, and in our other filings with the Securities and Exchange Commission, could cause actual results to differ materially from those suggested by the forward-looking statements and include, without limitation:
+•
+changes in general economic and financial conditions, inflationary pressures, tariff regimes, including ongoing uncertainty around newly imposed U.S. tariffs and any additional responsive non-U.S. tariffs or additional U.S. tariffs, and the resulting impact on the level of discretionary consumer spending for apparel and pricing trend fluctuations, and our ability to plan for and respond to the impact of those changes;
+•
+potential increases in import tariffs or taxes, impacts from already implemented or announced tariffs, including newly imposed U.S. tariffs and any additional responsive non-U.S. tariffs or additional U.S. tariffs, and the implementation of trade restrictions or sanctions;
+•
+the Russia-Ukraine war, escalating conflicts in the Middle East, and the potential impacts of these and other conflicts on global economic and geopolitical conditions, in particular energy prices;
+•
+the risk of future non-cash asset impairment charges, including to goodwill, operating right-of-use assets and/or other store assets;
+•
+our ability to execute on our business strategies, including our focus on elevating and strengthening our brand, the portion of our net revenues we aim to have represented by our direct-to-consumer business, our digital presence and growth into under-penetrated parts of our business, our expectations regarding gross and Adjusted EBIT margins, and our plans and expectations for the benefits of investments in operational excellence including steps to improve our speed-to-market;
+•
+our ability to effectively manage any global productivity and outsourcing actions as planned, which are intended to increase productivity and efficiency in our global operations, take advantage of lower-cost service-delivery models in our distribution network and streamline our procurement practices to maximize efficiency in our global operations, without business disruption or mitigation to such disruptions;
+•
+our ability to effectively manage our inventory and supply chain, the ability of business partners, including global third party logistics providers, to meet their obligations to us, and operational challenges faced by our warehouses and distribution centers;
+•
+consequences of impacts to the businesses of our wholesale customers, including significant store closures or a significant decline in a wholesale customer’s financial condition leading to restructuring actions, bankruptcies, liquidations or other unfavorable events for our wholesale customers, caused by factors such as, among other things, inability to secure financing, decreased discretionary consumer spending, inconsistent foot and online traffic patterns and an increase in promotional activity as a result of decreased foot and online traffic, pricing fluctuations, general economic and financial conditions and changing consumer preferences;
+53
+Table of Co
+nte
+nts
+•
+our ability to execute on our commitment to increasing total shareholder returns through our capital allocation priorities and strategies;
+•
+our ability to achieve anticipated operating model optimization, simplified processes and cost savings from our global productivity initiative;
+•
+our and our wholesale customers’ decisions to modify strategies and adjust product mix and pricing, and our ability to manage any resulting product transition costs, including liquidating inventory or increasing promotional activity;
+•
+our ability to purchase products through our independent contract manufacturers that are made with quality raw materials and our ability to mitigate the variability of costs related to manufacturing, sourcing, and raw materials supply and to manage consumer response to such mitigating actions;
+•
+our ability to gauge and adapt to changing U.S. and international retail environments and fashion trends and changing consumer preferences in product, price-points, as well as in-store and digital shopping experiences;
+•
+our ability to respond to price, innovation and other competitive pressures in the global apparel industry, on and from our key customers and in our key markets and to increasing consumer expectations;
+•
+our ability to increase the number of dedicated stores for our products, including through opening and profitably operating company-operated stores;
+•
+our future business expectations, products, strategies, and goals, including our future financial, strategic, and operating performance and our long-term goals and targets;
+•
+the extent to which wholesale customer forward demand signals result in actual sales;
+•
+consequences of inflation, foreign currency exchange and interest rate fluctuations;
+•
+the impact of foreign currency and exchange counterparty exposures;
+•
+the impact of the effects of global supply chain disruptions on our business;
+•
+increases in the price or availability of raw materials;
+•
+the impact on our consumer traffic and demand, our business operations and the operations of our suppliers and manufacturers as climate change evolves and the frequency and severity of weather events increase;
+•
+the impact of seasonality of our sales and our business;
+•
+our ability to successfully prevent or mitigate the impacts of data security breaches;
+•
+our ability to attract and retain key executives and other key employees;
+•
+our ability to achieve our diversity, equity and inclusion, ESG and sustainability and climate change goals;
+•
+our ability to protect our trademarks and other intellectual property;
+•
+the impact of the variables that affect the net periodic benefit cost and future funding requirements of our postretirement benefits and pension plans;
+•
+our dependence on key distribution channels, customers and suppliers;
+•
+our ability to utilize our tax credits and net operating loss carryforwards;
+•
+potential future paydowns of existing debt;
+•
+future acquisitions of or investments in new businesses;
+•
+planned dispositions and their expected impact;
+•
+the adequacy of our liquidity position;
+•
+the process and risks relating to the implementation of a new ERP system;
+•
+the impact of pending, ongoing or future legal proceedings, litigation matters and disputes and regulatory developments;
+•
+the impact of future shareholder returns, including share repurchases and dividends;
+•
+changes in or application of trade and tax laws and policies; and
+•
+political, social and economic instability, or natural disasters, in countries where we or our customers do business.
+54
+Table of Co
+nte
+nts
+We have based the forward-looking statements contained in this Quarterly Report primarily on our current expectations and projections about future events and trends that we believe may affect our business, financial condition, results of operations, prospects, business strategy and financial needs. The outcome of the events described in these forward-looking statements is subject to risks, uncertainties, assumptions and other factors described under Part I, Item 1A – Risk Factors of our Annual Report on Form 10-K for the fiscal year ended November 30, 2025, in our other filings with the SEC and in this Quarterly Report. These risks are not exhaustive. Other sections of this Quarterly Report include additional factors that could adversely affect our business and financial performance. Moreover, we operate in a very competitive and rapidly changing environment. New risks and uncertainties emerge from time to time, and it is not possible for us to predict all risks and uncertainties that could have an impact on the forward-looking statements contained in this Quarterly Report. We cannot assure you that the results, events and circumstances reflected in the forward-looking statements will be achieved or occur, and actual results, events or circumstances could differ materially from those described in the forward-looking statements.
+In addition, statements that "we believe" and similar statements reflect our beliefs and opinions on the relevant subject. These statements are based upon information available to us as of the date of this Quarterly Report, and while we believe such information forms a reasonable basis for such statements, such information may be limited or incomplete, and our statements should not be read to indicate that we have conducted an exhaustive inquiry into, or review of, all potentially available relevant information. These statements are inherently uncertain and investors are cautioned not to unduly rely upon these statements.
+The forward-looking statements made in this Quarterly Report relate only to events as of the date on which such statements are made. We undertake no obligation to update any forward-looking statements after the date of this Quarterly Report or to conform such statements to actual results or revised expectations, except as required by law.
+Additional information regarding factors that could cause results to differ can be found in our Annual Report on Form 10-K for the fiscal year ended November 30, 2025, in this Quarterly Report and our other filings with the U.S. Securities and Exchange Commission. We suggest that this document be read in conjunction with our other filings with the U.S. Securities and Exchange Commission.
+As used herein, "Levi Strauss", "Levi", "Levi’s”, "the company", "the Company", "we", "us", "our" and similar terms include Levi Strauss & Co. and its subsidiaries, unless the context indicates otherwise.
+Item 3.
+QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK
+There have been no material changes in our primary market risk exposures or how those exposures are managed from the information disclosed in our Annual Report on Form 10-K for the fiscal year ended November 30, 2025.
+Item 4.
+CONTROLS AND PROCEDURES
+Evaluation of Disclosure Controls and Procedures
+We have evaluated, under the supervision and with the participation of management, including our chief executive officer and our chief financial officer, the effectiveness of the design and operation of our disclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934 (the "Exchange Act") as of March 1, 2026. Based on that evaluation, our chief executive officer and our chief financial officer concluded that as of March 1, 2026, our disclosure controls and procedures were effective at a reasonable assurance level.
+Changes in Internal Control over Financial Reporting
+We maintain a system of internal control over financial reporting that is designed to provide reasonable assurance that our books and records accurately reflect our transactions and that our established policies and procedures are followed. There were no changes to our internal control over financial reporting for the quarterly period ended March 1, 2026 that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting.
+55
+Table of Co
+nte
+nts
+PART II — OTHER INFORMATION
+Item 1.
+LEGAL PROCEEDINGS
+The information contained under Note 9 “Commitments and Contingencies” in the Consolidated Financial Statements is incorporated herein by reference.
+Item 1A.
+RISK FACTORS
+For information regarding factors that could affect our results of operations, financial condition and liquidity, see the risk factors discussed in Part I, Item 1A. "Risk Factors" in our Annual Report on Form 10-K for the year ended November 30, 2025. There have been no material changes to our previously reported Risk Factors.
+Item 2.
+UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS
+(a) Recent Sales of Unregistered Securities
+None.
+(b) Use of Proceeds from Securities
+None.
+(c) Purchases of Equity Securities by the Issuer and Affiliated Purchasers
+Period
+Total number of shares purchased
+(1)
+Average price paid per share
+(2)
+Total number of shares purchased as part of publicly announced plans or programs
+(1)
+Approximate maximum dollar value of shares that may yet be purchased under the plans or programs
+(1)
+December 1, 2025 - January 4, 2026
+—
+$
+—
+—
+$
+440,436,556
+January 5, 2026 - February 1, 2026
+7,789,679
+—
+7,789,679
+240,436,556
+February 2, 2026 - March 1, 2026
+(2)
+—
+—
+—
+240,436,556
+Total
+7,789,679
+$
+—
+7,789,679
+_________
+(1)
+We maintain a share repurchase program authorized by the Board. Under this program, we may repurchase shares from time to time. The timing and actual number of shares repurchased will depend on a variety of factors, including price, general business and market conditions and alternate uses of capital. The share repurchase program may be effected through Rule 10b5-1 plans, open market purchases or privately negotiated transactions, each in compliance with Rule 10b-18 under the Exchange Act. The program may be suspended or discontinued at any time and does not have an expiration date. Share repurchase authority was $240.4 million as of March 31, 2026.
+(2)
+During the first quarter of 2026, the Company entered into an accelerated share repurchase transaction with a third-party financial institution to repurchase an aggregate of $200.0 million
+of the Company’s Class A common stock as part of its share repurchase program. At inception, the Company made an initial payment of $200.0 million and received and immediately retired 7,789,679 shares of Class A common stock, representing 80% of the dollar amount of the transaction based on the January 29, 2026 closing share price, over the transaction’s term (the “ASR Agreement”). The total number of shares the Company will ultimately repurchase and the average price per share under the ASR Agreement will be based on the average of the daily volume-weighted average prices of our common stock during the term of the ASR Agreement, less a discount, pursuant to the terms and conditions of the ASR Agreement, and is expected to occur no later than the third quarter of 2026.
+Shares withheld related to the vesting or exercise of stock-based compensation awards are excluded from the disclosure.
+Item 3.
+DEFAULTS UPON SENIOR SECURITIES
+None.
+Item 4.
+MINE SAFETY DISCLOSURES
+Not applicable.
+56
+Table of Co
+nte
+nts
+Item 5.
+OTHER INFORMATION
+During the first quarter ended March 1, 2026, none of our directors or officers (as defined in Rule 16a-1(f) under the Securities Exchange Act of 1934, as amended (the “Exchange Act”))
+adopted
+or
+terminated
+a “Rule 10b5-1 trading arrangement” or “non-Rule 10b5-1 trading arrangement,” as those terms are defined in Item 408 of Regulation S-K, except as described in the table below:
+Name and Title
+Action
+Applicable Date
+Duration of Trading Arrangements
+Rule 10b5-1 Trading Arrangement?
+(Y/N)*
+Aggregate Number of Securities Subject to Trading Arrangement
+David Jedrzejek
+Senior Vice President and General Counsel
+Adopt
+February 6, 2026
+February 6, 2026 - February 5, 2027
+Y
+Up to
+36,430
+shares of Class A Common Stock
+_____________
+* Denotes whether the trading plan is intended, when adopted, to satisfy the affirmative defense of Rule 10b5-1(c).
+57
+Table of Co
+nte
+nts
+Item 6.
+EXHIBITS
+Incorporated by Reference
+Exhibit Number
+Description of Document
+Form
+SEC File No.
+Exhibit
+Filing Date
+3.1
+Amended and Restated Certificate of Incorporation of the Registrant
+.
+8-K
+001-06631
+3.1
+3/25/2019
+3.2
+Amended and Restated Bylaws
+.
+8-K
+001-06631
+3.1
+4/21/2023
+31.1
+Certification of Chief Executive Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002. Filed herewith.
+31.2
+Certification of Chief Financial Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002. Filed herewith.
+32.1†
+Certification of Chief Executive Officer and Chief Financial Officer pursuant to Section 18 U.S.C. 1350, as adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002. Furnished herewith.
+101.INS
+XBRL Instance Document - the instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document. Filed herewith.
+101.SCH
+Inline XBRL Taxonomy Extension Schema Document. Filed herewith.
+101.CAL
+Inline XBRL Taxonomy Extension Calculation Linkbase Document. Filed herewith.
+101.DEF
+Inline XBRL Taxonomy Extension Definition Linkbase Document. Filed herewith.
+101.LAB
+Inline XBRL Taxonomy Extension Label Linkbase Document. Filed herewith.
+101.PRE
+Inline XBRL Taxonomy Extension Presentation Linkbase Document. Filed herewith.
+104
+Cover Page Interactive Data File (formatted as inline XBRL and contained within Exhibit 101). Filed herewith.
+†    The certification attached as Exhibit 32.1 accompanies this Quarterly Report on Form 10-Q, is not deemed filed with the Commission and is not to be incorporated by reference into any filing of Levi Strauss & Co. under the Securities Act of 1933, as amended, or the Securities Exchange Act of 1934, as amended, whether made before or after the date of this Quarterly Report on Form 10-Q, irrespective of any general incorporation language contained in such filing.
+58
+Table of Co
+nte
+nts
+SIGNATURE
+Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.
+Date:
+April 7, 2026
+LEVI STRAUSS & CO.
+(Registrant)
+By:
+/s/ TIMOTHY J. DAVIS
+Timothy J. Davis
+Senior Vice President and Global Controller
+(Principal Accounting Officer and Duly Authorized Officer)
+59

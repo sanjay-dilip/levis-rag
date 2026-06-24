@@ -1,0 +1,142 @@
+Current Report
+false
+0000094845
+0000094845
+2025-12-11
+2025-12-11
+iso4217:USD
+xbrli:shares
+iso4217:USD
+xbrli:shares
+UNITED
+STATES
+SECURITIES
+AND EXCHANGE COMMISSION
+WASHINGTON,
+DC 20549
+_________________
+FORM
+8-K
+_________________
+CURRENT
+REPORT
+PURSUANT
+TO SECTION 13 OR 15(d) OF THE
+SECURITIES
+EXCHANGE ACT OF 1934
+Date
+of Report (Date of earliest event reported):
+December
+11, 2025
+_________________
+LEVI STRAUSS & CO.
+(Exact
+name of registrant as specified in its charter)
+Delaware
+001-06631
+94-0905160
+(State or Other Jurisdiction of
+Incorporation)
+(Commission
+File Number)
+(I.R.S. Employer
+Identification No.)
+1155 Battery Street
+San Francisco
+,
+California
+94111
+(Address of principal executive offices) (Zip Code)
+(415)
+501-6000
+(Registrant’s telephone number, including area code)
+Not Applicable
+(Former name or former address, if changed since last report)
+_________________
+Check the
+appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any
+of the following provisions (See General Instruction A.2. below):
+☐
+Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+☐
+Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)
+☐
+Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))
+☐
+Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240. 13e-4(c))
+Securities
+registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading symbol(s)
+Name of each exchange on which registered
+Class A Common Stock, $0.001 par value per share
+LEVI
+New York Stock Exchange
+Indicate
+by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405
+of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (§240.12b-2 of this chapter).
+Emerging growth company
+☐
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying
+with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐
+ITEM 5.02
+Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of Certain Officers.
+On December 11, 2025, upon recommendation of its Nominating, Governance
+and Corporate Citizenship Committee, the Board of Directors (the “Board”) of Levi Strauss & Co. (the “Company”)
+approved an increase to the size of the Board to 13 directors and elected Jeffrey J. Jones II to serve as a Class III member of the Board,
+both effective January 21, 2026. The Board also appointed Mr. Jones to serve as a member of the Board’s Compensation and Human Capital
+Committee and Nominating, Governance and Corporate Citizenship Committee, in each case effective January 21, 2026. As a Class III director,
+Mr. Jones will serve as a member of the Board until the Company’s 2028 annual meeting of shareholders and until his successor
+is elected and qualified, or until his earlier death, resignation, retirement or removal. The Board determined that Mr. Jones is an “independent”
+director under the New York Stock Exchange rules.
+In connection with Mr. Jones’s election as a non-employee director,
+the Board granted him restricted stock unit awards (“RSUs”) representing the right to receive shares of Class A common stock
+under the Company’s 2019 Equity Incentive Plan with a grant date fair value of $44,110, which is the prorated amount of the annual
+equity award value granted to each non-employee director in accordance with the Company’s current non-employee director compensation
+policy. The RSUs vest in full on the earlier of (i) the day before the next annual meeting or (ii) the one-year anniversary of the
+date of grant. In addition, the RSU grant includes a deferral delivery feature, under which Mr. Jones will not receive the vested awards
+until six months following the cessation of service on the Board. Mr. Jones will also be entitled to receive $94,382, which is the prorated
+amount of the annual cash retainer fee granted to the Company’s non-employee directors for the 2026 calendar year.
+Mr. Jones is not a party to any arrangement or understanding with any
+person pursuant to which he was elected as a director, nor is he a party to any transaction requiring disclosure pursuant to Item 404(a)
+of Regulation S-K.
+Mr. Jones, 58, has served as President and CEO and director of H&R
+Block, Inc., a global provider of tax preparation services, financial products and small business solutions, since 2017. Mr. Jones will
+retire from his roles at H&R Block, Inc. effective December 31, 2025. Prior to H&R Block, Inc., Mr. Jones served as President,
+Ride Sharing at Uber Technologies Inc. from September 2016 until March 2017 and Executive Vice President and Chief Marketing Officer at
+Target Corporation from April 2012 to September 2016. Prior to his time at Target Corporation, Mr. Jones was Partner and President of
+McKinney, an advertising agency, from March 2006 to March 2012. Mr. Jones currently serves on the board of directors of Advance Auto Parts,
+where he chairs the Compensation Committee and is a member of the Nominating and Governance Committee. He will retire from the board of
+directors and board committee positions of Advance Auto Parts effective December 31, 2025. Mr. Jones is a member of the Council for Inclusive
+Capitalism, the Fast Company Impact Council and the Kansas City Economic Club. He holds a Bachelor of Arts degree in Communications from
+the University of Dayton.
+ITEM 7.01
+Regulation FD Disclosure.
+The Company issued the press release attached hereto as Exhibit 99.1
+with respect to the matters set forth in Item 5.02 above. The information in Item 7.01 of this Current Report on Form 8-K is being furnished
+and shall not be deemed “filed” for the purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange
+Act”), or otherwise subject to the liabilities of that section, and shall not be deemed incorporated by reference into any filing
+made under the Securities Act of 1933, as amended, or the Exchange Act, except as otherwise expressly stated in such filing.
+ITEM 9.01.
+Financial Statement and Exhibits
+(d) Exhibits
+99.1
+Press Release dated December 16, 2025
+104
+The cover page from this Current Report on Form 8-K, formatted
+in Inline XBRL
+SIGNATURES
+Pursuant
+to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by
+the undersigned hereunto duly authorized.
+LEVI STRAUSS & CO.
+Date:
+December 16, 2025
+By:
+/s/
+    David Jedrzejek
+Name:
+David Jedrzejek
+Title:
+Senior Vice President and
+    General Counsel

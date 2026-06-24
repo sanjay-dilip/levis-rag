@@ -1,0 +1,111 @@
+8-K
+LEVI STRAUSS & CO
+CA
+false
+0000094845
+0000094845
+2024-11-08
+2024-11-08
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+Washington, D.C. 20549
+FORM
+8-K
+CURRENT REPORT
+PURSUANT TO SECTION 13 OR 15(d)
+OF THE SECURITIES EXCHANGE ACT OF 1934
+Date of Report (Date of earliest event reported):
+November 8, 2024
+LEVI STRAUSS & CO.
+(Exact name of registrant as specified in its charter)
+Delaware
+001-06631
+94-0905160
+(State or Other Jurisdiction
+of Incorporation)
+(Commission
+File Number)
+(I.R.S. Employer
+Identification No.)
+1155 BATTERY STREET
+SAN FRANCISCO
+,
+CALIFORNIA
+94111
+(Address of principal executive offices, including zip code)
+(415)
+501-6000
+(Registrant’s telephone number, including area code)
+Check the appropriate box below if the
+Form 8-K
+filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following provisions:
+☐
+Written communication pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+☐
+Soliciting material pursuant to
+Rule 14a-12
+under the Exchange Act (17 CFR
+240.14a-12)
+☐
+Pre-commencement
+communication pursuant to
+Rule 14d-2(b)
+under the Exchange Act (17 CFR
+240.14d-2(b))
+☐
+Pre-commencement
+communication pursuant to
+Rule 13e-4(c)
+under the Exchange Act (17 CFR
+240.13e-4(c))
+Securities registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading
+Symbol(s)
+Name of each exchange
+on which registered
+Class A Common Stock, par value $0.001 per share
+LEVI
+New York Stock Exchange
+Indicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405 of this chapter) or Rule
+12b-2
+of the Securities Exchange Act of 1934
+(§240.12b-2
+of this chapter).
+Emerging growth company
+☐
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐
+Item 1.01.
+Entry into a Material Definitive Agreement.
+On November 8, 2024, Levi Strauss & Co. (the “Company”), Levi Strauss & Co. (Canada) Inc. (“LS Canada”) and certain other subsidiaries of the Company, entered into an eighth amendment to its second amended and restated credit agreement (the “Amendment”) with JPMorgan Chase Bank, N.A., as Administrative Agent (the “Administrative Agent”), JPMorgan Chase Bank, N.A., Toronto Branch, as Multicurrency Administrative Agent (together with the Administrative Agent, the “Agents”), the lenders party thereto, which amends the existing Second Amended and Restated Credit Agreement, dated as of May 23, 2017, as amended by that certain Amendment No. 1 to Second Amended and Restated Credit Agreement dated as of October 23, 2018, that certain Amendment No. 2, dated as of January 5, 2021, that certain Amendment No. 3, dated as of July 22, 2021, that certain Amendment No. 4, dated as of September 20, 2021, that certain Amendment No. 5, dated as of November 22, 2022, that certain Amendment No. 6 and Waiver, dated as of March 22, 2023, and that certain Amendment No 7, dated as of April 15, 2024 (as so amended, the “Existing Credit Agreement,” and, as further amended by the Amendment, the “Restated Credit Agreement”) by and among the Company, LS Canada, the other subsidiaries party thereto, the Agents, the lenders party thereto, and the other financial institutions and arrangers party thereto.
+The Restated Credit Agreement modifies certain terms of the Existing Credit Agreement including, among other changes (i) extending the term of the agreement to November 2029 and (ii) resetting the $150,000,000 accordion option that allows for an increase in the total available commitments of up to $1,150,000,000 in the aggregate.
+Other terms of the Existing Credit Agreement, as described in our Annual Report on Form
+10-K
+filed on January 25, 2024, (including, without limitation, guarantees and security, covenants, events of default), have not been materially changed as a result of the Restated Credit Agreement and remain in full force and effect.
+The foregoing does not constitute a complete summary of the terms of the Restated Credit Agreement and reference is made to the complete text of the governing document, which is filed as Exhibit 10.1 to this Current Report on Form
+8-K
+and incorporated by reference.
+Item 2.03.
+Creation of a Direct Financial Obligation or an Obligation under an
+Off-Balance
+Sheet Arrangement of a Registrant.
+The information included in Item 1.01 of this Current Report on Form
+8-K
+is incorporated herein by reference.
+Item 9.01.
+Financial Statements and Exhibits
+(d) Exhibits.
+10.1
+Amendment No. 8 to Second Amended and Restated Credit Agreement, dated as of November 8, 2024, by and among the Company, LS Canada, certain other subsidiaries of the Company party thereto, the Agents, and the other financial institutions, agents and arrangers party thereto.
+104
+Cover Page Interactive Data File (embedded within the Inline XBRL document).
+SIGNATURES
+Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+DATE: November 12, 2024
+LEVI STRAUSS & CO.
+By:
+/s/ DAVID JEDRZEJEK
+Name:
+David Jedrzejek
+Title:
+Senior Vice President and General Counsel

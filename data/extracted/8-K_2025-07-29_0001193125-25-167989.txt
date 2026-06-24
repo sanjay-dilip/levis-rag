@@ -1,0 +1,121 @@
+8-K
+LEVI STRAUSS & CO
+DE
+false
+0000094845
+0000094845
+2025-07-29
+2025-07-29
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+WASHINGTON, DC 20549
+FORM
+8-K
+CURRENT REPORT
+PURSUANT TO SECTION 13 OR 15(d)
+OF THE SECURITIES EXCHANGE ACT OF 1934
+Date of Report (Date of earliest event reported):
+July 29, 2025
+LEVI STRAUSS & CO.
+(Exact name of registrant as specified in its charter)
+DELAWARE
+001-06631
+94-0905160
+(State or Other Jurisdiction
+of Incorporation)
+(Commission
+File Number)
+(I.R.S. Employer
+Identification No.)
+1155 Battery Street
+San Francisco
+,
+California
+94111
+(Address of principal executive offices) (Zip Code)
+(415)
+501-6000
+(Registrant’s telephone number, including area code)
+Check the appropriate box below if the Form
+8-K
+filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following provisions:
+☐
+Written communication pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+☐
+Soliciting material pursuant to Rule
+14a-12
+under the Exchange Act (17 CFR
+240.14a-12)
+☐
+Pre-commencement communication pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))
+☐
+Pre-commencement communication pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240.13e-4(c))
+Securities registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading
+Symbol(s)
+Name of each exchange
+on which registered
+Class A Common Stock, par value $0.001 per share
+LEVI
+New York Stock Exchange
+Indicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405 of this chapter) or Rule
+12b-2
+of the Securities Exchange Act of 1934
+(§240.12b-2
+of this chapter).
+Emerging growth company
+☐
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐
+Item 1.01 Entry into a Material Definitive Agreement
+On July 29, 2025, Levi Strauss & Co. (the “Company”) entered into an indenture (the “Indenture”) in connection with the Company’s offering of €475 million aggregate principal amount of 4.000% Senior Notes due 2030 (the “Notes”).
+The Notes bear interest at 4.000% per annum, payable semiannually in arrears on February 15 and August 15, commencing February 15, 2026, and will mature on August 15, 2030. Computershare Trust Company. N.A. is acting as trustee and HSBC Bank plc is acting as registrar, transfer agent and paying agent.
+The Notes are general senior obligations of the Company and rank equally in right of payment to the Company’s existing and future senior unsecured debt and rank senior in right of payment to the Company’s future debt that is expressly subordinated in right of payment to the Notes. The Notes are effectively subordinated to the Company’s secured indebtedness, including indebtedness under the Company’s senior secured revolving credit facility, to the extent of the value of the collateral securing such indebtedness, and are structurally subordinated to all of the existing and future liabilities, including trade payables, of the Company’s subsidiaries.
+Optional Redemption
+At any time prior to August 15, 2027, the Company may redeem up to 40% of the original aggregate principal amount of the Notes (including additional notes, if any) with the proceeds of one or more equity offerings, at a redemption price of 104.000% of the principal amount thereof, plus accrued and unpaid interest thereon, if any.
+In addition, the Company may redeem all or any portion of the Notes, at once or over time, prior to August 15, 2027 at a redemption price equal to the sum of: 100% of the principal amount of the Notes to be redeemed plus the excess of (i) the present value on such redemption date of (A) the redemption price of such Notes to be redeemed on August 15, 2027 (as set forth in the table in the next paragraph below), plus (B) all required remaining scheduled interest payments due on such Notes to be redeemed through August 15, 2027 computed using a discount rate equal to the Bund Rate (as defined in the Indenture) plus 50 basis points, over (ii) the principal amount of such Notes to be redeemed, plus accrued and unpaid interest, if any to the redemption date (subject to the right of holders of record on the relevant record date to receive interest due on the relevant interest payment date).
+On or after August 15, 2027, the Company may redeem all or a part of the Notes at the prices set forth below, plus accrued and unpaid interest, if any, if redeemed during a
+12-month
+period beginning on August 15 of the years indicated below, and are expressed as percentages of the principal amount:
+Redemption Year
+Price
+2027
+102.000
+%
+2028
+101.000
+%
+2029 and thereafter
+100.000
+%
+Repurchase Offer upon a Change of Control
+Upon the occurrence of a Change of Control Triggering Event (as defined in the Indenture), unless the Company has exercised its right, if any, to redeem the Notes in full, each holder of Notes may require the Company to repurchase all or a portion of the Notes in cash at a price equal to 101.000% of the principal amount of Notes to be repurchased, plus accrued and unpaid interest, if any, thereon to the date of purchase, as provided in and subject to the terms of, the Indenture. However, the Company’s secured revolving credit facility limits its ability to repurchase the Notes prior to their maturity.
+Other Covenants
+The Indenture contains covenants that limit, among other things, the Company’s ability to incur liens and enter into sale and leaseback transactions and merge or consolidate with another person. The Indenture also restricts the ability of the Company’s subsidiaries to incur additional debt, incur liens and enter into sale and leaseback transactions. The Indenture provides for customary events of default (subject in certain cases to customary grace and
+2
+cure periods), which include nonpayment, breach of covenants in the Indenture, payment defaults or acceleration of other indebtedness, a failure to pay certain judgments and certain events of bankruptcy and insolvency. Generally, if an event of default occurs, the trustee under the Indenture or holders of at least 25% in principal amount of the then outstanding Notes may declare all the Notes to be due and payable immediately.
+Use of Proceeds
+The Company used the net proceeds of the Notes, together with cash on hand, to redeem all €475,000,000 in aggregate principal amount of its outstanding 3.375% Senior Notes due 2027 on July 29, 2025.
+The offering and sale of the Notes have not been and will not be registered under the Securities Act of 1933, as amended (the “Securities Act”), and may not be offered or sold within the United States or to, or for the account or benefit of, U.S. persons, except pursuant to an exemption from, or in a transaction not subject to, the registration requirements of the Securities Act and applicable state securities laws.
+Item 2.03 Creation of a Direct Financial Obligation or an Obligation under an
+Off-Balance
+Sheet Arrangement of a Registrant.
+The information set forth above in Item 1.01 is incorporated herein by reference.
+Item 9.01. Financial Statements and Exhibits
+Exhibits.
+Exhibit No.
+Description
+4.1
+Indenture, dated as of July 29, 2025, by and between Levi Strauss & Co. and Computershare Trust Company, N.A., as Trustee (including form of 4.000% Senior Note due 2030).
+104
+Cover Page Interactive Data File (embedded within the inline XBRL document).
+3
+SIGNATURES
+Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+LEVI STRAUSS & CO.
+Date: July 29, 2025
+By:
+/s/ Nanci Prado
+Name: Nanci Prado
+Title: Deputy General Counsel
+4

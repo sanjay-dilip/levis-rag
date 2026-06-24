@@ -1,0 +1,147 @@
+false
+0000094845
+0000094845
+2025-01-17
+2025-01-17
+iso4217:USD
+xbrli:shares
+iso4217:USD
+xbrli:shares
+UNITED
+STATES
+SECURITIES AND EXCHANGE COMMISSION
+WASHINGTON, DC 20549
+FORM
+8-K
+CURRENT
+REPORT
+PURSUANT
+TO SECTION 13 OR 15(d) OF THE
+SECURITIES EXCHANGE ACT OF 1934
+Date of Report (Date of earliest event reported):
+January 17, 2025
+LEVI STRAUSS & CO.
+(Exact name of registrant as specified in its charter)
+Delaware
+001-06631
+94-0905160
+(State
+or Other Jurisdiction of
+Incorporation)
+(Commission
+File
+Number)
+(I.R.S.
+Employer
+Identification No.)
+1155 Battery Street
+San Francisco
+,
+California
+94111
+(Address of principal executive offices) (Zip Code)
+(
+415
+)
+501-6000
+(Registrant’s telephone number, including area code)
+Not Applicable
+(Former name or former address, if changed since last report)
+Check
+the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under
+any of the following provisions (See General Instruction A.2. below):
+☐
+Written
+communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+☐
+Soliciting
+material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)
+☐
+Pre-commencement
+communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))
+☐
+Pre-commencement
+communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240. 13e-4(c))
+Securities
+registered pursuant to Section 12(b) of the Act:
+Title
+    of each class
+Trading
+    symbol(s)
+Name
+    of each exchange on which registered
+Class A Common Stock, $0.001 par value per share
+LEVI
+New
+    York Stock Exchange
+Indicate
+by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405
+of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (§240.12b-2 of this chapter).
+Emerging
+growth company
+☐
+If
+an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying
+with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐
+Item 5.02
+Departure of Directors or Certain
+    Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of Certain Officers.
+On
+January 17, 2025, upon the recommendation of its Nominating, Governance and Corporate Citizenship Committee, the Board of Directors (the
+“Board”) of Levi Strauss & Co. (the “Company”) approved an increase to the size of the Board to 13 directors
+and elected Artemis Patrick to serve as a Class I member of the Board, both effective February 1, 2025. The Board also appointed Ms. Patrick
+to serve as a member of the Board’s Audit and Nominating, Governance and Corporate Citizenship Committees, effective March 1, 2025.
+As a Class I director, Ms. Patrick will serve as a member of the Board until the Company’s 2026 annual meeting of shareholders
+and until her successor is elected and qualified, or until her earlier death, resignation, retirement or removal. The Board determined
+that Ms. Patrick is an “independent” director under the New York Stock Exchange rules and meets all applicable requirements
+to serve on the Audit Committee.
+In
+connection with Ms. Patrick’s election as a director, the Board granted her restricted stock unit awards (“RSUs”) representing
+the right to receive shares of Class A common stock under the Company’s 2019 Equity Incentive Plan with a grant date fair value
+of $38,836, which is the prorated amount of the annual equity award value granted to each non-employee director in accordance with the
+Company’s current non-employee director compensation policy. The RSUs vest in full on the earlier of (i) the day before the next
+annual meeting or (ii) the one-year anniversary of the date of grant. In addition, the RSU grant includes a deferral delivery feature,
+under which Ms. Patrick will not receive the vested awards until six months following the cessation of service on the Board. Ms. Patrick
+will also be entitled to receive $91,389, which is the prorated amount of the annual cash retainer fee granted to the Company’s
+non-employee directors for the current calendar year.
+Ms.
+Patrick is not a party to any arrangement or understanding with any person pursuant to which he was elected as a director, nor is she
+a party to any transaction requiring disclosure pursuant to Item 404(a) of Regulation S-K.
+Ms.
+Patrick, 53, joined Sephora, Inc. in 2006 and currently serves as the President and CEO of Sephora North America where she is responsible
+for the strategy, vision and financial performance of Sephora’s United States and Canadian businesses. Ms. Patrick has held ecommerce,
+retail and merchandising roles of increasing responsibility within Sephora over her nineteen-year tenure. Ms. Patrick has a bachelor’s
+degree in economics from the University of California – Santa Cruz and an MBA from San Francisco State University.
+Item 7.01
+Regulation FD Disclosure.
+The
+Company issued the press release attached hereto as Exhibit 99.1 with respect to the matters set forth in Item 5.02 above. The information
+in Item 7.01 of this Current Report on Form 8-K is being furnished and shall not be deemed “filed” for the purposes
+of Section 18 of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), or otherwise subject to the liabilities
+of that section, and shall not be deemed incorporated by reference into any filing made under the Securities Act of 1933, as amended,
+or the Exchange Act, except as otherwise expressly stated in such filing.
+Item 9.01
+Financial Statement and Exhibits.
+(d)
+Exhibits
+99.1
+Press Release dated January 22, 2025
+104
+The cover page from this Current Report on Form 8-K, formatted
+in Inline XBRL
+SIGNATURES
+Pursuant
+to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by
+the undersigned hereunto duly authorized.
+LEVI STRAUSS & CO.
+DATE:
+January
+    22, 2025
+By:
+/s/ David Jedrzejek
+Name:
+David
+    Jedrzejek
+Title:
+Senior
+    Vice President and General Counsel

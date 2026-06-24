@@ -1,0 +1,97 @@
+levi-20240411
+FALSE
+0000094845
+0000094845
+2024-04-11
+2024-04-11
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+WASHINGTON, DC 20549
+_________________
+FORM
+8-K
+_________________
+CURRENT REPORT
+PURSUANT TO SECTION 13 OR 15(d) OF THE
+SECURITIES EXCHANGE ACT OF 1934
+Date of Report (Date of earliest event reported):
+April 11, 2024
+_________________
+LEVI STRAUSS & CO.
+(Exact name of registrant as specified in its charter)
+Delaware
+001-06631
+94-0905160
+(State or Other Jurisdiction of
+Incorporation)
+(Commission
+File Number)
+(I.R.S. Employer
+Identification No.)
+1155 Battery Street
+San Francisco
+,
+California
+94111
+(Address of principal executive offices) (Zip Code)
+(
+415
+)
+501-6000
+(Registrant’s telephone number, including area code)
+Not Applicable
+(Former name or former address, if changed since last report)
+_________________
+Check the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following provisions (See General Instruction A.2. below):
+¨
+Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+¨
+Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)
+¨
+Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))
+¨
+Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240. 13e-4(c))
+Securities registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading symbol(s)
+Name of each exchange on which registered
+Class A Common Stock, $0.001 par value per share
+LEVI
+New York Stock Exchange
+Indicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405 of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (§240.12b-2 of this chapter).
+Emerging growth company
+¨
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.
+¨
+ITEM 5.02
+Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of Certain Officers.
+On April 11, 2024, Levi Strauss & Co. (the “Company”) announced the appointment of Gianluca Flore as the Company’s Executive Vice President – Chief Commercial Officer, effective on or about July 29, 2024.
+Mr. Flore, 53, most recently served as the Chief Commercial Officer of the Burberry Group, a global luxury brand, beginning in 2021. Prior to his role as Chief Commercial Officer, he served as President, Americas and Global Head of Retail Excellence from 2017 to 2021. Before joining the Burberry Group, Mr. Flore held leadership roles at Kering Group, a multinational corporation specializing in luxury goods, from 2014 to 2017, including Chief Executive Officer of Brioni. Additional prior positions include Worldwide Retail and Wholesale Director and Chief Executive Officer of APAC at Bottega Veneta SA, President of Americas at Bottega Veneta, President, North America at Fendi and President, North America at La Perla. Mr. Flore has a bachelor’s degree in Business Administration and a post-graduate certificate in marketing from LUISS Business School in Italy and a postgraduate certificate in finance from the London School of Economics in the United Kingdom.
+Mr. Flore’s employment is expected to commence on or about July 29, 2024 (the “Effective Date”) and may be terminated at-will by either party, with or without notice. He will receive a base salary of $1,000,000 per year, participate in the Company’s Annual Incentive Plan with an initial target bonus of 100% of his base salary, and will be eligible to participate in the benefit and perquisite programs (including relocation policy) available to Company executives. He will be eligible to receive equity grants in 2024, which grants will have an aggregate value of $2,250,000 and consist of (a) restricted stock units (“RSUs”) subject to four-year ratable vesting with a value of $562,500, (b) stock appreciation rights (“SARs”) subject to four-year ratable vesting with a value of $562,500 and (c) performance-based RSUs subject to successful achievement of Company 3-year overlapping performance goals following Board approval of results against the goals with a value of $1,125,000. Mr. Flore will also receive a one-time signing bonus of $1,350,000 and a one-time sign-on RSU grant with a value of $2,000,000 that vests in two equal installments at 12 months and 24 months following the Effective Date subject to his continued employment through each vesting date (except as set forth below) and subject to an obligation to repay or return all or part of such sign-on payments and awards in certain circumstances including certain separations from service. All equity grants will be made under the Company’s 2019 Equity Incentive Plan (the “2019 Plan”) and subject to the terms of the 2019 Plan, the applicable award agreements and the Company’s Senior Executive Severance Plan.
+Mr. Flore will be generally entitled to receive the benefits provided by the Company’s Senior Executive Severance Plan.
+Mr. Flore is expected to enter into an indemnification agreement with the Company (the “Indemnification Agreement”) in substantially the same form as the Company has entered into with other executive officers and directors.
+The 2019 Plan, current forms of award documents, the Senior Executive Severance Plan and the form of Indemnification Agreement have previously been filed as exhibits to the Company’s filings with the Securities and Exchange Commission.
+There are no arrangements or understandings between Mr. Flore and any other persons pursuant to which he was appointed to the Board or as the Company’s Chief Commercial Officer. There is no family relationship between Mr. Flore and any director, executive officer, or person nominated or chosen by the Company to become a director or executive officer of the Company. The Company has not entered into any transactions with Mr. Flore that would require disclosure pursuant to Item 404(a) of Regulation S-K under the Securities Exchange Act of 1934, as amended (the “Exchange Act”).
+ITEM 7.01
+Regulation FD Disclosure.
+The Company issued the press release attached hereto as Exhibit 99.1 with respect to the matters set forth in Item 5.02 above. The information in Item 7.01 of this Current Report on Form 8-K is being furnished and shall not be deemed “filed” for the purposes of Section 18 of the Exchange Act, or otherwise subject to the liabilities of that section, and shall not be deemed incorporated by reference into any filing made under the Securities Act of 1933, as amended, or the Exchange Act, except as otherwise expressly stated in such filing.
+ITEM 9.01.
+Financial Statement and Exhibits
+(d) Exhibits
+10.1
+Employment Offer Letter between Levi Strauss & Co. and Gianluca Flore
+99.1
+Press Release dated April 11, 2024
+104
+The cover page from this Current Report on Form 8-K, formatted in Inline XBRL
+SIGNATURES
+Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+LEVI STRAUSS & CO.
+DATE:
+April 11, 2024
+By:
+/s/ DAVID JEDRZEJEK
+Name:
+David Jedrzejek
+Title:
+Senior Vice President and General Counsel

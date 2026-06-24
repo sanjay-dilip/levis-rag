@@ -1,0 +1,127 @@
+false
+0000094845
+0000094845
+2025-08-07
+2025-08-07
+iso4217:USD
+xbrli:shares
+iso4217:USD
+xbrli:shares
+UNITED STATES
+SECURITIES AND
+EXCHANGE COMMISSION
+WASHINGTON, DC
+20549
+FORM
+8-K
+CURRENT REPORT
+PURSUANT TO SECTION
+13 OR 15(d) OF THE
+SECURITIES EXCHANGE
+ACT OF 1934
+Date of Report (Date of earliest event reported):
+August
+7, 2025
+LEVI STRAUSS & CO.
+(Exact name of registrant as specified in its
+charter)
+Delaware
+001-06631
+94-0905160
+(State or Other Jurisdiction of
+Incorporation)
+(Commission
+File Number)
+(I.R.S. Employer
+Identification No.)
+1155 Battery Street
+San Francisco
+,
+California
+94111
+(Address of principal executive offices) (Zip
+Code)
+(415)
+501-6000
+(Registrant’s telephone number, including
+area code)
+Not Applicable
+(Former name or former address, if changed since
+last report)
+Check the appropriate box below if the Form 8-K filing is intended
+to simultaneously satisfy the filing obligation of the registrant under any of the following provisions (See General Instruction A.2.
+below):
+☐
+Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+☐
+Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)
+☐
+Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))
+☐
+Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240. 13e-4(c))
+Securities registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading symbol(s)
+Name of each exchange on which registered
+Class A Common Stock, $0.001 par value per share
+LEVI
+New York Stock Exchange
+Indicate by check mark whether the registrant is an emerging growth
+company as defined in Rule 405 of the Securities Act of 1933 (§230.405 of this chapter) or Rule 12b-2 of the Securities Exchange
+Act of 1934 (§240.12b-2 of this chapter).
+Emerging growth company
+☐
+If an emerging growth company, indicate by check mark if the registrant
+has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant
+to Section 13(a) of the Exchange Act. ☐
+Item 5.02.
+Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of Certain Officers.
+On August 7, 2025, Levi
+Strauss & Co. (the “Company”) announced the appointment of Timothy Joseph “Joe” Davis as the Company’s
+Senior Vice President, Global Controller, effective August 11, 2025 (the “Effective Date”).
+Mr. Davis, 56, most recently
+served as the Vice President and Chief Accounting Officer of Crocs, Inc., a multi-brand global footwear retailer and manufacturer, beginning
+in 2019. Before joining Crocs, Inc., Mr. Davis served as Vice President, Controller at Agero, Inc., a privately-held technology provider,
+from 2017 to 2019. Mr. Davis also previously served as Director, Technical Accounting at Thermo Fisher Scientific Inc. Mr. Davis holds
+a Bachelor of Science in Accounting from the University of Akron and is a Certified Public Accountant.
+Mr. Davis’s employment
+is expected to commence on the Effective Date and may be terminated at-will by either party, with or without notice. He will receive a
+base salary of $450,000 per year, participate in the Company’s Annual Incentive Plan with an initial target bonus of 50% of his
+base salary, and will be eligible to participate in the benefit and perquisite programs (including relocation policy) available to Company
+executives. He will be eligible to receive equity grants in 2025, which grants will have an aggregate value of $500,000 and consist of
+(a) restricted stock units (“RSUs”) subject to four-year ratable vesting with a value of $250,000 and (b) performance-based
+RSUs subject to successful achievement of Company three-year overlapping performance goals following approval by the Board of Directors
+of the Company of results against the goals with a value of $250,000. Mr. Davis will also receive a one-time signing cash bonus of $185,000
+that pays $100,000 within the first 30 days of the Effective Date and $85,000 paid within 30 days of the one-year anniversary and a one-time
+sign-on RSU grant with a value of $115,000 that vests in two equal installments at 12 months and 24 months following the grant date of
+the award, in each case subject to his continued employment through each payment date or vesting date, as applicable, and subject to an
+obligation to repay or return all or part of such sign-on payments and awards in certain circumstances including certain separations from
+service. All equity grants will be made under the Company’s 2019 Equity Incentive Plan. Mr. Davis will be generally entitled to
+receive the benefits provided by the Company’s severance plan available to similarly situated employees.
+There are no arrangements
+or understandings between Mr. Davis and any other persons pursuant to which he was appointed as the Company’s Controller. There
+is no family relationship between Mr. Davis and any director, executive officer, or person nominated or chosen by the Company to become
+a director or executive officer of the Company. The Company has not entered into any transactions with Mr. Davis that would require disclosure
+pursuant to Item 404(a) of Regulation S-K under the Securities Exchange Act of 1934, as amended.
+As previously announced
+on May 2, 2025, Lisa Stirling, the Company’s Global Controller and Principal Accounting Officer, will transition to a new role
+as Vice President, U.S. and Canada Finance. Her transition will be effective as of the Effective Date.
+Item 9.01
+Financial Statement and Exhibits.
+(d) Exhibits
+10.1
+Employment Offer Letter between Levi Strauss & Co. and Timothy Joseph Davis.
+104
+The cover page from this Current Report on Form 8-K, formatted in Inline XBRL.
+SIGNATURES
+Pursuant to the requirements of the Securities Exchange Act of 1934,
+the Registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+LEVI STRAUSS & CO.
+DATE:
+August 11, 2025
+By:
+/s/ David Jedrzejek
+Name:
+David Jedrzejek
+Title:
+Senior Vice President and General Counsel

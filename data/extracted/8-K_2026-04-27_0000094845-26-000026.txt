@@ -1,0 +1,99 @@
+levi-20260423
+FALSE
+0000094845
+--11-29
+0000094845
+2026-04-23
+2026-04-23
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+WASHINGTON, DC 20549
+_________________
+FORM
+8-K
+_________________
+CURRENT REPORT
+PURSUANT TO SECTION 13 OR 15(d) OF THE
+SECURITIES EXCHANGE ACT OF 1934
+Date of Report (Date of earliest event reported):
+April 23, 2026
+_________________
+LEVI STRAUSS & CO.
+(Exact name of registrant as specified in its charter)
+Delaware
+001-06631
+94-0905160
+(State or Other Jurisdiction of
+Incorporation)
+(Commission
+File Number)
+(I.R.S. Employer
+Identification No.)
+1155 Battery Street
+San Francisco
+,
+California
+94111
+(Address of principal executive offices) (Zip Code)
+(
+415
+)
+501-6000
+(Registrant’s telephone number, including area code)
+Not Applicable
+(Former name or former address, if changed since last report)
+_________________
+Check the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following provisions (See General Instruction A.2. below):
+¨
+Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+¨
+Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)
+¨
+Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))
+¨
+Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240. 13e-4(c))
+Securities registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading symbol(s)
+Name of each exchange on which registered
+Class A Common Stock, $0.001 par value per share
+LEVI
+New York Stock Exchange
+Indicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405 of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (§240.12b-2 of this chapter).
+Emerging growth company
+¨
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.
+¨
+ITEM 5.03
+Amendments to Articles of Incorporation or Bylaws; Change in Fiscal Year.
+On April 23, 2026, the Board of Directors (the “Board”) of Levi Strauss & Co. (the “Company”) approved amendments to the Company’s Amended and Restated Bylaws (the “Bylaws”), which became effective the same day. Among other things, the amendments:
+•
+clarify and update certain procedural and disclosure requirements in the advance notice provisions relating to the requirements for stockholder-submitted nominations and/or other business proposals (other than proposals that are proper matters for stockholder action under Delaware law sought to be included in the Company’s proxy materials pursuant to Rule 14a-8 under the Securities Exchange Act of 1934, as amended, and the rules and regulations thereunder (the “Exchange Act”)), including, among other things, to clarify the scope of information required regarding proposed nominees and to reduce certain information requirements concerning other related persons;
+•
+further update provisions relating to the “universal proxy” rules adopted by the Securities and Exchange Commission pursuant to Rule 14a-19 under the Exchange Act;
+•
+update provisions relating to the conduct and administration of meetings of stockholders, including to clarify the authority of the chairperson to convene, recess and/or adjourn the meeting;
+•
+require an indemnitee seeking advancement to first provide the Company an undertaking to repay such amounts if he or she is ultimately not entitled to be indemnified, irrespective of whether such undertaking is required under the Delaware General Corporation Law; and
+•
+designate the Court of Chancery of the State of Delaware as the exclusive forum for indemnification and advancement of expenses claims brought under the Bylaws.
+The amendments also make certain other technical, conforming, modernizing and clarifying changes.
+The foregoing summary does not purport to be a complete description of the Bylaws and is qualified in its entirety by reference to the Bylaws, a copy of which is filed herewith as Exhibit 3.1 to this Current Report on Form 8-K and is incorporated by reference into this Item 5.03.
+ITEM 9.01.
+Financial Statements and Exhibits.
+(d) Exhibits.
+3.1
+Amended and Restated Bylaws of Levi Strauss & Co.
+104
+The cover page from this Current Report on Form 8-K, formatted in Inline XBRL
+SIGNATURES
+Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+LEVI STRAUSS & CO.
+DATE:
+April 27, 2026
+By:
+/s/ DAVID JEDRZEJEK
+Name:
+David Jedrzejek
+Title:
+Senior Vice President and General Counsel

@@ -1,0 +1,97 @@
+levi-20241010
+FALSE
+0000094845
+0000094845
+2024-10-10
+2024-10-10
+UNITED STATES
+SECURITIES AND EXCHANGE COMMISSION
+WASHINGTON, DC 20549
+_________________
+FORM
+8-K
+_________________
+CURRENT REPORT
+PURSUANT TO SECTION 13 OR 15(d) OF THE
+SECURITIES EXCHANGE ACT OF 1934
+Date of Report (Date of earliest event reported):
+October 10, 2024
+_________________
+LEVI STRAUSS & CO.
+(Exact name of registrant as specified in its charter)
+Delaware
+001-06631
+94-0905160
+(State or Other Jurisdiction of
+Incorporation)
+(Commission
+File Number)
+(I.R.S. Employer
+Identification No.)
+1155 Battery Street
+San Francisco
+,
+California
+94111
+(Address of principal executive offices) (Zip Code)
+(
+415
+)
+501-6000
+(Registrant’s telephone number, including area code)
+Not Applicable
+(Former name or former address, if changed since last report)
+_________________
+Check the appropriate box below if the Form 8-K filing is intended to simultaneously satisfy the filing obligation of the registrant under any of the following provisions (See General Instruction A.2. below):
+¨
+Written communications pursuant to Rule 425 under the Securities Act (17 CFR 230.425)
+¨
+Soliciting material pursuant to Rule 14a-12 under the Exchange Act (17 CFR 240.14a-12)
+¨
+Pre-commencement communications pursuant to Rule 14d-2(b) under the Exchange Act (17 CFR 240.14d-2(b))
+¨
+Pre-commencement communications pursuant to Rule 13e-4(c) under the Exchange Act (17 CFR 240. 13e-4(c))
+Securities registered pursuant to Section 12(b) of the Act:
+Title of each class
+Trading symbol(s)
+Name of each exchange on which registered
+Class A Common Stock, $0.001 par value per share
+LEVI
+New York Stock Exchange
+Indicate by check mark whether the registrant is an emerging growth company as defined in Rule 405 of the Securities Act of 1933 (§230.405 of this chapter) or Rule 12b-2 of the Securities Exchange Act of 1934 (§240.12b-2 of this chapter).
+Emerging growth company
+¨
+If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.
+¨
+ITEM 5.02
+Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers; Compensatory Arrangements of Certain Officers.
+David Friedman, a Class II director, is expected to retire from Levi Strauss & Co.’s (the “Company”) Board of Directors (the “Board”) upon reaching the mandatory retirement age on April 26, 2025.  Under the terms of the Company’s corporate governance guidelines, Mr. Friedman will be deemed to have resigned automatically upon reaching the mandatory retirement age.  Mr. Friedman has served on the Company’s Board since 2018 and currently serves on the Nominating, Governance and Corporate Citizenship Committee and the Compensation and Human Capital Committee of the Board. Mr. Friedman’s expected retirement is not the result of any disagreement with the Company on any matter relating to the Company’s operations, policies or practices.
+On October 10, 2024, upon recommendation of its Nominating, Governance and Corporate Citizenship Committee, the Board elected Dan Geballe to serve as a Class II member of the Board, effective upon Mr. Friedman’s retirement. The Company will file an amended Form 8-K to disclose Mr. Geballe’s committee assignments once determined.
+As a Class II director, Mr. Geballe will serve as a member of the Board until the Company’s 2027 annual meeting of shareholders and until his successor is elected and qualified, or until his earlier death, resignation, retirement or removal. The Board determined that Mr. Geballe is an “independent” director under the New York Stock Exchange rules.
+Mr. Geballe will receive compensation as a non-employee director in accordance with the Company’s non-employee director compensation practices described under the heading “Non-Employee Director Compensation During Fiscal Year 2023” in the Company’s Proxy Statement for its 2024 Annual Meeting, filed with the Securities and Exchange Commission on March 14, 2024.
+Mr. Geballe is not a party to any arrangement or understanding with any person pursuant to which he was elected as a director, nor is he a party to any transaction requiring disclosure pursuant to Item 404(a) of Regulation S-K.
+Mr. Geballe, 41, joined SJF Ventures in 2013 and currently serves as a Managing Director leading investments in early stage companies creating positive social and/or environmental impacts. Prior to SJF Ventures, Mr. Geballe worked for the Corporation for Enterprise Development and Fisher Investments. Mr. Geballe has a Bachelor’s Degree in anthropology and a Master’s Degree in environmental management both from Yale University and an MBA from the Stanford Graduate School of Business. Mr. Geballe serves as Vice President and a member of the Board of Directors of the Levi Strauss Foundation and chairs its Finance Committee.
+Mr. Friedman and Mr. Geballe are descendants of the family of our founder, Levi Strauss.
+ITEM 7.01
+Regulation FD Disclosure.
+The Company issued the press release attached hereto as Exhibit 99.1 with respect to the matters set forth in Item 5.02 above. The information in Item 7.01 of this Current Report on Form 8-K is being furnished and shall not be deemed “filed” for the purposes of Section 18 of the Securities Exchange Act of 1934, as amended (the "Exchange Act"), or otherwise subject to the liabilities of that section, and shall not be deemed incorporated by reference into any filing made under the Securities Act of 1933, as amended, or the Exchange Act, except as otherwise expressly stated in such filing.
+ITEM 9.01.
+Financial Statement and Exhibits
+(d) Exhibits
+99.1
+Press Release dated October
+15
+, 2024
+104
+The cover page from this Current Report on Form 8-K, formatted in Inline XBRL
+SIGNATURES
+Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.
+LEVI STRAUSS & CO.
+DATE:
+October 15, 2024
+By:
+/s/ DAVID JEDRZEJEK
+Name:
+David Jedrzejek
+Title:
+Senior Vice President and General Counsel
