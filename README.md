@@ -4,7 +4,7 @@ A RAG-powered tool for evidence-tiered analysis of Levi Strauss & Co.'s
 SEC filings and strategic narrative. Built as a portfolio project 
 demonstrating applied AI engineering judgment.
 
-**Status: Prototype in progress (Days 1–4 of 5-week build)**
+**Status: Prototype in progress (Days 1–5 of 5-week build)**
 
 ---
 
@@ -25,9 +25,10 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 
 ## Current state
 
-- [x] EDGAR 10-K fetch and plain-text extraction (FY2025)
-- [x] Chunking — 137 overlapping chunks (~600 words each, ~50-word overlap)
-- [x] Embeddings — (137, 384) matrix via all-MiniLM-L6-v2, saved to `data/embeddings.npy`
+- [x] EDGAR bulk ingest — 41 filings (3 × 10-K, 7 × 10-Q, 31 × 8-K) from 2024-01-01 onwards
+- [x] Section-aware chunking — 1,449 chunks with table detection (`chunk_v2.py`)
+- [x] Embeddings — all-MiniLM-L6-v2 (384-dim), 1,449 vectors
+- [x] Supabase live — vectors stored in Postgres + pgvector, `match_chunks` RPC ready
 - [ ] Retrieval and cited answer generation (Gemini Flash)
 - [ ] Hybrid retrieval for financial tables (BM25 + dense)
 - [ ] Evidentiary tier tagging
@@ -44,7 +45,7 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 |---|---|
 | Embeddings | sentence-transformers/all-MiniLM-L6-v2 |
 | Generation | Gemini Flash (Google AI Studio) |
-| Vector store (prod) | Supabase Postgres + pgvector |
+| Vector store | Supabase Postgres + pgvector ✓ live |
 | Backend (prod) | FastAPI |
 | Frontend (prod) | Next.js + Tailwind on Vercel |
 | Data source | SEC EDGAR (public, no API key required) |
@@ -56,12 +57,13 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 Run each script in order to reproduce the data artifacts:
 
 ```bash
-python src/fetch.py    # Download 10-K from EDGAR → data/extracted/fy2025_10k.txt
-python src/chunk.py   # Split into ~600-word chunks → data/chunks.json
-python src/embed.py   # Encode chunks → data/embeddings.npy
+python src/ingest.py        # Fetch 41 filings from EDGAR → data/extracted/
+python src/chunk_v2.py      # Section-aware chunking → data/chunks_v2.json
+python src/load_vectors.py  # Embed + upsert all chunks into Supabase
 ```
 
-`embed.py` downloads ~80 MB on first run (all-MiniLM-L6-v2 model weights).
+`load_vectors.py` downloads ~80 MB on first run (all-MiniLM-L6-v2 model weights).
+Requires `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`, and `GEMINI_API_KEY` in `.env`.
 
 ---
 
@@ -73,7 +75,7 @@ cd levis-rag
 python -m venv venv
 venv\Scripts\activate        # Windows
 pip install -r requirements.txt
-cp .env.example .env         # Add your GEMINI_API_KEY
+cp .env.example .env         # Add GEMINI_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY
 ```
 
 ---
