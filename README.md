@@ -29,6 +29,7 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 - [x] Chunking — 137 overlapping chunks (~600 words each, ~50-word overlap)
 - [x] Embeddings — (137, 384) matrix via all-MiniLM-L6-v2, saved to `data/embeddings.npy`
 - [ ] Retrieval and cited answer generation (Gemini Flash)
+- [ ] Hybrid retrieval for financial tables (BM25 + dense)
 - [ ] Evidentiary tier tagging
 - [ ] FastAPI backend + tool router
 - [ ] Next.js frontend
