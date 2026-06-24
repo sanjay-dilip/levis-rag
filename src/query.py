@@ -1,6 +1,5 @@
-"""Embed a question, retrieve the top-5 chunks by cosine similarity, and answer via Gemini."""
+"""Answer questions about Levi's SEC filings using hybrid retrieval and Gemini."""
 
-import json
 import logging
 import os
 import sys
@@ -8,25 +7,14 @@ import warnings
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-import numpy as np
 from dotenv import load_dotenv
-from sentence_transformers import SentenceTransformer
 import google.generativeai as genai
 
-# KNOWN LIMITATION:
-# Dense retrieval underperforms on financial tables. Chunk 77 contains
-# Levi's DTC revenue figure ($3.07B) but scores below top-10 similarity
-# for the query "DTC revenue" because the chunk is number-dense and
-# semantically sparse. Fix: hybrid sparse+dense retrieval
-# (BM25 keyword layer + pgvector dense layer) or section-aware chunking
-# that keeps financial statement tables as discrete chunks.
+from retrieve import build_retriever
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
 
-CHUNKS_PATH = "data/chunks.json"
-EMBEDDINGS_PATH = "data/embeddings.npy"
-MODEL_NAME = "all-MiniLM-L6-v2"
 GEMINI_MODEL = "gemini-2.5-flash"
 TOP_K = 10
 
@@ -44,39 +32,11 @@ Context:
 Question: {question}"""
 
 
-def load_chunks(path: str) -> list[dict]:
-    """Load and return the list of chunk dicts from chunks.json."""
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
-
-
-def cosine_similarity(query_vec: np.ndarray, matrix: np.ndarray) -> np.ndarray:
-    """Return cosine similarity scores between *query_vec* and every row in *matrix*."""
-    query_norm = query_vec / np.linalg.norm(query_vec)
-    row_norms = np.linalg.norm(matrix, axis=1, keepdims=True)
-    normed_matrix = matrix / row_norms
-    return normed_matrix @ query_norm
-
-
-def retrieve(
-    question: str,
-    model: SentenceTransformer,
-    chunks: list[dict],
-    embeddings: np.ndarray,
-    top_k: int,
-) -> list[tuple[dict, float]]:
-    """Embed *question* and return the top-k (chunk, score) pairs by cosine similarity."""
-    query_vec = model.encode(question)
-    scores = cosine_similarity(query_vec, embeddings)
-    top_indices = np.argsort(scores)[::-1][:top_k]
-    return [(chunks[i], float(scores[i])) for i in top_indices]
-
-
-def build_prompt(question: str, hits: list[tuple[dict, float]]) -> str:
+def build_prompt(question: str, hits: list[dict]) -> str:
     """Assemble the RAG prompt from the question and retrieved chunks."""
     context_lines = [
         f"[Chunk {rank}]: {chunk['text']}"
-        for rank, (chunk, _) in enumerate(hits, start=1)
+        for rank, chunk in enumerate(hits, start=1)
     ]
     return PROMPT_TEMPLATE.format(
         context="\n\n".join(context_lines),
@@ -95,7 +55,7 @@ def call_gemini(prompt: str, api_key: str) -> str:
 def main() -> None:
     """Run the full RAG query pipeline."""
     if len(sys.argv) < 2:
-        print("Usage: python src/query.py \"your question here\"")
+        print('Usage: python src/query.py "your question here"')
         sys.exit(1)
 
     question = sys.argv[1]
@@ -105,21 +65,21 @@ def main() -> None:
     if not api_key:
         raise EnvironmentError("GEMINI_API_KEY not set in .env")
 
-    chunks = load_chunks(CHUNKS_PATH)
-    embeddings = np.load(EMBEDDINGS_PATH)
+    retriever = build_retriever()
+    hits = retriever.retrieve(question, top_k=TOP_K)
 
-    logger.info("Loading model: %s", MODEL_NAME)
-    model = SentenceTransformer(MODEL_NAME)
-
-    hits = retrieve(question, model, chunks, embeddings, TOP_K)
     prompt = build_prompt(question, hits)
     answer = call_gemini(prompt, api_key)
 
     print(answer)
     print("\n---")
-    for rank, (chunk, score) in enumerate(hits, start=1):
-        print(f"\n[Chunk {rank}] (id={chunk['id']}, score={score:.4f})")
-        print(chunk["text"][:300] + "..." if len(chunk["text"]) > 300 else chunk["text"])
+    for rank, chunk in enumerate(hits, start=1):
+        print(
+            f"\n[Chunk {rank}] (id={chunk['id']}, bm25={chunk['bm25_rank']}, "
+            f"dense={chunk['dense_rank']}, rrf={chunk['rrf_score']:.4f})"
+        )
+        text = chunk["text"]
+        print(text[:300] + "..." if len(text) > 300 else text)
 
 
 if __name__ == "__main__":
