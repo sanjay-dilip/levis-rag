@@ -29,8 +29,9 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 - [x] Section-aware chunking — 1,449 chunks with table detection (`chunk_v2.py`)
 - [x] Embeddings — all-MiniLM-L6-v2 (384-dim), 1,449 vectors
 - [x] Supabase live — vectors stored in Postgres + pgvector, `match_chunks` RPC ready
-- [ ] Retrieval and cited answer generation (Gemini Flash)
-- [ ] Hybrid retrieval for financial tables (BM25 + dense)
+- [x] Hybrid retrieval live — BM25 (rank_bm25) + pgvector dense, fused via RRF (`retrieve.py`)
+- [x] End-to-end query pipeline — `query.py` calls `retrieve.py` → Gemini Flash → cited answer
+- [ ] Evidentiary tier tagging
 - [ ] Evidentiary tier tagging
 - [ ] FastAPI backend + tool router
 - [ ] Next.js frontend
@@ -77,6 +78,17 @@ venv\Scripts\activate        # Windows
 pip install -r requirements.txt
 cp .env.example .env         # Add GEMINI_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY
 ```
+
+---
+
+## Known limitations
+
+**Financial table retrieval (Week 2 fix):** Table chunks embed poorly in dense space
+(cosine scores 0.11–0.20), so they rank near the bottom of the dense leg and get
+surfaced only when BM25 keyword matching happens to fire. The fix planned for Week 2
+is to enrich each table chunk's text with its section header and filing metadata
+(e.g. `"FY2025 10-K | Item 7. MD&A | [table rows]"`) before re-embedding — rather
+than tuning RRF constants, which only moves the problem around.
 
 ---
 
