@@ -1,0 +1,1584 @@
+[
+  {
+    "id": "eval_001",
+    "question": "What was Levi's FY2025 gross margin?",
+    "expected_answer": "61.7%",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=604 contains both FY2024 and FY2025 gross margin in the same table row",
+    "returned_chunk_ids": [
+      369,
+      125,
+      848,
+      769,
+      208,
+      686,
+      453,
+      604,
+      1022,
+      364
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_002",
+    "question": "What was Levi's FY2025 net revenue?",
+    "expected_answer": "$6,282.0M",
+    "ground_truth_chunk_ids": [
+      686
+    ],
+    "acceptable_chunk_ids": [
+      602
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=686 is the FY2025 disaggregated revenue table (Note 17) with total $6,282.0M; id=602 is the income statement table",
+    "returned_chunk_ids": [
+      453,
+      208,
+      686,
+      369,
+      125,
+      40,
+      753,
+      765,
+      279,
+      525
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_003",
+    "question": "What was Levi's FY2025 DTC revenue?",
+    "expected_answer": "$3,076.8M",
+    "ground_truth_chunk_ids": [
+      686
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=686 disaggregated revenue table: DTC row totals $3,076.8M across all segments",
+    "returned_chunk_ids": [
+      1019,
+      1304,
+      453,
+      1303,
+      208,
+      369,
+      686,
+      1206,
+      364,
+      1104
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_004",
+    "question": "What was Levi's FY2025 wholesale revenue?",
+    "expected_answer": "$3,205.2M",
+    "ground_truth_chunk_ids": [
+      686
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=686 disaggregated revenue table: Wholesale row totals $3,205.2M",
+    "returned_chunk_ids": [
+      453,
+      208,
+      686,
+      753,
+      369,
+      1303,
+      40,
+      1019,
+      276,
+      122
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_005",
+    "question": "What was Levi's FY2025 operating income?",
+    "expected_answer": "$677.6M",
+    "ground_truth_chunk_ids": [
+      606
+    ],
+    "acceptable_chunk_ids": [
+      602,
+      607
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=606 opens with $677.6M; id=602 is income statement table; id=607 narrative states 'increased 157.9% to $677.6 million'",
+    "returned_chunk_ids": [
+      125,
+      369,
+      769,
+      848,
+      208,
+      606,
+      686,
+      453,
+      364,
+      1295
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_006",
+    "question": "What was Levi's FY2025 net income?",
+    "expected_answer": "$578.1M (total); $502.0M from continuing operations",
+    "ground_truth_chunk_ids": [
+      602
+    ],
+    "acceptable_chunk_ids": [
+      694,
+      600
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=602 income statement: Net income $578.1M total ($502.0M continuing + $76.1M discontinued Dockers); id=602 not retrieved in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      369,
+      125,
+      208,
+      453,
+      686,
+      366,
+      769,
+      765,
+      279,
+      525
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_007",
+    "question": "What was Levi's Americas segment revenue in FY2025?",
+    "expected_answer": "$3,297.0M",
+    "ground_truth_chunk_ids": [
+      686
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=686 disaggregated revenue table: Americas Total $3,297.0M (Wholesale $1,921.5 + DTC $1,375.5)",
+    "returned_chunk_ids": [
+      453,
+      208,
+      686,
+      753,
+      369,
+      125,
+      916,
+      1290,
+      831,
+      1009
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_008",
+    "question": "What was Levi's Europe segment revenue in FY2025?",
+    "expected_answer": "$1,699.3M",
+    "ground_truth_chunk_ids": [
+      686
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=686 disaggregated revenue table: Europe Total $1,699.3M (Wholesale $756.6 + DTC $942.7)",
+    "returned_chunk_ids": [
+      453,
+      208,
+      686,
+      753,
+      369,
+      125,
+      916,
+      831,
+      1290,
+      1092
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_009",
+    "question": "What was Levi's Asia segment revenue in FY2025?",
+    "expected_answer": "$1,134.4M",
+    "ground_truth_chunk_ids": [
+      686
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=686 disaggregated revenue table: Asia Total $1,134.4M (Wholesale $477.7 + DTC $656.7)",
+    "returned_chunk_ids": [
+      453,
+      686,
+      208,
+      753,
+      831,
+      916,
+      369,
+      1290,
+      125,
+      1092
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_010",
+    "question": "What was Levi's e-commerce growth rate in Q4 FY2025?",
+    "expected_answer": "Q4 e-commerce growth rate not separately disclosed; FY2025 annual e-commerce was 11% of total net revenues (up from 10% in FY2024)",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [
+      596
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "qualitative_lookup",
+    "notes": "Q4-specific e-commerce growth % not disclosed in 10-K; id=604 mentions 'higher e-commerce traffic' qualitatively; id=596 has annual share (11% of total); question_type changed from numeric_lookup: no specific Q4 rate in corpus",
+    "returned_chunk_ids": [
+      844,
+      933,
+      766,
+      931,
+      1104,
+      43,
+      38,
+      282,
+      208,
+      604
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_011",
+    "question": "What was Levi's women's segment growth in FY2025?",
+    "expected_answer": "Women's products grew to 39% of net revenues in FY2025 vs 37% in FY2024 (up 2 percentage points)",
+    "ground_truth_chunk_ids": [
+      525
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "trend_comparison",
+    "notes": "Levi's does not report a 'women's segment'; data is women's products as % of net revenues (id=525); id=525 not retrieved in top-10 for this query — expected MISS",
+    "returned_chunk_ids": [
+      369,
+      686,
+      208,
+      453,
+      1295,
+      38,
+      40,
+      695,
+      462,
+      217
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_012",
+    "question": "What was Levi's FY2024 gross margin?",
+    "expected_answer": "60.6% (continuing ops per FY2025 10-K); 60.0% (total incl. Dockers per FY2024 10-K: $3,815.9M / $6,355.3M)",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [
+      398
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2024",
+    "question_type": "numeric_lookup",
+    "notes": "id=604 (FY2025 10-K gross profit table) shows FY2024 gross margin as 60.6% on continuing-ops basis; id=398 (FY2024 income statement) shows 60.0% total. id=604 at rank 8 in retrieval.",
+    "returned_chunk_ids": [
+      369,
+      125,
+      208,
+      453,
+      686,
+      769,
+      848,
+      604,
+      1022,
+      364
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_013",
+    "question": "What was Levi's FY2024 net revenue?",
+    "expected_answer": "$6,355.3M (total per FY2024 10-K); $6,032.0M (continuing ops per FY2025 10-K, Dockers excluded)",
+    "ground_truth_chunk_ids": [
+      453
+    ],
+    "acceptable_chunk_ids": [
+      604
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2024",
+    "question_type": "numeric_lookup",
+    "notes": "id=453 (FY2024 Note 15 disaggregated revenue) shows $6,355.3M total; id=604 header shows $6,032.0M on continuing-ops basis. Both are valid depending on scope.",
+    "returned_chunk_ids": [
+      208,
+      453,
+      686,
+      369,
+      125,
+      40,
+      753,
+      765,
+      279,
+      525
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_014",
+    "question": "What was Levi's FY2024 DTC revenue?",
+    "expected_answer": "$2,923.8M (total per FY2024 10-K incl. Dockers); $2,809.1M (continuing ops per FY2025 10-K)",
+    "ground_truth_chunk_ids": [
+      453
+    ],
+    "acceptable_chunk_ids": [
+      686
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2024",
+    "question_type": "numeric_lookup",
+    "notes": "id=453 (FY2024 Note 15): DTC $2,923.8M total (incl. Dockers $192.4M); id=686 (FY2025 Note 17): FY2024 DTC restated to $2,809.1M ex-Dockers",
+    "returned_chunk_ids": [
+      1304,
+      1019,
+      453,
+      208,
+      1303,
+      686,
+      1206,
+      369,
+      844,
+      367
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_015",
+    "question": "How did Levi's net revenue change between FY2024 and FY2025?",
+    "expected_answer": "+4.1% reported (+7.2% organic); $6,282.0M vs $6,032.0M on continuing-ops basis",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [
+      686,
+      601
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=604 gross profit table header shows '6,282.0 | 6,032.0 | 4.1%'; id=686 has both years' totals (derivable); id=601 has the full income table. id=686 at rank 3 → expected PARTIAL",
+    "returned_chunk_ids": [
+      208,
+      453,
+      686,
+      369,
+      125,
+      1290,
+      1009,
+      753,
+      848,
+      1295
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_016",
+    "question": "How did Levi's gross margin change between FY2024 and FY2025?",
+    "expected_answer": "61.7% (FY2025) vs 60.6% (FY2024), an increase of approximately 1.1 percentage points (110 basis points)",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=604 gross profit table shows gross margin 61.7% (FY2025) vs 60.6% (FY2024); id=604 at rank 3 in retrieval → expected HIT",
+    "returned_chunk_ids": [
+      125,
+      369,
+      604,
+      606,
+      848,
+      1106,
+      768,
+      1108,
+      686,
+      1022
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_017",
+    "question": "How did Levi's DTC revenue change between FY2024 and FY2025?",
+    "expected_answer": "+9.5% reported (+10.5% organic); $3,076.8M (FY2025) vs $2,809.1M (FY2024 continuing ops)",
+    "ground_truth_chunk_ids": [
+      601
+    ],
+    "acceptable_chunk_ids": [
+      686
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=601 has channel breakdown with DTC +9.5%; id=686 has both years' DTC totals (derivable); neither in top-10 for this query — expected MISS",
+    "returned_chunk_ids": [
+      208,
+      453,
+      686,
+      367,
+      1206,
+      931,
+      369,
+      1304,
+      1019,
+      604
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_018",
+    "question": "How did Levi's wholesale revenue change between FY2024 and FY2025?",
+    "expected_answer": "-0.5% reported (+4.1% organic); $3,205.2M (FY2025) vs $3,222.9M (FY2024 continuing ops)",
+    "ground_truth_chunk_ids": [
+      601
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=601 has channel breakdown with Wholesale -0.5% reported / +4.1% organic; id=601 not in top-10 — expected MISS. Note: FY2024 10-K showed wholesale $3,431.5M (incl. Dockers); restated $3,222.9M used here.",
+    "returned_chunk_ids": [
+      208,
+      453,
+      125,
+      916,
+      831,
+      753,
+      122,
+      844,
+      931,
+      604
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_019",
+    "question": "What was the trend in Levi's gross margin from FY2023 to FY2025?",
+    "expected_answer": "FY2023: 56.9%, FY2024: 60.6% (continuing ops), FY2025: 61.7%; improving trend of approximately 480 basis points over two years",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [
+      122,
+      398
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=604 (FY2025 10-K) shows 61.7%/60.6%; id=122 (FY2023 10-K MD&A income table) shows 56.9%; id=398 (FY2024 income statement) shows FY2023 56.9% as comparison. id=604 at rank 3 → expected HIT",
+    "returned_chunk_ids": [
+      125,
+      369,
+      604,
+      769,
+      606,
+      768,
+      1206,
+      367,
+      1304,
+      848
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_020",
+    "question": "How has Levi's DTC mix changed as a percentage of total revenue from FY2023 to FY2025?",
+    "expected_answer": "FY2023: 43%, FY2024: 47%, FY2025: 49%; DTC share growing steadily",
+    "ground_truth_chunk_ids": [
+      603
+    ],
+    "acceptable_chunk_ids": [
+      596,
+      115
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=603 (FY2025 10-K): 'DTC comprised 49% of total net revenues'; id=596 (FY2025 Business section): 49% FY2025 / 47% FY2024; id=115 (FY2023 10-K): 43% FY2023. None in top-10 for this query — expected MISS",
+    "returned_chunk_ids": [
+      1206,
+      1304,
+      367,
+      604,
+      125,
+      1019,
+      369,
+      844,
+      1020,
+      122
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_021",
+    "question": "How did Levi's Americas segment revenue change year over year in FY2025?",
+    "expected_answer": "+3.0% reported (+6.8% organic); $3,297.0M (FY2025) vs $3,200.6M (FY2024)",
+    "ground_truth_chunk_ids": [
+      602
+    ],
+    "acceptable_chunk_ids": [
+      686
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "trend_comparison",
+    "notes": "id=602 (FY2025 MD&A revenue table) shows Americas $3,297.0M vs $3,200.6M (+3.0% / +6.8%); id=686 has both years' Americas totals; neither in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      453,
+      208,
+      753,
+      125,
+      366,
+      831,
+      916,
+      606,
+      769,
+      604
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_022",
+    "question": "What was Levi's FY2023 net revenue?",
+    "expected_answer": "$6,179.0M",
+    "ground_truth_chunk_ids": [
+      453
+    ],
+    "acceptable_chunk_ids": [
+      208,
+      122
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2023",
+    "question_type": "numeric_lookup",
+    "notes": "id=453 (FY2024 Note 15 comparison table) shows FY2023 Total $6,179.0M; id=208 (FY2023 notes) also has it; id=122 (FY2023 MD&A income table) shows $6,179.0M. id=453 at rank 1 → expected HIT",
+    "returned_chunk_ids": [
+      453,
+      208,
+      686,
+      369,
+      125,
+      40,
+      753,
+      765,
+      279,
+      525
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_023",
+    "question": "What was Levi's FY2023 gross margin?",
+    "expected_answer": "56.9% ($3,515.7M gross profit / $6,179.0M net revenues)",
+    "ground_truth_chunk_ids": [
+      122
+    ],
+    "acceptable_chunk_ids": [
+      398
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2023",
+    "question_type": "numeric_lookup",
+    "notes": "id=122 (FY2023 10-K MD&A income table) explicitly shows 'Gross profit 3,515.7 | 56.9%'; id=398 (FY2024 income statement) has FY2023 as comparison column ($3,515.7M, 56.9%). Neither in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      369,
+      125,
+      208,
+      769,
+      453,
+      848,
+      686,
+      1022,
+      604,
+      364
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_024",
+    "question": "How did Levi's e-commerce performance change between Q3 and Q4 FY2025?",
+    "expected_answer": "Both periods showed e-commerce growth driven by higher traffic; no explicit Q3 vs Q4 e-commerce comparison stated; annual FY2025 e-commerce drove DTC growth across all regions",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [
+      1206
+    ],
+    "expected_tier": "Management-qualitative-statement",
+    "filing_type": "CROSS",
+    "fiscal_year": "FY2025",
+    "question_type": "qualitative_lookup",
+    "notes": "id=604 (FY2025 10-K): annual e-commerce narrative; id=1206 (10-Q_2025-10-09, Q3 FY2025): Q3 DTC/e-commerce narrative. No direct Q3 vs Q4 e-commerce comparison in filings. id=604 at rank 3 → expected HIT",
+    "returned_chunk_ids": [
+      208,
+      453,
+      604,
+      43,
+      125,
+      282,
+      931,
+      122,
+      765,
+      916
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_025",
+    "question": "What was Levi's operating income in FY2024 versus FY2025?",
+    "expected_answer": "$677.6M (FY2025) vs $262.7M (FY2024), an increase of 157.9%; operating margin improved from 4.4% to 10.8%",
+    "ground_truth_chunk_ids": [
+      606
+    ],
+    "acceptable_chunk_ids": [
+      602,
+      607
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=606 (FY2025 10-K) opens with '$677.6 $262.7 157.9%'; id=607 narrative; id=602 income statement. id=606 at rank 4 → expected HIT",
+    "returned_chunk_ids": [
+      125,
+      369,
+      769,
+      606,
+      848,
+      364,
+      1022,
+      1108,
+      120,
+      208
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_026",
+    "question": "How did Levi's inventory levels change between FY2024 and FY2025?",
+    "expected_answer": "$1,237.7M (FY2025) vs $1,131.3M (FY2024), an increase of $106.4M (+9.4%)",
+    "ground_truth_chunk_ids": [
+      632
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=632 (FY2025 consolidated balance sheet) shows Inventories $1,237.7M (Nov 2025) vs $1,131.3M (Dec 2024); id=632 not retrieved in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      369,
+      208,
+      453,
+      686,
+      125,
+      1295,
+      127,
+      765,
+      636,
+      606
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_027",
+    "question": "What does Levi's management say about its DTC-first strategy?",
+    "expected_answer": "Levi's describes brand-dedicated retail stores as 'an increasingly important part of our DTC First strategy'; management emphasizes growing owned stores and e-commerce as the primary channel shift",
+    "ground_truth_chunk_ids": [
+      528
+    ],
+    "acceptable_chunk_ids": [
+      522,
+      527
+    ],
+    "expected_tier": "Management-qualitative-statement",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "qualitative_lookup",
+    "notes": "id=528 (FY2025 10-K Business section) explicitly names 'DTC First strategy'; id=522 is Business Overview; id=528 not in top-10 — id=522 at rank 7 → expected PARTIAL",
+    "returned_chunk_ids": [
+      462,
+      217,
+      695,
+      276,
+      1304,
+      1411,
+      522,
+      400,
+      1436,
+      635
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_028",
+    "question": "What are the primary risk factors Levi's discloses in its FY2025 10-K?",
+    "expected_answer": "Key risks include: consumer discretionary spending declines, global macroeconomic volatility, FX exposure, tariff and trade restrictions, DTC channel execution risk, inventory forecasting, and cybersecurity threats",
+    "ground_truth_chunk_ids": [
+      536
+    ],
+    "acceptable_chunk_ids": [
+      538,
+      545,
+      560
+    ],
+    "expected_tier": "Management-qualitative-statement",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "qualitative_lookup",
+    "notes": "id=536 (FY2025 10-K Item 1A header) introduces risk factors; ids=538,545,560 are individual risk factor chunks; retriever returns 10-Q pointers and Business Overview instead — expected MISS",
+    "returned_chunk_ids": [
+      1325,
+      1045,
+      1137,
+      1246,
+      276,
+      37,
+      462,
+      522,
+      1276,
+      1319
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_029",
+    "question": "How does Levi's describe its competitive position in denim?",
+    "expected_answer": "Levi's describes itself as one of the world's largest brand-name apparel companies, with the Levi's brand as the world's leading denim brand by net revenues globally; it emphasizes premium positioning and diversified product range",
+    "ground_truth_chunk_ids": [
+      522
+    ],
+    "acceptable_chunk_ids": [
+      276
+    ],
+    "expected_tier": "Management-qualitative-statement",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "qualitative_lookup",
+    "notes": "id=522 (FY2025 10-K Business Overview) describes market position; id=276 (FY2024 10-K Business Overview) is the equivalent prior-year chunk; id=276 at rank 3 → expected PARTIAL",
+    "returned_chunk_ids": [
+      400,
+      40,
+      276,
+      1169,
+      462,
+      1276,
+      37,
+      743,
+      695,
+      995
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_030",
+    "question": "What did Levi's management say about tariff headwinds in FY2025?",
+    "expected_answer": "FY2025 10-K discloses that import operations are subject to trade restrictions and tariffs set by governments; the risk factor notes potential for new tariffs, duties, and trade restrictions to increase cost of goods and affect margins",
+    "ground_truth_chunk_ids": [
+      560
+    ],
+    "acceptable_chunk_ids": [
+      1299
+    ],
+    "expected_tier": "Management-qualitative-statement",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "qualitative_lookup",
+    "notes": "id=560 (FY2025 10-K risk factor) discusses tariffs and trade law; id=1299 (Q1 FY2026 10-Q MD&A) discusses current tariff impacts; id=560 not in top-10 but id=1299 at rank 4 → expected PARTIAL",
+    "returned_chunk_ids": [
+      125,
+      208,
+      453,
+      1299,
+      606,
+      1022,
+      769,
+      1108,
+      765,
+      753
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_031",
+    "question": "What is Levi's stated approach to inventory management?",
+    "expected_answer": "Levi's aims to avoid excess inventory by accurately forecasting consumer demand; excess inventory risk is explicitly disclosed as it may result in write-downs or discounted sales that harm brand image",
+    "ground_truth_chunk_ids": [
+      545
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Management-qualitative-statement",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "qualitative_lookup",
+    "notes": "id=545 (FY2025 10-K risk factor section) discusses inventory forecasting and write-down risk; not retrieved in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      369,
+      38,
+      453,
+      357,
+      277,
+      523,
+      217,
+      593,
+      208,
+      755
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_032",
+    "question": "What was Levi's implied COGS for FY2025?",
+    "expected_answer": "$2,404.2M (explicitly stated as 'Cost of goods sold' in FY2025 10-K gross profit table; gross margin 61.7% implies COGS = $6,282.0M × 38.3% = $2,404.0M)",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [
+      601
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "inference",
+    "notes": "id=604 explicitly states 'Cost of goods sold 2,404.2'; id=601 has the full income statement table; neither in top-10 for 'implied COGS' query — expected MISS",
+    "returned_chunk_ids": [
+      40,
+      208,
+      453,
+      125,
+      686,
+      369,
+      1276,
+      1169,
+      743,
+      279
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_033",
+    "question": "What was Levi's DTC revenue as a percentage of total revenue in FY2025?",
+    "expected_answer": "49% (DTC $3,076.8M / total net revenues $6,282.0M = 49.0%)",
+    "ground_truth_chunk_ids": [
+      596
+    ],
+    "acceptable_chunk_ids": [
+      603
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=596 (FY2025 10-K Business section) explicitly states 'DTC channel generated 49% and 47% of our net revenues in fiscal years 2025 and 2024'; id=603 confirms '49% of total net revenues'; neither in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      1019,
+      1304,
+      1206,
+      367,
+      125,
+      844,
+      369,
+      931,
+      848,
+      604
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_034",
+    "question": "What was Levi's revenue per percentage point of gross margin in FY2025?",
+    "expected_answer": "$62.82M per percentage point (calculated: $6,282.0M total net revenues / 100 percentage points = $62.82M per 1pp of gross margin)",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Model-inference",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "inference",
+    "notes": "Not stated verbatim; requires dividing revenue by 100. id=604 has both revenue ($6,282.0M) and gross margin (61.7%) needed for calculation. id=604 at rank 3 → expected HIT (input data retrieved)",
+    "returned_chunk_ids": [
+      125,
+      769,
+      604,
+      131,
+      1022,
+      120,
+      768,
+      1106,
+      937,
+      1206
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_035",
+    "question": "How much did Levi's gross margin improve in basis points between FY2024 and FY2025?",
+    "expected_answer": "110 basis points (61.7% − 60.6% = 1.1 percentage points = 110 bps)",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Model-inference",
+    "filing_type": "10-K",
+    "fiscal_year": "CROSS",
+    "question_type": "inference",
+    "notes": "Not stated verbatim in basis points; requires subtracting 60.6% from 61.7%. id=604 has both values in the same table. id=604 at rank 3 → expected HIT (input data retrieved)",
+    "returned_chunk_ids": [
+      125,
+      369,
+      604,
+      1017,
+      769,
+      1106,
+      848,
+      606,
+      1022,
+      768
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_036",
+    "question": "What would Levi's net revenue have been if DTC grew at the same rate as wholesale in FY2025?",
+    "expected_answer": "Hypothetical: if DTC grew at −0.5% (wholesale reported rate) instead of +9.5%, DTC would be ~$2,795.1M; total revenue ~$6,151.6M vs actual $6,282.0M — a shortfall of ~$130.4M",
+    "ground_truth_chunk_ids": [
+      601
+    ],
+    "acceptable_chunk_ids": [
+      686
+    ],
+    "expected_tier": "Model-inference",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "inference",
+    "notes": "Multi-step calculation using DTC base ($2,809.1M), wholesale growth (−0.5%), and Beyond Yoga ($151.3M); id=601 has channel % changes; id=686 has revenue breakdown; neither in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      367,
+      1019,
+      1206,
+      753,
+      1105,
+      845,
+      844,
+      1009,
+      1020,
+      1304
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_037",
+    "question": "What is Levi's FY2026 revenue guidance?",
+    "expected_answer": "Not available in ingested corpus — FY2026 guidance is provided in earnings call transcripts and 8-K press releases, which are not fully ingested as structured MD&A text",
+    "ground_truth_chunk_ids": [],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Not-in-corpus",
+    "filing_type": "N/A",
+    "fiscal_year": "FY2026",
+    "question_type": "out_of_scope",
+    "notes": "Revenue guidance is not disclosed in 10-K/10-Q filings; provided in earnings call transcripts and Exhibit 99.1 of 8-Ks; earnings call transcripts not ingested — expected MISS",
+    "returned_chunk_ids": [
+      686,
+      453,
+      369,
+      208,
+      696,
+      523,
+      277,
+      753,
+      695,
+      916
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_038",
+    "question": "What is Levi's current stock price?",
+    "expected_answer": "Not available — current stock price is real-time market data; SEC filings do not contain live price data",
+    "ground_truth_chunk_ids": [],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Not-in-corpus",
+    "filing_type": "N/A",
+    "fiscal_year": "N/A",
+    "question_type": "out_of_scope",
+    "notes": "Live market data — definitively outside the scope of any SEC filing corpus — expected MISS",
+    "returned_chunk_ids": [
+      208,
+      453,
+      1295,
+      369,
+      686,
+      828,
+      756,
+      276,
+      37,
+      916
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_039",
+    "question": "What is VF Corporation's gross margin?",
+    "expected_answer": "Not available — VF Corporation financial data is not present in the Levi's SEC filing corpus",
+    "ground_truth_chunk_ids": [],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Not-in-corpus",
+    "filing_type": "N/A",
+    "fiscal_year": "N/A",
+    "question_type": "out_of_scope",
+    "notes": "Competitor data not in corpus — definitively out of scope — expected MISS",
+    "returned_chunk_ids": [
+      839,
+      277,
+      1284,
+      1084,
+      38,
+      1182,
+      523,
+      769,
+      362,
+      131
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_040",
+    "question": "What did the Levi's CEO say on the Q4 FY2025 earnings call?",
+    "expected_answer": "Earnings call transcripts are not ingested; the 8-K press release (id=1430, filed 2026-01-28) contains Q4 FY2025 earnings highlights but not verbatim CEO commentary",
+    "ground_truth_chunk_ids": [],
+    "acceptable_chunk_ids": [
+      1430
+    ],
+    "expected_tier": "Not-in-corpus",
+    "filing_type": "8-K",
+    "fiscal_year": "FY2025",
+    "question_type": "out_of_scope",
+    "notes": "Earnings call transcripts not ingested; id=1430 (8-K_2026-01-28 Exhibit 99.1 index) is the closest item; id=1430 at rank 5 → expected PARTIAL (8-K press release partially addresses earnings highlights)",
+    "returned_chunk_ids": [
+      369,
+      125,
+      208,
+      686,
+      1430,
+      53,
+      1422,
+      928,
+      453,
+      1436
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_041",
+    "question": "What is Levi's market share in the global denim market?",
+    "expected_answer": "Specific market share percentages are not disclosed in SEC filings; Levi's describes itself qualitatively as one of the world's largest brand-name apparel companies and the world's leading denim brand by net revenues",
+    "ground_truth_chunk_ids": [],
+    "acceptable_chunk_ids": [
+      522
+    ],
+    "expected_tier": "Not-in-corpus",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "out_of_scope",
+    "notes": "Market share % not disclosed in filings; id=522 (FY2025 10-K Business Overview) has qualitative competitive position description; id=522 at rank 7 → expected PARTIAL",
+    "returned_chunk_ids": [
+      276,
+      40,
+      208,
+      453,
+      37,
+      686,
+      522,
+      523,
+      277,
+      765
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_042",
+    "question": "What was Levi's total net revenue in Q1 FY2025?",
+    "expected_answer": "$1,526.8M (quarter ended March 2, 2025; +3.1% reported vs Q1 FY2024 on continuing ops basis, +8.6% organic)",
+    "ground_truth_chunk_ids": [
+      1019
+    ],
+    "acceptable_chunk_ids": [
+      1009
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-Q",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=1019 (10-Q_2025-04-07 revenue table) shows 'Total net revenues $1,526.8 $1,480.2 3.1%'; id=1009 (disaggregated note) confirms with segment breakdown totalling $1,526.8M; id=1019 at rank 4 → expected HIT",
+    "returned_chunk_ids": [
+      453,
+      208,
+      686,
+      1019,
+      369,
+      125,
+      753,
+      1009,
+      916,
+      848
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_043",
+    "question": "What was Levi's Americas segment revenue in Q3 FY2025?",
+    "expected_answer": "$806.4M (quarter ended August 31, 2025; vs $757.2M in Q3 FY2024)",
+    "ground_truth_chunk_ids": [
+      1191,
+      1195
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-Q",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=1191 (10-Q_2025-10-09 Note 12 disaggregated revenue) shows Americas $806.4M; id=1195 (business segment note same 10-Q) shows Americas $806.4M vs $757.2M; id=1195 at rank 9 → expected HIT",
+    "returned_chunk_ids": [
+      453,
+      208,
+      753,
+      125,
+      916,
+      831,
+      844,
+      769,
+      1195,
+      765
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_044",
+    "question": "What was Levi's DTC revenue in Q2 FY2025?",
+    "expected_answer": "$716.1M (quarter ended June 1, 2025; vs $669.1M in Q2 FY2024 on continuing ops basis)",
+    "ground_truth_chunk_ids": [
+      1092
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-Q",
+    "fiscal_year": "FY2025",
+    "question_type": "numeric_lookup",
+    "notes": "id=1092 (10-Q_2025-07-10 Note 11 disaggregated revenue) shows DTC total $716.1M; id=1092 not retrieved in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      1019,
+      453,
+      1304,
+      208,
+      844,
+      686,
+      367,
+      369,
+      931,
+      604
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_045",
+    "question": "What was Levi's total net revenue in Q1 FY2026?",
+    "expected_answer": "$1,742.5M (quarter ended March 1, 2026; +14.1% reported vs Q1 FY2025, +9.2% organic)",
+    "ground_truth_chunk_ids": [
+      1303
+    ],
+    "acceptable_chunk_ids": [
+      1290
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-Q",
+    "fiscal_year": "FY2026",
+    "question_type": "numeric_lookup",
+    "notes": "id=1303 (10-Q_2026-04-07 revenue table) shows 'Total net revenues $1,742.5 $1,526.8 14.1%'; id=1290 (disaggregated note) has both period segment totals; neither in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      453,
+      208,
+      686,
+      369,
+      125,
+      1019,
+      753,
+      1009,
+      916,
+      848
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_046",
+    "question": "What was Levi's gross margin in Q1 FY2024?",
+    "expected_answer": "58.2% (quarter ended February 25, 2024; gross profit $906.5M on revenues of $1,557.6M including Dockers)",
+    "ground_truth_chunk_ids": [
+      768
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-Q",
+    "fiscal_year": "FY2024",
+    "question_type": "numeric_lookup",
+    "notes": "id=768 (10-Q_2024-04-03 gross profit table) shows 'Gross margin 58.2%' for Q1 FY2024; id=768 at rank 9 → expected HIT. Note: figure includes Dockers (total company basis).",
+    "returned_chunk_ids": [
+      125,
+      369,
+      769,
+      848,
+      604,
+      606,
+      1022,
+      131,
+      768,
+      1106
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_047",
+    "question": "How did Levi's total net revenue change from Q1 FY2024 to Q1 FY2025?",
+    "expected_answer": "+3.1% reported (+8.6% organic); $1,526.8M (Q1 FY2025) vs $1,480.2M (Q1 FY2024 on continuing ops basis, Dockers excluded)",
+    "ground_truth_chunk_ids": [
+      1019
+    ],
+    "acceptable_chunk_ids": [
+      1009
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-Q",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=1019 has explicit '+3.1%' change; id=1009 (disaggregated note) has both periods' segment breakdowns (both totalling $1,526.8M and $1,480.2M); id=1009 at rank 5 → expected PARTIAL (ground truth 1019 not in top-10)",
+    "returned_chunk_ids": [
+      453,
+      208,
+      686,
+      753,
+      1009,
+      369,
+      125,
+      1290,
+      916,
+      831
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_048",
+    "question": "How did Levi's total net revenue change from Q3 FY2024 to Q3 FY2025?",
+    "expected_answer": "+$100.3M (+7.0%); $1,543.4M (Q3 FY2025, ended Aug 31, 2025) vs $1,443.1M (Q3 FY2024, ended Aug 25, 2024, continuing ops basis)",
+    "ground_truth_chunk_ids": [
+      1191
+    ],
+    "acceptable_chunk_ids": [
+      1195
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-Q",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=1191 (disaggregated note) has both Q3 FY2025 ($1,543.4M) and Q3 FY2024 ($1,443.1M) totals; id=1195 (segment note) also has both periods; neither in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      453,
+      208,
+      686,
+      366,
+      753,
+      1009,
+      369,
+      125,
+      1290,
+      1019
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_049",
+    "question": "How did Levi's total net revenue change from Q1 FY2025 to Q1 FY2026?",
+    "expected_answer": "+14.1% reported (+9.2% organic); $1,742.5M (Q1 FY2026) vs $1,526.8M (Q1 FY2025)",
+    "ground_truth_chunk_ids": [
+      1303
+    ],
+    "acceptable_chunk_ids": [
+      1290
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-Q",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=1303 (10-Q_2026-04-07 revenue table) shows explicit '14.1% 9.2%'; id=1290 (disaggregated note) has both periods' totals (derivable); id=1290 at rank 8 → expected PARTIAL",
+    "returned_chunk_ids": [
+      453,
+      208,
+      686,
+      753,
+      125,
+      1009,
+      369,
+      1290,
+      916,
+      831
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_050",
+    "question": "How did Levi's operating income change from Q2 FY2024 to Q2 FY2025?",
+    "expected_answer": "$108.0M (Q2 FY2025, 7.5% margin) vs $20.9M (Q2 FY2024, 1.5% margin); increase of $87.1M",
+    "ground_truth_chunk_ids": [
+      1108
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-Q",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=1108 (10-Q_2025-07-10 operating income table) shows 'Total operating income $108.0 $20.9 * 7.5% v 1.5%'; id=1108 at rank 5 → expected HIT",
+    "returned_chunk_ids": [
+      369,
+      125,
+      769,
+      848,
+      1108,
+      606,
+      1022,
+      208,
+      453,
+      364
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_051",
+    "question": "How did Levi's Asia segment revenue change from Q1 FY2025 to Q1 FY2026?",
+    "expected_answer": "+$39.4M (+12.8%); $347.5M (Q1 FY2026) vs $308.1M (Q1 FY2025)",
+    "ground_truth_chunk_ids": [
+      1290
+    ],
+    "acceptable_chunk_ids": [
+      1303
+    ],
+    "expected_tier": "Verified-from-filing",
+    "filing_type": "10-Q",
+    "fiscal_year": "CROSS",
+    "question_type": "trend_comparison",
+    "notes": "id=1290 (disaggregated note) shows Asia $347.5M (Q1 FY2026) vs $308.1M (Q1 FY2025); id=1303 (revenue table) has both periods' totals; id=1290 not in top-10 for this query — expected MISS",
+    "returned_chunk_ids": [
+      453,
+      208,
+      831,
+      753,
+      125,
+      916,
+      1306,
+      769,
+      606,
+      1279
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_052",
+    "question": "What did Levi's management say about the April 2025 U.S. tariffs in Q1 FY2025?",
+    "expected_answer": "On April 2, 2025, the U.S. government announced additional tariffs on goods imported to the U.S.; Levi's management stated they expect these new tariffs to have a material impact on results of operations in fiscal year 2025",
+    "ground_truth_chunk_ids": [
+      1015
+    ],
+    "acceptable_chunk_ids": [
+      1299
+    ],
+    "expected_tier": "Management-qualitative-statement",
+    "filing_type": "10-Q",
+    "fiscal_year": "FY2025",
+    "question_type": "qualitative_lookup",
+    "notes": "id=1015 (10-Q_2025-04-07 MD&A 'Tariffs' section) explicitly states 'On April 2, 2025...We expect these new tariffs to have a material impact'; id=1299 (Q1 FY2026 10-Q) discusses 'Reciprocal tariffs'; id=1299 at rank 8 → expected PARTIAL",
+    "returned_chunk_ids": [
+      1288,
+      1299,
+      1035,
+      1236,
+      125,
+      686,
+      369,
+      208,
+      453,
+      560
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_053",
+    "question": "What did Levi's management say about inventory levels in Q3 FY2025?",
+    "expected_answer": "Inventory increased 12% YoY (excluding Dockers) in Q3 FY2025, driven by preparation for holiday season sales and earlier receipts to mitigate potential tariff impacts",
+    "ground_truth_chunk_ids": [
+      1202
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Management-qualitative-statement",
+    "filing_type": "10-Q",
+    "fiscal_year": "FY2025",
+    "question_type": "qualitative_lookup",
+    "notes": "id=1202 (10-Q_2025-10-09 Q3 FY2025 highlights) explicitly states 'inventory increased 12%, excluding the Dockers business, in preparation for sales for the remainder of the year and from earlier receipts in order to mitigate potential impacts from tariffs'; not in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      369,
+      208,
+      453,
+      125,
+      686,
+      769,
+      606,
+      753,
+      127,
+      637
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_054",
+    "question": "What was Levi's implied Q4 FY2025 DTC revenue?",
+    "expected_answer": "$861.0M (calculated: annual DTC $3,076.8M minus 9-month YTD DTC $2,214.8M from Q3 FY2025 10-Q)",
+    "ground_truth_chunk_ids": [
+      1191
+    ],
+    "acceptable_chunk_ids": [
+      686
+    ],
+    "expected_tier": "Model-inference",
+    "filing_type": "CROSS",
+    "fiscal_year": "FY2025",
+    "question_type": "inference",
+    "notes": "id=1191 (10-Q_2025-10-09 Note 12) has 9M YTD DTC $2,214.8M; id=686 (FY2025 10-K Note 17) has annual DTC $3,076.8M; subtraction gives Q4 DTC $861.0M; id=686 at rank 7 → expected PARTIAL (provides annual total but not 9M YTD)",
+    "returned_chunk_ids": [
+      1019,
+      1304,
+      453,
+      208,
+      369,
+      1303,
+      686,
+      367,
+      765,
+      523
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_055",
+    "question": "What was Levi's DTC revenue as a percentage of total revenue in Q1 FY2026?",
+    "expected_answer": "52.3% (calculated: DTC $911.5M / total net revenues $1,742.5M = 52.3%); DTC exceeded wholesale for the first time at 52% vs 48%",
+    "ground_truth_chunk_ids": [
+      1290
+    ],
+    "acceptable_chunk_ids": [
+      1303
+    ],
+    "expected_tier": "Model-inference",
+    "filing_type": "10-Q",
+    "fiscal_year": "FY2026",
+    "question_type": "inference",
+    "notes": "id=1290 (10-Q_2026-04-07 disaggregated note) has DTC $911.5M and Total $1,742.5M; id=1303 (revenue table) shows DTC $911.5M and total $1,742.5M explicitly; 52.3% is not stated verbatim — must be calculated; neither in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      1019,
+      1304,
+      367,
+      125,
+      369,
+      844,
+      848,
+      769,
+      931,
+      604
+    ],
+    "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_056",
+    "question": "By how much did Levi's Asia segment revenue grow from Q3 FY2024 to Q3 FY2025?",
+    "expected_answer": "+$30.6M (+12.4%); $277.7M (Q3 FY2025, ended Aug 31, 2025) vs $247.1M (Q3 FY2024, ended Aug 25, 2024)",
+    "ground_truth_chunk_ids": [
+      1191,
+      1195
+    ],
+    "acceptable_chunk_ids": [],
+    "expected_tier": "Model-inference",
+    "filing_type": "10-Q",
+    "fiscal_year": "CROSS",
+    "question_type": "inference",
+    "notes": "id=1191 (disaggregated note) and id=1195 (segment note) both show Asia $277.7M (Q3 FY2025) and $247.1M (Q3 FY2024) in same table; +12.4% is not stated verbatim — must be calculated; neither in top-10 — expected MISS",
+    "returned_chunk_ids": [
+      453,
+      208,
+      831,
+      916,
+      753,
+      769,
+      120,
+      686,
+      369,
+      122
+    ],
+    "retrieval_result": "MISS"
+  }
+]

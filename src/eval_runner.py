@@ -1,0 +1,148 @@
+"""Retrieval evaluation runner for the Levi's RAG eval set.
+
+Loads data/eval_set.json, runs each question through the hybrid retriever,
+scores retrieval as HIT / PARTIAL / MISS, prints a summary, and saves
+per-question results to data/eval_results.json.
+
+Tier-tagging evaluation is out of scope for this script — retrieval only.
+"""
+
+import json
+import logging
+import warnings
+from collections import defaultdict
+from pathlib import Path
+
+warnings.filterwarnings("ignore", category=FutureWarning)
+
+from retrieve import build_retriever
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+logger = logging.getLogger(__name__)
+
+EVAL_SET_PATH = Path("data/eval_set.json")
+RESULTS_PATH = Path("data/eval_results.json")
+TOP_K = 10
+
+HIT = "HIT"
+PARTIAL = "PARTIAL"
+MISS = "MISS"
+
+
+def score_retrieval(
+    returned_ids: list[int],
+    ground_truth_ids: list[int],
+    acceptable_ids: list[int],
+) -> str:
+    """Return HIT, PARTIAL, or MISS given the retrieved and expected chunk ids.
+
+    Args:
+        returned_ids: Chunk ids returned by the retriever (top-k).
+        ground_truth_ids: Primary chunk ids that must appear for a HIT.
+        acceptable_ids: Secondary chunk ids that count as PARTIAL credit.
+
+    Returns:
+        ``HIT`` if any ground-truth id is in returned_ids.
+        ``PARTIAL`` if no ground-truth id but an acceptable id is present.
+        ``MISS`` otherwise.
+    """
+    returned_set = set(returned_ids)
+    if any(cid in returned_set for cid in ground_truth_ids):
+        return HIT
+    if any(cid in returned_set for cid in acceptable_ids):
+        return PARTIAL
+    return MISS
+
+
+def run_eval(eval_entries: list[dict], retriever) -> list[dict]:
+    """Run retrieval for every eval entry and return annotated results.
+
+    Args:
+        eval_entries: Loaded eval_set.json entries.
+        retriever: An initialised Retriever instance.
+
+    Returns:
+        List of eval entry dicts enriched with ``retrieval_result`` and
+        ``returned_chunk_ids``.
+    """
+    results = []
+    for entry in eval_entries:
+        question = entry["question"]
+        hits = retriever.retrieve(question, top_k=TOP_K)
+        returned_ids = [h["id"] for h in hits]
+
+        result = entry.copy()
+        result["returned_chunk_ids"] = returned_ids
+        result["retrieval_result"] = score_retrieval(
+            returned_ids,
+            entry.get("ground_truth_chunk_ids", []),
+            entry.get("acceptable_chunk_ids", []),
+        )
+        results.append(result)
+    return results
+
+
+def print_summary(results: list[dict]) -> None:
+    """Print the retrieval evaluation summary to stdout."""
+    total = len(results)
+    counts = {HIT: 0, PARTIAL: 0, MISS: 0}
+    by_type: dict[str, dict[str, int]] = defaultdict(lambda: {HIT: 0, PARTIAL: 0, MISS: 0})
+    misses = []
+
+    for r in results:
+        verdict = r["retrieval_result"]
+        qtype = r.get("question_type", "unknown")
+        counts[verdict] += 1
+        by_type[qtype][verdict] += 1
+        if verdict == MISS:
+            misses.append(r)
+
+    def pct(n: int) -> str:
+        return f"{n / total * 100:.1f}%" if total else "0.0%"
+
+    print("\nRETRIEVAL EVALUATION SUMMARY")
+    print("-" * 33)
+    print(f"Total questions:     {total}")
+    print(f"Hits (recall@10):    {counts[HIT]}  ({pct(counts[HIT])})")
+    print(f"Partials:            {counts[PARTIAL]}  ({pct(counts[PARTIAL])})")
+    print(f"Misses:              {counts[MISS]}  ({pct(counts[MISS])})")
+
+    print("\nBY QUESTION TYPE:")
+    for qtype in sorted(by_type):
+        t = by_type[qtype]
+        print(
+            f"  {qtype:<22} -- Hit: {t[HIT]} | Partial: {t[PARTIAL]} | Miss: {t[MISS]}"
+        )
+
+    if misses:
+        print("\nMISSES:")
+        for r in misses:
+            print(f"  [{r['id']}] {r['question']}")
+            print(f"         returned chunks: {r['returned_chunk_ids']}")
+    else:
+        print("\nNo misses.")
+
+
+def main() -> None:
+    """Entry point."""
+    eval_entries = json.loads(EVAL_SET_PATH.read_text(encoding="utf-8"))
+    if not eval_entries:
+        logger.info("eval_set.json is empty — nothing to evaluate.")
+        return
+
+    logger.info("Building retriever...")
+    retriever = build_retriever()
+
+    logger.info("Running %d eval questions...", len(eval_entries))
+    results = run_eval(eval_entries, retriever)
+
+    print_summary(results)
+
+    RESULTS_PATH.write_text(
+        json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    logger.info("\nResults saved to %s", RESULTS_PATH)
+
+
+if __name__ == "__main__":
+    main()
