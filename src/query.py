@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 import google.generativeai as genai
 
 from retrieve import build_retriever
+from tier_tagger import tag_claims
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
@@ -18,38 +19,30 @@ logger = logging.getLogger(__name__)
 GEMINI_MODEL = "gemini-2.5-flash"
 TOP_K = 10
 
-PROMPT_TEMPLATE = """\
-You are a financial analyst answering questions about Levi Strauss & Co. \
-based solely on excerpts from SEC filings.
 
-Answer the question using ONLY the context provided. For each fact you \
-state, cite the chunk number in brackets like [Chunk 3]. If the answer \
-is not in the context, say "Not found in provided context."
+def _print_result(result: dict, hits: list[dict]) -> None:
+    """Print the structured tier-tagged answer followed by retrieval debug info."""
+    print("\nANSWER")
+    print("-" * 6)
+    print(result.get("answer", ""))
 
-Context:
-{context}
+    print("\nCLAIMS")
+    print("-" * 6)
+    for i, claim in enumerate(result.get("claims", []), start=1):
+        fy = claim.get("fiscal_year") or "N/A"
+        print(f'[{i}] "{claim["claim_text"]}"')
+        print(f'    Tier: {claim["tier"]}')
+        print(f'    Chunk: {claim["supporting_chunk_id"]} | FY: {fy}')
 
-Question: {question}"""
-
-
-def build_prompt(question: str, hits: list[dict]) -> str:
-    """Assemble the RAG prompt from the question and retrieved chunks."""
-    context_lines = [
-        f"[Chunk {rank}]: {chunk['text']}"
-        for rank, chunk in enumerate(hits, start=1)
-    ]
-    return PROMPT_TEMPLATE.format(
-        context="\n\n".join(context_lines),
-        question=question,
-    )
-
-
-def call_gemini(prompt: str, api_key: str) -> str:
-    """Send *prompt* to Gemini and return the response text."""
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(GEMINI_MODEL)
-    response = model.generate_content(prompt)
-    return response.text
+    print("\nRETRIEVAL DEBUG")
+    print("-" * 15)
+    for rank, chunk in enumerate(hits, start=1):
+        print(
+            f"\n[Chunk {rank}] (id={chunk['id']}, bm25={chunk['bm25_rank']}, "
+            f"dense={chunk['dense_rank']}, rrf={chunk['rrf_score']:.4f})"
+        )
+        text = chunk["text"]
+        print(text[:300] + "..." if len(text) > 300 else text)
 
 
 def main() -> None:
@@ -68,18 +61,11 @@ def main() -> None:
     retriever = build_retriever()
     hits = retriever.retrieve(question, top_k=TOP_K)
 
-    prompt = build_prompt(question, hits)
-    answer = call_gemini(prompt, api_key)
+    genai.configure(api_key=api_key)
+    model = genai.GenerativeModel(GEMINI_MODEL)
 
-    print(answer)
-    print("\n---")
-    for rank, chunk in enumerate(hits, start=1):
-        print(
-            f"\n[Chunk {rank}] (id={chunk['id']}, bm25={chunk['bm25_rank']}, "
-            f"dense={chunk['dense_rank']}, rrf={chunk['rrf_score']:.4f})"
-        )
-        text = chunk["text"]
-        print(text[:300] + "..." if len(text) > 300 else text)
+    result = tag_claims(question, hits, model)
+    _print_result(result, hits)
 
 
 if __name__ == "__main__":

@@ -97,3 +97,47 @@ the same underlying number. The $2,923.8M figure is FY2024 data and must not be 
 When surfacing this figure, note the scope: Levi's Brands + Beyond Yoga. Dockers DTC (~$114.7M in FY2024)
 is excluded because Dockers was divested during FY2025. If a user asks for a like-for-like FY2024 comparison,
 use $2,809.1M (FY2024 ex-Dockers, as restated in the FY2025 10-K), not $2,923.8M.
+
+---
+
+## 8-K Exhibit Gap
+
+### Finding
+
+All 31 8-K files in `data/extracted/` were checked for financial content (Week 2, Session 3).
+
+| Category | Count | Detail |
+|---|---|---|
+| Earnings-table financial figures (revenue, margin, EPS) | **0** | None of the 31 files contain earnings release tables |
+| Non-earnings financial figures (debt, compensation, insider trades) | 5 | `8-K_2024-04-11`, `8-K_2024-11-12`, `8-K_2025-01-22`, `8-K_2025-08-11`, `8-K_2025-12-16` |
+| Wrapper-only (no financial figures beyond `$0.001` par value boilerplate) | 26 | All remaining files, including the FY2024 and FY2025 earnings release 8-Ks |
+
+**Root cause:** EDGAR 8-K filings separate the press release into Exhibit 99.1. The `ingest.py` script
+fetches the primary filing document but not the attached exhibit. The earnings release financial tables
+(quarterly revenues, DTC breakdowns, gross margin, EPS) exist only in Exhibit 99.1 and were never
+extracted into `data/extracted/`.
+
+Confirmed missing for these earnings release 8-Ks specifically:
+- `8-K_2025-01-29_0000094845-25-000006.txt` — FY2024 Q4 / full-year earnings release (wrapper only)
+- `8-K_2026-01-28_0000094845-26-000009.txt` — FY2025 Q4 / full-year earnings release (wrapper only)
+- `8-K_2025-04-07_0000094845-25-000021.txt` — Q1 FY2025 earnings release (wrapper only)
+- `8-K_2025-07-10_0000094845-25-000037.txt` — Q2 FY2025 earnings release (wrapper only)
+- `8-K_2025-10-09_0000094845-25-000051.txt` — Q3 FY2025 earnings release (wrapper only)
+
+### Decision required before eval set build
+
+**Option A — Ingest Exhibit 99.1 from each earnings release 8-K.**
+Adds earnings release financial tables to the corpus. Higher coverage of non-GAAP figures,
+preliminary results, and rounded billion-dollar figures used in press headlines. Requires
+re-running exhibit extraction for the 5 earnings release 8-Ks above (at minimum), re-chunking,
+and re-embedding the new content. Estimated new chunks: ~50–100.
+
+**Option B — Leave 8-K exhibits out of scope for MVP.**
+The 10-K and 10-Q filings contain audited versions of all material financial figures. Earnings
+release figures that differ from 10-K figures (e.g. preliminary, non-GAAP, rounded billions)
+are a known gap, documented here. The $3.07B / $3,076.8M case confirms that the 10-K figure
+is the authoritative source and serves the RAG system's needs.
+
+### Recommendation
+
+*Leave blank — decision to be made in planning session.*
