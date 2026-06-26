@@ -23,10 +23,10 @@ logger = logging.getLogger(__name__)
 
 CHUNKS_PATH = Path("data/chunks_v2.json")
 MODEL_NAME = "all-MiniLM-L6-v2"
-BM25_CANDIDATES = 50
-DENSE_CANDIDATES = 50
+BM25_CANDIDATES = 100
+DENSE_CANDIDATES = 100
 RRF_K = 60
-PENALTY_RANK = 51
+PENALTY_RANK = 101
 
 
 def _tokenize(text: str) -> list[str]:
@@ -46,7 +46,7 @@ class Retriever:
         corpus = [_tokenize(c["text"]) for c in chunks]
         self._bm25 = BM25Okapi(corpus)
 
-    def retrieve(self, question: str, top_k: int = 10) -> list[dict]:
+    def retrieve(self, question: str, top_k: int = 10, debug: bool = False) -> list[dict]:
         """Return the top *top_k* chunks via RRF over BM25 and dense results.
 
         Args:
@@ -70,26 +70,46 @@ class Retriever:
         response = (
             self._supabase.rpc(
                 "match_chunks", {"query_embedding": query_vec, "match_count": DENSE_CANDIDATES}
-            ).execute()
+            ).limit(DENSE_CANDIDATES).execute()
         )
         dense_results: list[dict] = response.data
-        dense_ranks: dict[int, int] = {
-            row["id"]: rank for rank, row in enumerate(dense_results, start=1)
+        # Store (rank, similarity) so similarity can break RRF ties below.
+        dense_ranks: dict[int, tuple[int, float]] = {
+            row["id"]: (rank, row["similarity"])
+            for rank, row in enumerate(dense_results, start=1)
         }
 
+        if debug:
+            print(f"\n--- Dense top-20 (pre-RRF) for: {question!r} ---\n")
+            for rank, row in enumerate(dense_results[:20], start=1):
+                chunk_meta = self._chunks_by_id.get(row["id"], {})
+                print(
+                    f"[{rank:2d}] id={row['id']:5d}  sim={row['similarity']:.4f}"
+                    f"  is_table={str(row.get('is_table', chunk_meta.get('is_table', '?'))):5s}"
+                    f"  {row.get('filing_type', chunk_meta.get('filing_type', '?')):5s}"
+                    f"  src={row.get('source', chunk_meta.get('source', '?'))[:35]:35s}"
+                    f"  sec={row.get('section', chunk_meta.get('section', '?'))[:30]:30s}"
+                    f"  txt={row['text'][:80]!r}"
+                )
+            print()
+
         # RRF fusion
+        # When a chunk appears in only one leg, its single-leg score is
+        # 1/(k+rank) + 1/(k+penalty). For equal rank N, BM25-only and
+        # dense-only chunks produce identical RRF scores.  Break those ties
+        # by dense similarity so well-matched dense chunks surface correctly.
         all_ids = set(bm25_ranks) | set(dense_ranks)
         fused: list[tuple[int, float]] = []
         for chunk_id in all_ids:
             b_rank = bm25_ranks.get(chunk_id, PENALTY_RANK)
-            d_rank = dense_ranks.get(chunk_id, PENALTY_RANK)
+            d_rank, d_sim = dense_ranks.get(chunk_id, (PENALTY_RANK, 0.0))
             rrf = 1 / (RRF_K + b_rank) + 1 / (RRF_K + d_rank)
-            fused.append((chunk_id, b_rank, d_rank, rrf))
+            fused.append((chunk_id, b_rank, d_rank, rrf, d_sim))
 
-        fused.sort(key=lambda x: x[3], reverse=True)
+        fused.sort(key=lambda x: (x[3], x[4]), reverse=True)
 
         results = []
-        for chunk_id, b_rank, d_rank, rrf in fused[:top_k]:
+        for chunk_id, b_rank, d_rank, rrf, _d_sim in fused[:top_k]:
             chunk = self._chunks_by_id.get(chunk_id)
             if chunk is None:
                 # chunk came from dense leg only — build minimal dict from Supabase row
@@ -117,7 +137,8 @@ def build_retriever() -> Retriever:
     load_dotenv()
 
     url = os.environ["SUPABASE_URL"]
-    key = os.environ["SUPABASE_KEY"]
+    # Service key required: anon role lacks EXECUTE on match_chunks RPC.
+    key = os.environ["SUPABASE_SERVICE_KEY"]
     supabase = create_client(url, key)
 
     chunks = json.loads(CHUNKS_PATH.read_text(encoding="utf-8"))
