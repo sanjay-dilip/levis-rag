@@ -1580,5 +1580,122 @@
       122
     ],
     "retrieval_result": "MISS"
+  },
+  {
+    "id": "eval_057",
+    "question": "What was Levi's gross profit in dollars for FY2025?",
+    "expected_answer": "Approximately $3,876M. Derived from FY2025 net revenues of $6,282.0M multiplied by the FY2025 gross margin of 61.7% ($6,282.0M x 0.617 = $3,875.9M).",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [
+      601,
+      686
+    ],
+    "expected_tier": "Model-inference",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "inference",
+    "notes": "Tests simultaneous retrieval of both input figures. Chunk 604 has gross margin % (61.7%); chunk 686 or 601 has total net revenues ($6,282.0M). Both are needed for the derivation. Different from eval_035 (gross margin in bps) and eval_034 (revenue per pp gross margin).",
+    "returned_chunk_ids": [
+      604,
+      125,
+      369,
+      1106,
+      1304,
+      769,
+      1206,
+      768,
+      367,
+      765
+    ],
+    "retrieval_result": "HIT"
+  },
+  {
+    "id": "eval_058",
+    "question": "What percentage of Levi's FY2025 net revenues came from wholesale?",
+    "expected_answer": "Approximately 51.0%. FY2025 wholesale net revenues were $3,205.2M out of total net revenues of $6,282.0M ($3,205.2M / $6,282.0M = 51.0%).",
+    "ground_truth_chunk_ids": [
+      601
+    ],
+    "acceptable_chunk_ids": [
+      686
+    ],
+    "expected_tier": "Model-inference",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "inference",
+    "notes": "Tests channel mix derivation from FY2025 MD&A channel revenue table (chunk 601). Different from eval_033 (DTC % of 49% which is stated verbatim in the Business section). The wholesale % must be calculated; it is not stated verbatim anywhere in the filings.",
+    "returned_chunk_ids": [
+      453,
+      208,
+      686,
+      369,
+      125,
+      122,
+      769,
+      525,
+      1304,
+      279
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_059",
+    "question": "How much did Levi's DTC revenue grow in absolute dollar terms between FY2024 and FY2025?",
+    "expected_answer": "Approximately $267.7M. FY2025 DTC revenues were $3,076.8M; FY2024 DTC revenues restated on a continuing-operations basis (ex-Dockers) were $2,809.1M. Growth = $3,076.8M - $2,809.1M = $267.7M.",
+    "ground_truth_chunk_ids": [
+      601
+    ],
+    "acceptable_chunk_ids": [
+      686
+    ],
+    "expected_tier": "Model-inference",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "inference",
+    "notes": "Use FY2024 restated DTC ($2,809.1M ex-Dockers) not as-reported ($2,923.8M incl. Dockers). See data/dtc_conflict_finding.md. Both FY2025 and restated FY2024 DTC figures appear together in the FY2025 10-K channel revenue table (chunk 601). Chunk 686 (Note 17) also has the channel comparison.",
+    "returned_chunk_ids": [
+      208,
+      453,
+      686,
+      1206,
+      931,
+      367,
+      369,
+      1019,
+      125,
+      1304
+    ],
+    "retrieval_result": "PARTIAL"
+  },
+  {
+    "id": "eval_060",
+    "question": "What does Levi's FY2025 10-K disclose about its approach to pricing strategy?",
+    "expected_answer": "The FY2025 10-K MD&A attributes gross margin improvement partly to favorable pricing and product mix. Levi pursues premium positioning in DTC channels where full retail price is captured, and exercises pricing discipline in wholesale. The 60.6% to 61.7% gross margin expansion is described as partly driven by pricing benefits.",
+    "ground_truth_chunk_ids": [
+      604
+    ],
+    "acceptable_chunk_ids": [
+      523
+    ],
+    "expected_tier": "Management-qualitative-statement",
+    "filing_type": "10-K",
+    "fiscal_year": "FY2025",
+    "question_type": "qualitative_lookup",
+    "notes": "Pricing narrative resides in the MD&A gross margin section (chunk 604), not the Business Overview. Retriever surfaces Business Overview (chunk 523, rank 2) which contains general strategy language but not the specific pricing-as-margin-driver disclosure. Consistent with the qualitative section miss pattern from eval_028 (risk factors) and eval_031 (inventory management).",
+    "returned_chunk_ids": [
+      462,
+      1276,
+      695,
+      217,
+      276,
+      400,
+      277,
+      523,
+      522,
+      357
+    ],
+    "retrieval_result": "PARTIAL"
   }
 ]
