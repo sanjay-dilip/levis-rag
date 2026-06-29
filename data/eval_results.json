@@ -277,8 +277,7 @@
       208,
       604
     ],
-    "oos_false_positive": true,
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_011",
@@ -305,7 +304,6 @@
       462,
       217
     ],
-    "oos_false_positive": true,
     "retrieval_result": "MISS"
   },
   {
@@ -683,8 +681,7 @@
       765,
       916
     ],
-    "oos_false_positive": true,
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_025",
@@ -741,7 +738,6 @@
       636,
       606
     ],
-    "oos_false_positive": true,
     "retrieval_result": "MISS"
   },
   {
@@ -772,8 +768,7 @@
       1436,
       635
     ],
-    "oos_false_positive": true,
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_028",
@@ -833,8 +828,7 @@
       695,
       995
     ],
-    "oos_false_positive": true,
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_030",
@@ -863,8 +857,7 @@
       765,
       753
     ],
-    "oos_false_positive": true,
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_031",
@@ -891,7 +884,6 @@
       208,
       755
     ],
-    "oos_false_positive": true,
     "retrieval_result": "MISS"
   },
   {
@@ -921,7 +913,6 @@
       743,
       279
     ],
-    "oos_false_positive": true,
     "retrieval_result": "MISS"
   },
   {
@@ -1136,7 +1127,7 @@
       453,
       1436
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_041",
@@ -1163,7 +1154,7 @@
       277,
       765
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_042",
@@ -1475,8 +1466,7 @@
       453,
       560
     ],
-    "oos_false_positive": true,
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_053",
@@ -1503,7 +1493,6 @@
       127,
       637
     ],
-    "oos_false_positive": true,
     "retrieval_result": "MISS"
   },
   {
@@ -1533,8 +1522,7 @@
       765,
       523
     ],
-    "oos_false_positive": true,
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_055",
@@ -1708,7 +1696,6 @@
       522,
       357
     ],
-    "oos_false_positive": true,
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   }
 ]

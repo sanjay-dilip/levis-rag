@@ -19,7 +19,7 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 from retrieve import build_retriever
 from utils import is_out_of_scope
 
-OUT_OF_SCOPE_THRESHOLD = 0.53
+OUT_OF_SCOPE_THRESHOLD = 0.20
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)

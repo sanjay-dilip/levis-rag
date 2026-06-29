@@ -20,18 +20,14 @@ logger = logging.getLogger(__name__)
 GEMINI_MODEL = "gemini-2.5-flash"
 TOP_K = 10
 
-# OUT_OF_SCOPE_THRESHOLD: set from full-eval diagnostic in Week 2 Task 8.
-# Initial Step 1 diagnostic (5 numeric lookups) suggested a clean gap at
-# 0.57, but the full 60-question eval revealed significant overlap:
-# qualitative/inference in-scope questions cluster at 0.37–0.56,
-# overlapping the OOS zone (0.42–0.53). No single threshold achieves both
-# 0 OOS PARTIALs and 0 in-scope HIT regressions.
-# 0.53 is the minimum that blocks the two targeted OOS PARTIAL questions
-# (eval_040 CEO call at 0.4670, eval_041 market share at 0.5261). It also
-# causes 2 in-scope HIT regressions (eval_010 at 0.4312, eval_024 at 0.4868)
-# which cannot be avoided without losing the OOS fix. Robust discrimination
-# would require question-type classification, not a similarity threshold alone.
-OUT_OF_SCOPE_THRESHOLD = 0.53
+# OUT_OF_SCOPE_THRESHOLD: set to 0.20 — intercepts only
+# truly empty retrievals (no chunks returned or all chunks
+# below meaningful similarity). A value of 0.53 was tested
+# in Week 2 Task 8 and caused 2 HIT regressions because
+# qualitative in-scope questions cluster at 0.37–0.55,
+# overlapping the OOS zone. Full OOS detection deferred to
+# post-FastAPI (open item #12). See data/rrf_tuning_results.md.
+OUT_OF_SCOPE_THRESHOLD = 0.20
 
 
 def _print_result(result: dict, hits: list[dict]) -> None:
