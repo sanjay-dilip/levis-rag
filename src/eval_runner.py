@@ -17,6 +17,9 @@ from pathlib import Path
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 from retrieve import build_retriever
+from utils import is_out_of_scope
+
+OUT_OF_SCOPE_THRESHOLD = 0.53
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
@@ -83,11 +86,23 @@ def run_eval(
 
         result = entry.copy()
         result["returned_chunk_ids"] = returned_ids
-        result["retrieval_result"] = score_retrieval(
-            returned_ids,
-            entry.get("ground_truth_chunk_ids", []),
-            entry.get("acceptable_chunk_ids", []),
-        )
+
+        if is_out_of_scope(hits, OUT_OF_SCOPE_THRESHOLD):
+            # Out-of-scope gate fired: correct for out_of_scope questions, a
+            # false positive for any in-scope type.
+            if entry.get("question_type") == "out_of_scope":
+                verdict = MISS
+            else:
+                verdict = MISS
+                result["oos_false_positive"] = True
+        else:
+            verdict = score_retrieval(
+                returned_ids,
+                entry.get("ground_truth_chunk_ids", []),
+                entry.get("acceptable_chunk_ids", []),
+            )
+
+        result["retrieval_result"] = verdict
         results.append(result)
     return results
 
@@ -99,6 +114,7 @@ def print_summary(results: list[dict]) -> None:
     by_type: dict[str, dict[str, int]] = defaultdict(lambda: {HIT: 0, PARTIAL: 0, MISS: 0})
     misses = []
 
+    false_positives = []
     for r in results:
         verdict = r["retrieval_result"]
         qtype = r.get("question_type", "unknown")
@@ -106,6 +122,8 @@ def print_summary(results: list[dict]) -> None:
         by_type[qtype][verdict] += 1
         if verdict == MISS:
             misses.append(r)
+        if r.get("oos_false_positive"):
+            false_positives.append(r)
 
     def pct(n: int) -> str:
         return f"{n / total * 100:.1f}%" if total else "0.0%"
@@ -123,6 +141,14 @@ def print_summary(results: list[dict]) -> None:
         print(
             f"  {qtype:<22} -- Hit: {t[HIT]} | Partial: {t[PARTIAL]} | Miss: {t[MISS]}"
         )
+
+    if false_positives:
+        print("\nOOS FALSE POSITIVES (in-scope questions intercepted by threshold):")
+        for r in false_positives:
+            top_sim = r["returned_chunk_ids"] and "see eval_results.json"
+            print(f"  [{r['id']}] {r['question']}")
+    else:
+        print("\nNo OOS false positives.")
 
     if misses:
         print("\nMISSES:")

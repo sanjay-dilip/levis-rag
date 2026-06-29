@@ -171,7 +171,7 @@ class Retriever:
         fused.sort(key=lambda x: (x[3], x[4]), reverse=True)
 
         results = []
-        for chunk_id, b_rank, d_rank, rrf, _d_sim in fused[:top_k]:
+        for chunk_id, b_rank, d_rank, rrf, d_sim in fused[:top_k]:
             chunk = self._chunks_by_id.get(chunk_id)
             if chunk is None:
                 # chunk came from dense leg only — build minimal dict from Supabase row
@@ -188,6 +188,7 @@ class Retriever:
                     "bm25_rank": b_rank,
                     "dense_rank": d_rank,
                     "rrf_score": rrf,
+                    "similarity": d_sim,
                 }
             )
 
