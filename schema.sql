@@ -1,51 +1,56 @@
 -- Enable pgvector extension (already done manually, this is idempotent)
-create extension if not exists vector;
+CREATE EXTENSION IF NOT EXISTS vector;
 
 -- Main chunks table
-create table if not exists chunks (
-    id bigint primary key,
-    text text not null,
-    source text not null,
-    filing_type text not null,
-    section text,
-    word_count integer,
-    is_table boolean default false,
-    embedding vector(384)
+CREATE TABLE IF NOT EXISTS chunks (
+    id               bigserial PRIMARY KEY,
+    text             text NOT NULL,
+    source           text,
+    filing_type      text,
+    section          text,
+    word_count       integer,
+    is_table         boolean DEFAULT false,
+    fiscal_year      text,
+    period_of_report text,
+    embedding        vector(384)
 );
 
 -- Index for fast cosine similarity search
-create index if not exists chunks_embedding_idx
-    on chunks
-    using ivfflat (embedding vector_cosine_ops)
-    with (lists = 50);
+CREATE INDEX IF NOT EXISTS chunks_embedding_idx
+    ON chunks
+    USING ivfflat (embedding vector_cosine_ops)
+    WITH (lists = 50);
 
 -- Similarity search function
-create or replace function match_chunks(
-    query_embedding vector(384),
-    match_count int default 10
+-- Sets ivfflat.probes=10 per-query so the index scans across lists
+-- rather than defaulting to 1. Returning fiscal_year and period_of_report
+-- enables metadata filtering in the retriever without a separate lookup.
+CREATE OR REPLACE FUNCTION match_chunks(
+    query_embedding  vector(384),
+    match_count      int DEFAULT 10
 )
-returns table (
-    id bigint,
-    text text,
-    source text,
-    filing_type text,
-    section text,
-    word_count integer,
-    is_table boolean,
-    similarity float
+RETURNS TABLE (
+    id               bigint,
+    text             text,
+    source           text,
+    filing_type      text,
+    section          text,
+    word_count       integer,
+    is_table         boolean,
+    fiscal_year      text,
+    period_of_report text,
+    similarity       float
 )
-language sql stable
-as $$
-    select
-        id,
-        text,
-        source,
-        filing_type,
-        section,
-        word_count,
-        is_table,
-        1 - (embedding <=> query_embedding) as similarity
-    from chunks
-    order by embedding <=> query_embedding
-    limit match_count;
+LANGUAGE plpgsql STABLE AS $$
+BEGIN
+  PERFORM set_config('ivfflat.probes', '10', true);
+  RETURN QUERY
+    SELECT c.id, c.text, c.source, c.filing_type, c.section,
+           c.word_count, c.is_table, c.fiscal_year,
+           c.period_of_report,
+           1 - (c.embedding <=> query_embedding) AS similarity
+    FROM chunks c
+    ORDER BY c.embedding <=> query_embedding
+    LIMIT match_count;
+END;
 $$;
