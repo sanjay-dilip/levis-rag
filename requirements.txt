@@ -3,7 +3,7 @@ beautifulsoup4
 lxml
 sentence-transformers
 numpy
-google-generativeai
+google-genai
 python-dotenv
 supabase
 tqdm

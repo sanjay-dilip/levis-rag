@@ -6,7 +6,8 @@ import warnings
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 logger = logging.getLogger(__name__)
 
@@ -128,14 +129,14 @@ def _build_prompt(question: str, context_chunks: list[dict]) -> str:
 def tag_claims(
     question: str,
     context_chunks: list[dict],
-    model: genai.GenerativeModel,
+    client: genai.Client,
 ) -> dict:
     """Return a structured dict with answer text and per-claim tier assignments.
 
     Args:
         question: The natural-language question to answer.
         context_chunks: Top-k retrieved chunks from the hybrid retriever.
-        model: A configured genai.GenerativeModel instance.
+        client: An initialised genai.Client instance.
 
     Returns:
         Dict with keys ``answer`` (str) and ``claims`` (list of dicts).
@@ -145,9 +146,10 @@ def tag_claims(
     prompt = _build_prompt(question, context_chunks)
 
     try:
-        response = model.generate_content(
-            prompt,
-            generation_config=genai.GenerationConfig(
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+            config=types.GenerateContentConfig(
                 response_mime_type="application/json",
                 response_schema=TIER_SCHEMA,
             ),

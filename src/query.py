@@ -8,7 +8,7 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 from dotenv import load_dotenv
-import google.generativeai as genai
+from google import genai
 
 from retrieve import build_retriever
 from tier_tagger import tag_claims
@@ -82,10 +82,9 @@ def main() -> None:
         print("    Chunk: -1 | FY: N/A")
         return
 
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(GEMINI_MODEL)
+    client = genai.Client(api_key=api_key)
 
-    result = tag_claims(question, hits, model)
+    result = tag_claims(question, hits, client)
     _print_result(result, hits)
 
 
