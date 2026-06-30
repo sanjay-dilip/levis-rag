@@ -1,6 +1,7 @@
 """Heuristic question-type classification for the /query dispatch path."""
 
 import os
+import re
 import sys
 from enum import Enum
 
@@ -27,6 +28,13 @@ class QuestionType(Enum):
     OUT_OF_SCOPE = "out_of_scope"
 
 
+def _matches_kpi_term(question_lower: str) -> bool:
+    return any(
+        re.search(r'\b' + re.escape(term) + r'\b', question_lower)
+        for term in _KPI_TERMS
+    )
+
+
 def classify_question(question: str) -> QuestionType:
     """Route a question to a dispatch path using ordered keyword heuristics.
 
@@ -42,7 +50,7 @@ def classify_question(question: str) -> QuestionType:
 
     lowered = question.lower()
 
-    has_kpi_term = any(term in lowered for term in _KPI_TERMS)
+    has_kpi_term = _matches_kpi_term(lowered)
     has_period_term = any(term in lowered for term in _PERIOD_TERMS)
     if has_kpi_term and has_period_term:
         return QuestionType.XBRL_KPI

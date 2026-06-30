@@ -18,7 +18,7 @@ KPI_MAP = {
     "revenue": ["RevenueFromContractWithCustomerExcludingAssessedTax", "Revenues"],
     "gross profit": ["GrossProfit"],
     "operating income": ["OperatingIncomeLoss"],
-    "net income": ["NetIncomeLoss"],
+    "net income": ["ProfitLoss", "NetIncomeLoss"],
     "eps": ["EarningsPerShareDiluted", "EarningsPerShareBasic"],
     "earnings per share": ["EarningsPerShareDiluted", "EarningsPerShareBasic"],
     "inventory": ["InventoryNet"],
