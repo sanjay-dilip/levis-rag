@@ -10,9 +10,10 @@ from google import genai
 
 from retrieve import build_retriever, _fy_from_source
 from tier_tagger import tag_claims
-from utils import is_keyword_out_of_scope, is_out_of_scope
+from utils import is_out_of_scope
 
 from app.models.query import QueryRequest, QueryResponse
+from app.router import QuestionType, classify_question
 
 OUT_OF_SCOPE_THRESHOLD = 0.20
 TOP_K = 10
@@ -39,7 +40,9 @@ def _strip_chunk(chunk: dict) -> dict:
 @router.post("/query", response_model=QueryResponse)
 def query(request: QueryRequest) -> QueryResponse:
     """Run hybrid retrieval, OOS gating, and tiered generation for a question."""
-    if is_keyword_out_of_scope(request.question):
+    question_type = classify_question(request.question)
+
+    if question_type == QuestionType.OUT_OF_SCOPE:
         return QueryResponse(
             question=request.question,
             answer="This question is outside the Levi's filing corpus.",
@@ -48,6 +51,25 @@ def query(request: QueryRequest) -> QueryResponse:
             out_of_scope=True,
         )
 
+    if question_type == QuestionType.TREND_QUERY:
+        return QueryResponse(
+            question=request.question,
+            answer="Trend analysis tool not yet implemented.",
+            claims=[],
+            chunks=[],
+            out_of_scope=False,
+        )
+
+    if question_type == QuestionType.XBRL_KPI:
+        return QueryResponse(
+            question=request.question,
+            answer="XBRL KPI extraction not yet implemented.",
+            claims=[],
+            chunks=[],
+            out_of_scope=False,
+        )
+
+    # FINANCIAL_LOOKUP — existing RAG pipeline
     hits = _retriever.retrieve(request.question, top_k=TOP_K)
     stripped_chunks = [_strip_chunk(chunk) for chunk in hits]
 
