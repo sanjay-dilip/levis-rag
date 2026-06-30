@@ -10,6 +10,7 @@ from google import genai
 
 from retrieve import build_retriever, _fy_from_source
 from tier_tagger import tag_claims
+from trend_decay_tool import analyze_drop
 from utils import is_out_of_scope
 
 from app.models.query import QueryRequest, QueryResponse
@@ -22,6 +23,67 @@ router = APIRouter()
 
 _retriever = build_retriever()
 _client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
+
+def _format_drop_text(result: dict) -> str:
+    """Render the status-dependent half-life summary for one drop event."""
+    status = result.get("status")
+    if status == "ok":
+        if result.get("confidence") == "low" or result.get("warning"):
+            warning = result.get("warning", "")
+            return f"Half-life estimate: {result.get('half_life_weeks')} weeks — LOW CONFIDENCE. {warning}".strip()
+        return (
+            f"Half-life: {result.get('half_life_weeks')} weeks "
+            f"({result.get('half_life_days')} days). R²={result.get('r_squared')}. "
+            f"Confidence: {result.get('confidence')}. "
+            f"vs report claim: {result.get('vs_report_claim')}."
+        )
+    if status == "insufficient_data":
+        return "Insufficient signal to fit a decay curve."
+    if status == "error":
+        return f"Data pull failed: {result.get('error_message')}"
+    return f"Status: {status}"
+
+
+def _format_trend_answer(silverstone: dict, austin: dict) -> str:
+    """Build the plain-English answer string for a TREND_QUERY question."""
+    methodology_note = silverstone.get("methodology_note") or austin.get("methodology_note") or ""
+    return (
+        "Levi's McLaren search interest analysis (Google Trends):\n\n"
+        f"Silverstone drop (July 3, 2024): {_format_drop_text(silverstone)}\n"
+        f"Austin drop (October 17, 2024): {_format_drop_text(austin)}\n\n"
+        f"Methodology: {methodology_note}\n"
+        "Report claim: 6–8 week trend cycle. Interpretation requires caution — see confidence flags."
+    )
+
+
+def _trend_claims(silverstone: dict, austin: dict) -> list[dict]:
+    """Build one tier-schema claim dict per drop event."""
+    claims = []
+    for result in (silverstone, austin):
+        if result.get("status") == "ok":
+            claims.append(
+                {
+                    "claim_text": (
+                        f"Google Trends search interest for '{result['keyword']}' around the "
+                        f"{result['label']} drop has estimated half-life of "
+                        f"{result.get('half_life_weeks')} weeks (R²={result.get('r_squared')})"
+                    ),
+                    "tier": "Third-party-benchmark",
+                    "supporting_chunk_id": -1,
+                    "fiscal_year": None,
+                }
+            )
+        else:
+            claims.append(
+                {
+                    "claim_text": result.get("status"),
+                    "tier": "Model-inference",
+                    "supporting_chunk_id": -1,
+                    "fiscal_year": None,
+                }
+            )
+    return claims
 
 
 def _strip_chunk(chunk: dict) -> dict:
@@ -52,10 +114,13 @@ def query(request: QueryRequest) -> QueryResponse:
         )
 
     if question_type == QuestionType.TREND_QUERY:
+        silverstone = analyze_drop("silverstone_2024")
+        austin = analyze_drop("austin_2024")
+
         return QueryResponse(
             question=request.question,
-            answer="Trend analysis tool not yet implemented.",
-            claims=[],
+            answer=_format_trend_answer(silverstone, austin),
+            claims=_trend_claims(silverstone, austin),
             chunks=[],
             out_of_scope=False,
         )

@@ -35,6 +35,35 @@ METHODOLOGY_NOTE = (
     "the requested window."
 )
 
+IMPULSE_MAX_NONZERO_WEEKS = 2
+IMPULSE_WARNING = (
+    "Signal is impulse-like (≤2 non-zero post-peak weeks) — half-life "
+    "estimate is not reliable; interpret with caution"
+)
+
+# Canonical per-drop windows. Google Trends normalises relative interest
+# (0-100) to the peak within the requested window, so caller-supplied
+# windows change the tool's output (Task 5 finding: a wide window dwarfs
+# a smaller drop's signal under a bigger one). Fixed here so analyze_drop()
+# always returns a comparable result for a given drop, isolated from
+# unrelated events.
+KNOWN_DROPS = {
+    "silverstone_2024": {
+        "keyword": "Levi's McLaren",
+        "drop_date": "2024-07-03",
+        "window_start": "2024-06-01",  # 4 weeks pre-drop
+        "window_end": "2024-09-01",  # 8 weeks post-drop, isolated from Austin
+        "label": "Silverstone / British Grand Prix",
+    },
+    "austin_2024": {
+        "keyword": "Levi's McLaren",
+        "drop_date": "2024-10-17",
+        "window_start": "2024-09-15",  # 4 weeks pre-drop
+        "window_end": "2024-12-15",  # 8 weeks post-drop
+        "label": "Austin / U.S. Grand Prix",
+    },
+}
+
 
 def _empty_result(keyword: str, drop_date: str, status: str, **extra: object) -> dict:
     """Build a return dict with all optional fields defaulted to None."""
@@ -127,6 +156,9 @@ def compute_half_life(
     if len(decay_values) < MIN_DECAY_SERIES_LENGTH:
         return _empty_result(keyword, drop_date, "insufficient_data")
 
+    nonzero_count = sum(1 for v in decay_values if v > 0)
+    is_impulse = nonzero_count <= IMPULSE_MAX_NONZERO_WEEKS
+
     # Step 4 — fit f(t) = A * exp(-lambda * t), t = weeks since peak.
     t = np.arange(len(decay_values), dtype=float)
     y = np.array(decay_values, dtype=float)
@@ -151,8 +183,12 @@ def compute_half_life(
     ss_tot = float(np.sum((y - np.mean(y)) ** 2))
     r_squared = round(1.0 if ss_res == 0 else 0.0, 3) if ss_tot == 0 else round(1 - ss_res / ss_tot, 3)
 
-    # Step 5 — confidence.
-    if len(decay_values) >= HIGH_CONFIDENCE_MIN_LENGTH and r_squared >= HIGH_CONFIDENCE_MIN_R2:
+    # Step 5 — confidence. Impulse-like signals (<=2 non-zero post-peak
+    # weeks) are step functions, not decay curves — force low confidence
+    # regardless of fit quality.
+    if is_impulse:
+        confidence = "low"
+    elif len(decay_values) >= HIGH_CONFIDENCE_MIN_LENGTH and r_squared >= HIGH_CONFIDENCE_MIN_R2:
         confidence = "high"
     elif len(decay_values) >= MEDIUM_CONFIDENCE_MIN_LENGTH and r_squared >= MEDIUM_CONFIDENCE_MIN_R2:
         confidence = "medium"
@@ -167,7 +203,7 @@ def compute_half_life(
     else:
         vs_report_claim = "longer"
 
-    return _empty_result(
+    result = _empty_result(
         keyword,
         drop_date,
         "ok",
@@ -180,3 +216,31 @@ def compute_half_life(
         decay_series_length=len(decay_values),
         vs_report_claim=vs_report_claim,
     )
+    if is_impulse:
+        result["warning"] = IMPULSE_WARNING
+    return result
+
+
+def analyze_drop(drop_key: str) -> dict:
+    """Run compute_half_life against a canonical, pre-defined drop window.
+
+    Args:
+        drop_key: Key into KNOWN_DROPS, e.g. "silverstone_2024".
+
+    Returns:
+        The compute_half_life() result dict, with "drop_key" and "label"
+        added. Returns a minimal error dict if drop_key is not recognised.
+    """
+    drop = KNOWN_DROPS.get(drop_key)
+    if drop is None:
+        return {"status": "error", "error_message": f"Unknown drop key: {drop_key}"}
+
+    result = compute_half_life(
+        keyword=drop["keyword"],
+        drop_date=drop["drop_date"],
+        window_start=drop["window_start"],
+        window_end=drop["window_end"],
+    )
+    result["drop_key"] = drop_key
+    result["label"] = drop["label"]
+    return result
