@@ -4,5 +4,6 @@ __pycache__/
 *.pyc
 .DS_Store
 /data/raw/
+/data/xbrl_facts.json
 CONTEXT.md
 exe_query.txt

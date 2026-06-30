@@ -12,6 +12,7 @@ from retrieve import build_retriever, _fy_from_source
 from tier_tagger import tag_claims
 from trend_decay_tool import analyze_drop
 from utils import is_out_of_scope
+from xbrl_tool import get_kpi
 
 from app.models.query import QueryRequest, QueryResponse
 from app.router import QuestionType, classify_question
@@ -86,6 +87,40 @@ def _trend_claims(silverstone: dict, austin: dict) -> list[dict]:
     return claims
 
 
+def _format_kpi_answer(result: dict) -> str:
+    """Render the status-dependent answer string for an XBRL_KPI question."""
+    status = result.get("status")
+    if status == "ok":
+        return (
+            f"Levi's {result['kpi']} for {result['period']}: "
+            f"{result['value']:,} {result['unit']} "
+            f"(Source: {result['form']} filed {result['filed']}, EDGAR XBRL)"
+        )
+    if status == "no_kpi_match":
+        return (
+            "Could not identify a specific KPI in that question. Try asking "
+            "about revenue, gross profit, operating income, net income, EPS, or inventory."
+        )
+    if status == "no_period_match":
+        return "Please specify a fiscal period (e.g. FY2025, Q1 FY2025)."
+    if status == "not_found":
+        return (
+            f"No XBRL fact found for {result.get('kpi')} in {result.get('period')}. "
+            "This period may not be tagged in EDGAR or may predate XBRL filing requirements."
+        )
+    return f"Status: {status}"
+
+
+def _kpi_claim(result: dict) -> dict:
+    """Build a single tier-schema claim dict for an XBRL_KPI question."""
+    return {
+        "claim_text": _format_kpi_answer(result),
+        "tier": result.get("tier", "Model-inference"),
+        "supporting_chunk_id": -1,
+        "fiscal_year": None,
+    }
+
+
 def _strip_chunk(chunk: dict) -> dict:
     """Drop the chunk text and keep only the fields the response needs."""
     return {
@@ -126,10 +161,12 @@ def query(request: QueryRequest) -> QueryResponse:
         )
 
     if question_type == QuestionType.XBRL_KPI:
+        kpi_result = get_kpi(request.question)
+        answer = _format_kpi_answer(kpi_result)
         return QueryResponse(
             question=request.question,
-            answer="XBRL KPI extraction not yet implemented.",
-            claims=[],
+            answer=answer,
+            claims=[_kpi_claim(kpi_result)],
             chunks=[],
             out_of_scope=False,
         )
