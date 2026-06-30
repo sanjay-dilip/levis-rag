@@ -4,7 +4,7 @@ A RAG-powered tool for evidence-tiered analysis of Levi Strauss & Co.'s
 SEC filings and strategic narrative. Built as a portfolio project
 demonstrating applied AI engineering judgment.
 
-**Status: Week 2 of 5-week build — retrieval pipeline and eval harness complete, FastAPI scaffold next**
+**Status: Week 3 of 5-week build — FastAPI backend, tool router, trend-decay tool, and XBRL KPI tool complete; Next.js frontend next**
 
 ---
 
@@ -35,9 +35,13 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 - [x] End-to-end query pipeline — `query.py` → `retrieve.py` → `tier_tagger.py` → cited, tiered answer
 - [x] Hand-labeled eval set — 60 questions across 5 types; recall@10 baseline **40.0%** (24/60 HIT)
 - [x] RRF tuning — 6-config grid (k, candidates, FY filter); no improvement found; gap diagnosed as structural
-- [ ] FastAPI backend — `/query` endpoint wrapping retrieve + generate
+- [x] Out-of-scope detection — similarity threshold + keyword blocklist, two-stage gate before generation
+- [x] FastAPI backend — `POST /query` wrapping retrieve + generate, `GET /health`
+- [x] Tool router — heuristic `QuestionType` dispatch (`OUT_OF_SCOPE` → `XBRL_KPI` → `TREND_QUERY` → `FINANCIAL_LOOKUP`)
+- [x] Trend-decay tool — Google Trends pull + exponential decay half-life fit for the McLaren collaboration drops
+- [x] XBRL KPI tool — direct EDGAR `companyfacts` lookups for revenue, gross profit, operating income, net income, EPS, inventory
+- [x] End-to-end integration test — 60-question eval regression (40.0% held) + 5-path dispatch audit
 - [ ] Next.js frontend
-- [ ] Trend-decay tool (pytrends integration)
 
 ---
 
@@ -46,12 +50,13 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 | Layer | Tool |
 |---|---|
 | Embeddings | sentence-transformers/all-MiniLM-L6-v2 |
-| Generation | Gemini 2.5 Flash (Google AI Studio) |
+| Generation | Gemini 2.5 Flash (via `google-genai`) |
 | Vector store | Supabase Postgres + pgvector |
 | Retrieval | BM25 (rank_bm25) + pgvector dense, RRF fusion |
-| Backend (planned) | FastAPI |
+| Backend | FastAPI (`app/`) |
+| Trend analysis | pytrends (Google Trends) + scipy (`curve_fit`) |
 | Frontend (planned) | Next.js + Tailwind on Vercel |
-| Data source | SEC EDGAR (public, no API key required) |
+| Data sources | SEC EDGAR full-text filings + EDGAR XBRL `companyfacts` API (both public, no API key required) |
 
 ---
 
@@ -70,7 +75,7 @@ python src/fix_fiscal_year_metadata.py # Backfill fiscal_year + period_of_report
 `load_vectors.py` downloads ~80 MB on first run (all-MiniLM-L6-v2 model weights).
 Requires `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`, and `GEMINI_API_KEY` in `.env`.
 
-**To run a query:**
+**To run a query from the CLI:**
 ```bash
 python src/query.py "What was Levi's FY2025 gross margin?"
 ```
@@ -81,6 +86,86 @@ python src/eval_runner.py                          # Default config (k=60, candi
 python src/eval_runner.py --k 30 --candidates 150  # Custom RRF config
 python src/eval_runner.py --fy-filter              # Fiscal-year-filtered dense leg
 ```
+
+---
+
+## Running the API
+
+```bash
+uvicorn app.main:app --reload
+```
+
+```bash
+curl http://localhost:8000/health
+
+curl -X POST http://localhost:8000/query \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What was Levi'\''s FY2025 gross margin?"}'
+```
+
+Every response is shaped as:
+```json
+{
+  "question": "...",
+  "answer": "...",
+  "claims": [{"claim_text": "...", "tier": "...", "supporting_chunk_id": -1, "fiscal_year": null}],
+  "chunks": [{"id": 604, "source": "...", "filing_type": "10-K", "section": "...", "fiscal_year": "FY2025", "rrf_score": 0.024, "similarity": 0.544}],
+  "out_of_scope": false
+}
+```
+
+### Tool router
+
+`POST /query` classifies every question into one of four dispatch paths before
+doing any retrieval (`app/router.py`, heuristic, no ML — evaluated in this
+order, first match wins):
+
+| `QuestionType` | Trigger | What handles it |
+|---|---|---|
+| `OUT_OF_SCOPE` | Keyword blocklist (competitors, stock price, earnings-call specifics, Dockers) | Declined, no retrieval call |
+| `XBRL_KPI` | A KPI term (revenue, gross profit, operating income, net income, EPS, inventory) **and** a period token (FY2025/FY2024/FY2026, Q1–Q4) | `src/xbrl_tool.py` — direct EDGAR XBRL lookup |
+| `TREND_QUERY` | Trend-topic keywords (trend, mclaren, f1, silverstone, austin, half-life, search interest, ...) | `src/trend_decay_tool.py` — Google Trends decay analysis |
+| `FINANCIAL_LOOKUP` | Default — everything else | Hybrid retrieval (`retrieve.py`) → Gemini tier-tagging (`tier_tagger.py`) |
+
+A second OOS gate runs inside the `FINANCIAL_LOOKUP` path: if the top-1 dense
+similarity for the retrieved chunks falls below 0.20, generation is skipped
+even if the keyword blocklist didn't catch it.
+
+### XBRL KPI tool
+
+`src/xbrl_tool.py` pulls `https://data.sec.gov/api/xbrl/companyfacts/CIK0000094845.json`
+(EDGAR's structured per-fact API, not the filing text) once, caches it to
+`data/xbrl_facts.json` (gitignored — regenerate on a fresh checkout), and
+resolves a question like *"What was Levi's gross profit in FY2025?"* to a
+specific GAAP-tagged value with its filing source and a `Verified-from-filing`
+tier.
+
+A real EDGAR data-structure quirk surfaced building this: each 10-K re-tags
+up to three years of comparative figures under the *same* `fy`/`fp`/`form`,
+all sharing one `"filed"` date — so disambiguating the current-period figure
+from prior-year comparatives requires picking the entry with the latest
+`"end"` date, not the latest `"filed"` date. A second quirk: Levi's FY2025
+10-K tags full-year net income under the GAAP concept `ProfitLoss`, not the
+more common `NetIncomeLoss` (which has no annual entries for FY2025/FY2026 in
+the cached facts). Both are handled in `KPI_MAP`'s tag-priority lists.
+
+### Trend-decay tool
+
+`src/trend_decay_tool.py` fits an exponential decay curve (`f(t) = A·e^(-λt)`,
+via `scipy.optimize.curve_fit`) to Google Trends search interest for
+`"Levi's McLaren"` around the two confirmed collaboration drop dates
+(Silverstone, July 3 2024; Austin, October 17 2024), and reports a half-life
+in weeks against the source report's claimed "6–8 week trend cycle."
+
+**Result:** the search-interest signal for both drops is impulse-like — a
+single-week spike followed almost immediately by zero — not a smooth
+multi-week decline. The fit is mathematically valid (R²=0.991 for
+Silverstone) but a two-point, mostly-zero-separated decay series can't
+meaningfully constrain a half-life, so the tool flags both results
+`confidence: "low"`. **The report's claim is untestable from Google Trends
+weekly data at this granularity — not falsified.** Full methodology, raw
+numbers, and the window-normalization issue that motivated the tool's
+canonical per-drop windows: [`data/trend_decay_findings.md`](data/trend_decay_findings.md).
 
 ---
 
@@ -101,7 +186,10 @@ cp .env.example .env         # Add GEMINI_API_KEY, SUPABASE_URL, SUPABASE_SERVIC
 
 Baseline measured on a 60-question hand-labeled eval set (`data/eval_set.json`).
 Scoring: **HIT** = any ground-truth chunk in top-10; **PARTIAL** = acceptable chunk
-in top-10; **MISS** = neither.
+in top-10; **MISS** = neither. Re-confirmed unchanged at end of Week 3 (`python
+src/eval_runner.py` run directly against the retrieval layer, bypassing the
+FastAPI router) to verify none of the router/tool-dispatch work introduced a
+regression.
 
 | Metric | Score |
 |---|---|
@@ -133,10 +221,29 @@ by 10-Q boilerplate. Full tuning results: `data/rrf_tuning_results.md`.
 - **8-K exhibit gap:** All 31 8-K files are wrapper documents — earnings release
   financial tables live in Exhibit 99.1 and are not yet ingested. Audited figures
   are present in 10-K/10-Q filings and cover the same data.
-- **schema.sql out of sync:** Two columns (`fiscal_year`, `period_of_report`) were
-  added via the Supabase SQL editor and are not reflected in `schema.sql`.
-- **google-generativeai 0.8.6 deprecated:** Structured output works but migration
-  to `google-genai` is deferred until after the FastAPI scaffold.
+- **Out-of-scope detection is threshold-tuned, not classifier-based:** the
+  similarity gate (0.20) only catches truly empty retrievals; qualitative
+  in-scope and OOS questions overlap in the 0.37–0.55 similarity band, so two
+  OOS eval questions (CEO earnings call, market share) still score PARTIAL
+  rather than being declined outright. The keyword blocklist added in Week 3
+  covers known out-of-corpus topics but isn't exhaustive.
+- **Trend-decay tool's half-life estimates are low-confidence by design:**
+  Google Trends weekly data for the McLaren drops is impulse-like (single-week
+  spike, near-zero floor), so both canonical drops are flagged
+  `confidence: "low"` regardless of fit R². The source report's "6–8 week
+  trend cycle" claim is untestable at this data granularity, not falsified —
+  see `data/trend_decay_findings.md`.
+- **Same figure, different brand scope, multiple correct answers:** Levi's
+  divested Dockers mid-period, so "FY2024 total revenue" has two legitimate
+  values depending on whether Dockers is included ($6,355.3M, originally
+  reported) or excluded ($6,032.0M / $2,809.1M DTC, restated in the FY2025
+  10-K). Both the RAG pipeline and the XBRL tool can return either figure
+  depending on which chunk/tag they land on, and neither is wrong — see
+  `data/dtc_conflict_finding.md`.
+- **Tool router is heuristic, not classifier-based:** `app/router.py` dispatches
+  on keyword/regex matching (word-boundary as of Week 3 Task 8), not a trained
+  classifier. Misclassifications are possible for unusual phrasings; router
+  accuracy improvements are deferred to Week 4–5.
 
 ---
 
