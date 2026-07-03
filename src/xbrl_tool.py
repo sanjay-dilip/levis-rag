@@ -122,7 +122,7 @@ def get_kpi(question: str) -> dict:
                 "gaap_tag": tag,
                 "value": best["val"],
                 "unit": unit_key,
-                "period": f"{fp} FY{fy}",
+                "period": f"FY{fy}" if fp == "FY" else f"{fp} FY{fy}",
                 "form": best["form"],
                 "filed": best["filed"],
                 "end_date": best["end"],
