@@ -51,16 +51,16 @@ def _extract_period(question: str) -> tuple[str | None, str | None]:
     """Parse a fiscal period (fp, fy) from a question, e.g. ("FY", "2025") or ("Q1", "2025")."""
     lowered = question.lower()
 
-    fy_match = re.search(r"fy(20\d\d)", lowered)
-    if fy_match:
-        return "FY", fy_match.group(1)
-
     for token in _QUARTER_TOKENS:
         if token in lowered:
             fp = token.upper()
             year_match = re.search(r"(20\d\d)", lowered)
             fy = year_match.group(1) if year_match else _DEFAULT_QUARTER_YEAR
             return fp, fy
+
+    fy_match = re.search(r"fy(20\d\d)", lowered)
+    if fy_match:
+        return "FY", fy_match.group(1)
 
     return None, None
 
