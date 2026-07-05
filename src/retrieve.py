@@ -44,7 +44,21 @@ _SOURCE_FY_MAP: dict[str, str] = {
     "10-Q_2024-04-03": "FY2024",
 }
 
-_FY_PATTERN = re.compile(r"FY20\d\d", re.IGNORECASE)
+# Maps 10-Q source filename prefix → quarter label, derived from the same
+# period-of-report dates used in fix_fiscal_year_metadata.py. 10-Ks and 8-Ks
+# have no quarter (annual / event-driven) and are absent from this map.
+_SOURCE_QUARTER_MAP: dict[str, str] = {
+    "10-Q_2026-04-07": "Q1",  # period 2026-03-01
+    "10-Q_2025-10-09": "Q3",  # period 2025-08-31
+    "10-Q_2025-07-10": "Q2",  # period 2025-06-01
+    "10-Q_2025-04-07": "Q1",  # period 2025-03-02
+    "10-Q_2024-10-02": "Q3",  # period 2024-08-25
+    "10-Q_2024-06-26": "Q2",  # period 2024-05-26
+    "10-Q_2024-04-03": "Q1",  # period 2024-02-25
+}
+
+_FY_PATTERN = re.compile(r"FY(20\d\d)", re.IGNORECASE)
+_QUARTER_PATTERN = re.compile(r"\bQ([1-4])\b", re.IGNORECASE)
 
 
 def _fy_from_source(source: str) -> str | None:
@@ -55,14 +69,45 @@ def _fy_from_source(source: str) -> str | None:
     return None
 
 
-def _detect_fy(question: str) -> str | None:
-    """Return the single fiscal year token if exactly one FY appears in question.
+def _quarter_from_source(source: str) -> str | None:
+    """Return quarter label ("Q1".."Q4") for a 10-Q source, or None for 10-Ks/8-Ks."""
+    for prefix, quarter in _SOURCE_QUARTER_MAP.items():
+        if source.startswith(prefix):
+            return quarter
+    return None
 
-    Returns None when the question contains zero or two-or-more distinct FY
-    strings (cross-year questions should not be filtered).
+
+def _detect_period(question: str) -> tuple[str | None, str | None]:
+    """Return (fiscal_year, quarter) tokens detected in the question.
+
+    fiscal_year is the FY token to filter on, or None if the question names
+    no fiscal year (cross-year and quarter-specific questions should not be
+    filtered by the caller in that case). When multiple distinct FY tokens
+    appear (e.g. "between FY2024 and FY2025"), the latest year is used --
+    later filings carry the prior year(s) as restated comparatives in the
+    same chunk, so filtering to the latest year's filing still surfaces the
+    answer.
+
+    quarter is a single "Q1".."Q4" token if exactly one distinct quarter
+    token appears, else None (no quarter-level filtering).
     """
-    matches = {m.upper() for m in _FY_PATTERN.findall(question)}
-    return matches.pop() if len(matches) == 1 else None
+    years = {m for m in _FY_PATTERN.findall(question)}
+    if not years:
+        return None, None
+    fy = f"FY{max(years)}"
+
+    quarters = {m.upper() for m in _QUARTER_PATTERN.findall(question)}
+    quarter = f"Q{quarters.pop()}" if len(quarters) == 1 else None
+
+    # Levi's Q4 is never filed as its own 10-Q -- the fourth quarter is only
+    # ever reported inline in the annual 10-K, which chunk-level metadata
+    # tags as annual (quarter=None), not "Q4". Treating "Q4" as a quarter
+    # filter would match zero chunks and starve both legs. Fall back to
+    # FY-only filtering, which correctly matches the 10-K.
+    if quarter == "Q4":
+        quarter = None
+
+    return fy, quarter
 
 
 def _tokenize(text: str) -> list[str]:
@@ -78,6 +123,13 @@ class Retriever:
         self._chunks_by_id: dict[int, dict] = {c["id"]: c for c in chunks}
         self._model = model
 
+        # (fiscal_year, quarter) per chunk, aligned with `chunks` order, for
+        # BM25-side period filtering (chunks_v2.json has no fiscal_year column).
+        self._chunk_periods: list[tuple[str | None, str | None]] = [
+            (_fy_from_source(c["source"]), _quarter_from_source(c["source"]))
+            for c in chunks
+        ]
+
         logger.info("Building BM25 index over %d chunks...", len(chunks))
         corpus = [_tokenize(c["text"]) for c in chunks]
         self._bm25 = BM25Okapi(corpus)
@@ -89,7 +141,7 @@ class Retriever:
         debug: bool = False,
         k: int = RRF_K,
         candidates: int = DENSE_CANDIDATES,
-        fy_filter: bool = False,
+        fy_filter: bool = True,
     ) -> list[dict]:
         """Return the top *top_k* chunks via RRF over BM25 and dense results.
 
@@ -98,28 +150,53 @@ class Retriever:
             top_k: Number of chunks to return.
             k: RRF constant controlling rank compression.
             candidates: Number of candidates per leg before fusion.
-            fy_filter: When True, restrict the dense leg to chunks whose
-                fiscal year matches the single FY token in the question.
-                Skipped when zero or multiple FY tokens are present.
+            fy_filter: When True, restrict both legs to chunks whose fiscal
+                year (and quarter, if a single quarter token is present)
+                matches the period detected in the question. Skipped when
+                the question names no fiscal year.
 
         Returns:
             List of chunk dicts enriched with bm25_rank, dense_rank, rrf_score.
         """
         penalty = candidates + 1
 
-        # BM25 leg
+        target_fy, target_quarter = _detect_period(question) if fy_filter else (None, None)
+
+        # Annual (no-quarter) figures for year Y are commonly restated as the
+        # prior-year comparative column in year Y+1's own 10-K MD&A table
+        # (e.g. FY2024 gross margin appears in the FY2025 10-K), so a bare
+        # single-year question is allowed to match either filing. Quarter
+        # questions don't need this: the matching 10-Q already carries its
+        # own prior-year comparative inline (see _detect_period).
+        allowed_fys: set[str] | None = None
+        if target_fy:
+            allowed_fys = {target_fy}
+            if not target_quarter:
+                allowed_fys.add(f"FY{int(target_fy[2:]) + 1}")
+
+        # BM25 leg — mask out chunks from a non-matching fiscal year/quarter
+        # before ranking, so period-specific boilerplate from other filings
+        # (e.g. every 10-K/10-Q repeats near-identical "Disaggregated Revenue"
+        # note text) can't outrank the chunk from the queried period.
         tokens = _tokenize(question)
         bm25_scores = self._bm25.get_scores(tokens)
+        if allowed_fys:
+            for idx, (chunk_fy, chunk_quarter) in enumerate(self._chunk_periods):
+                if chunk_fy not in allowed_fys:
+                    bm25_scores[idx] = -np.inf
+                elif target_quarter and chunk_quarter != target_quarter:
+                    bm25_scores[idx] = -np.inf
         bm25_order = np.argsort(bm25_scores)[::-1][:candidates]
         bm25_ranks: dict[int, int] = {
             int(self._chunks[idx]["id"]): rank
             for rank, idx in enumerate(bm25_order, start=1)
+            if bm25_scores[idx] != -np.inf
         }
 
-        # Dense leg — over-request when FY filter is active to compensate for
-        # post-filter attrition (~17% of chunks belong to any given fiscal year).
-        target_fy = _detect_fy(question) if fy_filter else None
-        dense_match_count = candidates * 5 if target_fy else candidates
+        # Dense leg — over-request when the period filter is active to
+        # compensate for post-filter attrition (a single fiscal year is
+        # ~1/10 of chunks; a single quarter within it is smaller still).
+        dense_match_count = candidates * 8 if target_quarter else (candidates * 5 if target_fy else candidates)
 
         query_vec = self._model.encode(question).tolist()
         response = (
@@ -129,10 +206,11 @@ class Retriever:
         )
         dense_results: list[dict] = response.data
 
-        if target_fy:
+        if allowed_fys:
             dense_results = [
                 row for row in dense_results
-                if _fy_from_source(row.get("source", "")) == target_fy
+                if _fy_from_source(row.get("source", "")) in allowed_fys
+                and (target_quarter is None or _quarter_from_source(row.get("source", "")) == target_quarter)
             ][:candidates]
 
         # Store (rank, similarity) so similarity can break RRF ties below.

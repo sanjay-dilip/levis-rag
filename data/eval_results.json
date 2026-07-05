@@ -13,16 +13,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=604 contains both FY2024 and FY2025 gross margin in the same table row",
     "returned_chunk_ids": [
-      369,
-      125,
-      848,
-      769,
-      208,
       686,
-      453,
       604,
       1022,
-      364
+      606,
+      1106,
+      1206,
+      1304,
+      1295,
+      1108,
+      1017
     ],
     "retrieval_result": "HIT"
   },
@@ -42,16 +42,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=686 is the FY2025 disaggregated revenue table (Note 17) with total $6,282.0M; id=602 is the income statement table",
     "returned_chunk_ids": [
-      453,
-      208,
       686,
-      369,
-      125,
-      40,
-      753,
-      765,
-      279,
-      525
+      1295,
+      1019,
+      1276,
+      1169,
+      700,
+      695,
+      1303,
+      604,
+      995
     ],
     "retrieval_result": "HIT"
   },
@@ -71,14 +71,14 @@
     "returned_chunk_ids": [
       1019,
       1304,
-      453,
       1303,
-      208,
-      369,
       686,
       1206,
-      364,
-      1104
+      1104,
+      1020,
+      1295,
+      1105,
+      695
     ],
     "retrieval_result": "HIT"
   },
@@ -96,16 +96,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=686 disaggregated revenue table: Wholesale row totals $3,205.2M",
     "returned_chunk_ids": [
-      453,
-      208,
       686,
-      753,
-      369,
       1303,
-      40,
       1019,
-      276,
-      122
+      1009,
+      1104,
+      1191,
+      1092,
+      1295,
+      604,
+      522
     ],
     "retrieval_result": "HIT"
   },
@@ -126,16 +126,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=606 opens with $677.6M; id=602 is income statement table; id=607 narrative states 'increased 157.9% to $677.6 million'",
     "returned_chunk_ids": [
-      125,
-      369,
-      769,
-      848,
-      208,
       606,
       686,
-      453,
-      364,
-      1295
+      1022,
+      1295,
+      1108,
+      695,
+      1276,
+      697,
+      1169,
+      995
     ],
     "retrieval_result": "HIT"
   },
@@ -156,16 +156,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=602 income statement: Net income $578.1M total ($502.0M continuing + $76.1M discontinued Dockers); id=602 not retrieved in top-10 — expected MISS",
     "returned_chunk_ids": [
-      369,
-      125,
-      208,
-      453,
       686,
-      366,
-      769,
-      765,
-      279,
-      525
+      700,
+      604,
+      1276,
+      1019,
+      1295,
+      1169,
+      995,
+      1301,
+      1303
     ],
     "retrieval_result": "MISS"
   },
@@ -183,16 +183,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=686 disaggregated revenue table: Americas Total $3,297.0M (Wholesale $1,921.5 + DTC $1,375.5)",
     "returned_chunk_ids": [
-      453,
-      208,
       686,
-      753,
-      369,
-      125,
-      916,
       1290,
-      831,
-      1009
+      1009,
+      1092,
+      1191,
+      1295,
+      698,
+      1019,
+      1294,
+      696
     ],
     "retrieval_result": "HIT"
   },
@@ -210,16 +210,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=686 disaggregated revenue table: Europe Total $1,699.3M (Wholesale $756.6 + DTC $942.7)",
     "returned_chunk_ids": [
-      453,
-      208,
       686,
-      753,
-      369,
-      125,
-      916,
-      831,
       1290,
-      1092
+      1092,
+      1191,
+      1009,
+      1295,
+      696,
+      698,
+      1294,
+      697
     ],
     "retrieval_result": "HIT"
   },
@@ -237,16 +237,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=686 disaggregated revenue table: Asia Total $1,134.4M (Wholesale $477.7 + DTC $656.7)",
     "returned_chunk_ids": [
-      453,
       686,
-      208,
-      753,
-      831,
-      916,
-      369,
+      1092,
       1290,
-      125,
-      1092
+      1009,
+      1191,
+      1295,
+      696,
+      1294,
+      698,
+      697
     ],
     "retrieval_result": "HIT"
   },
@@ -266,16 +266,16 @@
     "question_type": "qualitative_lookup",
     "notes": "Q4-specific e-commerce growth % not disclosed in 10-K; id=604 mentions 'higher e-commerce traffic' qualitatively; id=596 has annual share (11% of total); question_type changed from numeric_lookup: no specific Q4 rate in corpus",
     "returned_chunk_ids": [
-      844,
-      933,
-      766,
-      931,
       1104,
-      43,
-      38,
-      282,
-      208,
-      604
+      604,
+      603,
+      525,
+      523,
+      527,
+      1021,
+      1207,
+      1306,
+      583
     ],
     "retrieval_result": "HIT"
   },
@@ -293,16 +293,16 @@
     "question_type": "trend_comparison",
     "notes": "Levi's does not report a 'women's segment'; data is women's products as % of net revenues (id=525); id=525 not retrieved in top-10 for this query — expected MISS",
     "returned_chunk_ids": [
-      369,
       686,
-      208,
-      453,
       1295,
-      38,
-      40,
       695,
-      462,
-      217
+      1019,
+      697,
+      523,
+      522,
+      1011,
+      1276,
+      696
     ],
     "retrieval_result": "MISS"
   },
@@ -323,15 +323,15 @@
     "notes": "id=604 (FY2025 10-K gross profit table) shows FY2024 gross margin as 60.6% on continuing-ops basis; id=398 (FY2024 income statement) shows 60.0% total. id=604 at rank 8 in retrieval.",
     "returned_chunk_ids": [
       369,
-      125,
-      208,
-      453,
       686,
+      453,
       769,
       848,
       604,
       1022,
-      364
+      364,
+      1106,
+      768
     ],
     "retrieval_result": "HIT"
   },
@@ -351,16 +351,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=453 (FY2024 Note 15 disaggregated revenue) shows $6,355.3M total; id=604 header shows $6,032.0M on continuing-ops basis. Both are valid depending on scope.",
     "returned_chunk_ids": [
-      208,
       453,
       686,
       369,
-      125,
-      40,
       753,
+      1019,
       765,
       279,
-      525
+      462,
+      700,
+      769
     ],
     "retrieval_result": "HIT"
   },
@@ -380,16 +380,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=453 (FY2024 Note 15): DTC $2,923.8M total (incl. Dockers $192.4M); id=686 (FY2025 Note 17): FY2024 DTC restated to $2,809.1M ex-Dockers",
     "returned_chunk_ids": [
-      1304,
       1019,
       453,
-      208,
-      1303,
       686,
       1206,
       369,
       844,
-      367
+      367,
+      364,
+      1104,
+      604
     ],
     "retrieval_result": "HIT"
   },
@@ -410,18 +410,18 @@
     "question_type": "trend_comparison",
     "notes": "id=604 gross profit table header shows '6,282.0 | 6,032.0 | 4.1%'; id=686 has both years' totals (derivable); id=601 has the full income table. id=686 at rank 3 → expected PARTIAL",
     "returned_chunk_ids": [
-      208,
-      453,
       686,
-      369,
-      125,
       1290,
       1009,
-      753,
-      848,
-      1295
+      1295,
+      1106,
+      1191,
+      1092,
+      604,
+      1108,
+      1022
     ],
-    "retrieval_result": "PARTIAL"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_016",
@@ -437,16 +437,16 @@
     "question_type": "trend_comparison",
     "notes": "id=604 gross profit table shows gross margin 61.7% (FY2025) vs 60.6% (FY2024); id=604 at rank 3 in retrieval → expected HIT",
     "returned_chunk_ids": [
-      125,
-      369,
       604,
       606,
-      848,
       1106,
-      768,
-      1108,
       686,
-      1022
+      1108,
+      1022,
+      1017,
+      1304,
+      1206,
+      1295
     ],
     "retrieval_result": "HIT"
   },
@@ -466,16 +466,16 @@
     "question_type": "trend_comparison",
     "notes": "id=601 has channel breakdown with DTC +9.5%; id=686 has both years' DTC totals (derivable); neither in top-10 for this query — expected MISS",
     "returned_chunk_ids": [
-      208,
-      453,
       686,
-      367,
       1206,
-      931,
-      369,
       1304,
       1019,
-      604
+      604,
+      1020,
+      1105,
+      1303,
+      1106,
+      1290
     ],
     "retrieval_result": "PARTIAL"
   },
@@ -493,16 +493,16 @@
     "question_type": "trend_comparison",
     "notes": "id=601 has channel breakdown with Wholesale -0.5% reported / +4.1% organic; id=601 not in top-10 — expected MISS. Note: FY2024 10-K showed wholesale $3,431.5M (incl. Dockers); restated $3,222.9M used here.",
     "returned_chunk_ids": [
-      208,
-      453,
-      125,
-      916,
-      831,
-      753,
-      122,
-      844,
-      931,
-      604
+      604,
+      527,
+      1279,
+      1022,
+      1108,
+      1106,
+      646,
+      525,
+      1104,
+      603
     ],
     "retrieval_result": "MISS"
   },
@@ -523,16 +523,16 @@
     "question_type": "trend_comparison",
     "notes": "id=604 (FY2025 10-K) shows 61.7%/60.6%; id=122 (FY2023 10-K MD&A income table) shows 56.9%; id=398 (FY2024 income statement) shows FY2023 56.9% as comparison. id=604 at rank 3 → expected HIT",
     "returned_chunk_ids": [
-      125,
-      369,
       604,
-      769,
       606,
-      768,
-      1206,
-      367,
+      1022,
       1304,
-      848
+      1206,
+      1106,
+      1017,
+      1108,
+      1020,
+      1301
     ],
     "retrieval_result": "HIT"
   },
@@ -553,18 +553,18 @@
     "question_type": "trend_comparison",
     "notes": "id=603 (FY2025 10-K): 'DTC comprised 49% of total net revenues'; id=596 (FY2025 Business section): 49% FY2025 / 47% FY2024; id=115 (FY2023 10-K): 43% FY2023. None in top-10 for this query — expected MISS",
     "returned_chunk_ids": [
-      1206,
       1304,
-      367,
+      1206,
       604,
-      125,
       1019,
-      369,
-      844,
       1020,
-      122
+      1105,
+      1303,
+      603,
+      1022,
+      1106
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_021",
@@ -582,18 +582,18 @@
     "question_type": "trend_comparison",
     "notes": "id=602 (FY2025 MD&A revenue table) shows Americas $3,297.0M vs $3,200.6M (+3.0% / +6.8%); id=686 has both years' Americas totals; neither in top-10 — expected MISS",
     "returned_chunk_ids": [
-      453,
-      208,
-      753,
-      125,
-      366,
-      831,
-      916,
       606,
-      769,
-      604
+      604,
+      1022,
+      1205,
+      1108,
+      1306,
+      1279,
+      1209,
+      1106,
+      686
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_022",
@@ -614,14 +614,14 @@
     "returned_chunk_ids": [
       453,
       208,
-      686,
       369,
       125,
       40,
       753,
-      765,
-      279,
-      525
+      769,
+      462,
+      364,
+      367
     ],
     "retrieval_result": "HIT"
   },
@@ -644,13 +644,13 @@
       369,
       125,
       208,
+      848,
       769,
       453,
-      848,
-      686,
-      1022,
-      604,
-      364
+      768,
+      364,
+      937,
+      367
     ],
     "retrieval_result": "MISS"
   },
@@ -670,16 +670,16 @@
     "question_type": "qualitative_lookup",
     "notes": "id=604 (FY2025 10-K): annual e-commerce narrative; id=1206 (10-Q_2025-10-09, Q3 FY2025): Q3 DTC/e-commerce narrative. No direct Q3 vs Q4 e-commerce comparison in filings. id=604 at rank 3 → expected HIT",
     "returned_chunk_ids": [
-      208,
-      453,
       604,
-      43,
-      125,
-      282,
-      931,
-      122,
-      765,
-      916
+      1279,
+      525,
+      646,
+      1104,
+      547,
+      603,
+      1106,
+      995,
+      1108
     ],
     "retrieval_result": "HIT"
   },
@@ -700,16 +700,16 @@
     "question_type": "trend_comparison",
     "notes": "id=606 (FY2025 10-K) opens with '$677.6 $262.7 157.9%'; id=607 narrative; id=602 income statement. id=606 at rank 4 → expected HIT",
     "returned_chunk_ids": [
-      125,
-      369,
-      769,
       606,
-      848,
-      364,
       1022,
       1108,
-      120,
-      208
+      1295,
+      686,
+      1306,
+      602,
+      697,
+      695,
+      1209
     ],
     "retrieval_result": "HIT"
   },
@@ -727,16 +727,16 @@
     "question_type": "trend_comparison",
     "notes": "id=632 (FY2025 consolidated balance sheet) shows Inventories $1,237.7M (Nov 2025) vs $1,131.3M (Dec 2024); id=632 not retrieved in top-10 — expected MISS",
     "returned_chunk_ids": [
-      369,
-      208,
-      453,
       686,
-      125,
       1295,
-      127,
-      765,
-      636,
-      606
+      606,
+      1108,
+      1009,
+      1022,
+      545,
+      1290,
+      604,
+      636
     ],
     "retrieval_result": "MISS"
   },
@@ -790,14 +790,14 @@
     "returned_chunk_ids": [
       1325,
       1045,
-      1137,
       1246,
-      276,
-      37,
-      462,
-      522,
+      1137,
       1276,
-      1319
+      995,
+      695,
+      1201,
+      686,
+      1169
     ],
     "retrieval_result": "MISS"
   },
@@ -846,18 +846,18 @@
     "question_type": "qualitative_lookup",
     "notes": "id=560 (FY2025 10-K risk factor) discusses tariffs and trade law; id=1299 (Q1 FY2026 10-Q MD&A) discusses current tariff impacts; id=560 not in top-10 but id=1299 at rank 4 → expected PARTIAL",
     "returned_chunk_ids": [
-      125,
-      208,
-      453,
       1299,
       606,
       1022,
-      769,
       1108,
-      765,
-      753
+      1306,
+      1106,
+      1035,
+      560,
+      583,
+      995
     ],
-    "retrieval_result": "PARTIAL"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_031",
@@ -902,16 +902,16 @@
     "question_type": "inference",
     "notes": "id=604 explicitly states 'Cost of goods sold 2,404.2'; id=601 has the full income statement table; neither in top-10 for 'implied COGS' query — expected MISS",
     "returned_chunk_ids": [
-      40,
-      208,
-      453,
-      125,
       686,
-      369,
       1276,
       1169,
-      743,
-      279
+      995,
+      1022,
+      522,
+      1295,
+      695,
+      1019,
+      1089
     ],
     "retrieval_result": "MISS"
   },
@@ -934,13 +934,13 @@
       1019,
       1304,
       1206,
-      367,
-      125,
-      844,
-      369,
-      931,
-      848,
-      604
+      604,
+      1105,
+      1022,
+      1020,
+      646,
+      1009,
+      1104
     ],
     "retrieval_result": "MISS"
   },
@@ -958,16 +958,16 @@
     "question_type": "inference",
     "notes": "Not stated verbatim; requires dividing revenue by 100. id=604 has both revenue ($6,282.0M) and gross margin (61.7%) needed for calculation. id=604 at rank 3 → expected HIT (input data retrieved)",
     "returned_chunk_ids": [
-      125,
-      769,
       604,
-      131,
       1022,
-      120,
-      768,
+      1206,
+      606,
       1106,
-      937,
-      1206
+      1108,
+      1301,
+      1209,
+      1020,
+      1104
     ],
     "retrieval_result": "HIT"
   },
@@ -985,16 +985,16 @@
     "question_type": "inference",
     "notes": "Not stated verbatim in basis points; requires subtracting 60.6% from 61.7%. id=604 has both values in the same table. id=604 at rank 3 → expected HIT (input data retrieved)",
     "returned_chunk_ids": [
-      125,
-      369,
       604,
       1017,
-      769,
-      1106,
-      848,
       606,
       1022,
-      768
+      1106,
+      1301,
+      1304,
+      1108,
+      686,
+      1206
     ],
     "retrieval_result": "HIT"
   },
@@ -1014,18 +1014,18 @@
     "question_type": "inference",
     "notes": "Multi-step calculation using DTC base ($2,809.1M), wholesale growth (−0.5%), and Beyond Yoga ($151.3M); id=601 has channel % changes; id=686 has revenue breakdown; neither in top-10 — expected MISS",
     "returned_chunk_ids": [
-      367,
       1019,
       1206,
-      753,
-      1105,
-      845,
-      844,
       1009,
+      1105,
+      1304,
       1020,
-      1304
+      1303,
+      686,
+      1104,
+      646
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_037",
@@ -1039,16 +1039,16 @@
     "question_type": "out_of_scope",
     "notes": "Revenue guidance is not disclosed in 10-K/10-Q filings; provided in earnings call transcripts and Exhibit 99.1 of 8-Ks; earnings call transcripts not ingested — expected MISS",
     "returned_chunk_ids": [
-      686,
-      453,
-      369,
-      208,
-      696,
-      523,
-      277,
-      753,
-      695,
-      916
+      1290,
+      1276,
+      1279,
+      1295,
+      1304,
+      1301,
+      1293,
+      1277,
+      1307,
+      1311
     ],
     "retrieval_result": "MISS"
   },
@@ -1116,18 +1116,18 @@
     "question_type": "out_of_scope",
     "notes": "Earnings call transcripts not ingested; id=1430 (8-K_2026-01-28 Exhibit 99.1 index) is the closest item; id=1430 at rank 5 → expected PARTIAL (8-K press release partially addresses earnings highlights)",
     "returned_chunk_ids": [
-      369,
-      125,
-      208,
       686,
-      1430,
-      53,
-      1422,
-      928,
-      453,
-      1436
+      1276,
+      1009,
+      1169,
+      995,
+      1017,
+      695,
+      1022,
+      1275,
+      600
     ],
-    "retrieval_result": "PARTIAL"
+    "retrieval_result": "MISS"
   },
   {
     "id": "eval_041",
@@ -1172,16 +1172,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=1019 (10-Q_2025-04-07 revenue table) shows 'Total net revenues $1,526.8 $1,480.2 3.1%'; id=1009 (disaggregated note) confirms with segment breakdown totalling $1,526.8M; id=1019 at rank 4 → expected HIT",
     "returned_chunk_ids": [
-      453,
-      208,
-      686,
       1019,
-      369,
-      125,
-      753,
       1009,
-      916,
-      848
+      1022,
+      995,
+      1021,
+      1017,
+      1014,
+      1023,
+      1011,
+      1024
     ],
     "retrieval_result": "HIT"
   },
@@ -1200,16 +1200,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=1191 (10-Q_2025-10-09 Note 12 disaggregated revenue) shows Americas $806.4M; id=1195 (business segment note same 10-Q) shows Americas $806.4M vs $757.2M; id=1195 at rank 9 → expected HIT",
     "returned_chunk_ids": [
-      453,
-      208,
-      753,
-      125,
-      916,
-      831,
-      844,
-      769,
       1195,
-      765
+      1169,
+      1209,
+      1232,
+      1200,
+      1201,
+      1212,
+      1170,
+      1203,
+      1237
     ],
     "retrieval_result": "HIT"
   },
@@ -1227,18 +1227,18 @@
     "question_type": "numeric_lookup",
     "notes": "id=1092 (10-Q_2025-07-10 Note 11 disaggregated revenue) shows DTC total $716.1M; id=1092 not retrieved in top-10 — expected MISS",
     "returned_chunk_ids": [
-      1019,
-      453,
-      1304,
-      208,
-      844,
-      686,
-      367,
-      369,
-      931,
-      604
+      1104,
+      1106,
+      1108,
+      1092,
+      1110,
+      1095,
+      1102,
+      1107,
+      1121,
+      1117
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_045",
@@ -1256,18 +1256,18 @@
     "question_type": "numeric_lookup",
     "notes": "id=1303 (10-Q_2026-04-07 revenue table) shows 'Total net revenues $1,742.5 $1,526.8 14.1%'; id=1290 (disaggregated note) has both period segment totals; neither in top-10 — expected MISS",
     "returned_chunk_ids": [
-      453,
-      208,
-      686,
-      369,
-      125,
-      1019,
-      753,
-      1009,
-      916,
-      848
+      1290,
+      1295,
+      1304,
+      1303,
+      1279,
+      1276,
+      1294,
+      1306,
+      1301,
+      1308
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_046",
@@ -1283,16 +1283,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=768 (10-Q_2024-04-03 gross profit table) shows 'Gross margin 58.2%' for Q1 FY2024; id=768 at rank 9 → expected HIT. Note: figure includes Dockers (total company basis).",
     "returned_chunk_ids": [
-      125,
-      369,
       769,
-      848,
-      604,
-      606,
-      1022,
-      131,
       768,
-      1106
+      774,
+      753,
+      763,
+      773,
+      743,
+      770,
+      766,
+      756
     ],
     "retrieval_result": "HIT"
   },
@@ -1312,18 +1312,18 @@
     "question_type": "trend_comparison",
     "notes": "id=1019 has explicit '+3.1%' change; id=1009 (disaggregated note) has both periods' segment breakdowns (both totalling $1,526.8M and $1,480.2M); id=1009 at rank 5 → expected PARTIAL (ground truth 1019 not in top-10)",
     "returned_chunk_ids": [
-      453,
-      208,
-      686,
-      753,
       1009,
-      369,
-      125,
-      1290,
-      916,
-      831
+      1019,
+      1022,
+      1017,
+      995,
+      994,
+      1021,
+      1011,
+      1023,
+      1014
     ],
-    "retrieval_result": "PARTIAL"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_048",
@@ -1341,18 +1341,18 @@
     "question_type": "trend_comparison",
     "notes": "id=1191 (disaggregated note) has both Q3 FY2025 ($1,543.4M) and Q3 FY2024 ($1,443.1M) totals; id=1195 (segment note) also has both periods; neither in top-10 — expected MISS",
     "returned_chunk_ids": [
-      453,
-      208,
-      686,
-      366,
-      753,
-      1009,
-      369,
-      125,
-      1290,
-      1019
+      1191,
+      1209,
+      1169,
+      1205,
+      1233,
+      1202,
+      1175,
+      1195,
+      1192,
+      1211
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_049",
@@ -1370,18 +1370,18 @@
     "question_type": "trend_comparison",
     "notes": "id=1303 (10-Q_2026-04-07 revenue table) shows explicit '14.1% 9.2%'; id=1290 (disaggregated note) has both periods' totals (derivable); id=1290 at rank 8 → expected PARTIAL",
     "returned_chunk_ids": [
-      453,
-      208,
-      686,
-      753,
-      125,
-      1009,
-      369,
       1290,
-      916,
-      831
+      1304,
+      1303,
+      1295,
+      1279,
+      1306,
+      1276,
+      1275,
+      1294,
+      1301
     ],
-    "retrieval_result": "PARTIAL"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_050",
@@ -1397,16 +1397,16 @@
     "question_type": "trend_comparison",
     "notes": "id=1108 (10-Q_2025-07-10 operating income table) shows 'Total operating income $108.0 $20.9 * 7.5% v 1.5%'; id=1108 at rank 5 → expected HIT",
     "returned_chunk_ids": [
-      369,
-      125,
-      769,
-      848,
       1108,
-      606,
-      1022,
-      208,
-      453,
-      364
+      1106,
+      1114,
+      1095,
+      1080,
+      1094,
+      1103,
+      1092,
+      1118,
+      1113
     ],
     "retrieval_result": "HIT"
   },
@@ -1426,16 +1426,16 @@
     "question_type": "trend_comparison",
     "notes": "id=1290 (disaggregated note) shows Asia $347.5M (Q1 FY2026) vs $308.1M (Q1 FY2025); id=1303 (revenue table) has both periods' totals; id=1290 not in top-10 for this query — expected MISS",
     "returned_chunk_ids": [
-      453,
-      208,
-      831,
-      753,
-      125,
-      916,
       1306,
-      769,
-      606,
-      1279
+      1279,
+      1301,
+      1319,
+      1275,
+      1316,
+      1307,
+      1281,
+      1277,
+      1292
     ],
     "retrieval_result": "MISS"
   },
@@ -1455,18 +1455,18 @@
     "question_type": "qualitative_lookup",
     "notes": "id=1015 (10-Q_2025-04-07 MD&A 'Tariffs' section) explicitly states 'On April 2, 2025...We expect these new tariffs to have a material impact'; id=1299 (Q1 FY2026 10-Q) discusses 'Reciprocal tariffs'; id=1299 at rank 8 → expected PARTIAL",
     "returned_chunk_ids": [
-      1288,
-      1299,
       1035,
-      1236,
-      125,
-      686,
-      369,
-      208,
-      453,
-      560
+      1022,
+      1009,
+      996,
+      995,
+      1007,
+      1013,
+      1016,
+      1011,
+      1019
     ],
-    "retrieval_result": "PARTIAL"
+    "retrieval_result": "MISS"
   },
   {
     "id": "eval_053",
@@ -1482,18 +1482,18 @@
     "question_type": "qualitative_lookup",
     "notes": "id=1202 (10-Q_2025-10-09 Q3 FY2025 highlights) explicitly states 'inventory increased 12%, excluding the Dockers business, in preparation for sales for the remainder of the year and from earlier receipts in order to mitigate potential impacts from tariffs'; not in top-10 — expected MISS",
     "returned_chunk_ids": [
-      369,
-      208,
-      453,
-      125,
-      686,
-      769,
-      606,
-      753,
-      127,
-      637
+      1169,
+      1211,
+      1170,
+      1191,
+      1173,
+      1214,
+      1209,
+      1240,
+      1210,
+      1202
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_054",
@@ -1513,14 +1513,14 @@
     "returned_chunk_ids": [
       1019,
       1304,
-      453,
-      208,
-      369,
-      1303,
       686,
-      367,
-      765,
-      523
+      1303,
+      604,
+      1104,
+      1276,
+      1295,
+      1169,
+      995
     ],
     "retrieval_result": "PARTIAL"
   },
@@ -1540,18 +1540,18 @@
     "question_type": "inference",
     "notes": "id=1290 (10-Q_2026-04-07 disaggregated note) has DTC $911.5M and Total $1,742.5M; id=1303 (revenue table) shows DTC $911.5M and total $1,742.5M explicitly; 52.3% is not stated verbatim — must be calculated; neither in top-10 — expected MISS",
     "returned_chunk_ids": [
-      1019,
       1304,
-      367,
-      125,
-      369,
-      844,
-      848,
-      769,
-      931,
-      604
+      1303,
+      1279,
+      1290,
+      1305,
+      1295,
+      1276,
+      1302,
+      1301,
+      1308
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_056",
@@ -1568,18 +1568,18 @@
     "question_type": "inference",
     "notes": "id=1191 (disaggregated note) and id=1195 (segment note) both show Asia $277.7M (Q3 FY2025) and $247.1M (Q3 FY2024) in same table; +12.4% is not stated verbatim — must be calculated; neither in top-10 — expected MISS",
     "returned_chunk_ids": [
-      453,
-      208,
-      831,
-      916,
-      753,
-      769,
-      120,
-      686,
-      369,
-      122
+      1207,
+      1201,
+      1147,
+      1248,
+      1212,
+      1203,
+      1180,
+      1237,
+      1191,
+      1205
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_057",
@@ -1599,15 +1599,15 @@
     "notes": "Tests simultaneous retrieval of both input figures. Chunk 604 has gross margin % (61.7%); chunk 686 or 601 has total net revenues ($6,282.0M). Both are needed for the derivation. Different from eval_035 (gross margin in bps) and eval_034 (revenue per pp gross margin).",
     "returned_chunk_ids": [
       604,
-      125,
-      369,
       1106,
       1304,
-      769,
+      1022,
       1206,
-      768,
-      367,
-      765
+      606,
+      1017,
+      686,
+      1108,
+      1209
     ],
     "retrieval_result": "HIT"
   },
@@ -1627,16 +1627,16 @@
     "question_type": "inference",
     "notes": "Tests channel mix derivation from FY2025 MD&A channel revenue table (chunk 601). Different from eval_033 (DTC % of 49% which is stated verbatim in the Business section). The wholesale % must be calculated; it is not stated verbatim anywhere in the filings.",
     "returned_chunk_ids": [
-      453,
-      208,
       686,
-      369,
-      125,
-      122,
-      769,
-      525,
       1304,
-      279
+      525,
+      604,
+      603,
+      1106,
+      1104,
+      1303,
+      1207,
+      611
     ],
     "retrieval_result": "PARTIAL"
   },
@@ -1656,16 +1656,16 @@
     "question_type": "inference",
     "notes": "Use FY2024 restated DTC ($2,809.1M ex-Dockers) not as-reported ($2,923.8M incl. Dockers). See data/dtc_conflict_finding.md. Both FY2025 and restated FY2024 DTC figures appear together in the FY2025 10-K channel revenue table (chunk 601). Chunk 686 (Note 17) also has the channel comparison.",
     "returned_chunk_ids": [
-      208,
-      453,
       686,
       1206,
-      931,
-      367,
-      369,
       1019,
-      125,
-      1304
+      1304,
+      604,
+      1020,
+      1105,
+      1303,
+      1106,
+      1290
     ],
     "retrieval_result": "PARTIAL"
   },
@@ -1685,16 +1685,16 @@
     "question_type": "qualitative_lookup",
     "notes": "Pricing narrative resides in the MD&A gross margin section (chunk 604), not the Business Overview. Retriever surfaces Business Overview (chunk 523, rank 2) which contains general strategy language but not the specific pricing-as-margin-driver disclosure. Consistent with the qualitative section miss pattern from eval_028 (risk factors) and eval_031 (inventory management).",
     "returned_chunk_ids": [
-      462,
       1276,
       695,
-      217,
-      276,
-      400,
-      277,
       523,
       522,
-      357
+      1173,
+      686,
+      1194,
+      529,
+      696,
+      593
     ],
     "retrieval_result": "PARTIAL"
   }

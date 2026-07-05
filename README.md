@@ -4,7 +4,7 @@ A RAG-powered tool for evidence-tiered analysis of Levi Strauss & Co.'s
 SEC filings and strategic narrative. Built as a portfolio project
 demonstrating applied AI engineering judgment.
 
-**Status: Week 3 of 5-week build — FastAPI backend, tool router, trend-decay tool, and XBRL KPI tool complete; Next.js frontend next**
+**Status: Week 4 of 5-week build — structural retrieval fix complete (recall@10 40.0% → 58.3%); Next.js frontend next**
 
 ---
 
@@ -30,17 +30,19 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 - [x] Embeddings — all-MiniLM-L6-v2 (384-dim); 120 financial table chunks re-embedded with metadata prefix to improve dense recall
 - [x] Fiscal year metadata — every 10-K/10-Q chunk tagged with `fiscal_year` and `period_of_report` in Supabase
 - [x] Supabase live — vectors in Postgres + pgvector; `match_chunks` RPC with IVFFlat index (`probes=10`)
-- [x] Hybrid retrieval live — BM25 (rank_bm25) + pgvector dense, fused via RRF (k=60); bug-fixed dense leg, dynamic penalty rank
+- [x] Hybrid retrieval live — BM25 (rank_bm25) + pgvector dense, fused via RRF (k=60); bug-fixed dense leg, dynamic penalty rank; quarter-aware period filtering on both legs
 - [x] Evidentiary tier tagging — Gemini Flash structured output (JSON schema enforced); four tiers, per-claim citations
 - [x] End-to-end query pipeline — `query.py` → `retrieve.py` → `tier_tagger.py` → cited, tiered answer
-- [x] Hand-labeled eval set — 60 questions across 5 types; recall@10 baseline **40.0%** (24/60 HIT)
+- [x] Hand-labeled eval set — 60 questions across 5 types; recall@10 **58.3%** (35/60 HIT)
 - [x] RRF tuning — 6-config grid (k, candidates, FY filter); no improvement found; gap diagnosed as structural
+- [x] Quarter-aware period filtering — fixes the structural gap the RRF grid couldn't; recall@10 40.0% → 58.3%
 - [x] Out-of-scope detection — similarity threshold + keyword blocklist, two-stage gate before generation
 - [x] FastAPI backend — `POST /query` wrapping retrieve + generate, `GET /health`
 - [x] Tool router — heuristic `QuestionType` dispatch (`OUT_OF_SCOPE` → `XBRL_KPI` → `TREND_QUERY` → `FINANCIAL_LOOKUP`)
 - [x] Trend-decay tool — Google Trends pull + exponential decay half-life fit for the McLaren collaboration drops
 - [x] XBRL KPI tool — direct EDGAR `companyfacts` lookups for revenue, gross profit, operating income, net income, EPS, inventory
 - [x] End-to-end integration test — 60-question eval regression (40.0% held) + 5-path dispatch audit
+- [x] Structural retrieval fix (Week 4) — quarter-aware metadata filtering applied to both BM25 and dense legs
 - [ ] Next.js frontend
 
 ---
@@ -184,35 +186,58 @@ cp .env.example .env         # Add GEMINI_API_KEY, SUPABASE_URL, SUPABASE_SERVIC
 
 ## Retrieval performance
 
-Baseline measured on a 60-question hand-labeled eval set (`data/eval_set.json`).
+Measured on a 60-question hand-labeled eval set (`data/eval_set.json`).
 Scoring: **HIT** = any ground-truth chunk in top-10; **PARTIAL** = acceptable chunk
-in top-10; **MISS** = neither. Re-confirmed unchanged at end of Week 3 (`python
-src/eval_runner.py` run directly against the retrieval layer, bypassing the
-FastAPI router) to verify none of the router/tool-dispatch work introduced a
-regression.
+in top-10; **MISS** = neither.
 
 | Metric | Score |
 |---|---|
-| recall@10 (HIT) | 40.0% (24/60) |
-| Partial credit | 23.3% (14/60) |
-| Miss | 36.7% (22/60) |
+| recall@10 (HIT) | 58.3% (35/60) |
+| Partial credit | 16.7% (10/60) |
+| Miss | 25.0% (15/60) |
 
 **By question type:**
 
 | Type | Hit | Partial | Miss |
 |---|---|---|---|
-| numeric_lookup | 15 | 0 | 5 |
-| trend_comparison | 4 | 4 | 7 |
-| qualitative_lookup | 2 | 5 | 3 |
-| inference | 3 | 3 | 4 |
-| out_of_scope | 0 | 2 | 3 |
+| numeric_lookup | 17 | 0 | 3 |
+| trend_comparison | 9 | 2 | 4 |
+| qualitative_lookup | 4 | 3 | 3 |
+| inference | 5 | 4 | 1 |
+| out_of_scope | 0 | 1 | 4 |
 
-The remaining 36.7% miss rate is a **chunking and metadata problem**, not an RRF
-problem. A 6-configuration tuning grid (k ∈ {30, 60, 90}, candidates ∈ {100, 150},
-FY filter on/off) found no configuration beats baseline by more than 2pp. Known
-failure patterns: income statement continuation chunks displaced by notes tables;
-cross-period quarterly queries returning annual data; Risk Factors section outranked
-by 10-Q boilerplate. Full tuning results: `data/rrf_tuning_results.md`.
+Of the 15 remaining misses, 3 are out-of-scope questions correctly rejected by the
+similarity gate — the eval scorer has no separate "correct rejection" verdict, so a
+correct OOS decline still counts as MISS. Real retrieval misses: **12/60**.
+
+**Week 4 fix — quarter-aware metadata filtering (recall@10 40.0% → 58.3%):** the
+Week 2 RRF tuning grid (below) found that a plain FY filter made no difference,
+because it only touched the dense leg and had no concept of fiscal quarters. Reading
+the actual miss data (`data/eval_results.json`) showed why: every 10-K/10-Q repeats
+near-identical "Disaggregated Revenue" notes boilerplate with no period token in the
+text itself (dates are spelled out, e.g. "November 30, 2025", never "FY2025"), so
+BM25 and dense embeddings can't tell filings apart on content alone — cross-period
+chunks from every other filing crowd out the one from the queried period. The fix
+(`src/retrieve.py`): `_detect_period()` extracts FY **and** quarter tokens from the
+question (taking the latest year when multiple are named, since later filings carry
+prior years as restated comparatives) and the resulting filter is applied to **both**
+legs, not just dense. Two edge cases required special handling: Levi's Q4 is never
+filed as its own 10-Q (it only appears inline in the annual 10-K), so a literal "Q4"
+quarter filter would match zero chunks and needed to fall back to FY-only; and a bare
+single-year question (no quarter) can also match the *following* year's 10-K, since
+annual figures are commonly restated there as the prior-year comparative column.
+`fy_filter` is now the retriever's default (`True`), used automatically by both
+`app/routers/query.py` and `src/query.py`.
+
+Original (Week 2) diagnosis, still true for the residual gap: the miss rate is a
+**chunking and metadata problem**, not an RRF problem. A 6-configuration tuning grid
+(k ∈ {30, 60, 90}, candidates ∈ {100, 150}, FY filter on/off) found no configuration
+beat the 40.0% baseline by more than 2pp — because that FY filter didn't yet
+understand quarters. Full tuning results: `data/rrf_tuning_results.md`. Remaining
+known failure patterns (12 real misses): DTC-percentage and segment-growth business
+narrative figures competing against annual boilerplate, and qualitative sections
+(Risk Factors, inventory-management commentary) still outranked by unrelated
+10-Q content.
 
 ---
 
@@ -227,6 +252,12 @@ by 10-Q boilerplate. Full tuning results: `data/rrf_tuning_results.md`.
   OOS eval questions (CEO earnings call, market share) still score PARTIAL
   rather than being declined outright. The keyword blocklist added in Week 3
   covers known out-of-corpus topics but isn't exhaustive.
+- **Eval scorer has no "correct rejection" verdict for out-of-scope questions:**
+  `eval_runner.py` labels every OOS question `MISS`, even when the similarity
+  gate correctly declines to answer it. This inflates the headline miss rate —
+  3 of the 15 misses in the current run are OOS questions behaving correctly,
+  not retrieval failures. Not yet fixed; noted here so the miss-rate number
+  isn't misread.
 - **Trend-decay tool's half-life estimates are low-confidence by design:**
   Google Trends weekly data for the McLaren drops is impulse-like (single-week
   spike, near-zero floor), so both canonical drops are flagged
