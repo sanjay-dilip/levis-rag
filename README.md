@@ -285,6 +285,22 @@ non-public data used. Single-company scope: Levi Strauss & Co. only.
 
 ---
 
+## Potential future scope
+
+- **Earnings call transcripts (considered, not added):** FY2026 guidance is
+  confirmed absent from every 10-K — guidance is discussed on earnings calls,
+  not filed. Adding transcripts as a data source was evaluated and closed as
+  out of scope for this build: transcripts are neither filed/furnished with
+  the SEC nor sourced from EDGAR (they'd come from Levi's IR site or a
+  third-party transcript service), which conflicts with this project's
+  stated scope of SEC-EDGAR-only, public-record data. Revisiting this would
+  be a scope expansion, not a same-scope data-source swap, and would also
+  require updating the scope language above and extending the evidentiary
+  tier system to mark forward-looking/unaudited guidance distinctly from
+  filed figures.
+
+---
+
 ## Background
 
 Built on top of "The Denim Lifestyle Pivot" — a BUAN 6390 Analytics
