@@ -140,4 +140,13 @@ is the authoritative source and serves the RAG system's needs.
 
 ### Recommendation
 
-*Leave blank — decision to be made in planning session.*
+**Decided: Option B — leave 8-K exhibits out of scope.** The 10-K/10-Q filings
+already carry audited versions of every material figure the exhibits would
+add. Exhibit 99.1 press releases are furnished, not filed, and often contain
+preliminary/non-GAAP/rounded figures — ingesting them risks reproducing the
+same-fiscal-year version of the DTC scope conflict documented above (two
+technically-correct but different figures for the same period), which is a
+worse user-trust problem than the cross-year case already found here. This
+also keeps the corpus consistent with the scope boundary set when closing the
+earnings-call-transcripts question (SEC-filed/audited primary documents only,
+not furnished exhibits or press-release figures). No ingestion code added.

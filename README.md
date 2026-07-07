@@ -1,8 +1,8 @@
 # Levi's RAG — AI Due Diligence Copilot
 
 A RAG-powered tool for evidence-tiered analysis of Levi Strauss & Co.'s
-SEC filings and strategic narrative. Built as a portfolio project
-demonstrating applied AI engineering judgment.
+publicly available SEC EDGAR filings and strategic narrative. Built as a
+portfolio project demonstrating applied AI engineering judgment.
 
 **Status: Week 4 of 5-week build — structural retrieval fix complete (recall@10 40.0% → 58.3%); Next.js frontend next**
 
@@ -244,7 +244,7 @@ narrative figures competing against annual boilerplate, and qualitative sections
 ## Known limitations
 
 - **8-K exhibit gap:** All 31 8-K files are wrapper documents — earnings release
-  financial tables live in Exhibit 99.1 and are not yet ingested. Audited figures
+  financial tables live in Exhibit 99.1 and are not ingested. Audited figures
   are present in 10-K/10-Q filings and cover the same data.
 - **Out-of-scope detection is threshold-tuned, not classifier-based:** the
   similarity gate (0.20) only catches truly empty retrievals; qualitative
