@@ -14,6 +14,7 @@ OOS_KEYWORDS = [
     "analyst rating", "price target", "short interest", "options",
     # Earnings call specifics not in corpus
     "earnings call", "conference call", "q&a session", "analyst question",
+    "guidance",  # forward guidance is discussed on earnings calls, not filed in 10-Ks/10-Qs
     # Out-of-scope entities
     "dockers",  # divested; FY2025 10-K scope is Levi's + Beyond Yoga only
     "beyond yoga revenue",  # segment not broken out separately in corpus

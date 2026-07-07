@@ -1038,18 +1038,8 @@
     "fiscal_year": "FY2026",
     "question_type": "out_of_scope",
     "notes": "Revenue guidance is not disclosed in 10-K/10-Q filings; provided in earnings call transcripts and Exhibit 99.1 of 8-Ks; earnings call transcripts not ingested — expected MISS",
-    "returned_chunk_ids": [
-      686,
-      453,
-      369,
-      208,
-      696,
-      523,
-      277,
-      753,
-      695,
-      916
-    ],
+    "keyword_oos_triggered": true,
+    "returned_chunk_ids": [],
     "retrieval_result": "MISS"
   },
   {
