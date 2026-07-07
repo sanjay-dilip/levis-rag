@@ -142,6 +142,7 @@ def query(request: QueryRequest) -> QueryResponse:
     if question_type == QuestionType.OUT_OF_SCOPE:
         return QueryResponse(
             question=request.question,
+            question_type=question_type.name,
             answer="This question is outside the Levi's filing corpus.",
             claims=[],
             chunks=[],
@@ -154,6 +155,7 @@ def query(request: QueryRequest) -> QueryResponse:
 
         return QueryResponse(
             question=request.question,
+            question_type=question_type.name,
             answer=_format_trend_answer(silverstone, austin),
             claims=_trend_claims(silverstone, austin),
             chunks=[],
@@ -165,6 +167,7 @@ def query(request: QueryRequest) -> QueryResponse:
         answer = _format_kpi_answer(kpi_result)
         return QueryResponse(
             question=request.question,
+            question_type=question_type.name,
             answer=answer,
             claims=[_kpi_claim(kpi_result)],
             chunks=[],
@@ -178,6 +181,7 @@ def query(request: QueryRequest) -> QueryResponse:
     if is_out_of_scope(hits, OUT_OF_SCOPE_THRESHOLD):
         return QueryResponse(
             question=request.question,
+            question_type=question_type.name,
             answer="This question is outside the Levi's filing corpus.",
             claims=[],
             chunks=stripped_chunks,
@@ -188,6 +192,7 @@ def query(request: QueryRequest) -> QueryResponse:
 
     return QueryResponse(
         question=request.question,
+        question_type=question_type.name,
         answer=result.get("answer", ""),
         claims=result.get("claims", []),
         chunks=stripped_chunks,

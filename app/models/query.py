@@ -9,6 +9,7 @@ class QueryRequest(BaseModel):
 
 class QueryResponse(BaseModel):
     question: str
+    question_type: str  # "FINANCIAL_LOOKUP" | "TREND_QUERY" | "XBRL_KPI" | "OUT_OF_SCOPE"
     answer: str
     claims: list[dict]
     chunks: list[dict]
