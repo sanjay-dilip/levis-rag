@@ -8,6 +8,16 @@ function findChunk(chunks: Chunk[], id: number): Chunk | undefined {
   return chunks.find((chunk) => chunk.id === id);
 }
 
+function nonRagSourceLabel(questionType: QueryResponse["question_type"]): string {
+  if (questionType === "XBRL_KPI") {
+    return "No filing chunk — sourced from the XBRL KPI tool (EDGAR companyfacts).";
+  }
+  if (questionType === "TREND_QUERY") {
+    return "No filing chunk — sourced from the Google Trends decay tool.";
+  }
+  return "No filing chunk — this is a model-derived inference, not a direct filing citation.";
+}
+
 export default function Home() {
   const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
@@ -105,6 +115,12 @@ export default function Home() {
                         <p className="text-xs text-red-600 dark:text-red-400">
                           Chunk #{chunkId} referenced but not found in the
                           returned chunks — data inconsistency.
+                        </p>
+                      )}
+
+                      {!isRagClaim && (
+                        <p className="text-xs italic text-zinc-500 dark:text-zinc-400">
+                          {nonRagSourceLabel(response.question_type)}
                         </p>
                       )}
                     </li>
