@@ -1,8 +1,12 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { queryFilings, type QueryResponse } from "@/lib/api";
+import { queryFilings, type Chunk, type QueryResponse } from "@/lib/api";
 import TierBadge from "@/components/TierBadge";
+
+function findChunk(chunks: Chunk[], id: number): Chunk | undefined {
+  return chunks.find((chunk) => chunk.id === id);
+}
 
 export default function Home() {
   const [question, setQuestion] = useState("");
@@ -67,17 +71,45 @@ export default function Home() {
 
             {response.claims.length > 0 && (
               <ul className="flex flex-col gap-2">
-                {response.claims.map((claim, index) => (
-                  <li
-                    key={index}
-                    className="flex flex-col gap-1 rounded-md border border-zinc-200 p-3 dark:border-zinc-800"
-                  >
-                    <TierBadge tier={claim.tier} />
-                    <p className="text-sm text-black dark:text-zinc-50">
-                      {claim.claim_text}
-                    </p>
-                  </li>
-                ))}
+                {response.claims.map((claim, index) => {
+                  const chunkId = claim.supporting_chunk_id;
+                  const isRagClaim = chunkId >= 0;
+                  const matchedChunk = isRagClaim
+                    ? findChunk(response.chunks, chunkId)
+                    : undefined;
+
+                  return (
+                    <li
+                      key={index}
+                      className="flex flex-col gap-1 rounded-md border border-zinc-200 p-3 dark:border-zinc-800"
+                    >
+                      <TierBadge tier={claim.tier} />
+                      <p className="text-sm text-black dark:text-zinc-50">
+                        {claim.claim_text}
+                      </p>
+
+                      {isRagClaim && matchedChunk && (
+                        <details className="text-xs text-zinc-600 dark:text-zinc-400">
+                          <summary className="cursor-pointer">
+                            Chunk #{chunkId}
+                          </summary>
+                          <ul className="mt-1 pl-4">
+                            <li>Source: {matchedChunk.source}</li>
+                            <li>Section: {matchedChunk.section}</li>
+                            <li>Fiscal year: {matchedChunk.fiscal_year}</li>
+                          </ul>
+                        </details>
+                      )}
+
+                      {isRagClaim && !matchedChunk && (
+                        <p className="text-xs text-red-600 dark:text-red-400">
+                          Chunk #{chunkId} referenced but not found in the
+                          returned chunks — data inconsistency.
+                        </p>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             )}
           </div>
