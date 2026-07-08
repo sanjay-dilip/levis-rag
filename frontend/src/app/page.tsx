@@ -3,6 +3,8 @@
 import { useState, type FormEvent } from "react";
 import { queryFilings, type Chunk, type QueryResponse } from "@/lib/api";
 import TierBadge from "@/components/TierBadge";
+import KpiStatCard from "@/components/KpiStatCard";
+import TrendDropCard from "@/components/TrendDropCard";
 
 function findChunk(chunks: Chunk[], id: number): Chunk | undefined {
   return chunks.find((chunk) => chunk.id === id);
@@ -87,7 +89,46 @@ export default function Home() {
             </p>
             <p className="text-black dark:text-zinc-50">{response.answer}</p>
 
-            {response.claims.length > 0 && (
+            {/* T6.5 routing decision: XBRL_KPI and TREND_QUERY get the
+                structured T6.2/T6.3 displays instead of the generic claims
+                list — their claim_text is a near-duplicate of the structured
+                data (XBRL) or strictly less informative (trend's
+                "insufficient_data" claim_text vs. TrendDropCard's message),
+                so showing both would be redundant. The tier badge is kept
+                (paired per-card) since it answers a different question than
+                confidence does: tier is "what kind of evidence is this"
+                (filing-verified vs. third-party benchmark vs. model
+                inference), confidence is "how reliable is this specific
+                number" — not redundant with each other. */}
+            {response.question_type === "XBRL_KPI" && response.kpi_result && (
+              <div className="flex flex-col gap-1">
+                <KpiStatCard result={response.kpi_result} />
+                {response.claims[0] && (
+                  <TierBadge tier={response.claims[0].tier} />
+                )}
+              </div>
+            )}
+
+            {response.question_type === "TREND_QUERY" &&
+              response.trend_results && (
+                <div className="flex flex-col gap-2">
+                  {response.trend_results.map((trendResult, index) => (
+                    <div
+                      key={trendResult.drop_key}
+                      className="flex flex-col gap-1"
+                    >
+                      <TrendDropCard result={trendResult} />
+                      {response.claims[index] && (
+                        <TierBadge tier={response.claims[index].tier} />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+            {response.question_type !== "XBRL_KPI" &&
+              response.question_type !== "TREND_QUERY" &&
+              response.claims.length > 0 && (
               <ul className="flex flex-col gap-2">
                 {response.claims.map((claim, index) => {
                   const chunkId = claim.supporting_chunk_id;
