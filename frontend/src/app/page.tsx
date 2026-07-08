@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { queryFilings, type QueryResponse } from "@/lib/api";
+import TierBadge from "@/components/TierBadge";
 
 export default function Home() {
   const [question, setQuestion] = useState("");
@@ -63,6 +64,22 @@ export default function Home() {
               question_type: {response.question_type}
             </p>
             <p className="text-black dark:text-zinc-50">{response.answer}</p>
+
+            {response.claims.length > 0 && (
+              <ul className="flex flex-col gap-2">
+                {response.claims.map((claim, index) => (
+                  <li
+                    key={index}
+                    className="flex flex-col gap-1 rounded-md border border-zinc-200 p-3 dark:border-zinc-800"
+                  >
+                    <TierBadge tier={claim.tier} />
+                    <p className="text-sm text-black dark:text-zinc-50">
+                      {claim.claim_text}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         )}
       </main>
