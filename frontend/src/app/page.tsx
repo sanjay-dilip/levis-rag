@@ -8,6 +8,14 @@ function findChunk(chunks: Chunk[], id: number): Chunk | undefined {
   return chunks.find((chunk) => chunk.id === id);
 }
 
+const FISCAL_YEAR_UNSPECIFIED = "Fiscal year not specified";
+
+// Deliberate: an explicit null and a missing key both mean "no fiscal year
+// given" to the user, so both fall through to the same nullish-coalescing branch.
+function formatFiscalYear(fiscalYear: string | null | undefined): string {
+  return fiscalYear ?? FISCAL_YEAR_UNSPECIFIED;
+}
+
 function nonRagSourceLabel(questionType: QueryResponse["question_type"]): string {
   if (questionType === "XBRL_KPI") {
     return "No filing chunk — sourced from the XBRL KPI tool (EDGAR companyfacts).";
@@ -97,6 +105,9 @@ export default function Home() {
                       <p className="text-sm text-black dark:text-zinc-50">
                         {claim.claim_text}
                       </p>
+                      <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                        Fiscal year: {formatFiscalYear(claim.fiscal_year)}
+                      </p>
 
                       {isRagClaim && matchedChunk && (
                         <details className="text-xs text-zinc-600 dark:text-zinc-400">
@@ -106,7 +117,10 @@ export default function Home() {
                           <ul className="mt-1 pl-4">
                             <li>Source: {matchedChunk.source}</li>
                             <li>Section: {matchedChunk.section}</li>
-                            <li>Fiscal year: {matchedChunk.fiscal_year}</li>
+                            <li>
+                              Fiscal year:{" "}
+                              {formatFiscalYear(matchedChunk.fiscal_year)}
+                            </li>
                           </ul>
                         </details>
                       )}
