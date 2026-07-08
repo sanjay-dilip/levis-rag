@@ -45,6 +45,15 @@ export default function Home() {
             Ask
           </button>
         </form>
+
+        {response && (
+          <div className="flex flex-col gap-2">
+            <p className="text-sm text-zinc-500 dark:text-zinc-400">
+              question_type: {response.question_type}
+            </p>
+            <p className="text-black dark:text-zinc-50">{response.answer}</p>
+          </div>
+        )}
       </main>
     </div>
   );
