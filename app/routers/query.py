@@ -160,6 +160,7 @@ def query(request: QueryRequest) -> QueryResponse:
             claims=_trend_claims(silverstone, austin),
             chunks=[],
             out_of_scope=False,
+            trend_results=[silverstone, austin],
         )
 
     if question_type == QuestionType.XBRL_KPI:
@@ -172,6 +173,7 @@ def query(request: QueryRequest) -> QueryResponse:
             claims=[_kpi_claim(kpi_result)],
             chunks=[],
             out_of_scope=False,
+            kpi_result=kpi_result,
         )
 
     # FINANCIAL_LOOKUP — existing RAG pipeline

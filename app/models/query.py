@@ -14,3 +14,10 @@ class QueryResponse(BaseModel):
     claims: list[dict]
     chunks: list[dict]
     out_of_scope: bool
+    # Structured data behind `answer`'s prose, populated only for the
+    # matching question_type — get_kpi()'s result dict for XBRL_KPI,
+    # analyze_drop()'s result dicts (one per drop) for TREND_QUERY. Added
+    # so the frontend can render a stat card / confidence-flagged trend
+    # display instead of parsing the formatted answer string (Week 4, T6).
+    kpi_result: dict | None = None
+    trend_results: list[dict] | None = None

@@ -27,6 +27,44 @@ export type QuestionType =
   | "XBRL_KPI"
   | "OUT_OF_SCOPE";
 
+// Mirrors src/xbrl_tool.py's get_kpi() return dict. Only the "ok" status
+// carries the full set of fields; the error statuses carry a subset.
+export type KpiResult = {
+  status: "ok" | "no_kpi_match" | "no_period_match" | "not_found";
+  kpi?: string;
+  gaap_tag?: string;
+  value?: number;
+  unit?: string;
+  period?: string;
+  form?: string;
+  filed?: string;
+  end_date?: string;
+  tier?: Tier;
+  source?: string;
+  question?: string;
+};
+
+// Mirrors src/trend_decay_tool.py's analyze_drop() return dict (one per drop).
+export type TrendResult = {
+  keyword: string;
+  drop_date: string;
+  status: "ok" | "insufficient_data" | "fit_failed" | "error";
+  peak_date: string | null;
+  peak_value: number | null;
+  half_life_weeks: number | null;
+  half_life_days: number | null;
+  r_squared: number | null;
+  confidence: "high" | "medium" | "low" | null;
+  decay_series_length: number | null;
+  vs_report_claim: "within_range" | "shorter" | "longer" | null;
+  methodology_note: string;
+  report_claim: string;
+  warning?: string;
+  error_message?: string;
+  drop_key: string;
+  label: string;
+};
+
 export type QueryResponse = {
   question: string;
   question_type: QuestionType;
@@ -34,6 +72,8 @@ export type QueryResponse = {
   claims: Claim[];
   chunks: Chunk[];
   out_of_scope: boolean;
+  kpi_result?: KpiResult | null;
+  trend_results?: TrendResult[] | null;
 };
 
 export async function queryFilings(question: string): Promise<QueryResponse> {
