@@ -12,3 +12,5 @@ fastapi
 uvicorn[standard]
 pytrends
 scipy
+pytest
+httpx
