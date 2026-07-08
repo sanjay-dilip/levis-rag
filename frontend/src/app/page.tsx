@@ -15,6 +15,7 @@ export default function Home() {
     try {
       const result = await queryFilings(question);
       setResponse(result);
+      setError(null);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -50,6 +51,10 @@ export default function Home() {
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
             Loading...
           </p>
+        )}
+
+        {error && (
+          <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
         )}
 
         {response && (
