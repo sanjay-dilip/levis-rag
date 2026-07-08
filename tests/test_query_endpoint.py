@@ -22,17 +22,45 @@ def _query(client: TestClient, question: str) -> dict:
 
 
 def test_financial_lookup_gross_margin(client: TestClient) -> None:
-    """FINANCIAL_LOOKUP success path — RAG pipeline, mirrors T1/T3's gross margin check."""
+    """FINANCIAL_LOOKUP success path — RAG pipeline, mirrors T1/T3's gross margin check.
+
+    Ground truth (61.7%) confirmed repeatedly since Week 2, Session 2 — chunk 604.
+    """
     body = _query(client, "What was Levi's FY2025 gross margin?")
     assert body["question_type"] == "FINANCIAL_LOOKUP"
     assert body["out_of_scope"] is False
+    assert "61.7%" in body["answer"]
 
 
 def test_xbrl_kpi_gross_profit(client: TestClient) -> None:
-    """XBRL_KPI path — EDGAR companyfacts lookup, mirrors T7/T9's gross profit check."""
+    """XBRL_KPI path — EDGAR companyfacts lookup, mirrors T7/T9's gross profit check.
+
+    Asserts two previously-broken things: the Week 4 T1 Fix 1 bug (get_kpi()'s "period"
+    field read "FY FY2025" instead of "FY2025" for annual lookups), and the Task 7 ground
+    truth value itself ($3,877,800,000 — matches 61.7% x $6,282.0M within rounding).
+    """
     body = _query(client, "What was Levi's gross profit in FY2025?")
     assert body["question_type"] == "XBRL_KPI"
     assert body["out_of_scope"] is False
+    kpi_result = body["kpi_result"]
+    assert kpi_result["status"] == "ok"
+    assert kpi_result["period"] == "FY2025"  # not "FY FY2025" — T1 Fix 1 regression
+    assert kpi_result["value"] == 3877800000  # Task 7 ground truth
+
+
+def test_xbrl_kpi_net_income_profitloss_regression(client: TestClient) -> None:
+    """XBRL_KPI path — Task 8's ProfitLoss/NetIncomeLoss tag-priority bug.
+
+    Levi's FY2025 10-K tags full-year net income under the GAAP concept "ProfitLoss", not
+    "NetIncomeLoss" (which has zero fp="FY" entries for fy 2025/2026 in the cached facts).
+    Before the Task 8 fix, this returned status="not_found" instead of $578,100,000.
+    """
+    body = _query(client, "What was Levi's net income in FY2025?")
+    assert body["question_type"] == "XBRL_KPI"
+    kpi_result = body["kpi_result"]
+    assert kpi_result["status"] == "ok"
+    assert kpi_result["gaap_tag"] == "ProfitLoss"
+    assert kpi_result["value"] == 578100000
 
 
 def test_trend_query_mclaren(client: TestClient) -> None:
