@@ -46,6 +46,12 @@ export default function Home() {
           </button>
         </form>
 
+        {loading && (
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">
+            Loading...
+          </p>
+        )}
+
         {response && (
           <div className="flex flex-col gap-2">
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
