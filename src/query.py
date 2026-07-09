@@ -17,7 +17,7 @@ from utils import is_out_of_scope
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
 
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-flash-latest"
 TOP_K = 10
 
 # OUT_OF_SCOPE_THRESHOLD: set to 0.20 — intercepts only
