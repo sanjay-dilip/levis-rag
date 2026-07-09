@@ -78,8 +78,11 @@ def _trend_claims(silverstone: dict, austin: dict) -> list[dict]:
         else:
             claims.append(
                 {
-                    "claim_text": result.get("status"),
-                    "tier": "Model-inference",
+                    "claim_text": (
+                        f"No reliable half-life could be computed for the "
+                        f"{result['label']} drop — {result.get('status')}"
+                    ),
+                    "tier": "Insufficient-data",
                     "supporting_chunk_id": -1,
                     "fiscal_year": None,
                 }

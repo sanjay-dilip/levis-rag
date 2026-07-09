@@ -9,6 +9,8 @@ const TIER_STYLES: Record<Tier, string> = {
     "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
   "Model-inference":
     "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
+  "Insufficient-data":
+    "bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400",
 };
 
 export default function TierBadge({ tier }: { tier: Tier }) {

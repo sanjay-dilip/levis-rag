@@ -2,7 +2,8 @@ export type Tier =
   | "Verified-from-filing"
   | "Management-qualitative-statement"
   | "Third-party-benchmark"
-  | "Model-inference";
+  | "Model-inference"
+  | "Insufficient-data";
 
 export type Claim = {
   claim_text: string;
