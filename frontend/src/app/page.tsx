@@ -56,6 +56,8 @@ export default function Home() {
         </h1>
         <form onSubmit={handleSubmit} className="flex gap-2">
           <input
+            id="question-input"
+            name="question-input"
             type="text"
             value={question}
             onChange={(event) => setQuestion(event.target.value)}
