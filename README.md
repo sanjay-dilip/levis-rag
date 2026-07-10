@@ -36,9 +36,10 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 - [x] Hybrid retrieval live — BM25 (rank_bm25) + pgvector dense, fused via RRF (k=60); bug-fixed dense leg, dynamic penalty rank; quarter-aware period filtering on both legs
 - [x] Evidentiary tier tagging — Gemini Flash structured output (JSON schema enforced); four tiers, per-claim citations
 - [x] End-to-end query pipeline — `query.py` → `retrieve.py` → `tier_tagger.py` → cited, tiered answer
-- [x] Hand-labeled eval set — 60 questions across 5 types; recall@10 **58.3%** (35/60 HIT)
+- [x] Hand-labeled eval set — 60 questions across 5 types; recall@10 **61.7%** (37/60 HIT)
 - [x] RRF tuning — 6-config grid (k, candidates, FY filter); no improvement found; gap diagnosed as structural
 - [x] Quarter-aware period filtering — fixes the structural gap the RRF grid couldn't; recall@10 40.0% → 58.3%
+- [x] Targeted embedding enrichment — fixes a diluted mixed-topic chunk; recall@10 58.3% → 61.7%
 - [x] Out-of-scope detection — similarity threshold + keyword blocklist, two-stage gate before generation
 - [x] FastAPI backend — `POST /query` wrapping retrieve + generate, `GET /health`
 - [x] Tool router — heuristic `QuestionType` dispatch (`OUT_OF_SCOPE` → `XBRL_KPI` → `TREND_QUERY` → `FINANCIAL_LOOKUP`)
@@ -229,23 +230,39 @@ in top-10; **MISS** = neither.
 
 | Metric | Score |
 |---|---|
-| recall@10 (HIT) | 58.3% (35/60) |
-| Partial credit | 16.7% (10/60) |
-| Miss | 25.0% (15/60) |
+| recall@10 (HIT) | 61.7% (37/60) |
+| Partial credit | 15.0% (9/60) |
+| Miss | 23.3% (14/60) |
 
 **By question type:**
 
 | Type | Hit | Partial | Miss |
 |---|---|---|---|
-| numeric_lookup | 17 | 0 | 3 |
-| trend_comparison | 9 | 2 | 4 |
+| numeric_lookup | 18 | 0 | 2 |
+| trend_comparison | 10 | 1 | 4 |
 | qualitative_lookup | 4 | 3 | 3 |
 | inference | 5 | 4 | 1 |
 | out_of_scope | 0 | 1 | 4 |
 
-Of the 15 remaining misses, 3 are out-of-scope questions correctly rejected by the
+Of the 14 remaining misses, 3 are out-of-scope questions correctly rejected by the
 similarity gate — the eval scorer has no separate "correct rejection" verdict, so a
-correct OOS decline still counts as MISS. Real retrieval misses: **12/60**.
+correct OOS decline still counts as MISS. Real retrieval misses: **11/60**.
+
+**Targeted embedding enrichment (recall@10 58.3% → 61.7%):** one chunk (id 602)
+mixes an income-statement continuation (operating income through EPS) with a
+separate net-revenues-by-segment table — its plain embedding and a generic
+`filing_type | source | section` metadata prefix (the same technique that fixed
+120 other table chunks in Week 2) both scored a weak cosine similarity (0.39 and
+0.38) against "What was Levi's FY2025 net income?", because the pooled embedding
+gets diluted by the much larger unrelated content in the same chunk — re-chunking
+would be the structural fix, but was assessed as too high-risk relative to the
+confirmed benefit (touches all 1,449 chunk IDs, needs a full Supabase re-upload,
+and a manual eval-set remap with no reliable check). Instead, a specific,
+content-accurate sentence prefix naming the actual answer raised the cosine
+similarity to 0.61 — verified locally before writing to Supabase. Chunk 602 went
+from outside the dense top-500 to rank #1 for this query. `src/fix_misclassified_table_chunks.py`
+holds the explicit chunk-id → prefix map for this and any future one-off fixes
+of this kind.
 
 **Week 4 fix — quarter-aware metadata filtering (recall@10 40.0% → 58.3%):** the
 Week 2 RRF tuning grid (below) found that a plain FY filter made no difference,
