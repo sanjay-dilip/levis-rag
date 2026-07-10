@@ -263,14 +263,14 @@
     "question": "How did Levi's wholesale revenue change between FY2024 and FY2025?",
     "expected_answer": "-0.5% reported (+4.1% organic); $3,205.2M (FY2025) vs $3,222.9M (FY2024 continuing ops)",
     "ground_truth_chunk_ids": [
-      601
+      602
     ],
     "acceptable_chunk_ids": [],
     "expected_tier": "Verified-from-filing",
     "filing_type": "10-K",
     "fiscal_year": "CROSS",
     "question_type": "trend_comparison",
-    "notes": "id=601 has channel breakdown with Wholesale -0.5% reported / +4.1% organic; id=601 not in top-10 — expected MISS. Note: FY2024 10-K showed wholesale $3,431.5M (incl. Dockers); restated $3,222.9M used here."
+    "notes": "Corrected (residual-miss triage session): gt was 601, but 601 is narrative-only (segment/classification definitions); the actual channel breakdown table with 'Wholesale $3,205.2 $3,222.9 (0.5)% 4.1%' is in chunk 602, confirmed by direct read. 602 was already being returned at rank 1 for this question — the prior MISS was a labeling artifact, not a retrieval failure."
   },
   {
     "id": "eval_019",
@@ -783,14 +783,12 @@
     "ground_truth_chunk_ids": [
       1015
     ],
-    "acceptable_chunk_ids": [
-      1299
-    ],
+    "acceptable_chunk_ids": [],
     "expected_tier": "Management-qualitative-statement",
     "filing_type": "10-Q",
     "fiscal_year": "FY2025",
     "question_type": "qualitative_lookup",
-    "notes": "id=1015 (10-Q_2025-04-07 MD&A 'Tariffs' section) explicitly states 'On April 2, 2025...We expect these new tariffs to have a material impact'; id=1299 (Q1 FY2026 10-Q) discusses 'Reciprocal tariffs'; id=1299 at rank 8 → expected PARTIAL"
+    "notes": "id=1015 (10-Q_2025-04-07 MD&A 'Tariffs' section) explicitly states 'On April 2, 2025...We expect these new tariffs to have a material impact'. Corrected (residual-miss triage session): 1299 removed from acceptable_chunk_ids — direct read confirms it discusses a distinct, later tariff event (the Feb 20, 2026 U.S. Supreme Court IEEPA ruling and subsequent prospective tariffs), not the April 2025 announcement this question asks about."
   },
   {
     "id": "eval_053",
