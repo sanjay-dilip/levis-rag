@@ -4,7 +4,10 @@ A RAG-powered tool for evidence-tiered analysis of Levi Strauss & Co.'s
 publicly available SEC EDGAR filings and strategic narrative. Built as a
 portfolio project demonstrating applied AI engineering judgment.
 
-**Status: Week 4 of 5-week build — structural retrieval fix complete (recall@10 40.0% → 58.3%); Next.js frontend next**
+**Status: Live — deployed frontend + backend, full feature set through Week 5**
+
+**Live app:** https://levis-rag.vercel.app
+**Backend API:** https://levis-rag.onrender.com (`GET /health`, `POST /query`)
 
 ---
 
@@ -51,13 +54,13 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 
 | Layer | Tool |
 |---|---|
-| Embeddings | sentence-transformers/all-MiniLM-L6-v2 |
+| Embeddings | sentence-transformers/all-MiniLM-L6-v2 — local `SentenceTransformer` for the ingestion scripts; the deployed API runs the same model's pre-exported ONNX weights via `onnxruntime` instead (no `torch`/`transformers` at runtime — needed to fit Render's free-tier 512MB RAM limit; verified numerically equivalent, cosine similarity 1.0, before switching) |
 | Generation | Gemini 2.5 Flash (via `google-genai`) |
 | Vector store | Supabase Postgres + pgvector |
 | Retrieval | BM25 (rank_bm25) + pgvector dense, RRF fusion |
 | Backend | FastAPI (`app/`) |
 | Trend analysis | pytrends (Google Trends) + scipy (`curve_fit`) |
-| Frontend (planned) | Next.js + Tailwind on Vercel |
+| Frontend | Next.js + Tailwind, deployed on Vercel |
 | Data sources | SEC EDGAR full-text filings + EDGAR XBRL `companyfacts` API (both public, no API key required) |
 
 ---
@@ -115,6 +118,40 @@ Every response is shaped as:
   "out_of_scope": false
 }
 ```
+
+### Deployment
+
+The app is live: frontend on Vercel (`https://levis-rag.vercel.app`), backend
+on Render's free tier (`https://levis-rag.onrender.com`).
+
+```bash
+curl https://levis-rag.onrender.com/health
+
+curl -X POST https://levis-rag.onrender.com/query \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What was Levi'\''s FY2025 gross margin?"}'
+```
+
+**Getting this running on Render's free tier took two real fixes**, both
+worth knowing if redeploying elsewhere:
+- The backend built the `Retriever` and `genai.Client` at **module import
+  time**, which blocked uvicorn from ever binding `$PORT` — Render's port
+  scanner gave up before the process was ready. Fixed by moving that work
+  into a FastAPI `lifespan` startup hook (`app/main.py`), so the port binds
+  immediately and the heavy initialization happens after.
+- Even after that, the full `sentence-transformers` + `transformers` +
+  `torch` stack didn't fit in Render's 512MB RAM limit (confirmed via
+  repeated OOM kills — CPU-only torch wasn't enough on its own). Fixed by
+  running the same `all-MiniLM-L6-v2` model's pre-exported ONNX weights via
+  `onnxruntime` instead of loading it through `sentence-transformers` at
+  runtime — see the Embeddings row above.
+
+**Known limitation:** Gemini's free-tier daily quota (20 requests/day) means
+`FINANCIAL_LOOKUP` questions can occasionally return a `429` or take
+60-130s+ (the client appears to retry against the server's suggested delay
+before giving up) once the quota is exhausted for the day. The other three
+question types (`XBRL_KPI`, `TREND_QUERY`, `OUT_OF_SCOPE`) don't call Gemini
+and aren't affected.
 
 ### Tool router
 
