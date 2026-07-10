@@ -61,6 +61,12 @@ ENRICHMENT_PREFIXES = {
         "margin: net revenues $6,282.0 million minus gross profit $3,877.8 million equals "
         "cost of goods sold $2,404.2 million."
     ),
+    596: (
+        "Levi's DTC revenue as a percentage of total revenue in fiscal year 2025. DTC "
+        "(direct-to-consumer) channel revenue as a percentage of total net revenues: 49% in "
+        "fiscal year 2025, 47% in fiscal year 2024. Wholesale channel as a percentage of total "
+        "net revenues: 51% in fiscal year 2025, 53% in fiscal year 2024."
+    ),
 }
 
 

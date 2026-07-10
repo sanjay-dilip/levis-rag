@@ -77,8 +77,8 @@
       1206,
       1104,
       604,
-      1295,
-      1020
+      596,
+      1295
     ],
     "retrieval_result": "HIT"
   },
@@ -133,8 +133,8 @@
       1295,
       1108,
       1276,
-      695,
       697,
+      695,
       1169
     ],
     "retrieval_result": "HIT"
@@ -273,9 +273,9 @@
       1104,
       686,
       1205,
+      596,
       1009,
-      603,
-      525
+      603
     ],
     "retrieval_result": "HIT"
   },
@@ -416,8 +416,8 @@
       1191,
       1295,
       1092,
-      1106,
       604,
+      1106,
       1022,
       602
     ],
@@ -500,8 +500,8 @@
       1092,
       604,
       1019,
-      1295,
       1303,
+      1295,
       602
     ],
     "retrieval_result": "HIT"
@@ -562,7 +562,7 @@
       1303,
       603,
       602,
-      1022
+      596
     ],
     "retrieval_result": "HIT"
   },
@@ -591,7 +591,7 @@
       1191,
       602,
       698,
-      1295
+      697
     ],
     "retrieval_result": "HIT"
   },
@@ -679,7 +679,7 @@
       1206,
       522,
       1279,
-      1019
+      1009
     ],
     "retrieval_result": "HIT"
   },
@@ -759,14 +759,14 @@
     "returned_chunk_ids": [
       462,
       217,
-      765,
+      596,
       695,
       276,
+      765,
       1304,
-      1411,
       635,
       400,
-      1436
+      1411
     ],
     "retrieval_result": "MISS"
   },
@@ -788,9 +788,9 @@
     "question_type": "qualitative_lookup",
     "notes": "id=536 (FY2025 10-K Item 1A header) introduces risk factors; ids=538,545,560 are individual risk factor chunks; retriever returns 10-Q pointers and Business Overview instead — expected MISS",
     "returned_chunk_ids": [
+      1246,
       1325,
       1045,
-      1246,
       1137,
       1276,
       995,
@@ -909,9 +909,9 @@
       995,
       1022,
       604,
-      1295,
+      525,
       593,
-      525
+      1295
     ],
     "retrieval_result": "HIT"
   },
@@ -960,13 +960,13 @@
     "returned_chunk_ids": [
       604,
       1101,
-      1304,
       1017,
+      1304,
       1022,
       606,
       1206,
-      1106,
       611,
+      1106,
       686
     ],
     "retrieval_result": "HIT"
@@ -1017,8 +1017,8 @@
       1019,
       1206,
       1009,
-      1105,
       1304,
+      1105,
       1303,
       1020,
       686,
@@ -1475,10 +1475,10 @@
       686,
       602,
       1303,
+      596,
       1104,
       1206,
-      1276,
-      523
+      1276
     ],
     "retrieval_result": "PARTIAL"
   },
@@ -1620,9 +1620,9 @@
       1304,
       604,
       1020,
-      1303,
       1205,
       1105,
+      1303,
       602
     ],
     "retrieval_result": "PARTIAL"
