@@ -8,7 +8,10 @@ from app.main import app
 
 @pytest.fixture(scope="session")
 def client() -> TestClient:
-    """TestClient against the real app — session-scoped since app.main's
-    module-level Retriever/genai.Client setup (model load, BM25 index build)
-    is expensive to repeat per test."""
-    return TestClient(app)
+    """TestClient against the real app — session-scoped since the
+    Retriever/genai.Client setup (model load, BM25 index build), now built
+    in app.main's lifespan startup hook rather than at import time, is
+    expensive to repeat per test. Entered as a context manager so Starlette
+    actually runs the lifespan startup/shutdown around the test session."""
+    with TestClient(app) as test_client:
+        yield test_client

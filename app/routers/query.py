@@ -22,8 +22,21 @@ TOP_K = 10
 
 router = APIRouter()
 
-_retriever = build_retriever()
-_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+_retriever = None
+_client = None
+
+
+def init_dependencies() -> None:
+    """Build the Retriever and genai.Client once, at app startup (not import time).
+
+    Deferred out of module scope so uvicorn can bind $PORT before the
+    SentenceTransformer load + BM25 index build complete -- on a
+    constrained host (e.g. Render free tier) that work can take long
+    enough to trip a platform's port-scan timeout if done at import time.
+    """
+    global _retriever, _client
+    _retriever = build_retriever()
+    _client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 
 def _format_drop_text(result: dict) -> str:
