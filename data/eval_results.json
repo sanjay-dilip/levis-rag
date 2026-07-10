@@ -77,8 +77,8 @@
       1206,
       1104,
       604,
-      596,
-      1295
+      528,
+      596
     ],
     "retrieval_result": "HIT"
   },
@@ -267,15 +267,15 @@
     "notes": "Q4-specific e-commerce growth % not disclosed in 10-K; id=604 mentions 'higher e-commerce traffic' qualitatively; id=596 has annual share (11% of total); question_type changed from numeric_lookup: no specific Q4 rate in corpus",
     "returned_chunk_ids": [
       1019,
-      602,
+      528,
       604,
+      602,
       1303,
       1104,
       686,
       1205,
       596,
-      1009,
-      603
+      1009
     ],
     "retrieval_result": "HIT"
   },
@@ -385,11 +385,11 @@
       453,
       602,
       686,
+      528,
       1206,
       369,
       367,
-      1104,
-      604
+      1104
     ],
     "retrieval_result": "HIT"
   },
@@ -672,14 +672,14 @@
     "returned_chunk_ids": [
       686,
       604,
+      528,
       1303,
       1304,
       1295,
       602,
       1206,
       522,
-      1279,
-      1009
+      1279
     ],
     "retrieval_result": "HIT"
   },
@@ -757,18 +757,18 @@
     "question_type": "qualitative_lookup",
     "notes": "id=528 (FY2025 10-K Business section) explicitly names 'DTC First strategy'; id=522 is Business Overview; id=528 not in top-10 — id=522 at rank 7 → expected PARTIAL",
     "returned_chunk_ids": [
+      528,
       462,
-      596,
       695,
       217,
-      765,
+      596,
       276,
-      1304,
+      765,
       635,
-      1411,
+      1304,
       1076
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_028",
@@ -824,8 +824,8 @@
       1169,
       462,
       37,
-      1276,
       743,
+      1276,
       695
     ],
     "retrieval_result": "PARTIAL"
@@ -878,10 +878,10 @@
       369,
       632,
       593,
-      453,
       217,
       357,
-      637,
+      453,
+      528,
       755
     ],
     "retrieval_result": "HIT"
@@ -938,8 +938,8 @@
       1022,
       602,
       1105,
-      1020,
       1009,
+      1020,
       1104
     ],
     "retrieval_result": "MISS"
@@ -1022,8 +1022,8 @@
       1303,
       1020,
       686,
-      603,
-      1104
+      1104,
+      603
     ],
     "retrieval_result": "PARTIAL"
   },
@@ -1478,7 +1478,7 @@
       596,
       1104,
       1206,
-      1276
+      528
     ],
     "retrieval_result": "PARTIAL"
   },
@@ -1591,10 +1591,10 @@
       1101,
       525,
       604,
+      528,
       1206,
       601,
-      1104,
-      1303
+      1104
     ],
     "retrieval_result": "HIT"
   },
@@ -1620,9 +1620,9 @@
       1304,
       604,
       1020,
-      1205,
       1105,
       1303,
+      1205,
       602
     ],
     "retrieval_result": "PARTIAL"
@@ -1647,12 +1647,12 @@
       695,
       995,
       523,
-      1169,
       522,
+      1169,
       593,
       686,
       1173,
-      635
+      528
     ],
     "retrieval_result": "PARTIAL"
   }

@@ -71,6 +71,12 @@ ENRICHMENT_PREFIXES = {
         "Levi's gross margin for fiscal year 2023 was 56.9%, compared to 57.5% for fiscal "
         "year 2022; gross profit was $3,515.7 million on net revenues of $6,179.0 million."
     ),
+    528: (
+        "Levi's management describes its DTC First strategy: brand-dedicated retail stores "
+        "are an increasingly important part of the DTC First strategy, alongside brand-dedicated "
+        "e-commerce sites. Management emphasizes growing owned stores and e-commerce as the "
+        "primary channel shift."
+    ),
 }
 
 
