@@ -11,6 +11,19 @@ revenue-segment content. A specific, accurate sentence naming the answer
 directly raises this to cosine ~0.61 (verified locally before writing to
 Supabase -- see session notes). Explicit id->prefix map, not a generic
 batch job -- narrow fix scoped to one confirmed miss (eval_006).
+
+Residual-miss triage session (following eval_006): 8 more entries added
+after the same local cosine pre-check discipline (candidate prefixes tested
+offline against each question with the local SentenceTransformer before any
+Supabase write). Two lessons repeated from eval_006: (1) a short, one-shot
+prefix sometimes barely moves the needle when the chunk is very long/mixed
+(e.g. chunk 604's first draft prefix scored *below* the no-prefix baseline,
+0.332 vs 0.344) -- a longer prefix that repeats the key term/figures in the
+question's own phrasing (not just states them once) reliably did better in
+every case tried. (2) a chunk already carrying the generic
+filing_type|source|section prefix (chunk 596, is_table=True, enriched in
+Week 2) can still fail -- the generic prefix barely moved its cosine either
+(0.396 vs 0.394 no-prefix) until replaced with a specific one (0.619).
 """
 
 import json
@@ -34,6 +47,12 @@ ENRICHMENT_PREFIXES = {
     602: (
         "Levi Strauss & Co. net income for fiscal year 2025 was $578.1 million, "
         "compared to $210.6 million for fiscal year 2024, a 174.5% increase."
+    ),
+    632: (
+        "Levi's inventory levels change fiscal year 2024 to fiscal year 2025. Inventory "
+        "levels: $1,237.7 million (fiscal year 2025, as of November 30, 2025) versus "
+        "$1,131.3 million (fiscal year 2024, as of December 1, 2024) -- inventory levels "
+        "increased by $106.4 million, or 9.4%, year over year."
     ),
 }
 
