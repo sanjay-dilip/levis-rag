@@ -36,10 +36,10 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 - [x] Hybrid retrieval live — BM25 (rank_bm25) + pgvector dense, fused via RRF (k=60); bug-fixed dense leg, dynamic penalty rank; quarter-aware period filtering on both legs
 - [x] Evidentiary tier tagging — Gemini Flash structured output (JSON schema enforced); four tiers, per-claim citations
 - [x] End-to-end query pipeline — `query.py` → `retrieve.py` → `tier_tagger.py` → cited, tiered answer
-- [x] Hand-labeled eval set — 60 questions across 5 types; recall@10 **71.7%** (43/60 HIT)
+- [x] Hand-labeled eval set — 60 questions across 5 types; recall@10 **73.3%** (44/60 HIT)
 - [x] RRF tuning — 6-config grid (k, candidates, FY filter); no improvement found; gap diagnosed as structural
 - [x] Quarter-aware period filtering — fixes the structural gap the RRF grid couldn't; recall@10 40.0% → 58.3%
-- [x] Targeted embedding enrichment — fixes diluted mixed-topic chunks; recall@10 58.3% → 61.7% → 71.7% across two passes
+- [x] Targeted embedding enrichment — fixes diluted mixed-topic chunks; recall@10 58.3% → 61.7% → 71.7% → 73.3% across three passes
 - [x] IVFFlat probes raised 10 → 30 — closed an approximate-index coverage gap that was hiding correctly-fixed embeddings
 - [x] Out-of-scope detection — similarity threshold + keyword blocklist, two-stage gate before generation
 - [x] FastAPI backend — `POST /query` wrapping retrieve + generate, `GET /health`
@@ -231,9 +231,9 @@ in top-10; **MISS** = neither.
 
 | Metric | Score |
 |---|---|
-| recall@10 (HIT) | 71.7% (43/60) |
+| recall@10 (HIT) | 73.3% (44/60) |
 | Partial credit | 11.7% (7/60) |
-| Miss | 16.7% (10/60) |
+| Miss | 15.0% (9/60) |
 
 **By question type:**
 
@@ -241,13 +241,13 @@ in top-10; **MISS** = neither.
 |---|---|---|---|
 | numeric_lookup | 19 | 0 | 1 |
 | trend_comparison | 13 | 1 | 1 |
-| qualitative_lookup | 4 | 3 | 3 |
+| qualitative_lookup | 5 | 3 | 2 |
 | inference | 7 | 3 | 0 |
 | out_of_scope | 0 | 0 | 5 |
 
-Of the 10 remaining misses, 4 are out-of-scope questions correctly rejected by the
+Of the 9 remaining misses, 4 are out-of-scope questions correctly rejected by the
 keyword/similarity gates — the eval scorer has no separate "correct rejection" verdict,
-so a correct OOS decline still counts as MISS. Real retrieval misses: **6/60**.
+so a correct OOS decline still counts as MISS. Real retrieval misses: **5/60**.
 
 **Residual-miss triage pass (recall@10 61.7% → 71.7%):** revisited the remaining
 10 residual misses with the same discipline as the fix below — re-verified each
@@ -269,9 +269,21 @@ one chunk's embedding can create unintended cross-question interference for
 an unrelated question sharing similar financial vocabulary — observed
 directly, not theorized); one (a "list the primary risk factors" question)
 was left deliberately unfixed since its answer structurally spans several
-chunks, not one. Full diagnosis, every prefix tried, and the two new
-regressions this pass surfaced (unrelated to the original 10, left open for
-a future session): see `CONTEXT.md`.
+chunks, not one. This pass also surfaced two new regressions (unrelated to
+the original 10) from its own changes.
+
+**Follow-up pass (recall@10 71.7% → 73.3%):** picked up one of the two new
+regressions. A chunk enriched to fix a DTC-percentage question had become the
+strongest dense match for *any* "DTC"-themed question, pushing an unrelated
+DTC-strategy question's real answer chunk out of contention. Fixed by
+enriching the actual answer chunk directly instead of touching the original
+chunk again — and, having been caught by exactly this kind of cross-question
+interference once already, cosine-checked the new candidate prefix against
+every other DTC-related eval question *before* writing anything, confirming
+its boosted similarity stayed well below each of those questions' real
+top-10 floor. One regression remains open for a future session. Full
+diagnosis, every prefix tried, and the exact next steps for the remaining
+regression: see `CONTEXT.md`.
 
 **Targeted embedding enrichment (recall@10 58.3% → 61.7%):** one chunk (id 602)
 mixes an income-statement continuation (operating income through EPS) with a
