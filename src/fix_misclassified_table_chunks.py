@@ -54,6 +54,13 @@ ENRICHMENT_PREFIXES = {
         "$1,131.3 million (fiscal year 2024, as of December 1, 2024) -- inventory levels "
         "increased by $106.4 million, or 9.4%, year over year."
     ),
+    604: (
+        "Levi's implied cost of goods sold (COGS) for fiscal year 2025. Cost of goods sold "
+        "(COGS) fiscal year 2025: $2,404.2 million. Cost of goods sold (COGS) fiscal year "
+        "2024: $2,374.9 million. COGS increased 1.2% year over year. Implied COGS from gross "
+        "margin: net revenues $6,282.0 million minus gross profit $3,877.8 million equals "
+        "cost of goods sold $2,404.2 million."
+    ),
 }
 
 

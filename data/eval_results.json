@@ -159,13 +159,13 @@
       602,
       686,
       700,
-      604,
       1276,
       1019,
       1295,
       1169,
       995,
-      1301
+      1301,
+      604
     ],
     "retrieval_result": "HIT"
   },
@@ -268,10 +268,10 @@
     "returned_chunk_ids": [
       1019,
       602,
-      1303,
-      686,
-      1104,
       604,
+      1303,
+      1104,
+      686,
       1205,
       1009,
       603,
@@ -498,8 +498,8 @@
       1290,
       1191,
       1092,
-      1019,
       604,
+      1019,
       1295,
       1303,
       602
@@ -679,7 +679,7 @@
       1206,
       522,
       1279,
-      1009
+      1019
     ],
     "retrieval_result": "HIT"
   },
@@ -735,10 +735,10 @@
       1022,
       1009,
       637,
-      1290,
-      632
+      604,
+      1290
     ],
-    "retrieval_result": "HIT"
+    "retrieval_result": "MISS"
   },
   {
     "id": "eval_027",
@@ -788,15 +788,15 @@
     "question_type": "qualitative_lookup",
     "notes": "id=536 (FY2025 10-K Item 1A header) introduces risk factors; ids=538,545,560 are individual risk factor chunks; retriever returns 10-Q pointers and Business Overview instead — expected MISS",
     "returned_chunk_ids": [
-      1246,
       1325,
       1045,
+      1246,
       1137,
       1276,
       995,
       695,
-      1317,
       1201,
+      1317,
       686
     ],
     "retrieval_result": "MISS"
@@ -853,9 +853,9 @@
       1108,
       522,
       1009,
+      604,
       1035,
-      632,
-      696
+      632
     ],
     "retrieval_result": "PARTIAL"
   },
@@ -908,12 +908,12 @@
       602,
       995,
       1022,
+      604,
       1295,
       593,
-      1089,
       525
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_033",
@@ -1471,10 +1471,10 @@
     "returned_chunk_ids": [
       1019,
       1304,
+      604,
       686,
       602,
       1303,
-      604,
       1104,
       1206,
       1276,
