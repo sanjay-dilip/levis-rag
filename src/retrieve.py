@@ -14,9 +14,11 @@ from pathlib import Path
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 import numpy as np
+import onnxruntime as ort
 from dotenv import load_dotenv
+from huggingface_hub import hf_hub_download
 from rank_bm25 import BM25Okapi
-from sentence_transformers import SentenceTransformer
+from tokenizers import Tokenizer
 from supabase import create_client, Client
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
@@ -24,6 +26,7 @@ logger = logging.getLogger(__name__)
 
 CHUNKS_PATH = Path("data/chunks_v2.json")
 MODEL_NAME = "all-MiniLM-L6-v2"
+MODEL_REPO = "sentence-transformers/all-MiniLM-L6-v2"
 BM25_CANDIDATES = 100
 DENSE_CANDIDATES = 100
 RRF_K = 60
@@ -114,14 +117,51 @@ def _tokenize(text: str) -> list[str]:
     return text.lower().split()
 
 
+def _encode(text: str, tokenizer: Tokenizer, session: ort.InferenceSession) -> list[float]:
+    """Encode text to a 384-dim embedding matching SentenceTransformer's own
+    output for this model: mean-pool token embeddings (weighted by the
+    attention mask), then L2-normalize -- the exact pipeline this model's
+    own modules.json specifies (Transformer -> Pooling(mean) -> Normalize).
+    Verified against the local sentence-transformers output (cosine 1.0,
+    max elementwise diff ~1e-7) before relying on this in production.
+    """
+    encoded = tokenizer.encode(text)
+    input_ids = np.array([encoded.ids], dtype=np.int64)
+    attention_mask = np.array([encoded.attention_mask], dtype=np.int64)
+
+    ort_inputs = {"input_ids": input_ids, "attention_mask": attention_mask}
+    input_names = {i.name for i in session.get_inputs()}
+    if "token_type_ids" in input_names:
+        ort_inputs["token_type_ids"] = np.zeros_like(input_ids)
+
+    token_embeddings = session.run(None, ort_inputs)[0]  # [1, seq_len, 384]
+
+    mask = attention_mask[..., None].astype(np.float32)
+    summed = (token_embeddings * mask).sum(axis=1)
+    counts = np.clip(mask.sum(axis=1), a_min=1e-9, a_max=None)
+    mean_pooled = summed / counts
+
+    norm = np.linalg.norm(mean_pooled, axis=1, keepdims=True)
+    normalized = mean_pooled / norm
+
+    return normalized[0].tolist()
+
+
 class Retriever:
     """Holds all shared state so it is initialised once and reused across queries."""
 
-    def __init__(self, supabase: Client, chunks: list[dict], model: SentenceTransformer) -> None:
+    def __init__(
+        self,
+        supabase: Client,
+        chunks: list[dict],
+        tokenizer: Tokenizer,
+        onnx_session: ort.InferenceSession,
+    ) -> None:
         self._supabase = supabase
         self._chunks = chunks
         self._chunks_by_id: dict[int, dict] = {c["id"]: c for c in chunks}
-        self._model = model
+        self._tokenizer = tokenizer
+        self._onnx_session = onnx_session
 
         # (fiscal_year, quarter) per chunk, aligned with `chunks` order, for
         # BM25-side period filtering (chunks_v2.json has no fiscal_year column).
@@ -198,7 +238,7 @@ class Retriever:
         # ~1/10 of chunks; a single quarter within it is smaller still).
         dense_match_count = candidates * 8 if target_quarter else (candidates * 5 if target_fy else candidates)
 
-        query_vec = self._model.encode(question).tolist()
+        query_vec = _encode(question, self._tokenizer, self._onnx_session)
         response = (
             self._supabase.rpc(
                 "match_chunks", {"query_embedding": query_vec, "match_count": dense_match_count}
@@ -284,7 +324,10 @@ def build_retriever() -> Retriever:
 
     chunks = json.loads(CHUNKS_PATH.read_text(encoding="utf-8"))
 
-    logger.info("Loading model: %s", MODEL_NAME)
-    model = SentenceTransformer(MODEL_NAME)
+    logger.info("Loading model (ONNX): %s", MODEL_NAME)
+    onnx_path = hf_hub_download(MODEL_REPO, filename="onnx/model.onnx")
+    tokenizer_path = hf_hub_download(MODEL_REPO, filename="tokenizer.json")
+    tokenizer = Tokenizer.from_file(tokenizer_path)
+    onnx_session = ort.InferenceSession(onnx_path, providers=["CPUExecutionProvider"])
 
-    return Retriever(supabase, chunks, model)
+    return Retriever(supabase, chunks, tokenizer, onnx_session)

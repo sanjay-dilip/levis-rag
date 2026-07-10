@@ -9,6 +9,9 @@ python-dotenv
 supabase
 tqdm
 rank_bm25
+onnxruntime
+huggingface_hub
+tokenizers
 fastapi
 uvicorn[standard]
 pytrends
