@@ -132,9 +132,9 @@
       1022,
       1295,
       1108,
+      695,
       1276,
       697,
-      695,
       1169
     ],
     "retrieval_result": "HIT"
@@ -615,9 +615,9 @@
       453,
       208,
       369,
+      122,
       125,
       366,
-      122,
       40,
       753,
       769,
@@ -643,16 +643,16 @@
     "returned_chunk_ids": [
       369,
       125,
+      122,
       208,
       848,
       769,
       453,
       768,
       364,
-      366,
-      937
+      366
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_024",
@@ -758,15 +758,15 @@
     "notes": "id=528 (FY2025 10-K Business section) explicitly names 'DTC First strategy'; id=522 is Business Overview; id=528 not in top-10 — id=522 at rank 7 → expected PARTIAL",
     "returned_chunk_ids": [
       462,
-      217,
       596,
       695,
-      276,
+      217,
       765,
+      276,
       1304,
       635,
-      400,
-      1411
+      1411,
+      1076
     ],
     "retrieval_result": "MISS"
   },
@@ -873,16 +873,16 @@
     "question_type": "qualitative_lookup",
     "notes": "id=545 (FY2025 10-K risk factor section) discusses inventory forecasting and write-down risk; not retrieved in top-10 — expected MISS",
     "returned_chunk_ids": [
+      122,
       545,
       369,
-      453,
       632,
       593,
-      637,
+      453,
       217,
       357,
-      755,
-      38
+      637,
+      755
     ],
     "retrieval_result": "HIT"
   },

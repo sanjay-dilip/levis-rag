@@ -67,6 +67,10 @@ ENRICHMENT_PREFIXES = {
         "fiscal year 2025, 47% in fiscal year 2024. Wholesale channel as a percentage of total "
         "net revenues: 51% in fiscal year 2025, 53% in fiscal year 2024."
     ),
+    122: (
+        "Levi's gross margin for fiscal year 2023 was 56.9%, compared to 57.5% for fiscal "
+        "year 2022; gross profit was $3,515.7 million on net revenues of $6,179.0 million."
+    ),
 }
 
 
