@@ -22,9 +22,16 @@ CREATE INDEX IF NOT EXISTS chunks_embedding_idx
     WITH (lists = 50);
 
 -- Similarity search function
--- Sets ivfflat.probes=10 per-query so the index scans across lists
--- rather than defaulting to 1. Returning fiscal_year and period_of_report
--- enables metadata filtering in the retriever without a separate lookup.
+-- Sets ivfflat.probes=30 per-query (raised from 10 during the residual-miss
+-- triage session below) so the index scans more of the 50 list partitions.
+-- Raised because a freshly-updated chunk's own true nearest match (cosine
+-- 0.65, rank 1 of the full corpus) was found to be completely absent from
+-- a probes=10 scan requesting the normal 500-candidate pool -- confirmed via
+-- direct comparison (present when requesting a near-exhaustive scan, absent
+-- at normal candidate budgets, and inconsistent rank on repeated identical
+-- queries), i.e. a real approximate-index coverage gap, not an embedding
+-- defect. Returning fiscal_year and period_of_report enables metadata
+-- filtering in the retriever without a separate lookup.
 CREATE OR REPLACE FUNCTION match_chunks(
     query_embedding  vector(384),
     match_count      int DEFAULT 10
@@ -43,7 +50,7 @@ RETURNS TABLE (
 )
 LANGUAGE plpgsql STABLE AS $$
 BEGIN
-  PERFORM set_config('ivfflat.probes', '10', true);
+  PERFORM set_config('ivfflat.probes', '30', true);
   RETURN QUERY
     SELECT c.id, c.text, c.source, c.filing_type, c.section,
            c.word_count, c.is_table, c.fiscal_year,
