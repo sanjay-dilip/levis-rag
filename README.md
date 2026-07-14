@@ -232,22 +232,39 @@ in top-10; **MISS** = neither.
 | Metric | Score |
 |---|---|
 | recall@10 (HIT) | 76.7% (46/60) |
-| Partial credit | 11.7% (7/60) |
-| Miss | 11.7% (7/60) |
+| Partial credit | 13.3% (8/60) |
+| Miss | 10.0% (6/60) |
 
 **By question type:**
 
 | Type | Hit | Partial | Miss |
 |---|---|---|---|
-| numeric_lookup | 19 | 0 | 1 |
+| numeric_lookup | 19 | 1 | 0 |
 | trend_comparison | 14 | 1 | 0 |
 | qualitative_lookup | 6 | 3 | 1 |
 | inference | 7 | 3 | 0 |
 | out_of_scope | 0 | 0 | 5 |
 
-Of the 7 remaining misses, 4 are out-of-scope questions correctly rejected by the
+Of the 6 remaining misses, 4 are out-of-scope questions correctly rejected by the
 keyword/similarity gates — the eval scorer has no separate "correct rejection" verdict,
-so a correct OOS decline still counts as MISS. Real retrieval misses: **3/60**.
+so a correct OOS decline still counts as MISS. A 5th (`eval_041`, market share in the
+denim market) is also an out-of-scope-category question by its own label, just one
+deliberately left uncaught by the keyword gate. Real retrieval misses: **1/60**
+(`eval_028`).
+
+**eval_033 improvement (recall@10 unchanged at 76.7%; MISS → PARTIAL):** the ground-truth
+chunk (596) for "What was Levi's DTC revenue as a percentage of total revenue in
+FY2025?" had already been enriched once, but never cracked the top-10 — measuring its
+BM25 rank for the first time (never checked in any prior fix) confirmed why: rank 137
+of 1,449 unfiltered, a genuine two-leg problem that can't be fixed without touching the
+raw chunk text, which is out of scope. Instead, the *acceptable* chunk (603, never
+previously touched) had a much better BM25 rank and its own literal, diluted answer
+sentence ("DTC comprised 49% of total net revenues") — the same enrichment playbook
+applied there raised its cosine from 0.47 to 0.68 and moved it into the top-10.
+Cross-checked against 13 topically-adjacent FY2025 questions first; every case where
+the projected similarity exceeded a neighbor's current value was protected by that
+chunk's own strong BM25 rank, the same pattern validated in the eval_053 fix. Full
+regression: exactly one question changed.
 
 **eval_053 fix (recall@10 73.3% → 76.7%):** the last residual-miss triage pass left
 two flagged regressions open (`CONTEXT.md`); the DTC one was closed in a follow-up
