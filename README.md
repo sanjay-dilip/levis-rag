@@ -1,5 +1,11 @@
 # Levi's RAG — AI Due Diligence Copilot
 
+![Status](https://img.shields.io/badge/status-live-brightgreen)
+![Recall@10](https://img.shields.io/badge/recall%4010-78.3%25%20(47%2F60)-blue)
+![Tests](https://img.shields.io/badge/tests-17%2F18%20passing-yellow)
+![Backend](https://img.shields.io/badge/backend-FastAPI%20%2B%20Render-informational)
+![Frontend](https://img.shields.io/badge/frontend-Next.js%20%2B%20Vercel-informational)
+
 A RAG-powered tool for evidence-tiered analysis of Levi Strauss & Co.'s
 publicly available SEC EDGAR filings and strategic narrative. Built as a
 portfolio project demonstrating applied AI engineering judgment.
