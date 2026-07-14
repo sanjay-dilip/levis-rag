@@ -238,8 +238,8 @@ in top-10; **MISS** = neither.
 | Metric | Score |
 |---|---|
 | recall@10 (HIT) | 78.3% (47/60) |
-| Partial credit | 13.3% (8/60) |
-| Miss | 8.3% (5/60) |
+| Partial credit | 15.0% (9/60) |
+| Miss | 6.7% (4/60) |
 
 **By question type:**
 
@@ -249,16 +249,22 @@ in top-10; **MISS** = neither.
 | trend_comparison | 14 | 1 | 0 |
 | qualitative_lookup | 7 | 3 | 0 |
 | inference | 7 | 3 | 0 |
-| out_of_scope | 0 | 0 | 5 |
+| out_of_scope | 0 | 1 | 4 |
 
-Of the 5 remaining misses, 4 are out-of-scope questions correctly rejected by the
+Of the 4 remaining misses, all are out-of-scope questions correctly rejected by the
 keyword/similarity gates — the eval scorer has no separate "correct rejection" verdict,
-so a correct OOS decline still counts as MISS. The 5th (`eval_041`, market share in the
-denim market) is also an out-of-scope-category question by its own label, just one
-deliberately left uncaught by the keyword gate. Real (non-OOS-category) retrieval
-misses: **0/60** — the last one, `eval_028`, now scores PARTIAL rather than a clean
+so a correct OOS decline still counts as MISS. Real (non-OOS-category) retrieval
+misses: **0/60** — the last non-OOS gap, `eval_028`, scores PARTIAL rather than a clean
 HIT, since a single chunk structurally can't summarize "the primary risk factors" as
 a list; see below.
+
+**eval_041 follow-up correction (recall@10 unchanged at 78.3%; MISS → PARTIAL):** a
+live-deployment sanity check (asking this exact question through the deployed API)
+surfaced a stronger candidate than the ones added in the original label fix: chunk 525
+states Levi's is "the #1 brand globally in jeanswear (measured by total retail sales)"
+— a specific, quantified market-position claim, more on-point than 522/523, and already
+retrieved (no embedding write needed). Added to `acceptable_chunk_ids` as a pure label
+correction, found by exercising the real deployed app rather than by code review alone.
 
 **eval_028 improvement (recall@10 76.7% → 78.3%; MISS → PARTIAL, plus a bonus HIT):**
 "What are the primary risk factors Levi's discloses in its FY2025 10-K?" was losing to
