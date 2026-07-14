@@ -20,9 +20,9 @@
       606,
       1106,
       1295,
+      1108,
       1206,
-      1304,
-      1108
+      1304
     ],
     "retrieval_result": "HIT"
   },
@@ -46,8 +46,8 @@
       602,
       1019,
       1295,
-      1276,
       700,
+      1276,
       1169,
       1202,
       1303,
@@ -69,16 +69,16 @@
     "question_type": "numeric_lookup",
     "notes": "id=686 disaggregated revenue table: DTC row totals $3,076.8M across all segments",
     "returned_chunk_ids": [
-      1019,
+      603,
       1304,
+      1019,
       686,
       1303,
       602,
       1206,
       1104,
       604,
-      528,
-      1202
+      528
     ],
     "retrieval_result": "HIT"
   },
@@ -104,8 +104,8 @@
       1104,
       1191,
       1092,
-      604,
-      1295
+      603,
+      604
     ],
     "retrieval_result": "HIT"
   },
@@ -189,9 +189,9 @@
       1092,
       1191,
       1295,
-      602,
       698,
       696,
+      602,
       697
     ],
     "retrieval_result": "HIT"
@@ -266,16 +266,16 @@
     "question_type": "qualitative_lookup",
     "notes": "Q4-specific e-commerce growth % not disclosed in 10-K; id=604 mentions 'higher e-commerce traffic' qualitatively; id=596 has annual share (11% of total); question_type changed from numeric_lookup: no specific Q4 rate in corpus",
     "returned_chunk_ids": [
+      603,
       1019,
+      604,
       602,
       528,
-      604,
       1303,
       1104,
       686,
       1205,
-      596,
-      1009
+      596
     ],
     "retrieval_result": "HIT"
   },
@@ -380,6 +380,7 @@
     "question_type": "numeric_lookup",
     "notes": "id=453 (FY2024 Note 15): DTC $2,923.8M total (incl. Dockers $192.4M); id=686 (FY2025 Note 17): FY2024 DTC restated to $2,809.1M ex-Dockers",
     "returned_chunk_ids": [
+      603,
       366,
       1019,
       453,
@@ -388,8 +389,7 @@
       528,
       1206,
       369,
-      367,
-      1104
+      367
     ],
     "retrieval_result": "HIT"
   },
@@ -416,8 +416,8 @@
       1191,
       1295,
       1092,
-      1106,
       604,
+      1106,
       1022,
       602
     ],
@@ -470,12 +470,12 @@
       1206,
       1304,
       1019,
+      603,
       604,
       1020,
       1105,
       1303,
-      1106,
-      1290
+      1106
     ],
     "retrieval_result": "PARTIAL"
   },
@@ -500,8 +500,8 @@
       1191,
       604,
       1019,
-      1295,
       1303,
+      1295,
       602
     ],
     "retrieval_result": "HIT"
@@ -553,15 +553,15 @@
     "question_type": "trend_comparison",
     "notes": "id=603 (FY2025 10-K): 'DTC comprised 49% of total net revenues'; id=596 (FY2025 Business section): 49% FY2025 / 47% FY2024; id=115 (FY2023 10-K): 43% FY2023. None in top-10 for this query — expected MISS",
     "returned_chunk_ids": [
-      1304,
       1206,
+      1304,
       604,
       1019,
+      603,
       1020,
       1105,
       1303,
       602,
-      603,
       1022
     ],
     "retrieval_result": "HIT"
@@ -673,13 +673,13 @@
       686,
       604,
       528,
-      1303,
+      603,
       1304,
+      545,
+      1303,
       1295,
       602,
-      1206,
-      522,
-      1279
+      522
     ],
     "retrieval_result": "HIT"
   },
@@ -728,13 +728,13 @@
     "notes": "id=632 (FY2025 consolidated balance sheet) shows Inventories $1,237.7M (Nov 2025) vs $1,131.3M (Dec 2024); id=632 not retrieved in top-10 — expected MISS",
     "returned_chunk_ids": [
       686,
+      545,
       1295,
       606,
       1108,
       525,
       1022,
       1009,
-      637,
       632,
       636
     ],
@@ -788,18 +788,18 @@
     "question_type": "qualitative_lookup",
     "notes": "id=536 (FY2025 10-K Item 1A header) introduces risk factors; ids=538,545,560 are individual risk factor chunks; retriever returns 10-Q pointers and Business Overview instead — expected MISS",
     "returned_chunk_ids": [
-      1246,
       1325,
       1045,
+      1246,
       1137,
+      538,
       1276,
       995,
       695,
       1317,
-      1201,
-      686
+      1201
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_029",
@@ -850,14 +850,14 @@
       686,
       606,
       1022,
+      560,
       1108,
+      538,
       522,
       1009,
-      604,
-      1035,
-      632
+      604
     ],
-    "retrieval_result": "PARTIAL"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_031",
@@ -873,16 +873,16 @@
     "question_type": "qualitative_lookup",
     "notes": "id=545 (FY2025 10-K risk factor section) discusses inventory forecasting and write-down risk; not retrieved in top-10 — expected MISS",
     "returned_chunk_ids": [
-      122,
       545,
+      122,
       369,
       632,
       593,
-      1202,
       357,
+      1202,
       453,
-      217,
-      38
+      38,
+      637
     ],
     "retrieval_result": "HIT"
   },
@@ -910,7 +910,7 @@
       1022,
       604,
       525,
-      593,
+      1295,
       522
     ],
     "retrieval_result": "HIT"
@@ -931,18 +931,18 @@
     "question_type": "numeric_lookup",
     "notes": "id=596 (FY2025 10-K Business section) explicitly states 'DTC channel generated 49% and 47% of our net revenues in fiscal years 2025 and 2024'; id=603 confirms '49% of total net revenues'; neither in top-10 — expected MISS",
     "returned_chunk_ids": [
-      1304,
       1019,
+      1304,
       1206,
+      603,
       604,
       1022,
       602,
       1105,
       1020,
-      1009,
-      1104
+      1009
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_034",
@@ -962,8 +962,8 @@
       1101,
       1202,
       1017,
-      1304,
       1022,
+      1304,
       606,
       1206,
       611,
@@ -1014,15 +1014,15 @@
     "question_type": "inference",
     "notes": "Multi-step calculation using DTC base ($2,809.1M), wholesale growth (−0.5%), and Beyond Yoga ($151.3M); id=601 has channel % changes; id=686 has revenue breakdown; neither in top-10 — expected MISS",
     "returned_chunk_ids": [
+      603,
       1019,
       1206,
       1009,
       1304,
       1105,
-      1303,
       1020,
+      1303,
       686,
-      603,
       1104
     ],
     "retrieval_result": "PARTIAL"
@@ -1469,16 +1469,16 @@
     "question_type": "inference",
     "notes": "id=1191 (10-Q_2025-10-09 Note 12) has 9M YTD DTC $2,214.8M; id=686 (FY2025 10-K Note 17) has annual DTC $3,076.8M; subtraction gives Q4 DTC $861.0M; id=686 at rank 7 → expected PARTIAL (provides annual total but not 9M YTD)",
     "returned_chunk_ids": [
+      603,
       1019,
       1304,
       604,
-      686,
       602,
+      686,
       1303,
       596,
       1104,
-      1206,
-      1202
+      1206
     ],
     "retrieval_result": "PARTIAL"
   },
@@ -1590,11 +1590,11 @@
       602,
       1101,
       525,
+      603,
       604,
       528,
       1206,
-      601,
-      1104
+      601
     ],
     "retrieval_result": "HIT"
   },
@@ -1619,11 +1619,11 @@
       1019,
       1304,
       604,
+      603,
       1020,
       1205,
       1105,
-      1303,
-      602
+      1303
     ],
     "retrieval_result": "PARTIAL"
   },

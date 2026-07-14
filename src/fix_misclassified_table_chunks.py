@@ -84,6 +84,23 @@ ENRICHMENT_PREFIXES = {
         "for the remainder of the year and from earlier receipts in order to mitigate "
         "potential impacts from tariffs."
     ),
+    538: (
+        "Primary risk factors Levi's discloses: consumer discretionary spending declines, "
+        "global macroeconomic volatility, foreign currency exchange rate exposure, "
+        "commodity and raw material cost volatility, and tariff and trade restriction risk "
+        "affecting imported materials and finished goods."
+    ),
+    545: (
+        "Primary risk factors Levi's discloses: inventory forecasting risk (excess inventory "
+        "levels, inventory write-downs, markdowns from failing to accurately forecast "
+        "consumer demand), wholesale customer concentration risk, and DTC First strategy "
+        "execution risk in expanding retail stores and e-commerce."
+    ),
+    560: (
+        "Primary risk factors Levi's discloses: tariff and trade restriction risk from "
+        "reciprocal tariffs on imported goods, and key employee and executive management "
+        "retention risk, including recent fiscal year 2025 leadership transitions."
+    ),
 }
 
 
