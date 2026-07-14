@@ -21,8 +21,8 @@
       1106,
       1295,
       1108,
-      1206,
-      1304
+      1304,
+      1206
     ],
     "retrieval_result": "HIT"
   },
@@ -132,9 +132,9 @@
       1022,
       1295,
       1108,
-      695,
       1276,
       697,
+      695,
       1202
     ],
     "retrieval_result": "HIT"
@@ -675,11 +675,11 @@
       528,
       603,
       1304,
+      545,
       1303,
       1295,
       602,
-      522,
-      1206
+      522
     ],
     "retrieval_result": "HIT"
   },
@@ -728,13 +728,13 @@
     "notes": "id=632 (FY2025 consolidated balance sheet) shows Inventories $1,237.7M (Nov 2025) vs $1,131.3M (Dec 2024); id=632 not retrieved in top-10 — expected MISS",
     "returned_chunk_ids": [
       686,
+      545,
       1295,
       606,
       1108,
       525,
       1022,
       1009,
-      637,
       632,
       636
     ],
@@ -792,14 +792,14 @@
       1045,
       1246,
       1137,
+      538,
       1276,
       995,
       695,
       1317,
-      1201,
-      686
+      1201
     ],
-    "retrieval_result": "MISS"
+    "retrieval_result": "PARTIAL"
   },
   {
     "id": "eval_029",
@@ -850,14 +850,14 @@
       686,
       606,
       1022,
+      560,
       1108,
+      538,
       522,
       1009,
-      604,
-      1035,
-      632
+      604
     ],
-    "retrieval_result": "PARTIAL"
+    "retrieval_result": "HIT"
   },
   {
     "id": "eval_031",
@@ -873,16 +873,16 @@
     "question_type": "qualitative_lookup",
     "notes": "id=545 (FY2025 10-K risk factor section) discusses inventory forecasting and write-down risk; not retrieved in top-10 — expected MISS",
     "returned_chunk_ids": [
-      122,
       545,
+      122,
       369,
       632,
       593,
-      1202,
       357,
+      1202,
       453,
-      217,
-      38
+      38,
+      637
     ],
     "retrieval_result": "HIT"
   },
@@ -910,7 +910,7 @@
       1022,
       604,
       525,
-      593,
+      1295,
       522
     ],
     "retrieval_result": "HIT"
@@ -1092,16 +1092,17 @@
   {
     "id": "eval_041",
     "question": "What is Levi's market share in the global denim market?",
-    "expected_answer": "Specific market share percentages are not disclosed in SEC filings; Levi's describes itself qualitatively as one of the world's largest brand-name apparel companies and the world's leading denim brand by net revenues",
+    "expected_answer": "Specific market share percentages for the global denim market are not disclosed in SEC filings; Levi's states it will \"continue mens bottoms denim leadership globally\" as a forward-looking strategic goal (not a quantified market-share figure), and separately describes itself qualitatively as one of the world's largest brand-name apparel companies",
     "ground_truth_chunk_ids": [],
     "acceptable_chunk_ids": [
-      522
+      522,
+      523
     ],
     "expected_tier": "Not-in-corpus",
     "filing_type": "10-K",
     "fiscal_year": "FY2025",
     "question_type": "out_of_scope",
-    "notes": "Market share % not disclosed in filings; id=522 (FY2025 10-K Business Overview) has qualitative competitive position description; id=522 at rank 7 → expected PARTIAL",
+    "notes": "Corrected (follow-up session): the original expected_answer's phrase \"the world's leading denim brand by net revenues\" does not appear anywhere in the corpus (confirmed via direct grep across all 41 extracted filings) -- it was a fabricated/unsupported claim, not something the filings actually say. The closest genuine denim-position statement is \"We will continue mens bottoms denim leadership globally\" (id=523, FY2025 10-K; id=277 is the FY2024 10-K version of the same sentence) -- a qualitative strategic goal, not a market-share number. Neither id=522 nor id=523 is currently retrieved in the top-10 (522 was previously retrieved at rank 7 per this note's original text, but is no longer surfaced after several sessions' worth of retrieve.py/embedding changes) -- this question is expected to remain MISS under current scoring, and that is the correct behavior for a genuinely Not-in-corpus question, not a retrieval defect to chase with further embedding writes. See CONTEXT.md item #12 (Pass 3) and the eval_041 fix session entry for the full reasoning.",
     "returned_chunk_ids": [
       276,
       40,
