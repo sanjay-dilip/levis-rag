@@ -84,6 +84,12 @@ ENRICHMENT_PREFIXES = {
         "for the remainder of the year and from earlier receipts in order to mitigate "
         "potential impacts from tariffs."
     ),
+    603: (
+        "Levi's DTC (Direct to Consumer) revenue as a percentage of total net revenues "
+        "for fiscal year 2025 (FY2025). As a percentage of net revenues on a reported "
+        "basis for the year ended November 30, 2025, DTC comprised 49% of total net "
+        "revenues."
+    ),
     538: (
         "Primary risk factors Levi's discloses: consumer discretionary spending declines, "
         "global macroeconomic volatility, foreign currency exchange rate exposure, "
