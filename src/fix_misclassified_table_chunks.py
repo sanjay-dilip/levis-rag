@@ -77,6 +77,13 @@ ENRICHMENT_PREFIXES = {
         "e-commerce sites. Management emphasizes growing owned stores and e-commerce as the "
         "primary channel shift."
     ),
+    1202: (
+        "Levi's management commentary on inventory levels in the third quarter of fiscal "
+        "year 2025 (Q3 FY2025). Compared to the third quarter of fiscal year 2024, "
+        "inventory increased 12%, excluding the Dockers business, in preparation for sales "
+        "for the remainder of the year and from earlier receipts in order to mitigate "
+        "potential impacts from tariffs."
+    ),
 }
 
 
