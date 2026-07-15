@@ -310,6 +310,19 @@ closed by a raw-text change — a full corpus re-chunk (rejected in an earlier s
 cost/risk reasons) or a narrower manual chunk-split (considered and declined as
 disproportionate to one question's benefit). Issue #18 is closed.
 
+**`eval_054` investigated (issue #22) and confirmed the same limitation — genuine no-op,
+reverted.** A prefix enrichment for chunk 1191 (the 9-month YTD DTC figure needed for
+this cross-filing inference question) raised its dense rank to 1/1449 exactly as
+predicted, but the fused RRF score still fell short of the top-10 cutoff: its BM25 rank
+(1279/1449) is entirely outside the candidate window, so a single dominant leg can't
+out-fuse chunks with moderate-but-present ranks on both legs — the identical mechanism
+already diagnosed for `eval_060`. Verified via a full regression (zero questions changed)
+before reverting the write cleanly back to a byte-for-byte match with the pre-write
+baseline. This is now the third confirmed instance of this exact "dense-ceiling,
+BM25-absent" limitation — the embedding-prefix playbook cannot close this class of gap;
+only a raw-text change or a broader BM25-window change (both previously assessed as not
+worth the cost/risk) could. Closed as permanently PARTIAL, issue #22 closed.
+
 **Week 4 Task 8 — ground-truth relabeling (recall@10 78.3% → 83.3%, timeboxed, 1 session):**
 before starting any fix, re-ran `eval_runner.py` fresh to confirm the working baseline
 was still 78.3% (47/60) rather than trusting the committed file — came back byte-for-byte
