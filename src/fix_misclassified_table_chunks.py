@@ -107,6 +107,10 @@ ENRICHMENT_PREFIXES = {
         "reciprocal tariffs on imported goods, and key employee and executive management "
         "retention risk, including recent fiscal year 2025 leadership transitions."
     ),
+    523: (
+        "Levi's describes its competitive position in denim as mens bottoms denim "
+        "leadership globally."
+    ),
 }
 
 
