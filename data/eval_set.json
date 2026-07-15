@@ -442,16 +442,16 @@
     "question": "How does Levi's describe its competitive position in denim?",
     "expected_answer": "Levi's describes itself as one of the world's largest brand-name apparel companies, with the Levi's brand as the world's leading denim brand by net revenues globally; it emphasizes premium positioning and diversified product range",
     "ground_truth_chunk_ids": [
-      522
+      523
     ],
     "acceptable_chunk_ids": [
-      276
+      277
     ],
     "expected_tier": "Management-qualitative-statement",
     "filing_type": "10-K",
     "fiscal_year": "FY2025",
     "question_type": "qualitative_lookup",
-    "notes": "id=522 (FY2025 10-K Business Overview) describes market position; id=276 (FY2024 10-K Business Overview) is the equivalent prior-year chunk; id=276 at rank 3 → expected PARTIAL"
+    "notes": "Corrected (issue #18 investigation + follow-up fix session): the original gt=522/acceptable=276 were mislabeled -- direct text read confirms both are generic \"Item 1. BUSINESS Overview\" boilerplate (brand list, company history) containing zero denim or competitive-position language, regardless of which year's copy ranks higher. The actual denim-leadership/competitive-position statement (\"We will continue mens bottoms denim leadership globally while driving outsized growth in women's and tops...\") lives in the next sequential chunk in each filing -- id=523 (FY2025 10-K) and id=277 (FY2024 10-K), confirmed by direct read. Same mislabeling mechanism as the T8 eval_017/036/059 fix (a chunk_v2.py split point landing the labeled id one chunk before the real answer). Relabeled ground_truth_chunk_ids 522->523 and acceptable_chunk_ids 276->277."
   },
   {
     "id": "eval_030",
