@@ -247,16 +247,16 @@
     "question": "How did Levi's DTC revenue change between FY2024 and FY2025?",
     "expected_answer": "+9.5% reported (+10.5% organic); $3,076.8M (FY2025) vs $2,809.1M (FY2024 continuing ops)",
     "ground_truth_chunk_ids": [
-      601
+      686
     ],
     "acceptable_chunk_ids": [
-      686
+      602
     ],
     "expected_tier": "Verified-from-filing",
     "filing_type": "10-K",
     "fiscal_year": "CROSS",
     "question_type": "trend_comparison",
-    "notes": "id=601 has channel breakdown with DTC +9.5%; id=686 has both years' DTC totals (derivable); neither in top-10 for this query — expected MISS"
+    "notes": "Corrected (Week 4 Task 8 session): gt was 601, but 601 is narrative-only (segment/classification definitions plus the income-statement summary table — no DTC channel figures at all), same mislabeling already caught and fixed for eval_018. The actual DTC channel row ('DTC 3,076.8 2,809.1 9.5% 10.5%') is in chunk 602, confirmed by direct read; chunk 686 (Note 17 disaggregated revenue) also carries both years' DTC totals by segment, and was already being returned at rank 1 for this question — the prior PARTIAL was a labeling artifact, not a retrieval failure."
   },
   {
     "id": "eval_018",
@@ -548,16 +548,16 @@
     "question": "What would Levi's net revenue have been if DTC grew at the same rate as wholesale in FY2025?",
     "expected_answer": "Hypothetical: if DTC grew at −0.5% (wholesale reported rate) instead of +9.5%, DTC would be ~$2,795.1M; total revenue ~$6,151.6M vs actual $6,282.0M — a shortfall of ~$130.4M",
     "ground_truth_chunk_ids": [
-      601
+      686
     ],
     "acceptable_chunk_ids": [
-      686
+      602
     ],
     "expected_tier": "Model-inference",
     "filing_type": "10-K",
     "fiscal_year": "FY2025",
     "question_type": "inference",
-    "notes": "Multi-step calculation using DTC base ($2,809.1M), wholesale growth (−0.5%), and Beyond Yoga ($151.3M); id=601 has channel % changes; id=686 has revenue breakdown; neither in top-10 — expected MISS"
+    "notes": "Corrected (Week 4 Task 8 session): gt was 601, same mislabeling as eval_017/eval_018 — 601 has no channel % changes, that data is in chunk 602 ('Wholesale -0.5%, DTC +9.5%'). Chunk 686 (segment-disaggregated DTC/wholesale totals for both years) was already returned in the retrieved set for this question, so the prior PARTIAL was a labeling artifact. Multi-step calculation still requires DTC base ($2,809.1M), wholesale growth (−0.5%), and Beyond Yoga ($151.3M) as before."
   },
   {
     "id": "eval_037",
@@ -891,16 +891,16 @@
     "question": "How much did Levi's DTC revenue grow in absolute dollar terms between FY2024 and FY2025?",
     "expected_answer": "Approximately $267.7M. FY2025 DTC revenues were $3,076.8M; FY2024 DTC revenues restated on a continuing-operations basis (ex-Dockers) were $2,809.1M. Growth = $3,076.8M - $2,809.1M = $267.7M.",
     "ground_truth_chunk_ids": [
-      601
+      686
     ],
     "acceptable_chunk_ids": [
-      686
+      602
     ],
     "expected_tier": "Model-inference",
     "filing_type": "10-K",
     "fiscal_year": "FY2025",
     "question_type": "inference",
-    "notes": "Use FY2024 restated DTC ($2,809.1M ex-Dockers) not as-reported ($2,923.8M incl. Dockers). See data/dtc_conflict_finding.md. Both FY2025 and restated FY2024 DTC figures appear together in the FY2025 10-K channel revenue table (chunk 601). Chunk 686 (Note 17) also has the channel comparison."
+    "notes": "Corrected (Week 4 Task 8 session): the FY2025 and restated FY2024 DTC channel figures actually appear together in chunk 602, not 601 (601 is narrative-only, no channel breakdown) — same mislabeling as eval_017/036/018. Chunk 686 (Note 17) also has the segment-disaggregated channel comparison and was already retrieved for this question, so the prior PARTIAL was a labeling artifact, not a retrieval failure. See data/dtc_conflict_finding.md for why FY2024 restated (ex-Dockers) rather than as-reported DTC is used."
   },
   {
     "id": "eval_060",

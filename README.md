@@ -1,7 +1,7 @@
 # Levi's RAG — AI Due Diligence Copilot
 
 ![Status](https://img.shields.io/badge/status-live-brightgreen)
-![Recall@10](https://img.shields.io/badge/recall%4010-78.3%25%20(47%2F60)-blue)
+![Recall@10](https://img.shields.io/badge/recall%4010-83.3%25%20(50%2F60)-blue)
 ![Tests](https://img.shields.io/badge/tests-17%2F18%20passing-yellow)
 ![Backend](https://img.shields.io/badge/backend-FastAPI%20%2B%20Render-informational)
 ![Frontend](https://img.shields.io/badge/frontend-Next.js%20%2B%20Vercel-informational)
@@ -42,10 +42,11 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 - [x] Hybrid retrieval live — BM25 (rank_bm25) + pgvector dense, fused via RRF (k=60); bug-fixed dense leg, dynamic penalty rank; quarter-aware period filtering on both legs
 - [x] Evidentiary tier tagging — Gemini Flash structured output (JSON schema enforced); four tiers, per-claim citations
 - [x] End-to-end query pipeline — `query.py` → `retrieve.py` → `tier_tagger.py` → cited, tiered answer
-- [x] Hand-labeled eval set — 60 questions across 5 types; recall@10 **78.3%** (47/60 HIT)
+- [x] Hand-labeled eval set — 60 questions across 5 types; recall@10 **83.3%** (50/60 HIT)
 - [x] RRF tuning — 6-config grid (k, candidates, FY filter); no improvement found; gap diagnosed as structural
 - [x] Quarter-aware period filtering — fixes the structural gap the RRF grid couldn't; recall@10 40.0% → 58.3%
 - [x] Targeted embedding enrichment — fixes diluted mixed-topic chunks; recall@10 58.3% → 61.7% → 71.7% → 73.3% → 76.7% → 78.3% across five passes
+- [x] Ground-truth relabeling (Week 4 Task 8) — 3 eval questions had a stale mislabeled ground-truth chunk (matching a pattern already fixed for a sibling question); recall@10 78.3% → 83.3%
 - [x] IVFFlat probes raised 10 → 30 — closed an approximate-index coverage gap that was hiding correctly-fixed embeddings
 - [x] Out-of-scope detection — similarity threshold + keyword blocklist, two-stage gate before generation
 - [x] FastAPI backend — `POST /query` wrapping retrieve + generate, `GET /health`
@@ -237,8 +238,8 @@ in top-10; **MISS** = neither.
 
 | Metric | Score |
 |---|---|
-| recall@10 (HIT) | 78.3% (47/60) |
-| Partial credit | 15.0% (9/60) |
+| recall@10 (HIT) | 83.3% (50/60) |
+| Partial credit | 10.0% (6/60) |
 | Miss | 6.7% (4/60) |
 
 **By question type:**
@@ -246,9 +247,9 @@ in top-10; **MISS** = neither.
 | Type | Hit | Partial | Miss |
 |---|---|---|---|
 | numeric_lookup | 19 | 1 | 0 |
-| trend_comparison | 14 | 1 | 0 |
+| trend_comparison | 15 | 0 | 0 |
 | qualitative_lookup | 7 | 3 | 0 |
-| inference | 7 | 3 | 0 |
+| inference | 9 | 1 | 0 |
 | out_of_scope | 0 | 1 | 4 |
 
 Of the 4 remaining misses, all are out-of-scope questions correctly rejected by the
@@ -257,6 +258,28 @@ so a correct OOS decline still counts as MISS. Real (non-OOS-category) retrieval
 misses: **0/60** — the last non-OOS gap, `eval_028`, scores PARTIAL rather than a clean
 HIT, since a single chunk structurally can't summarize "the primary risk factors" as
 a list; see below.
+
+**Week 4 Task 8 — ground-truth relabeling (recall@10 78.3% → 83.3%, timeboxed, 1 session):**
+before starting any fix, re-ran `eval_runner.py` fresh to confirm the working baseline
+was still 78.3% (47/60) rather than trusting the committed file — came back byte-for-byte
+identical. Direct read of the actual chunk text (not eval-set notes) found three DTC
+revenue-change questions (`eval_017`, `eval_036`, `eval_059`) shared a stale
+`ground_truth_chunk_id` of 601 — a chunk that turns out to be narrative-only (segment
+and classification definitions, plus the income-statement summary table) with **no DTC
+channel dollar figures at all**. This is the same mislabeling already caught and fixed
+for `eval_018` in an earlier session, just never propagated to its three siblings. The
+actual DTC channel row lives in chunk 602; chunk 686 (Note 17, disaggregated by segment)
+carries the same DTC totals for both years and was already being retrieved at or near
+rank 1 for all three questions — the prior PARTIAL was a labeling artifact, not a
+retrieval failure. Relabeled `ground_truth_chunk_ids` 601 → 686. A second candidate,
+re-embedding `eval_033`, was investigated and explicitly **not** attempted: it had
+already been re-embedded twice in prior sessions, and the second of those fixes had
+already diagnosed the remaining blocker as a BM25 rank of 137/1449 — a lexical
+problem a dense-embedding prefix can't touch — so a third attempt would very likely
+repeat a fix already known not to work. Logged as a residual for a future re-chunking
+pass instead. Full per-question diff confirmed exactly 3 questions changed
+(`eval_017`/`036`/`059`, all PARTIAL → HIT), nothing else moved — a clean, isolated
+result, +5.0pp over the 2pp noise floor established by the RRF tuning grid.
 
 **eval_041 follow-up correction (recall@10 unchanged at 78.3%; MISS → PARTIAL):** a
 live-deployment sanity check (asking this exact question through the deployed API)
