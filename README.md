@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/status-live-brightgreen)
 ![Recall@10](https://img.shields.io/badge/recall%4010-83.3%25%20(50%2F60)-blue)
-![Tests](https://img.shields.io/badge/tests-17%2F18%20passing-yellow)
+![Tests](https://img.shields.io/badge/tests-53%2F54%20passing-yellow)
 ![Backend](https://img.shields.io/badge/backend-FastAPI%20%2B%20Render-informational)
 ![Frontend](https://img.shields.io/badge/frontend-Next.js%20%2B%20Vercel-informational)
 
@@ -171,13 +171,31 @@ order, first match wins):
 | `QuestionType` | Trigger | What handles it |
 |---|---|---|
 | `OUT_OF_SCOPE` | Keyword blocklist (competitors, stock price, earnings-call specifics, Dockers) | Declined, no retrieval call |
-| `XBRL_KPI` | A KPI term (revenue, gross profit, operating income, net income, EPS, inventory) **and** a period token (FY2025/FY2024/FY2026, Q1–Q4) | `src/xbrl_tool.py` — direct EDGAR XBRL lookup |
+| `XBRL_KPI` | A KPI term (revenue, gross profit, operating income, net income, EPS, inventory) **and** a period token (FY2025/FY2024/FY2026, Q1–Q4) — **unless** the question also contains a segment/percentage/comparison qualifier (`dtc`, `wholesale`, `segment`, `percentage`, `percent`, `ratio`, `management say`) or names 2+ distinct fiscal years, in which case it falls through to `FINANCIAL_LOOKUP` instead | `src/xbrl_tool.py` — direct EDGAR XBRL lookup |
 | `TREND_QUERY` | Trend-topic keywords (trend, mclaren, f1, silverstone, austin, half-life, search interest, ...) | `src/trend_decay_tool.py` — Google Trends decay analysis |
 | `FINANCIAL_LOOKUP` | Default — everything else | Hybrid retrieval (`retrieve.py`) → Gemini tier-tagging (`tier_tagger.py`) |
 
 A second OOS gate runs inside the `FINANCIAL_LOOKUP` path: if the top-1 dense
 similarity for the retrieved chunks falls below 0.20, generation is skipped
 even if the keyword blocklist didn't catch it.
+
+**Router fix — XBRL_KPI over-matching (issue #17):** the original `XBRL_KPI`
+rule was a bare "KPI term + period token" AND, with no concept of segment
+breakdown, percentage-of-total, multi-period comparison, or qualitative
+phrasing. A full audit of the 60-question eval set found 32 questions
+matching that AND — only 6 genuinely belong on `XBRL_KPI` (single-KPI,
+single-period lookups); the other 26 were being misrouted straight past
+retrieval to a tool that has no segment/channel tags and only ever extracts
+one period. Flagship case: *"What was Levi's DTC revenue as a percentage of
+total revenue in FY2025?"* routed to `XBRL_KPI` and answered with total
+revenue ($6.28B) instead of the DTC percentage (49%), even though retrieval
+already answers this question correctly. Fixed with two additive guards: an
+exclusion-term list (`dtc`, `wholesale`, `segment`, `percentage`, `percent`,
+`ratio`, `management say`) and a structural check rejecting questions that
+name 2+ distinct fiscal years. Verified against all 32 affected questions
+(`tests/test_router.py`, 36 assertions) and live end-to-end: the DTC-percentage
+question now routes to `FINANCIAL_LOOKUP` and answers "49% of total net
+revenues" correctly.
 
 ### XBRL KPI tool
 
