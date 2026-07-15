@@ -108,8 +108,7 @@ ENRICHMENT_PREFIXES = {
         "retention risk, including recent fiscal year 2025 leadership transitions."
     ),
     523: (
-        "Levi's describes its competitive position in denim as mens bottoms denim "
-        "leadership globally."
+        "Denim leadership globally: mens bottoms denim leadership."
     ),
 }
 
