@@ -6,4 +6,5 @@ __pycache__/
 /data/raw/
 /data/xbrl_facts.json
 CONTEXT.md
+CONTEXT_ARCHIVE_W1-W3.md
 exe_query.txt
