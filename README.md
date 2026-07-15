@@ -274,11 +274,12 @@ in top-10; **MISS** = neither.
 Of the 4 remaining misses, all are out-of-scope questions correctly rejected by the
 keyword/similarity gates — the eval scorer has no separate "correct rejection" verdict,
 so a correct OOS decline still counts as MISS. Real (non-OOS-category) retrieval
-misses: **0/60** — the last non-OOS gaps score PARTIAL rather than a clean HIT:
-`eval_028` (a single chunk structurally can't summarize "the primary risk factors" as
-a list) and `eval_060` (the ground-truth chunk has the single best possible dense
-match but falls just outside the BM25 candidate window — an RRF fusion-margin
-limitation, not a content gap); see below.
+misses: **0/60** — the last non-OOS gaps score PARTIAL rather than a clean HIT, and both
+are closed as permanently-PARTIAL-by-design (see below), not open bugs: `eval_028` (a
+single chunk structurally can't summarize "the primary risk factors" as a list) and
+`eval_060` (the ground-truth chunk has the single best possible dense match but falls
+just outside the BM25 candidate window — an RRF fusion-margin limitation, not a content
+gap).
 
 **Issue #18 — eval_029 relabeling + targeted enrichment (recall@10 83.3% → 85.0%):**
 investigated a cluster of three qualitative PARTIAL questions (`eval_028`/`029`/`060`).
@@ -299,8 +300,15 @@ also wrong — its ground-truth chunk (604) already has the best possible dense 
 (rank 1) but is genuinely outside the BM25 candidate window (rank 252 of 595
 fiscal-year-matching chunks); an embedding prefix can't help a chunk that's already at
 its dense ceiling, and a broad candidate-window widening was already tried and rejected
-in the Week 2 RRF tuning grid. `eval_028` and `eval_060` remain open, deliberately not
-attempted — see the full diagnosis in the project's session notes.
+in the Week 2 RRF tuning grid. `eval_028` and `eval_060` were investigated further in a
+follow-up session and **closed as permanently PARTIAL by decision**, not left open pending
+a future fix: `eval_028`'s remaining acceptable chunks (545/560) have BM25 ranks (190/1449,
+503/1449) that no embedding-prefix fix can move, and no single chunk in the corpus can
+answer a "list everything in category X" question by design; `eval_060`'s ground-truth
+chunk (604) is already at its dense-leg ceiling (rank 1), so its BM25 gap can only be
+closed by a raw-text change — a full corpus re-chunk (rejected in an earlier session for
+cost/risk reasons) or a narrower manual chunk-split (considered and declined as
+disproportionate to one question's benefit). Issue #18 is closed.
 
 **Week 4 Task 8 — ground-truth relabeling (recall@10 78.3% → 83.3%, timeboxed, 1 session):**
 before starting any fix, re-ran `eval_runner.py` fresh to confirm the working baseline
