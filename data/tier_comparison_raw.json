@@ -1,0 +1,527 @@
+{
+  "eval_001": {
+    "question": "What was Levi's FY2025 gross margin?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      686,
+      604,
+      1022,
+      602,
+      606,
+      1106,
+      1295,
+      1108,
+      1304,
+      1206
+    ],
+    "gemini": {
+      "answer": "Levi Strauss & Co.'s gross margin for the fiscal year ended November 30, 2025 (FY2025) was 61.7%, representing an increase from the gross margin of 60.6% for the prior fiscal year ended December 1, 2024. The increase in gross margin was primarily driven by favorable channel mix, price increases, and lower product costs, which were partially offset by the impact of tariffs. Additionally, currency, including both transaction and translation impacts, favorably impacted the gross margin by approximately 40 basis points.",
+      "claims": [
+        {
+          "claim_text": "Levi Strauss & Co.'s gross margin for the fiscal year ended November 30, 2025 (FY2025) was 61.7%",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "representing an increase from the gross margin of 60.6% for the prior fiscal year ended December 1, 2024",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "The increase in gross margin was primarily driven by favorable channel mix, price increases, and lower product costs, which were partially offset by the impact of tariffs.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Additionally, currency, including both transaction and translation impacts, favorably impacted the gross margin by approximately 40 basis points.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's FY2025 gross margin was 61.7%.",
+      "claims": [
+        {
+          "claim_text": "Levi's FY2025 gross margin was 61.7%.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "998",
+      "x-ratelimit-remaining-tokens": "2148",
+      "x-ratelimit-reset-requests": "2m52.8s",
+      "x-ratelimit-reset-tokens": "49.26s"
+    }
+  },
+  "eval_002": {
+    "question": "What was Levi's FY2025 net revenue?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      686,
+      602,
+      1019,
+      1295,
+      700,
+      1276,
+      1169,
+      1202,
+      1303,
+      604
+    ],
+    "gemini": {
+      "answer": "For the fiscal year ended November 30, 2025, Levi Strauss & Co. reported total net revenues of $6,282.0 million.",
+      "claims": [
+        {
+          "claim_text": "For the fiscal year ended November 30, 2025, Levi Strauss & Co. reported total net revenues of $6,282.0 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's FY2025 net revenue was $6,282.0 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's FY2025 net revenue was $6,282.0 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "997",
+      "x-ratelimit-remaining-tokens": "2830",
+      "x-ratelimit-reset-requests": "4m19.2s",
+      "x-ratelimit-reset-tokens": "45.85s"
+    }
+  },
+  "eval_003": {
+    "question": "What was Levi's FY2025 DTC revenue?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      603,
+      1304,
+      1019,
+      686,
+      1303,
+      602,
+      1206,
+      1104,
+      604,
+      528
+    ],
+    "gemini": {
+      "answer": "Levi Strauss & Co.'s Direct-to-Consumer (DTC) net revenue for the fiscal year ended November 30, 2025 (FY2025) was $3,076.8 million. The breakdown by segment is as follows:\n- Americas: $1,375.5 million\n- Europe: $942.7 million\n- Asia: $656.7 million\n- Beyond Yoga\u00ae: $101.9 million",
+      "claims": [
+        {
+          "claim_text": "Levi Strauss & Co.'s Direct-to-Consumer (DTC) net revenue for the fiscal year ended November 30, 2025 (FY2025) was $3,076.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "DTC revenue in the Americas was $1,375.5 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "DTC revenue in Europe was $942.7 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "DTC revenue in Asia was $656.7 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "DTC revenue for Beyond Yoga\u00ae was $101.9 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The FY2025 DTC revenue was $3,076.8 million.",
+      "claims": [
+        {
+          "claim_text": "The FY2025 DTC revenue was $3,076.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "996",
+      "x-ratelimit-remaining-tokens": "1439",
+      "x-ratelimit-reset-requests": "5m45.6s",
+      "x-ratelimit-reset-tokens": "52.805s"
+    }
+  },
+  "eval_004": {
+    "question": "What was Levi's FY2025 wholesale revenue?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      686,
+      1303,
+      602,
+      1019,
+      1009,
+      1104,
+      1191,
+      1092,
+      603,
+      604
+    ],
+    "gemini": {
+      "answer": "For the fiscal year ended November 30, 2025 (FY2025), Levi Strauss & Co. reported total wholesale net revenues of $3,205.2 million. The disaggregated wholesale net revenues by segment are as follows:\n- Americas: $1,921.5 million\n- Europe: $756.6 million\n- Asia: $477.7 million\n- Beyond Yoga\u00ae: $49.4 million",
+      "claims": [
+        {
+          "claim_text": "Levi Strauss & Co. reported total wholesale net revenues of $3,205.2 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Americas: $1,921.5 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Europe: $756.6 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Asia: $477.7 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Beyond Yoga\u00ae: $49.4 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's FY2025 wholesale revenue was $3,205.2 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's FY2025 wholesale revenue was $3,205.2 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "995",
+      "x-ratelimit-remaining-tokens": "2576",
+      "x-ratelimit-reset-requests": "7m12s",
+      "x-ratelimit-reset-tokens": "47.12s"
+    }
+  },
+  "eval_005": {
+    "question": "What was Levi's FY2025 operating income?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      602,
+      606,
+      686,
+      1022,
+      1295,
+      1108,
+      1276,
+      697,
+      695,
+      1202
+    ],
+    "gemini": {
+      "answer": "For the fiscal year ended November 30, 2025 (FY2025), Levi Strauss & Co. reported operating income of $677.6 million, which represented a 157.9% increase from the prior year's operating income of $262.7 million.",
+      "claims": [
+        {
+          "claim_text": "For the fiscal year ended November 30, 2025 (FY2025), Levi Strauss & Co. reported operating income of $677.6 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "which represented a 157.9% increase from the prior year's operating income of $262.7 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's FY2025 operating income was $677.6 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's FY2025 operating income was $677.6 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "994",
+      "x-ratelimit-remaining-tokens": "3215",
+      "x-ratelimit-reset-requests": "8m38.4s",
+      "x-ratelimit-reset-tokens": "43.925s"
+    }
+  },
+  "eval_006": {
+    "question": "What was Levi's FY2025 net income?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      602,
+      686,
+      700,
+      1202,
+      1276,
+      1019,
+      1169,
+      1295,
+      995,
+      1301
+    ],
+    "gemini": {
+      "answer": "For the fiscal year ended November 30, 2025 (FY2025), Levi Strauss & Co. reported a total net income of $578.1 million. This includes net income from continuing operations of $502.0 million and net income from discontinued operations (net of taxes) of $76.1 million.",
+      "claims": [
+        {
+          "claim_text": "For the fiscal year ended November 30, 2025 (FY2025), Levi Strauss & Co. reported a total net income of $578.1 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "This includes net income from continuing operations of $502.0 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "and net income from discontinued operations (net of taxes) of $76.1 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's FY2025 net income was $578.1 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's FY2025 net income was $578.1 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "993",
+      "x-ratelimit-remaining-tokens": "3245",
+      "x-ratelimit-reset-requests": "10m4.8s",
+      "x-ratelimit-reset-tokens": "43.775s"
+    }
+  },
+  "eval_007": {
+    "question": "What was Levi's Americas segment revenue in FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      686,
+      1290,
+      1009,
+      1092,
+      1191,
+      1295,
+      698,
+      696,
+      602,
+      697
+    ],
+    "gemini": {
+      "answer": "For the fiscal year ended November 30, 2025 (FY2025), net revenues for the Levi's Brands Americas segment were $3,297.0 million.",
+      "claims": [
+        {
+          "claim_text": "net revenues for the Levi's Brands Americas segment were $3,297.0 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 696,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's Americas segment revenue in FY2025 was $3,297.0 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's Americas segment revenue in FY2025 was $3,297.0 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "992",
+      "x-ratelimit-remaining-tokens": "4817",
+      "x-ratelimit-reset-requests": "11m31.2s",
+      "x-ratelimit-reset-tokens": "35.915s"
+    }
+  },
+  "eval_008": {
+    "question": "What was Levi's Europe segment revenue in FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      686,
+      1290,
+      1092,
+      1191,
+      1009,
+      602,
+      1295,
+      696,
+      698,
+      1294
+    ],
+    "gemini": {
+      "answer": "For the fiscal year ended November 30, 2025 (FY2025), Levi's Europe segment generated total net revenues of $1,699.3 million. Disaggregated by channel, this consisted of $756.6 million from wholesale and $942.7 million from direct-to-consumer channels.",
+      "claims": [
+        {
+          "claim_text": "For the fiscal year ended November 30, 2025 (FY2025), Levi's Europe segment generated total net revenues of $1,699.3 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "this consisted of $756.6 million from wholesale and $942.7 million from direct-to-consumer channels.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's Europe segment revenue in FY2025 was $1,699.3 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's Europe segment revenue in FY2025 was $1,699.3 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "991",
+      "x-ratelimit-remaining-tokens": "5006",
+      "x-ratelimit-reset-requests": "12m57.599s",
+      "x-ratelimit-reset-tokens": "34.97s"
+    }
+  },
+  "eval_009": {
+    "question": "What was Levi's Asia segment revenue in FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      686,
+      1092,
+      1290,
+      1009,
+      1191,
+      1295,
+      696,
+      1294,
+      602,
+      697
+    ],
+    "gemini": {
+      "answer": "For the fiscal year ended November 30, 2025 (FY2025), Levi's Asia segment net revenues were $1,134.4 million. This total consists of $477.7 million from the wholesale channel and $656.7 million from the direct-to-consumer channel.",
+      "claims": [
+        {
+          "claim_text": "For the fiscal year ended November 30, 2025 (FY2025), Levi's Asia segment net revenues were $1,134.4 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "This total consists of $477.7 million from the wholesale channel",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "and $656.7 million from the direct-to-consumer channel.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's Asia segment revenue in FY2025 was $1,134.4 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's Asia segment revenue in FY2025 was $1,134.4 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "990",
+      "x-ratelimit-remaining-tokens": "5027",
+      "x-ratelimit-reset-requests": "14m24s",
+      "x-ratelimit-reset-tokens": "34.864s"
+    }
+  }
+}
