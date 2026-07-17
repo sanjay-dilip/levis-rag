@@ -280,218 +280,51 @@ in top-10; **MISS** = neither.
 Of the 4 remaining misses, all are out-of-scope questions correctly rejected by the
 keyword/similarity gates — the eval scorer has no separate "correct rejection" verdict,
 so a correct OOS decline still counts as MISS. Real (non-OOS-category) retrieval
-misses: **0/60** — the last non-OOS gaps score PARTIAL rather than a clean HIT, and both
-are closed as permanently-PARTIAL-by-design (see below), not open bugs: `eval_028` (a
-single chunk structurally can't summarize "the primary risk factors" as a list) and
-`eval_060` (the ground-truth chunk has the single best possible dense match but falls
-just outside the BM25 candidate window — an RRF fusion-margin limitation, not a content
-gap).
+misses: **0/60**.
 
-**Issue #18 — eval_029 relabeling + targeted enrichment (recall@10 83.3% → 85.0%):**
-investigated a cluster of three qualitative PARTIAL questions (`eval_028`/`029`/`060`).
-Direct text reads disproved two of the three original hypotheses. `eval_029`'s labeled
-ground-truth/acceptable chunks (522/276) turned out to be generic "Business Overview"
-boilerplate containing zero denim or competitive-position language — the real answer
-("mens bottoms denim leadership globally...") lives in the *next* sequential chunk in
-each filing (523/277), the same mislabeling mechanism as the Task 8 fix above. Relabeled
-`ground_truth_chunk_ids`/`acceptable_chunk_ids` to 523/277; the label fix alone left the
-question at MISS (523 not yet in the top-10), so applied the established targeted
-embedding-prefix playbook to chunk 523. A first prefix draft fixed `eval_029` but
-introduced a narrow-margin side effect on an unrelated question (`eval_058`, HIT→PARTIAL
-via a razor-thin RRF gap) — rather than accept that trade-off, tried a second, much
-shorter prefix (bare "mens bottoms denim leadership globally" fact, no framing language)
-that fixed `eval_029` **and** avoided the `eval_058` collision entirely: diffed against
-the pre-fix baseline, exactly one question changed. `eval_060`'s original hypothesis was
-also wrong — its ground-truth chunk (604) already has the best possible dense match
-(rank 1) but is genuinely outside the BM25 candidate window (rank 252 of 595
-fiscal-year-matching chunks); an embedding prefix can't help a chunk that's already at
-its dense ceiling, and a broad candidate-window widening was already tried and rejected
-in the Week 2 RRF tuning grid. `eval_028` and `eval_060` were investigated further in a
-follow-up session and **closed as permanently PARTIAL by decision**, not left open pending
-a future fix: `eval_028`'s remaining acceptable chunks (545/560) have BM25 ranks (190/1449,
-503/1449) that no embedding-prefix fix can move, and no single chunk in the corpus can
-answer a "list everything in category X" question by design; `eval_060`'s ground-truth
-chunk (604) is already at its dense-leg ceiling (rank 1), so its BM25 gap can only be
-closed by a raw-text change — a full corpus re-chunk (rejected in an earlier session for
-cost/risk reasons) or a narrower manual chunk-split (considered and declined as
-disproportionate to one question's benefit). Issue #18 is closed.
+**Baseline (Week 2): 40.0% recall@10.** A 6-configuration RRF tuning grid (k ∈ {30, 60,
+90}, candidates ∈ {100, 150}, a plain fiscal-year filter on/off) found no configuration
+beat this by more than a 2pp noise floor — the gap was structural (chunking/metadata),
+not a fusion-parameter problem. Full grid results: `data/rrf_tuning_results.md`.
 
-**`eval_054` investigated (issue #22) and confirmed the same limitation — genuine no-op,
-reverted.** A prefix enrichment for chunk 1191 (the 9-month YTD DTC figure needed for
-this cross-filing inference question) raised its dense rank to 1/1449 exactly as
-predicted, but the fused RRF score still fell short of the top-10 cutoff: its BM25 rank
-(1279/1449) is entirely outside the candidate window, so a single dominant leg can't
-out-fuse chunks with moderate-but-present ranks on both legs — the identical mechanism
-already diagnosed for `eval_060`. Verified via a full regression (zero questions changed)
-before reverting the write cleanly back to a byte-for-byte match with the pre-write
-baseline. This is now the third confirmed instance of this exact "dense-ceiling,
-BM25-absent" limitation — the embedding-prefix playbook cannot close this class of gap;
-only a raw-text change or a broader BM25-window change (both previously assessed as not
-worth the cost/risk) could. Closed as permanently PARTIAL, issue #22 closed.
+**Two structural fixes closed most of the gap:**
+- **Quarter-aware period filtering (40.0% → 58.3%).** Every 10-K/10-Q repeats
+  near-identical disaggregated-revenue boilerplate with no period token in the text
+  itself (dates are spelled out, e.g. "November 30, 2025", never "FY2025") — the
+  original FY-only filter couldn't tell filings apart on content, so cross-period
+  chunks crowded out the one from the queried period. `_detect_period()`
+  (`src/retrieve.py`) now extracts fiscal year *and* quarter from the question and
+  filters **both** the BM25 and dense legs (the tuning grid's FY filter only touched
+  dense, which is why it found nothing). Two edge cases needed explicit handling:
+  Levi's Q4 has no dedicated 10-Q (only the annual 10-K), so a literal "Q4" filter
+  falls back to FY-only; and a bare single-year question can also match the
+  *following* year's 10-K, since annual figures get restated there as a prior-year
+  comparative column.
+- **IVFFlat `probes` 10 → 30.** The approximate vector index was only scanning 10 of
+  50 list partitions, hiding embeddings that were already correctly fixed — raising
+  `probes` alone lifted recall@10 several points before any further embedding writes.
 
-**Week 4 Task 8 — ground-truth relabeling (recall@10 78.3% → 83.3%, timeboxed, 1 session):**
-before starting any fix, re-ran `eval_runner.py` fresh to confirm the working baseline
-was still 78.3% (47/60) rather than trusting the committed file — came back byte-for-byte
-identical. Direct read of the actual chunk text (not eval-set notes) found three DTC
-revenue-change questions (`eval_017`, `eval_036`, `eval_059`) shared a stale
-`ground_truth_chunk_id` of 601 — a chunk that turns out to be narrative-only (segment
-and classification definitions, plus the income-statement summary table) with **no DTC
-channel dollar figures at all**. This is the same mislabeling already caught and fixed
-for `eval_018` in an earlier session, just never propagated to its three siblings. The
-actual DTC channel row lives in chunk 602; chunk 686 (Note 17, disaggregated by segment)
-carries the same DTC totals for both years and was already being retrieved at or near
-rank 1 for all three questions — the prior PARTIAL was a labeling artifact, not a
-retrieval failure. Relabeled `ground_truth_chunk_ids` 601 → 686. A second candidate,
-re-embedding `eval_033`, was investigated and explicitly **not** attempted: it had
-already been re-embedded twice in prior sessions, and the second of those fixes had
-already diagnosed the remaining blocker as a BM25 rank of 137/1449 — a lexical
-problem a dense-embedding prefix can't touch — so a third attempt would very likely
-repeat a fix already known not to work. Logged as a residual for a future re-chunking
-pass instead. Full per-question diff confirmed exactly 3 questions changed
-(`eval_017`/`036`/`059`, all PARTIAL → HIT), nothing else moved — a clean, isolated
-result, +5.0pp over the 2pp noise floor established by the RRF tuning grid.
+**The rest of the gap (58.3% → 85.0%) closed through iterative, verified
+embedding-prefix enrichment and eval-set label corrections** — a repeatable playbook:
+diagnose a chunk's dilution (a real answer buried in a long, mixed-topic passage) or a
+stale ground-truth label, cosine-check a content-specific prefix against the target
+question *and* every topically-adjacent question before writing to Supabase (a prefix
+that helps one question can measurably hurt another sharing similar vocabulary — hit
+in practice at least once, not just a theoretical risk, and guarded against on every
+write since), then verify with a full 60-question regression run. Applied across
+roughly a dozen chunks and eval-set corrections over several sessions; full
+session-by-session detail (every fix, every reverted experiment, every regression
+found and traced) is in the git commit history.
 
-**eval_041 follow-up correction (recall@10 unchanged at 78.3%; MISS → PARTIAL):** a
-live-deployment sanity check (asking this exact question through the deployed API)
-surfaced a stronger candidate than the ones added in the original label fix: chunk 525
-states Levi's is "the #1 brand globally in jeanswear (measured by total retail sales)"
-— a specific, quantified market-position claim, more on-point than 522/523, and already
-retrieved (no embedding write needed). Added to `acceptable_chunk_ids` as a pure label
-correction, found by exercising the real deployed app rather than by code review alone.
-
-**eval_028 improvement (recall@10 76.7% → 78.3%; MISS → PARTIAL, plus a bonus HIT):**
-"What are the primary risk factors Levi's discloses in its FY2025 10-K?" was losing to
-near-identical "see risk factors in the 10-K" pointer boilerplate repeated across four
-different 10-Qs — a genuine two-leg dominance (the boilerplate wins on **both** BM25 and
-dense, not just one), unlike every prior fix in this series. Applied the same targeted-prefix
-playbook to the three specific risk-factor chunks the question needs (538, 545, 560).
-Two of those three chunks turned out to already be the ground truth for *other* eval
-questions (`eval_031` inventory management, `eval_030` tariff headwinds) — checked the
-new prefixes against those questions too, and both improved rather than merely avoided
-harm, with `eval_030` flipping PARTIAL → HIT as an unplanned bonus. The target question
-itself now surfaces one of its three acceptable risk-factor chunks (a real, stable
-improvement, verified across repeated runs) but still can't reach a clean HIT, because
-the ground-truth chunk is a content-free section-header stub and the real answer
-structurally spans several separate chunks — a multi-chunk synthesis capability, not a
-retrieval-ranking fix, and out of scope for this pass.
-
-**eval_033 improvement (recall@10 unchanged at 76.7%; MISS → PARTIAL):** the ground-truth
-chunk (596) for "What was Levi's DTC revenue as a percentage of total revenue in
-FY2025?" had already been enriched once, but never cracked the top-10 — measuring its
-BM25 rank for the first time (never checked in any prior fix) confirmed why: rank 137
-of 1,449 unfiltered, a genuine two-leg problem that can't be fixed without touching the
-raw chunk text, which is out of scope. Instead, the *acceptable* chunk (603, never
-previously touched) had a much better BM25 rank and its own literal, diluted answer
-sentence ("DTC comprised 49% of total net revenues") — the same enrichment playbook
-applied there raised its cosine from 0.47 to 0.68 and moved it into the top-10.
-Cross-checked against 13 topically-adjacent FY2025 questions first; every case where
-the projected similarity exceeded a neighbor's current value was protected by that
-chunk's own strong BM25 rank, the same pattern validated in the eval_053 fix. Full
-regression: exactly one question changed.
-
-**eval_053 fix (recall@10 73.3% → 76.7%):** the last residual-miss triage pass left
-two flagged regressions open (`CONTEXT.md`); the DTC one was closed in a follow-up
-pass (above), and this one — "What did Levi's management say about inventory levels
-in Q3 FY2025?" (chunk 1202) — was picked up this session. Chunk 1202 is another
-mixed-topic MD&A chunk: the actual inventory sentence is first, followed by ~600
-unrelated words on revenue, net income, EBIT, and EPS — the same dilution pattern as
-every prior fix. A content-accurate prefix raised its cosine similarity for the
-target question from 0.30 to 0.60. Before writing, a cross-interference check against
-four neighboring Q3-FY2025 questions found a real, larger-than-usual leak (+0.20 to
-+0.26 cosine, driven by generic period phrasing the prefix can't avoid without losing
-its own target boost) — reported honestly rather than assumed safe, then verified
-live: none of the four questions' ground-truth chunks were displaced, because RRF's
-rank-based fusion barely moves a chunk that also holds a strong BM25 rank. The full
-eval run also flipped a second, previously-documented question (`eval_026`) from
-MISS to HIT — confirmed stable across repeated runs, not IVFFlat noise, though the
-exact mechanism (introducing chunk 1202 as a new candidate shifted the RRF ranking
-enough to let chunk 632 back into the previously-blocked eval_026/eval_032 trade-off)
-wasn't traced further.
-
-**Residual-miss triage pass (recall@10 61.7% → 71.7%):** revisited the remaining
-10 residual misses with the same discipline as the fix below — re-verified each
-one against the actual chunk text and a `debug=True` retrieval trace before
-assuming a category or a fix. Two label corrections in `data/eval_set.json`
-(one ground-truth id was simply wrong; one "acceptable" chunk turned out to
-describe a different, later event than the question asked about) closed one
-miss for free. The bigger finding: a freshly-enriched, objectively-correct
-embedding (cosine similarity 0.65, the best match in the whole corpus) was
-completely absent from `match_chunks`'s normal candidate pool — traced to
-`ivfflat.probes=10` only scanning 10 of the index's 50 list partitions.
-Raising `probes` to 30 alone lifted recall@10 from 63.3% to 70.0%, before any
-further embedding writes, by letting several already-fixed or never-touched
-embeddings surface properly. Four more chunks got the same targeted-prefix
-treatment as chunk 602 below (one, 604, needed a longer prefix after a
-short first draft actually scored *below* the no-prefix baseline). Closed
-7 of the original 10 misses; one was left as a documented trade-off (fixing
-one chunk's embedding can create unintended cross-question interference for
-an unrelated question sharing similar financial vocabulary — observed
-directly, not theorized); one (a "list the primary risk factors" question)
-was left deliberately unfixed since its answer structurally spans several
-chunks, not one. This pass also surfaced two new regressions (unrelated to
-the original 10) from its own changes.
-
-**Follow-up pass (recall@10 71.7% → 73.3%):** picked up one of the two new
-regressions. A chunk enriched to fix a DTC-percentage question had become the
-strongest dense match for *any* "DTC"-themed question, pushing an unrelated
-DTC-strategy question's real answer chunk out of contention. Fixed by
-enriching the actual answer chunk directly instead of touching the original
-chunk again — and, having been caught by exactly this kind of cross-question
-interference once already, cosine-checked the new candidate prefix against
-every other DTC-related eval question *before* writing anything, confirming
-its boosted similarity stayed well below each of those questions' real
-top-10 floor. One regression remains open for a future session. Full
-diagnosis, every prefix tried, and the exact next steps for the remaining
-regression: see `CONTEXT.md`.
-
-**Targeted embedding enrichment (recall@10 58.3% → 61.7%):** one chunk (id 602)
-mixes an income-statement continuation (operating income through EPS) with a
-separate net-revenues-by-segment table — its plain embedding and a generic
-`filing_type | source | section` metadata prefix (the same technique that fixed
-120 other table chunks in Week 2) both scored a weak cosine similarity (0.39 and
-0.38) against "What was Levi's FY2025 net income?", because the pooled embedding
-gets diluted by the much larger unrelated content in the same chunk — re-chunking
-would be the structural fix, but was assessed as too high-risk relative to the
-confirmed benefit (touches all 1,449 chunk IDs, needs a full Supabase re-upload,
-and a manual eval-set remap with no reliable check). Instead, a specific,
-content-accurate sentence prefix naming the actual answer raised the cosine
-similarity to 0.61 — verified locally before writing to Supabase. Chunk 602 went
-from outside the dense top-500 to rank #1 for this query. `src/fix_misclassified_table_chunks.py`
-holds the explicit chunk-id → prefix map for this and any future one-off fixes
-of this kind.
-
-**Week 4 fix — quarter-aware metadata filtering (recall@10 40.0% → 58.3%):** the
-Week 2 RRF tuning grid (below) found that a plain FY filter made no difference,
-because it only touched the dense leg and had no concept of fiscal quarters. Reading
-the actual miss data (`data/eval_results.json`) showed why: every 10-K/10-Q repeats
-near-identical "Disaggregated Revenue" notes boilerplate with no period token in the
-text itself (dates are spelled out, e.g. "November 30, 2025", never "FY2025"), so
-BM25 and dense embeddings can't tell filings apart on content alone — cross-period
-chunks from every other filing crowd out the one from the queried period. The fix
-(`src/retrieve.py`): `_detect_period()` extracts FY **and** quarter tokens from the
-question (taking the latest year when multiple are named, since later filings carry
-prior years as restated comparatives) and the resulting filter is applied to **both**
-legs, not just dense. Two edge cases required special handling: Levi's Q4 is never
-filed as its own 10-Q (it only appears inline in the annual 10-K), so a literal "Q4"
-quarter filter would match zero chunks and needed to fall back to FY-only; and a bare
-single-year question (no quarter) can also match the *following* year's 10-K, since
-annual figures are commonly restated there as the prior-year comparative column.
-`fy_filter` is now the retriever's default (`True`), used automatically by both
-`app/routers/query.py` and `src/query.py`.
-
-Original (Week 2) diagnosis, still true for the residual gap: the miss rate is a
-**chunking and metadata problem**, not an RRF problem. A 6-configuration tuning grid
-(k ∈ {30, 60, 90}, candidates ∈ {100, 150}, FY filter on/off) found no configuration
-beat the 40.0% baseline by more than 2pp — because that FY filter didn't yet
-understand quarters. Full tuning results: `data/rrf_tuning_results.md`. After the
-Week 4 fix, targeted embedding enrichment (two passes, see above), and raising
-`ivfflat.probes` 10→30, remaining known failure patterns (6 real misses): a
-"list the primary risk factors" question whose answer structurally spans
-several chunks rather than one; one DTC-percentage figure whose fused ranking
-stays just outside the top-10 despite a targeted embedding fix; and a documented
-cross-question interference trade-off where fixing one chunk's embedding can
-narrowly displace a different, unrelated question's previously-correct answer
-in the fused ranking — see `CONTEXT.md` for the full breakdown.
+**One recurring, understood, and accepted limitation:** a handful of questions
+(`eval_028`, `eval_033`, `eval_054`, `eval_060`) share a "dense-ceiling, BM25-absent"
+pattern — the ground-truth chunk already has the best possible dense-similarity match,
+but its BM25 rank is far outside the retriever's candidate window, so it can't be
+boosted by the embedding-prefix technique (which only touches the dense leg) and can't
+out-fuse chunks with moderate-but-present ranks on both legs. Closing this would need a
+raw-text change (re-chunking — assessed as too high-risk relative to the confirmed
+benefit) or a wider BM25 candidate window (tested broadly in the original tuning grid
+and found not to help). These score PARTIAL by design, not as open bugs.
 
 ---
 
@@ -512,15 +345,9 @@ in the fused ranking — see `CONTEXT.md` for the full breakdown.
   miss rate — 4 of the 10 misses in the current run are OOS questions behaving
   correctly, not retrieval failures. Not yet fixed; noted here so the miss-rate
   number isn't misread.
-- **Trend-decay tool's half-life estimates are low-confidence by design, and
-  unstable pull-to-pull:** Google Trends weekly data for the McLaren drops is
-  impulse-like (single-week spike, near-zero floor), so fitted half-lives are
-  never rated above `confidence: "medium"` regardless of R². Repeated pulls
-  of the same canonical window also return different results from each
-  other (Austin's fit flips between `"ok"` and `"insufficient_data"` run to
-  run) — a low-search-volume-keyword sampling-noise effect, not a bug. The
-  source report's "6–8 week trend cycle" claim is untestable at this data
-  granularity, not falsified — see `data/trend_decay_findings.md`.
+- **Trend-decay tool's half-life estimates are low-confidence and pull-to-pull
+  unstable, by design** — see the "Trend-decay tool" section above and
+  `data/trend_decay_findings.md` for the full methodology and findings.
 - **Same figure, different brand scope, multiple correct answers:** Levi's
   divested Dockers mid-period, so "FY2024 total revenue" has two legitimate
   values depending on whether Dockers is included ($6,355.3M, originally
