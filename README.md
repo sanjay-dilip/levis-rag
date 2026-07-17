@@ -226,13 +226,19 @@ in weeks against the source report's claimed "6–8 week trend cycle."
 
 **Result:** the search-interest signal for both drops is impulse-like — a
 single-week spike followed almost immediately by zero — not a smooth
-multi-week decline. The fit is mathematically valid (R²=0.991 for
-Silverstone) but a two-point, mostly-zero-separated decay series can't
-meaningfully constrain a half-life, so the tool flags both results
-`confidence: "low"`. **The report's claim is untestable from Google Trends
-weekly data at this granularity — not falsified.** Full methodology, raw
-numbers, and the window-normalization issue that motivated the tool's
-canonical per-drop windows: [`data/trend_decay_findings.md`](data/trend_decay_findings.md).
+multi-week decline. Across repeated pulls, fitted half-lives have landed in
+the 0.1–0.3 week range (R²≈0.93–0.99, `confidence: "low"`–`"medium"`,
+impulse-flagged); Austin's decay series is frequently too short to fit at
+all (`status: "insufficient_data"`). **The report's claim is untestable from
+Google Trends weekly data at this granularity — not falsified.**
+
+Repeated pulls of the identical canonical window and keyword also produce
+different results from each other — Google Trends' own sampling noise for
+this low-search-volume keyword is enough to shift a result between `"ok"`
+and `"insufficient_data"`, or move a fitted half-life between 0.1 and 0.3
+weeks, run to run. Full methodology, raw numbers, both findings above, and
+the window-normalization issue that motivated the tool's canonical per-drop
+windows: [`data/trend_decay_findings.md`](data/trend_decay_findings.md).
 
 ---
 
@@ -506,12 +512,15 @@ in the fused ranking — see `CONTEXT.md` for the full breakdown.
   miss rate — 4 of the 10 misses in the current run are OOS questions behaving
   correctly, not retrieval failures. Not yet fixed; noted here so the miss-rate
   number isn't misread.
-- **Trend-decay tool's half-life estimates are low-confidence by design:**
-  Google Trends weekly data for the McLaren drops is impulse-like (single-week
-  spike, near-zero floor), so both canonical drops are flagged
-  `confidence: "low"` regardless of fit R². The source report's "6–8 week
-  trend cycle" claim is untestable at this data granularity, not falsified —
-  see `data/trend_decay_findings.md`.
+- **Trend-decay tool's half-life estimates are low-confidence by design, and
+  unstable pull-to-pull:** Google Trends weekly data for the McLaren drops is
+  impulse-like (single-week spike, near-zero floor), so fitted half-lives are
+  never rated above `confidence: "medium"` regardless of R². Repeated pulls
+  of the same canonical window also return different results from each
+  other (Austin's fit flips between `"ok"` and `"insufficient_data"` run to
+  run) — a low-search-volume-keyword sampling-noise effect, not a bug. The
+  source report's "6–8 week trend cycle" claim is untestable at this data
+  granularity, not falsified — see `data/trend_decay_findings.md`.
 - **Same figure, different brand scope, multiple correct answers:** Levi's
   divested Dockers mid-period, so "FY2024 total revenue" has two legitimate
   values depending on whether Dockers is included ($6,355.3M, originally
