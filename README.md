@@ -523,6 +523,19 @@ in the fused ranking — see `CONTEXT.md` for the full breakdown.
   on keyword/regex matching (word-boundary as of Week 3 Task 8), not a trained
   classifier. Misclassifications are possible for unusual phrasings; router
   accuracy improvements are deferred to Week 4–5.
+- **Groq/Llama 3.3 70B vs. Gemini Flash tier-tagging comparison is a work in
+  progress:** a standalone research script (`src/tier_comparison_runner.py`,
+  not part of the live `/query` path) holds retrieval constant and tags the
+  same retrieved chunks with both models, to compare tier-tagging quality —
+  including the caveat that Groq's `llama-3.3-70b-versatile` has no
+  schema-enforced structured output (`json_object` only, no `json_schema`),
+  unlike Gemini's `response_schema`. 15 of the planned 60 eval questions are
+  genuinely scored on both models so far; both providers' free tiers impose
+  hard **daily** quotas (Gemini: 20 requests/day; Groq: 100,000 tokens/day)
+  that a single session can exhaust well short of 60 questions, so this is
+  completed incrementally across sessions as quotas reset. Tracked in
+  GitHub issues #26/#28/#29. No impact on the live app — `tier_tagger.py`
+  and the deployed `/query` endpoint remain Gemini-only throughout.
 
 ---
 
