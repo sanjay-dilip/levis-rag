@@ -523,5 +523,697 @@
       "x-ratelimit-reset-requests": "14m24s",
       "x-ratelimit-reset-tokens": "34.864s"
     }
+  },
+  "eval_010": {
+    "question": "What was Levi's e-commerce growth rate in Q4 FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "qualitative_lookup",
+    "retrieved_chunk_ids": [
+      603,
+      1019,
+      604,
+      602,
+      528,
+      1303,
+      1104,
+      686,
+      1205,
+      596
+    ],
+    "gemini": {
+      "answer": "The retrieved context does not contain enough information to determine Levi's e-commerce growth rate in Q4 FY2025. While the documents provide qualitative commentary on DTC and e-commerce performance and specify quarterly net revenue percentages, they do not disclose the specific e-commerce growth rate or revenue figures for the fourth quarter of fiscal year 2025.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain enough information to determine Levi's e-commerce growth rate in Q4 FY2025.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The retrieved context does not contain enough information to answer the question about Levi's e-commerce growth rate in Q4 FY2025.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain enough information to answer the question about Levi's e-commerce growth rate in Q4 FY2025.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "999",
+      "x-ratelimit-remaining-tokens": "2294",
+      "x-ratelimit-reset-requests": "1m26.4s",
+      "x-ratelimit-reset-tokens": "48.53s"
+    }
+  },
+  "eval_011": {
+    "question": "What was Levi's women's segment growth in FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "trend_comparison",
+    "retrieved_chunk_ids": [
+      686,
+      525,
+      523,
+      1295,
+      606,
+      602,
+      1019,
+      697,
+      695,
+      696
+    ],
+    "gemini": {
+      "answer": "Levi Strauss & Co. does not report a distinct \"women's segment.\" Instead, the company manages its business through three geographic reportable segments (Americas, Europe, and Asia), with the Beyond Yoga brand managed separately. \n\nHowever, the company does disclose performance metrics for its product categories, noting that its strategy includes driving \"outsized growth in women's and tops through a sharpened focus on denim lifestyle.\" \n\nFor women's products specifically:\n- In FY2024, women's products generated 37% of total net revenues ($6,032.0 million), which equates to approximately $2,231.84 million.\n- In FY2025, women's products generated 39% of total net revenues ($6,282.0 million), which equates to approximately $2,449.98 million.\n\nBased on these figures, the implied net revenue growth for women's products in FY2025 was approximately 9.77% (representing an increase of approximately $218.14 million).",
+      "claims": [
+        {
+          "claim_text": "The Company manages its business according to three reportable segments: Americas, Europe, and Asia, collectively comprising the Company's Levi's Brands business",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 695,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "The Beyond Yoga\u00ae business is managed separately and does not meet the quantitative threshold for reportable segments.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 695,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "We will continue men\u2019s bottoms denim leadership globally while driving outsized growth in women's and tops through a sharpened focus on denim lifestyle, building end-to-end capability in key lifestyle apparel categories beyond jeans.",
+          "tier": "Management-qualitative-statement",
+          "supporting_chunk_id": 523,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Women's products generated 39%, 37% and 36% of our net revenues in fiscal years 2025, 2024 and 2023, respectively.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 525,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Total net revenues in FY2025 were $6,282.0 million and in FY2024 were $6,032.0 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Based on these figures, the implied net revenue growth for women's products in FY2025 was approximately 9.77% (representing an increase of approximately $218.14 million).",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The retrieved context does not contain enough information to determine Levi's women's segment growth in FY2025.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain enough information to determine Levi's women's segment growth in FY2025.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "997",
+      "x-ratelimit-remaining-tokens": "835",
+      "x-ratelimit-reset-requests": "4m19.2s",
+      "x-ratelimit-reset-tokens": "55.825s"
+    }
+  },
+  "eval_012": {
+    "question": "What was Levi's FY2024 gross margin?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      369,
+      769,
+      686,
+      453,
+      848,
+      604,
+      1022,
+      1106,
+      602,
+      364
+    ],
+    "gemini": {
+      "answer": "According to Levi Strauss & Co.'s FY2025 10-K filing, the consolidated gross margin for the fiscal year ended December 1, 2024 (FY2024) was 60.6%. This was based on consolidated net revenues of $6,032.0 million, cost of goods sold of $2,374.9 million, and a consolidated gross profit of $3,657.1 million.",
+      "claims": [
+        {
+          "claim_text": "the consolidated gross margin for the fiscal year ended December 1, 2024 (FY2024) was 60.6%",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "This was based on consolidated net revenues of $6,032.0 million, cost of goods sold of $2,374.9 million, and a consolidated gross profit of $3,657.1 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2024"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The gross margin for Levi's in FY2024 was 60.6%.",
+      "claims": [
+        {
+          "claim_text": "The gross margin for Levi's in FY2024 was 60.6%.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2024"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "996",
+      "x-ratelimit-remaining-tokens": "1703",
+      "x-ratelimit-reset-requests": "5m45.6s",
+      "x-ratelimit-reset-tokens": "51.485s"
+    }
+  },
+  "eval_013": {
+    "question": "What was Levi's FY2024 net revenue?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      453,
+      686,
+      369,
+      366,
+      602,
+      753,
+      1019,
+      765,
+      279,
+      525
+    ],
+    "gemini": {
+      "answer": "According to the FY2024 10-K filing, Levi's reported total net revenues of $6,355.3 million for the fiscal year ended December 1, 2024, of which wholesale channel net revenues were $3,431.5 million and direct-to-consumer (DTC) net revenues were $2,923.8 million.\n\nAccording to the FY2025 10-K filing, comparative total net revenues for the fiscal year ended December 1, 2024 were listed as $6,032.0 million, consisting of $3,222.9 million in wholesale channel net revenues and $2,809.1 million in direct-to-consumer (DTC) net revenues.\n\nThe disaggregated revenue tables show that in the FY2024 10-K, the 'Other Brands' segment generated $454.4 million, whereas the FY2025 10-K only reports Beyond Yoga's net revenues of $131.1 million for FY2024. The difference of $323.3 million between the initially reported FY2024 net revenues ($6,355.3 million) and the comparative revenues reported in the FY2025 filing ($6,032.0 million) corresponds directly to the exclusion of other non-Beyond Yoga brands (such as Dockers) from the updated disaggregated table.",
+      "claims": [
+        {
+          "claim_text": "According to the FY2024 10-K filing, Levi's reported total net revenues of $6,355.3 million for the fiscal year ended December 1, 2024, of which wholesale channel net revenues were $3,431.5 million and direct-to-consumer (DTC) net revenues were $2,923.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 453,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "According to the FY2025 10-K filing, comparative total net revenues for the fiscal year ended December 1, 2024 were listed as $6,032.0 million, consisting of $3,222.9 million in wholesale channel net revenues and $2,809.1 million in direct-to-consumer (DTC) net revenues.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "in the FY2024 10-K, the 'Other Brands' segment generated $454.4 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 453,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "the FY2025 10-K only reports Beyond Yoga's net revenues of $131.1 million for FY2024.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "The difference of $323.3 million between the initially reported FY2024 net revenues ($6,355.3 million) and the comparative revenues reported in the FY2025 filing ($6,032.0 million) corresponds directly to the exclusion of other non-Beyond Yoga brands (such as Dockers) from the updated disaggregated table.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2024"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's FY2024 net revenue was $6,355.3 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's FY2024 net revenue was $6,355.3 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 453,
+          "fiscal_year": "FY2024"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "994",
+      "x-ratelimit-remaining-tokens": "3274",
+      "x-ratelimit-reset-requests": "8m38.4s",
+      "x-ratelimit-reset-tokens": "43.629s"
+    }
+  },
+  "eval_014": {
+    "question": "What was Levi's FY2024 DTC revenue?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      603,
+      366,
+      1019,
+      453,
+      602,
+      686,
+      528,
+      1206,
+      369,
+      367
+    ],
+    "gemini": {
+      "answer": "Levi's Direct-to-Consumer (DTC) net revenue for FY2024 (for the fiscal year ended December 1, 2024) is presented differently depending on the filing period: 1. As originally reported in the FY2024 10-K, total DTC net revenue was $2,923.8 million, which consisted of $1,280.8 million in the Americas, $861.5 million in Europe, $589.1 million in Asia, and $192.4 million in Other Brands (which included Dockers and Beyond Yoga). 2. As presented for comparative purposes in the FY2025 10-K, total DTC net revenue for FY2024 was revised to $2,809.1 million, which consisted of $1,280.8 million in the Americas, $861.5 million in Europe, $589.1 million in Asia, and $77.7 million in Beyond Yoga. The $114.7 million difference represents the DTC revenue of the Dockers brand, which was excluded from the FY2025 comparative presentation.",
+      "claims": [
+        {
+          "claim_text": "As originally reported in the FY2024 10-K, total DTC net revenue was $2,923.8 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 453,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "which consisted of $1,280.8 million in the Americas, $861.5 million in Europe, $589.1 million in Asia, and $192.4 million in Other Brands (which included Dockers and Beyond Yoga).",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 453,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "As presented for comparative purposes in the FY2025 10-K, total DTC net revenue for FY2024 was revised to $2,809.1 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "which consisted of $1,280.8 million in the Americas, $861.5 million in Europe, $589.1 million in Asia, and $77.7 million in Beyond Yoga.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "The $114.7 million difference represents the DTC revenue of the Dockers brand, which was excluded from the FY2025 comparative presentation.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2024"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's FY2024 DTC revenue was $2,923.8 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's FY2024 DTC revenue was $2,923.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 366,
+          "fiscal_year": "FY2024"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "993",
+      "x-ratelimit-remaining-tokens": "2288",
+      "x-ratelimit-reset-requests": "10m4.8s",
+      "x-ratelimit-reset-tokens": "48.56s"
+    }
+  },
+  "eval_015": {
+    "question": "How did Levi's net revenue change between FY2024 and FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "trend_comparison",
+    "retrieved_chunk_ids": [
+      686,
+      1290,
+      1009,
+      1191,
+      1295,
+      1092,
+      604,
+      1106,
+      1022,
+      602
+    ],
+    "gemini": {
+      "answer": "Levi's net revenues increased from $6,032.0 million in FY2024 to $6,282.0 million in FY2025. This represents an increase of 4.1% on an as-reported basis and 7.2% on an organic net revenues basis. This growth was driven by a 9.5% increase in direct-to-consumer (DTC) revenues (to $3,076.8 million), while wholesale revenues decreased slightly by 0.5% on a reported basis (but rose 4.1% organically) to $3,205.2 million. Growth was partially offset by the impact of a 53rd week in FY2024 (approx. $78 million or 1.3%), the wind-down of the Denizen brand ($30 million), and the exit of the footwear category ($66 million), while currency translation had a favorable impact of approximately $5 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's net revenues increased from $6,032.0 million in FY2024 to $6,282.0 million in FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "This represents an increase of 4.1% on an as-reported basis and 7.2% on an organic net revenues basis.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "This growth was driven by a 9.5% increase in direct-to-consumer (DTC) revenues (to $3,076.8 million), while wholesale revenues decreased slightly by 0.5% on a reported basis (but rose 4.1% organically) to $3,205.2 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Growth was partially offset by the impact of a 53rd week in FY2024 (approx. $78 million or 1.3%), the wind-down of the Denizen brand ($30 million), and the exit of the footwear category ($66 million), while currency translation had a favorable impact of approximately $5 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 5005, Requested 8521. Please try again in 7.63s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Used 5005, Requested 8521. Please try again in 7.63s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "992",
+      "x-ratelimit-remaining-tokens": "6995",
+      "x-ratelimit-reset-requests": "11m31.2s",
+      "x-ratelimit-reset-tokens": "25.025s"
+    }
+  },
+  "eval_016": {
+    "question": "How did Levi's gross margin change between FY2024 and FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "trend_comparison",
+    "retrieved_chunk_ids": [
+      604,
+      606,
+      686,
+      1108,
+      1106,
+      1022,
+      1017,
+      1304,
+      1206,
+      1295
+    ],
+    "gemini": {
+      "answer": "Levi's gross margin increased from 60.6% in FY2024 (for the year ended December 1, 2024) to 61.7% in FY2025 (for the year ended November 30, 2025), representing an increase of 1.1 percentage points (or 110 basis points). The increase in gross margin was primarily driven by favorable channel mix, price increases, and lower product costs, which were partially offset by the impact of tariffs. Additionally, currency (including both transaction and translation impacts) favorably impacted gross margin by approximately 40 basis points.",
+      "claims": [
+        {
+          "claim_text": "Levi's gross margin increased from 60.6% in FY2024 (for the year ended December 1, 2024) to 61.7% in FY2025 (for the year ended November 30, 2025)",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "representing an increase of 1.1 percentage points (or 110 basis points)",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "The increase in gross margin was primarily driven by favorable channel mix, price increases, and lower product costs",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "which were partially offset by the impact of tariffs",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Additionally, currency (including both transaction and translation impacts) favorably impacted gross margin by approximately 40 basis points",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's gross margin increased from 60.6% in FY2024 to 61.7% in FY2025.",
+      "claims": [
+        {
+          "claim_text": "Levi's gross margin increased from 60.6% in FY2024 to 61.7% in FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2024, FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "990",
+      "x-ratelimit-remaining-tokens": "1876",
+      "x-ratelimit-reset-requests": "14m24s",
+      "x-ratelimit-reset-tokens": "50.62s"
+    }
+  },
+  "eval_017": {
+    "question": "How did Levi's DTC revenue change between FY2024 and FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "trend_comparison",
+    "retrieved_chunk_ids": [
+      686,
+      1206,
+      1304,
+      1019,
+      603,
+      604,
+      1020,
+      1105,
+      1303,
+      1106
+    ],
+    "gemini": {
+      "answer": "Levi Strauss & Co.'s Direct-to-Consumer (DTC) net revenues grew from $2,809.1 million in the fiscal year ended December 1, 2024 (FY2024) to $3,076.8 million in the fiscal year ended November 30, 2025 (FY2025). This is an increase of $267.7 million (or approximately 9.53%).\n\nKey drivers and details of this DTC change include:\n- **Drivers of Growth:** The increase was driven primarily by store performance and e-commerce, with e-commerce driven primarily by higher online traffic.\n- **Organic Regional Growth:** On an organic net revenues basis, the DTC business grew 9% in the U.S., 8% in Europe, and 13% in Asia for FY2025.\n- **Foreign Currency Impact:** Currency translation had a favorable impact of approximately $12 million on DTC net revenues for the year.\n- **Revenue Share:** DTC net revenues comprised 49% of the company's total net revenues on a reported basis in FY2025.\n- **Segment Breakdown:**\n  - *Americas DTC:* Increased from $1,280.8 million in FY2024 to $1,375.5 million in FY2025.\n  - *Europe DTC:* Increased from $861.5 million in FY2024 to $942.7 million in FY2025.\n  - *Asia DTC:* Increased from $589.1 million in FY2024 to $656.7 million in FY2025.\n  - *Beyond Yoga DTC:* Increased from $77.7 million in FY2024 to $101.9 million in FY2025.",
+      "claims": [
+        {
+          "claim_text": "Direct-to-Consumer (DTC) net revenues grew from $2,809.1 million in the fiscal year ended December 1, 2024 (FY2024) to $3,076.8 million in the fiscal year ended November 30, 2025 (FY2025).",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "This is an increase of $267.7 million (or approximately 9.53%).",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "The increase was driven primarily by store performance and e-commerce, with e-commerce driven primarily by higher online traffic.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 603,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "On an organic net revenues basis, the DTC business grew 9% in the U.S., 8% in Europe, and 13% in Asia for FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 603,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Currency translation had a favorable impact of approximately $12 million on DTC net revenues for the year.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 603,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "DTC net revenues comprised 49% of the company's total net revenues on a reported basis in FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 603,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Americas DTC: Increased from $1,280.8 million in FY2024 to $1,375.5 million in FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Europe DTC: Increased from $861.5 million in FY2024 to $942.7 million in FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Asia DTC: Increased from $589.1 million in FY2024 to $656.7 million in FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Beyond Yoga DTC: Increased from $77.7 million in FY2024 to $101.9 million in FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97500, Requested 9982. Please try again in 1h47m44.447999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97500, Requested 9982. Please try again in 1h47m44.447999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "990",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "14m24s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
+  },
+  "eval_018": {
+    "question": "How did Levi's wholesale revenue change between FY2024 and FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "trend_comparison",
+    "retrieved_chunk_ids": [
+      686,
+      1290,
+      1009,
+      1092,
+      1191,
+      604,
+      1019,
+      1303,
+      1295,
+      602
+    ],
+    "gemini": {
+      "answer": "Levi's total wholesale net revenues decreased on a reported basis by 0.5% from $3,222.9 million in FY2024 to $3,205.2 million in FY2025, which represents an absolute decrease of $17.7 million. However, on an organic net revenues basis, wholesale net revenues increased by 4.1% over this period.\n\nAt the segment level, wholesale net revenues changed as follows:\n- **Americas**: Wholesale net revenues were $1,921.5 million in FY2025 compared to $1,919.8 million in FY2024. On a reported basis, wholesale revenues were flat, primarily due to the exit of the Denizen brand.\n- **Europe**: Wholesale net revenues remained relatively flat on a reported basis, ending at $756.6 million in FY2025 compared to $756.4 million in FY2024.\n- **Asia**: Wholesale net revenues decreased to $477.7 million in FY2025 from $493.3 million in FY2024.\n- **Beyond Yoga\u00ae**: Wholesale net revenues decreased to $49.4 million in FY2025 from $53.4 million in FY2024.",
+      "claims": [
+        {
+          "claim_text": "Levi's total wholesale net revenues decreased on a reported basis by 0.5% from $3,222.9 million in FY2024 to $3,205.2 million in FY2025",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "represents an absolute decrease of $17.7 million",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "on an organic net revenues basis, wholesale net revenues increased by 4.1% over this period",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Americas: Wholesale net revenues were $1,921.5 million in FY2025 compared to $1,919.8 million in FY2024.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "On a reported basis, wholesale revenues were flat, primarily due to the exit of the Denizen brand.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Europe: Wholesale net revenues remained relatively flat on a reported basis, ending at $756.6 million in FY2025 compared to $756.4 million in FY2024.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Asia: Wholesale net revenues decreased to $477.7 million in FY2025 from $493.3 million in FY2024.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Beyond Yoga\u00ae: Wholesale net revenues decreased to $49.4 million in FY2025 from $53.4 million in FY2024.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97404, Requested 8375. Please try again in 1h23m13.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97404, Requested 8375. Please try again in 1h23m13.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "991",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "12m57.599s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
+  },
+  "eval_019": {
+    "question": "What was the trend in Levi's gross margin from FY2023 to FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "trend_comparison",
+    "retrieved_chunk_ids": [
+      604,
+      606,
+      1202,
+      1022,
+      1304,
+      1101,
+      1206,
+      1106,
+      1017,
+      1108
+    ],
+    "gemini": {
+      "answer": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\\nPlease retry in 57.873002913s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57s'}]}}",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\\nPlease retry in 57.873002913s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57s'}]}}",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97137, Requested 10166. Please try again in 1h45m9.791999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97137, Requested 10166. Please try again in 1h45m9.791999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "994",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "8m38.4s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
   }
 }
