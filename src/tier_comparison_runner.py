@@ -8,7 +8,19 @@ data/tier_comparison_raw.json so a crash or Ctrl-C loses at most one
 question's work, and re-running resumes from the last completed question.
 
 IMPORTANT: this script does not alter tier_tagger.py or app/routers/query.py.
-It is a standalone research artifact for issue #25, not a production path.
+It is a standalone research artifact (originally #25, continued under #31
+with a dedicated key/project), not a production path. It reads
+GEMINI_API_KEY_II specifically - a second, genuinely separate Google AI
+Studio project's key - not GEMINI_API_KEY (which stays exclusively
+production's, permanently, so this script's daily quota use never
+competes with the live /query path's).
+
+On a Gemini RESOURCE_EXHAUSTED (daily quota) response, this script stops
+immediately rather than retrying: that quota (
+GenerateRequestsPerDayPerProjectPerModel-FreeTier, 20/day) resets once a
+day, not within a session, so retrying against it only spends more of an
+already-exhausted budget (confirmed in practice - issue #28's session
+spent 3 extra retries on one already-exhausted question and still failed).
 """
 
 import argparse
@@ -102,42 +114,105 @@ def _is_parse_failure(result: dict) -> bool:
     return False
 
 
-_GEMINI_RETRY_DELAY_PATTERN = re.compile(r"retry in ([\d.]+)s", re.IGNORECASE)
+def _is_resource_exhausted(result: dict) -> bool:
+    """True if a Gemini tagging result is a RESOURCE_EXHAUSTED (daily quota) failure.
 
-GEMINI_MAX_RETRIES = 3
-GEMINI_RETRY_FALLBACK_SECONDS = 30.0
-
-
-def _gemini_retry_delay(exc_text: str) -> float:
-    """Parse Gemini's suggested 'Please retry in Ns' delay, or a fallback."""
-    match = _GEMINI_RETRY_DELAY_PATTERN.search(exc_text)
-    if match:
-        return float(match.group(1)) + 2.0  # small safety buffer
-    return GEMINI_RETRY_FALLBACK_SECONDS
-
-
-def tag_claims_gemini_with_retry(question: str, hits: list[dict], client) -> dict:
-    """Call tag_claims with retry-with-backoff on a RESOURCE_EXHAUSTED failure.
-
-    Despite the free-tier error body naming its quotaId
-    'GenerateRequestsPerDayPerProjectPerModel-FreeTier', empirically (issue
-    #25's first run attempt) this recovers within tens of seconds, not 24
-    hours - the label is misleading. A short real backoff, honoring the
-    server's own suggested retry delay when present, resolves it far more
-    often than not.
+    Distinct from _is_parse_failure: a parse failure can be any kind of
+    error (malformed model output, a transient 5xx, etc.); this checks
+    specifically for the daily-quota case, which is the one that must not
+    be retried (see module docstring).
     """
-    result = tag_claims(question, hits, client)
-    for _ in range(GEMINI_MAX_RETRIES):
-        if not _is_parse_failure(result):
-            return result
-        claim_text = result["claims"][0]["claim_text"]
-        if "RESOURCE_EXHAUSTED" not in claim_text:
-            return result  # a different kind of failure - retrying won't help
-        delay = _gemini_retry_delay(claim_text)
-        print(f"  gemini RESOURCE_EXHAUSTED, retrying in {delay:.1f}s...")
-        time.sleep(delay)
-        result = tag_claims(question, hits, client)
-    return result
+    for claim in result.get("claims", []):
+        if "RESOURCE_EXHAUSTED" in claim.get("claim_text", ""):
+            return True
+    return False
+
+
+def tag_claims_gemini_once(question: str, hits: list[dict], client) -> dict:
+    """Single Gemini tagging call, no retry.
+
+    A RESOURCE_EXHAUSTED (daily quota) failure is a hard stop handled by
+    the caller, not retried here - see module docstring for why retrying
+    it is pure waste. Other failure types (malformed output, transient
+    errors) are returned as-is; tag_claims already catches and reports
+    those internally as a "Parse failure:"-prefixed claim.
+    """
+    try:
+        return tag_claims(question, hits, client)
+    except Exception as exc:  # tag_claims already catches internally; belt-and-suspenders
+        return {
+            "answer": str(exc),
+            "claims": [
+                {
+                    "claim_text": f"Runner-level failure: {exc}",
+                    "tier": "Model-inference",
+                    "supporting_chunk_id": -1,
+                    "fiscal_year": None,
+                }
+            ],
+        }
+
+
+def _done_ids(existing: dict) -> set[str]:
+    """Question ids with a genuine (non-parse-failure) result on both sides.
+
+    A question with a parse failure on either side is deliberately
+    excluded - it stays in the queue so a re-run retries it, rather than
+    the failure being silently treated as permanent.
+    """
+    return {
+        qid
+        for qid, record in existing.items()
+        if not _is_parse_failure(record["gemini"]) and not _is_parse_failure(record["groq"])
+    }
+
+
+def _compute_remaining(eval_set: list[dict], existing: dict, max_total: int | None) -> list[dict]:
+    """Questions still needing a genuine result, in eval_set order.
+
+    This is the actual resumability check (confirmed by direct test, not
+    assumed): a question already done on both sides is skipped entirely,
+    so a re-run never re-calls Gemini/Groq for it.
+    """
+    done_ids = _done_ids(existing)
+    remaining = [q for q in eval_set if q["id"] not in done_ids]
+    if max_total is not None:
+        n_needed = max(0, max_total - len(done_ids))
+        remaining = remaining[:n_needed]
+    return remaining
+
+
+def _process_question(
+    q: dict, gemini_client, groq_api_key: str, retriever
+) -> tuple[dict | None, bool]:
+    """Run one question through both models.
+
+    Returns (record, gemini_exhausted). If Gemini hits RESOURCE_EXHAUSTED,
+    returns (None, True) immediately - Groq is never called for this
+    question (no point spending its budget on a question that can't be
+    completed today anyway) and nothing is saved, so the next run retries
+    it from scratch rather than persisting a wasted/incomplete attempt.
+    """
+    question = q["question"]
+    hits = retriever.retrieve(question, top_k=TOP_K)
+    chunk_ids = [h["id"] for h in hits]
+
+    gemini_result = tag_claims_gemini_once(question, hits, gemini_client)
+    time.sleep(GEMINI_DELAY_SECONDS)
+    if _is_resource_exhausted(gemini_result):
+        return None, True
+
+    groq_result, groq_headers, _groq_success = tag_claims_groq(question, hits, groq_api_key)
+    record = {
+        "question": question,
+        "expected_tier": q["expected_tier"],
+        "question_type": q["question_type"],
+        "retrieved_chunk_ids": chunk_ids,
+        "gemini": gemini_result,
+        "groq": groq_result,
+        "groq_rate_limit_headers": groq_headers,
+    }
+    return record, False
 
 
 def main() -> None:
@@ -163,24 +238,13 @@ def main() -> None:
 
     eval_set = json.loads(EVAL_SET_PATH.read_text(encoding="utf-8"))
     existing = _load_existing_results()
-    # Only skip a question if BOTH sides produced a genuine result. A
-    # question where either side hit a parse failure (e.g. a transient
-    # rate-limit 429) stays in the queue so a re-run retries it, rather
-    # than permanently recording the failure as "done".
-    done_ids = {
-        qid
-        for qid, record in existing.items()
-        if not _is_parse_failure(record["gemini"]) and not _is_parse_failure(record["groq"])
-    }
-    remaining = [q for q in eval_set if q["id"] not in done_ids]
-    if args.max_total is not None:
-        n_needed = max(0, args.max_total - len(done_ids))
-        remaining = remaining[:n_needed]
+    done_count = len(_done_ids(existing))
+    remaining = _compute_remaining(eval_set, existing, args.max_total)
 
     est_seconds = len(remaining) * (GROQ_FALLBACK_DELAY_SECONDS + GEMINI_DELAY_SECONDS + 2.0)
     print(
-        f"{len(eval_set)} total questions, {len(done_ids)} genuinely completed "
-        f"(both models succeeded), {len(existing) - len(done_ids)} recorded as a "
+        f"{len(eval_set)} total questions, {done_count} genuinely completed "
+        f"(both models succeeded), {len(existing) - done_count} recorded as a "
         f"parse failure on at least one side (will be retried)."
     )
     if args.max_total is not None:
@@ -199,10 +263,17 @@ def main() -> None:
         return
 
     load_dotenv()
-    gemini_api_key = os.getenv("GEMINI_API_KEY")
+    # GEMINI_API_KEY_II deliberately, not GEMINI_API_KEY: a second, genuinely
+    # separate Google AI Studio project's key, dedicated to this script only,
+    # so its daily quota use never competes with production's (see module
+    # docstring). GEMINI_API_KEY is production's alone and is never read here.
+    gemini_api_key = os.getenv("GEMINI_API_KEY_II")
     groq_api_key = os.getenv("GROQ_API_KEY")
     if not gemini_api_key:
-        raise EnvironmentError("GEMINI_API_KEY not set in .env")
+        raise EnvironmentError(
+            "GEMINI_API_KEY_II not set in .env - this script uses a dedicated "
+            "second Gemini project's key, not GEMINI_API_KEY (production's)."
+        )
     if not groq_api_key:
         raise EnvironmentError("GROQ_API_KEY not set in .env")
 
@@ -214,61 +285,49 @@ def main() -> None:
     consecutive_gemini_failures = 0
     for i, q in enumerate(remaining, start=1):
         qid = q["id"]
-        question = q["question"]
-        print(f"\n[{i}/{len(remaining)}] {qid}: {question}")
+        print(f"\n[{i}/{len(remaining)}] {qid}: {q['question']}")
 
-        hits = retriever.retrieve(question, top_k=TOP_K)
-        chunk_ids = [h["id"] for h in hits]
+        record, gemini_exhausted = _process_question(q, gemini_client, groq_api_key, retriever)
 
-        try:
-            gemini_result = tag_claims_gemini_with_retry(question, hits, gemini_client)
-        except Exception as exc:  # tag_claims already catches internally; belt-and-suspenders
-            gemini_result = {
-                "answer": str(exc),
-                "claims": [
-                    {
-                        "claim_text": f"Runner-level failure: {exc}",
-                        "tier": "Model-inference",
-                        "supporting_chunk_id": -1,
-                        "fiscal_year": None,
-                    }
-                ],
-            }
-        time.sleep(GEMINI_DELAY_SECONDS)
-
-        if _is_parse_failure(gemini_result):
-            consecutive_gemini_failures += 1
-        else:
-            consecutive_gemini_failures = 0
-
-        if consecutive_gemini_failures >= 5:
+        if gemini_exhausted:
             print(
-                f"\n{consecutive_gemini_failures} consecutive Gemini failures even after "
-                "per-call retries - stopping rather than burning further failed calls. "
-                "This question was NOT saved and will be retried from scratch on the "
-                "next run."
+                f"\nGemini RESOURCE_EXHAUSTED (daily quota) at {qid} - stopping "
+                "immediately, no retry (retrying a daily quota only spends more "
+                "of an already-exhausted budget). This question was NOT saved "
+                "and will be retried from scratch on the next run, once the "
+                "daily quota has actually reset."
             )
             break
 
-        groq_result, groq_headers, groq_success = tag_claims_groq(question, hits, groq_api_key)
+        # Non-quota Gemini failures (malformed output, transient errors) are
+        # still saved (so Groq's genuine result for this question isn't
+        # thrown away) but tracked as a distinct, non-fatal safeguard from
+        # the quota hard-stop above.
+        if _is_parse_failure(record["gemini"]):
+            consecutive_gemini_failures += 1
+        else:
+            consecutive_gemini_failures = 0
+        if consecutive_gemini_failures >= 5:
+            print(
+                f"\n{consecutive_gemini_failures} consecutive non-quota Gemini failures - "
+                "stopping rather than burning further failed calls."
+            )
+            results = _load_existing_results()
+            results[qid] = record
+            _save_results(results)
+            break
+
+        groq_success = not _is_parse_failure(record["groq"])
         if groq_success:
             consecutive_groq_failures = 0
         else:
             consecutive_groq_failures += 1
 
         results = _load_existing_results()
-        results[qid] = {
-            "question": question,
-            "expected_tier": q["expected_tier"],
-            "question_type": q["question_type"],
-            "retrieved_chunk_ids": chunk_ids,
-            "gemini": gemini_result,
-            "groq": groq_result,
-            "groq_rate_limit_headers": groq_headers,
-        }
+        results[qid] = record
         _save_results(results)
-        print(f"  gemini tiers: {[c.get('tier') for c in gemini_result.get('claims', [])]}")
-        print(f"  groq tiers:   {[c.get('tier') for c in groq_result.get('claims', [])]}")
+        print(f"  gemini tiers: {[c.get('tier') for c in record['gemini'].get('claims', [])]}")
+        print(f"  groq tiers:   {[c.get('tier') for c in record['groq'].get('claims', [])]}")
 
         if consecutive_groq_failures >= 3:
             print(
@@ -279,7 +338,7 @@ def main() -> None:
             )
             break
 
-        wait = _groq_wait_seconds(groq_headers, groq_success)
+        wait = _groq_wait_seconds(record["groq_rate_limit_headers"], groq_success)
         if i < len(remaining) and wait > 0:
             print(f"  waiting {wait:.1f}s for Groq TPM budget to refill...")
             time.sleep(wait)
