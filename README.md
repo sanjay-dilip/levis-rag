@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/status-live-brightgreen)
 ![Recall@10](https://img.shields.io/badge/recall%4010-85.0%25%20(51%2F60)-blue)
-![Tests](https://img.shields.io/badge/tests-53%2F54%20passing-yellow)
+![Tests](https://img.shields.io/badge/tests-63%2F64%20passing-yellow)
 ![Backend](https://img.shields.io/badge/backend-FastAPI%20%2B%20Render-informational)
 ![Frontend](https://img.shields.io/badge/frontend-Next.js%20%2B%20Vercel-informational)
 
@@ -56,7 +56,7 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 - [x] XBRL KPI tool — direct EDGAR `companyfacts` lookups for revenue, gross profit, operating income, net income, EPS, inventory
 - [x] End-to-end integration test — 60-question eval regression (40.0% held) + 5-path dispatch audit
 - [x] Structural retrieval fix (Week 4) — quarter-aware metadata filtering applied to both BM25 and dense legs
-- [ ] Next.js frontend
+- [x] Next.js frontend — chat UI, citation/tier panel, KPI/trend-decay cards, deployed on Vercel
 
 ---
 
@@ -65,7 +65,7 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 | Layer | Tool |
 |---|---|
 | Embeddings | sentence-transformers/all-MiniLM-L6-v2 — local `SentenceTransformer` for the ingestion scripts; the deployed API runs the same model's pre-exported ONNX weights via `onnxruntime` instead (no `torch`/`transformers` at runtime — needed to fit Render's free-tier 512MB RAM limit; verified numerically equivalent, cosine similarity 1.0, before switching) |
-| Generation | Gemini 2.5 Flash (via `google-genai`) |
+| Generation | Gemini Flash (`gemini-flash-latest`, via `google-genai`) |
 | Vector store | Supabase Postgres + pgvector |
 | Retrieval | BM25 (rank_bm25) + pgvector dense, RRF fusion |
 | Backend | FastAPI (`app/`) |
