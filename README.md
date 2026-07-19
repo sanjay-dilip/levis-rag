@@ -419,3 +419,26 @@ Built on top of "The Denim Lifestyle Pivot" — a BUAN 6390 Analytics
 Practicum equity research report (Group 7, May 2026) analyzing Levi's
 $50M strategic transformation proposal. The tool tests the report's
 claims against primary SEC filing evidence.
+
+---
+
+## What This Project Demonstrates
+
+- Hybrid retrieval system design — BM25 + dense vector search fused via RRF,
+  with quarter-aware metadata filtering on both legs
+- Retrieval quality diagnosis and iterative tuning against a hand-labeled
+  eval set, with every fix verified by a full regression run
+- Evidentiary-tier answer grounding to keep generated claims traceable to a
+  specific filing, external source, or the model's own inference
+- Multi-tool orchestration — heuristic dispatch across RAG, a structured
+  XBRL API lookup, and a Google Trends decay-curve analysis
+- Production deployment troubleshooting on real resource constraints
+  (Render's free-tier port-binding and 512MB OOM limits, resolved via a
+  lifespan hook and an ONNX runtime swap)
+- Full-stack delivery — FastAPI backend and Next.js frontend, both deployed
+  and integration-tested live, not just locally
+- Regression-tested engineering workflow — a pytest suite and a retrieval
+  eval harness gating every change
+- Cross-provider LLM evaluation — a controlled comparison of Gemini's
+  schema-enforced structured output against Groq/Llama 3.3 70B's
+  best-effort JSON mode
