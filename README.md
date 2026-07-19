@@ -10,7 +10,7 @@ A RAG-powered tool for evidence-tiered analysis of Levi Strauss & Co.'s
 publicly available SEC EDGAR filings and strategic narrative. Built as a
 portfolio project demonstrating applied AI engineering judgment.
 
-**Status: Live — deployed frontend + backend, full feature set through Week 5**
+**Status: Live — deployed frontend + backend, full feature set**
 
 **Live app:** https://levis-rag.vercel.app
 **Backend API:** https://levis-rag.onrender.com (`GET /health`, `POST /query`)
@@ -45,17 +45,14 @@ Levi Strauss & Co. (SEC CIK: 0000094845).
 - [x] Hand-labeled eval set — 60 questions across 5 types; recall@10 **85.0%** (51/60 HIT)
 - [x] RRF tuning — 6-config grid (k, candidates, FY filter); no improvement found; gap diagnosed as structural
 - [x] Quarter-aware period filtering — fixes the structural gap the RRF grid couldn't; recall@10 40.0% → 58.3%
-- [x] Targeted embedding enrichment — fixes diluted mixed-topic chunks; recall@10 58.3% → 61.7% → 71.7% → 73.3% → 76.7% → 78.3% across five passes
-- [x] Ground-truth relabeling (Week 4 Task 8) — 3 eval questions had a stale mislabeled ground-truth chunk (matching a pattern already fixed for a sibling question); recall@10 78.3% → 83.3%
-- [x] eval_029 relabeling + targeted enrichment (issue #18) — mislabeled ground-truth chunk (same pattern as Task 8) plus a chunk-523 embedding enrichment; recall@10 83.3% → 85.0%
 - [x] IVFFlat probes raised 10 → 30 — closed an approximate-index coverage gap that was hiding correctly-fixed embeddings
+- [x] Targeted embedding enrichment + ground-truth relabeling — repeatable playbook closing dilution/mislabeling gaps; recall@10 58.3% → 85.0%
 - [x] Out-of-scope detection — similarity threshold + keyword blocklist, two-stage gate before generation
 - [x] FastAPI backend — `POST /query` wrapping retrieve + generate, `GET /health`
 - [x] Tool router — heuristic `QuestionType` dispatch (`OUT_OF_SCOPE` → `XBRL_KPI` → `TREND_QUERY` → `FINANCIAL_LOOKUP`)
 - [x] Trend-decay tool — Google Trends pull + exponential decay half-life fit for the McLaren collaboration drops
 - [x] XBRL KPI tool — direct EDGAR `companyfacts` lookups for revenue, gross profit, operating income, net income, EPS, inventory
 - [x] End-to-end integration test — 60-question eval regression (40.0% held) + 5-path dispatch audit
-- [x] Structural retrieval fix (Week 4) — quarter-aware metadata filtering applied to both BM25 and dense legs
 - [x] Next.js frontend — chat UI, citation/tier panel, KPI/trend-decay cards, deployed on Vercel
 
 ---
@@ -89,6 +86,7 @@ python src/fix_fiscal_year_metadata.py # Backfill fiscal_year + period_of_report
 
 `load_vectors.py` downloads ~80 MB on first run (all-MiniLM-L6-v2 model weights).
 Requires `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`, and `GEMINI_API_KEY` in `.env`.
+(`GROQ_API_KEY` and `GEMINI_API_KEY_II` are unrelated to this pipeline — see Setup.)
 
 **To run a query from the CLI:**
 ```bash
@@ -253,6 +251,17 @@ pip install -r requirements.txt
 cp .env.example .env         # Add GEMINI_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY
 ```
 
+`GROQ_API_KEY` and `GEMINI_API_KEY_II` in `.env.example` are optional — they're
+only used by the standalone Groq/Gemini tier-tagging comparison script
+(`src/tier_comparison_runner.py`), not by core setup, the pipeline, or the
+live `/query` path.
+
+### Running tests
+
+```bash
+python -m pytest -v
+```
+
 ---
 
 ## Retrieval performance
@@ -282,7 +291,7 @@ keyword/similarity gates — the eval scorer has no separate "correct rejection"
 so a correct OOS decline still counts as MISS. Real (non-OOS-category) retrieval
 misses: **0/60**.
 
-**Baseline (Week 2): 40.0% recall@10.** A 6-configuration RRF tuning grid (k ∈ {30, 60,
+**Baseline: 40.0% recall@10.** A 6-configuration RRF tuning grid (k ∈ {30, 60,
 90}, candidates ∈ {100, 150}, a plain fiscal-year filter on/off) found no configuration
 beat this by more than a 2pp noise floor — the gap was structural (chunking/metadata),
 not a fusion-parameter problem. Full grid results: `data/rrf_tuning_results.md`.
@@ -312,9 +321,9 @@ question *and* every topically-adjacent question before writing to Supabase (a p
 that helps one question can measurably hurt another sharing similar vocabulary — hit
 in practice at least once, not just a theoretical risk, and guarded against on every
 write since), then verify with a full 60-question regression run. Applied across
-roughly a dozen chunks and eval-set corrections over several sessions; full
-session-by-session detail (every fix, every reverted experiment, every regression
-found and traced) is in the git commit history.
+roughly a dozen chunks and eval-set corrections; full fix-by-fix detail (every
+attempt, every reverted experiment, every regression found and traced) is in
+the git commit history.
 
 **One recurring, understood, and accepted limitation:** a handful of questions
 (`eval_028`, `eval_033`, `eval_054`, `eval_060`) share a "dense-ceiling, BM25-absent"
@@ -330,35 +339,25 @@ and found not to help). These score PARTIAL by design, not as open bugs.
 
 ## Known limitations
 
-- **8-K exhibit gap:** All 31 8-K files are wrapper documents — earnings release
-  financial tables live in Exhibit 99.1 and are not ingested. Audited figures
-  are present in 10-K/10-Q filings and cover the same data.
+**Open:**
+
 - **Out-of-scope detection is threshold-tuned, not classifier-based:** the
   similarity gate (0.20) only catches truly empty retrievals; qualitative
-  in-scope and OOS questions overlap in the 0.37–0.55 similarity band, so two
-  OOS eval questions (CEO earnings call, market share) still score PARTIAL
-  rather than being declined outright. The keyword blocklist added in Week 3
-  covers known out-of-corpus topics but isn't exhaustive.
+  in-scope and OOS questions overlap in the 0.37–0.55 similarity band, so one
+  OOS eval question (market share) still scores PARTIAL rather than being
+  declined outright. The keyword blocklist covers known out-of-corpus topics
+  but isn't exhaustive.
 - **Eval scorer has no "correct rejection" verdict for out-of-scope questions:**
   `eval_runner.py` labels every OOS question `MISS`, even when the keyword or
   similarity gate correctly declines to answer it. This inflates the headline
-  miss rate — 4 of the 10 misses in the current run are OOS questions behaving
-  correctly, not retrieval failures. Not yet fixed; noted here so the miss-rate
-  number isn't misread.
-- **Trend-decay tool's half-life estimates are low-confidence and pull-to-pull
-  unstable, by design** — see the "Trend-decay tool" section above and
-  `data/trend_decay_findings.md` for the full methodology and findings.
-- **Same figure, different brand scope, multiple correct answers:** Levi's
-  divested Dockers mid-period, so "FY2024 total revenue" has two legitimate
-  values depending on whether Dockers is included ($6,355.3M, originally
-  reported) or excluded ($6,032.0M / $2,809.1M DTC, restated in the FY2025
-  10-K). Both the RAG pipeline and the XBRL tool can return either figure
-  depending on which chunk/tag they land on, and neither is wrong — see
-  `data/dtc_conflict_finding.md`.
+  miss rate — all 4 current misses are OOS questions behaving correctly, not
+  retrieval failures. Not yet fixed; noted here so the miss-rate number isn't
+  misread.
 - **Tool router is heuristic, not classifier-based:** `app/router.py` dispatches
-  on keyword/regex matching (word-boundary as of Week 3 Task 8), not a trained
-  classifier. Misclassifications are possible for unusual phrasings; router
-  accuracy improvements are deferred to Week 4–5.
+  on keyword/regex matching, not a trained classifier. A specific over-matching
+  bug (`XBRL_KPI` swallowing questions retrieval already answered correctly)
+  was found and fixed — see "Router fix" above — but the heuristic approach
+  itself remains a known limitation for unusual phrasings not yet seen.
 - **Groq/Llama 3.3 70B vs. Gemini Flash tier-tagging comparison is a work in
   progress:** a standalone research script (`src/tier_comparison_runner.py`,
   not part of the live `/query` path) holds retrieval constant and tags the
@@ -369,9 +368,25 @@ and found not to help). These score PARTIAL by design, not as open bugs.
   genuinely scored on both models so far; both providers' free tiers impose
   hard **daily** quotas (Gemini: 20 requests/day; Groq: 100,000 tokens/day)
   that a single session can exhaust well short of 60 questions, so this is
-  completed incrementally across sessions as quotas reset. Tracked in
-  GitHub issues #26/#28/#29. No impact on the live app — `tier_tagger.py`
-  and the deployed `/query` endpoint remain Gemini-only throughout.
+  completed incrementally as quotas reset. Tracked in GitHub issues
+  #26/#28/#29. No impact on the live app — `tier_tagger.py` and the deployed
+  `/query` endpoint remain Gemini-only throughout.
+
+**By design (investigated, resolved, not open bugs):**
+
+- **8-K exhibit gap:** All 31 8-K files are wrapper documents — earnings release
+  financial tables live in Exhibit 99.1 and are not ingested. Audited figures
+  are present in 10-K/10-Q filings and cover the same data.
+- **Trend-decay tool's half-life estimates are low-confidence and pull-to-pull
+  unstable, by design** — see the "Trend-decay tool" section above and
+  `data/trend_decay_findings.md` for the full methodology and findings.
+- **Same figure, different brand scope, multiple correct answers:** Levi's
+  divested Dockers mid-period, so "FY2024 total revenue" has two legitimate
+  values depending on whether Dockers is included ($6,355.3M, originally
+  reported) or excluded ($6,032.0M / $2,809.1M DTC, restated in the FY2025
+  10-K). Both the RAG pipeline and the XBRL tool can return either figure
+  depending on which chunk/tag they land on, and neither is wrong — see
+  `data/dtc_conflict_finding.md`.
 
 ---
 
@@ -404,3 +419,26 @@ Built on top of "The Denim Lifestyle Pivot" — a BUAN 6390 Analytics
 Practicum equity research report (Group 7, May 2026) analyzing Levi's
 $50M strategic transformation proposal. The tool tests the report's
 claims against primary SEC filing evidence.
+
+---
+
+## What This Project Demonstrates
+
+- Hybrid retrieval system design — BM25 + dense vector search fused via RRF,
+  with quarter-aware metadata filtering on both legs
+- Retrieval quality diagnosis and iterative tuning against a hand-labeled
+  eval set, with every fix verified by a full regression run
+- Evidentiary-tier answer grounding to keep generated claims traceable to a
+  specific filing, external source, or the model's own inference
+- Multi-tool orchestration — heuristic dispatch across RAG, a structured
+  XBRL API lookup, and a Google Trends decay-curve analysis
+- Production deployment troubleshooting on real resource constraints
+  (Render's free-tier port-binding and 512MB OOM limits, resolved via a
+  lifespan hook and an ONNX runtime swap)
+- Full-stack delivery — FastAPI backend and Next.js frontend, both deployed
+  and integration-tested live, not just locally
+- Regression-tested engineering workflow — a pytest suite and a retrieval
+  eval harness gating every change
+- Cross-provider LLM evaluation — a controlled comparison of Gemini's
+  schema-enforced structured output against Groq/Llama 3.3 70B's
+  best-effort JSON mode
