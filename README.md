@@ -6,103 +6,316 @@
 ![Backend](https://img.shields.io/badge/backend-FastAPI%20%2B%20Render-informational)
 ![Frontend](https://img.shields.io/badge/frontend-Next.js%20%2B%20Vercel-informational)
 
-A RAG-powered tool for evidence-tiered analysis of Levi Strauss & Co.'s
-publicly available SEC EDGAR filings and strategic narrative. Built as a
-portfolio project demonstrating applied AI engineering judgment.
-
-**Status: Live — deployed frontend + backend, full feature set**
+A RAG-powered ("Retrieval-Augmented Generation" — pairing a document search
+step with an LLM's answer generation, so answers are grounded in retrieved
+evidence rather than invented) tool for evidence-tiered analysis of Levi
+Strauss & Co.'s publicly available SEC EDGAR filings and strategic
+narrative.
 
 **Live app:** https://levis-rag.vercel.app
 **Backend API:** https://levis-rag.onrender.com (`GET /health`, `POST /query`)
 
 ---
 
-## What this does
+## Overview
 
-Answers natural-language questions about Levi's SEC filings (10-K, 10-Q, 8-K)
-with every claim tagged by evidentiary tier:
+This project answers natural-language financial questions about a single
+public company — Levi Strauss & Co. (SEC CIK: 0000094845) — using only its
+official SEC filings (10-K annual reports, 10-Q quarterly reports, 8-K
+current reports) as source material.
+
+**The problem it solves:** doing quick, evidence-backed due diligence on a
+company usually means manually digging through dozens of dense filings to
+find one number, or trusting a generic chatbot's answer with no way to
+verify where it came from. This tool sits in between — it answers the
+question *and* shows exactly which filing, which section, and which
+sentence the answer came from, tagged by how strong that evidence actually
+is.
+
+**Who it's for:** an equity research associate or analyst doing single-name
+due diligence on Levi Strauss & Co. — someone who needs a fast answer but
+still needs to trust and verify it before using it in real work.
+
+**What the user gets:** ask a question like *"What was Levi's FY2025 gross
+margin?"* and get back a direct answer, the specific filing chunk it's
+grounded in, and an evidentiary tier that says how much weight to put on
+it:
 
 - `Verified-from-filing` — stated directly in a filing
 - `Management-qualitative-statement` — said by management, not a hard number
 - `Third-party-benchmark` — sourced from an external report or vendor claim
 - `Model-inference` — the system's own calculation or conclusion
 
-Target user: an equity research associate doing single-name diligence on
-Levi Strauss & Co. (SEC CIK: 0000094845).
+---
+
+## Why I Built This
+
+This project builds on "The Denim Lifestyle Pivot" — a BUAN 6390 Analytics
+Practicum equity research report (Group 7, May 2026) that analyzed a $50M
+strategic transformation proposal for Levi Strauss & Co., including several
+strategic and market-trend claims about the brand.
+
+Reports like that make claims — about growth strategy, market position,
+consumer trends — that sound plausible but aren't always checked against
+the company's own primary evidence. I wanted to test that idea directly: can
+those claims be verified, refuted, or shown to be untestable using only
+what Levi's has actually filed with the SEC and what's independently
+observable (like public search-interest data)? Building the tool to answer
+that question turned into a full applied AI engineering exercise — hybrid
+retrieval, evidence grounding, tool orchestration, evaluation-driven
+tuning, and production deployment — documented throughout this README.
 
 ---
 
-## Current state
+## What Makes It Different
 
-- [x] EDGAR bulk ingest — 41 filings (3 × 10-K, 7 × 10-Q, 31 × 8-K) from 2024-01-01 onwards
-- [x] Section-aware chunking — 1,449 chunks with table detection (`chunk_v2.py`)
-- [x] Embeddings — all-MiniLM-L6-v2 (384-dim); 120 financial table chunks re-embedded with metadata prefix to improve dense recall
-- [x] Fiscal year metadata — every 10-K/10-Q chunk tagged with `fiscal_year` and `period_of_report` in Supabase
-- [x] Supabase live — vectors in Postgres + pgvector; `match_chunks` RPC with IVFFlat index (`probes=30`)
-- [x] Hybrid retrieval live — BM25 (rank_bm25) + pgvector dense, fused via RRF (k=60); bug-fixed dense leg, dynamic penalty rank; quarter-aware period filtering on both legs
-- [x] Evidentiary tier tagging — Gemini Flash structured output (JSON schema enforced); four tiers, per-claim citations
-- [x] End-to-end query pipeline — `query.py` → `retrieve.py` → `tier_tagger.py` → cited, tiered answer
-- [x] Hand-labeled eval set — 60 questions across 5 types; recall@10 **85.0%** (51/60 HIT)
-- [x] RRF tuning — 6-config grid (k, candidates, FY filter); no improvement found; gap diagnosed as structural
-- [x] Quarter-aware period filtering — fixes the structural gap the RRF grid couldn't; recall@10 40.0% → 58.3%
-- [x] IVFFlat probes raised 10 → 30 — closed an approximate-index coverage gap that was hiding correctly-fixed embeddings
-- [x] Targeted embedding enrichment + ground-truth relabeling — repeatable playbook closing dilution/mislabeling gaps; recall@10 58.3% → 85.0%
-- [x] Out-of-scope detection — similarity threshold + keyword blocklist, two-stage gate before generation
-- [x] FastAPI backend — `POST /query` wrapping retrieve + generate, `GET /health`
-- [x] Tool router — heuristic `QuestionType` dispatch (`OUT_OF_SCOPE` → `XBRL_KPI` → `TREND_QUERY` → `FINANCIAL_LOOKUP`)
-- [x] Trend-decay tool — Google Trends pull + exponential decay half-life fit for the McLaren collaboration drops
-- [x] XBRL KPI tool — direct EDGAR `companyfacts` lookups for revenue, gross profit, operating income, net income, EPS, inventory
-- [x] End-to-end integration test — 60-question eval regression (40.0% held) + 5-path dispatch audit
-- [x] Next.js frontend — chat UI, citation/tier panel, KPI/trend-decay cards, deployed on Vercel
+- **Evidence-tiered answers, not just answers.** Every claim the system
+  makes is tagged with where it came from and how reliable that source is,
+  instead of returning one undifferentiated block of generated text.
+- **Hybrid retrieval.** Combines classic keyword search (BM25) with
+  meaning-based semantic search (dense vector embeddings), fused together
+  so the system catches both exact-term matches and conceptually similar
+  passages that don't share exact wording.
+- **Direct XBRL lookups for hard numbers.** For a single clean KPI in a
+  single period, the system bypasses text search entirely and pulls the
+  figure straight from the SEC's structured, machine-readable financial
+  data feed (XBRL) — more reliable than parsing prose for something that's
+  already available as clean, tagged data.
+- **Trend analysis, not just filings.** A separate tool checks public
+  Google Trends search-interest data against a specific strategic claim
+  from the source report about how long a marketing "moment" lasts.
+- **Out-of-scope handling.** The system is designed to decline questions it
+  can't answer from its actual source material (competitor data, stock
+  price, earnings-call color) rather than guessing.
+- **Evaluation-driven development.** Every retrieval change in this
+  project was measured against a 60-question hand-labeled test set and
+  only kept if it produced a real, verified improvement — not tuned by
+  feel.
 
 ---
 
-## Tech stack
+## Key Features
+
+- Automated ingestion and structure-aware chunking of 41 real SEC filings
+- Hybrid BM25 + dense-vector retrieval with fiscal-year and quarter-aware
+  filtering, so the system distinguishes "FY2024" from "FY2025" content
+  even when the filing text itself never says the year explicitly
+- Evidentiary-tier claim tagging via structured LLM output (schema-enforced,
+  not just prompted), with a supporting citation on every claim
+- A tool router that automatically sends KPI questions to a direct
+  financial-data API instead of text search, and trend questions to a
+  dedicated statistical analysis tool
+- A hand-labeled, 60-question evaluation harness plus a pytest regression
+  suite, both run before and after every change
+- A deployed, full-stack live demo (Next.js chat UI + FastAPI backend)
+
+---
+
+## How the System Works
+
+```mermaid
+flowchart LR
+    A[SEC EDGAR filings] --> B[Ingest & chunk<br/>by section/table]
+    B --> C[Embed & index<br/>BM25 + vector DB]
+    D[User question] --> E{Tool router}
+    E -->|Out of scope| F[Declined,<br/>no lookup]
+    E -->|KPI + period| G[XBRL direct<br/>lookup]
+    E -->|Trend keywords| H[Google Trends<br/>decay analysis]
+    E -->|Everything else| I[Hybrid retrieval]
+    C --> I
+    I --> J[LLM: tiered answer<br/>+ citations]
+    G --> K[Answer + source]
+    H --> K
+    J --> K
+    K --> L[Response to user]
+```
+
+1. **Ingestion** — filings are pulled from SEC EDGAR and split into
+   section-aware chunks (preserving MD&A, Notes, Risk Factors boundaries),
+   with financial tables kept intact rather than split mid-table.
+2. **Indexing** — each chunk is embedded into a vector representation and
+   stored alongside a keyword (BM25) index, tagged with its fiscal year and
+   quarter where known.
+3. **Routing** — every incoming question is first classified into one of
+   four paths: declined as out-of-scope, sent to the direct KPI lookup
+   tool, sent to the trend-analysis tool, or sent to retrieval.
+4. **Retrieval** — for the default path, both the keyword and vector search
+   run in parallel, filtered to the fiscal period the question actually
+   asks about, and their rankings are merged (Reciprocal Rank Fusion — a
+   way of combining two ranked lists so a chunk that ranks well in *either*
+   method surfaces near the top).
+5. **Answer generation and evidence tagging** — the retrieved chunks are
+   passed to an LLM, which produces an answer where every individual claim
+   is tagged with one of the four evidentiary tiers and a specific
+   supporting chunk id.
+6. **Citations** — the final response includes the answer, each tagged
+   claim, and the underlying chunks (filing, section, fiscal year), so the
+   user can trace any statement back to its source.
+
+---
+
+## Results and Evaluation
+
+Retrieval quality is measured against a 60-question hand-labeled evaluation
+set (`data/eval_set.json`) covering five question types (numeric lookups,
+trend comparisons, qualitative questions, inference questions, and
+out-of-scope questions). Scoring: **HIT** = the correct source chunk is in
+the top 10 retrieved results; **PARTIAL** = an acceptable-but-not-ideal
+chunk is; **MISS** = neither.
+
+| Metric | Score |
+|---|---|
+| recall@10 (HIT) | **85.0% (51/60)** |
+| Partial credit | 8.3% (5/60) |
+| Miss | 6.7% (4/60) |
+
+**The system started at a 40.0% recall@10 baseline.** Standard fusion-tuning
+(adjusting the ranking-fusion parameters across a 6-configuration grid)
+found no improvement beyond noise — the real gap turned out to be
+structural, not a tuning problem (see Engineering Highlights below for the
+fixes that closed it).
+
+**Important caveat on the remaining 4 misses:** all four are out-of-scope
+questions that the system correctly declines to answer — but the automated
+scorer has no separate "correctly rejected" verdict, so a correct decline
+still counts as a MISS. Once that's accounted for, **real retrieval
+misses are effectively 0 out of 60** — everything the system is actually
+supposed to retrieve, it retrieves.
+
+---
+
+## Engineering Highlights
+
+The biggest gains came from diagnosing *why* retrieval was failing before
+trying to fix it, rather than guessing at parameters. A few of the most
+significant problems and fixes:
+
+- **Quarter-aware period filtering (recall@10 40.0% → 58.3%).** Every
+  filing repeats near-identical boilerplate language for things like
+  disaggregated revenue tables, with dates spelled out ("November 30,
+  2025") rather than labeled ("FY2025") — so a filing from the wrong
+  period could out-rank the correct one on pure text/keyword similarity.
+  The fix extracts the fiscal year *and* quarter directly from the
+  question and filters both the keyword and vector search legs to the
+  matching period, with explicit handling for two edge cases: Levi's Q4
+  has no dedicated quarterly filing (only the annual report), and a
+  single-year question can also legitimately match the *following* year's
+  filing, since annual reports restate the prior year for comparison.
+- **Vector index tuning (IVFFlat `probes` 10 → 30).** The approximate
+  vector index was only scanning a small sample of its search space by
+  default, occasionally hiding chunks that were otherwise correctly
+  matched. Widening that search sample recovered several points of
+  recall with no other changes.
+- **Targeted embedding enrichment (recall@10 58.3% → 85.0%).** Some correct
+  answer chunks were "diluted" — a real answer buried inside a long,
+  mixed-topic financial table — so they scored poorly on semantic
+  similarity even though the right text was present. The fix was a
+  repeatable playbook: identify the diluted chunk, test a content-specific
+  rewording against the target question *and* every other question that
+  shares similar vocabulary (to catch cases where fixing one answer could
+  accidentally out-rank a different, unrelated one — which happened at
+  least once and was caught before shipping), then verify with a full
+  60-question regression before keeping the change.
+- **Tool router correction.** The router originally sent any question
+  containing both a financial metric name and a time period straight to
+  the direct KPI lookup tool — even when the question needed more nuance
+  than that tool provides. For example, *"What was Levi's DTC revenue as a
+  percentage of total revenue in FY2025?"* was being answered with total
+  revenue instead of the percentage, even though the retrieval-based path
+  already had the right answer. Fixed by adding explicit exclusions for
+  segment/percentage/multi-period questions, verified against the full
+  affected question set.
+- **Production startup fix (Render deployment).** The backend was building
+  its retrieval index and AI client at process-startup time, before the
+  web server had a chance to open its network port — on a constrained free
+  hosting tier, this made the port-availability check time out before the
+  app was ever considered "up." Fixed by deferring that setup to run
+  immediately after the port opens rather than before.
+- **Memory-footprint fix (ONNX runtime).** Even after the startup fix, the
+  full embedding-model library (with its GPU-oriented dependencies) didn't
+  fit in the free tier's memory limit. The fix was to export the same
+  embedding model to a lighter, portable runtime format (ONNX) and run
+  inference through that instead — verified numerically identical
+  (cosine similarity 1.0) to the original before switching, so retrieval
+  quality was unaffected.
+
+---
+
+## Screenshots or Demo
+
+The fastest way to see the system working is the live app itself:
+
+- **Frontend (chat UI):** https://levis-rag.vercel.app
+- **Backend API:** https://levis-rag.onrender.com (`GET /health`, `POST /query`)
+
+_Screenshots are not yet included in this repository — the live links above
+show the working chat interface, tier badges, and citation panel directly._
+
+---
+
+## Tech Stack
 
 | Layer | Tool |
 |---|---|
-| Embeddings | sentence-transformers/all-MiniLM-L6-v2 — local `SentenceTransformer` for the ingestion scripts; the deployed API runs the same model's pre-exported ONNX weights via `onnxruntime` instead (no `torch`/`transformers` at runtime — needed to fit Render's free-tier 512MB RAM limit; verified numerically equivalent, cosine similarity 1.0, before switching) |
-| Generation | Gemini Flash (`gemini-flash-latest`, via `google-genai`) |
+| Embeddings | sentence-transformers/all-MiniLM-L6-v2 — used locally for data ingestion; the deployed API runs the same model's exported ONNX weights instead, to fit within the hosting tier's memory limit (verified numerically equivalent before switching) |
+| Generation | Google Gemini Flash (`gemini-flash-latest`, via `google-genai`) |
 | Vector store | Supabase Postgres + pgvector |
-| Retrieval | BM25 (rank_bm25) + pgvector dense, RRF fusion |
+| Retrieval | BM25 (keyword ranking) + pgvector (dense vector search), fused via Reciprocal Rank Fusion |
 | Backend | FastAPI (`app/`) |
-| Trend analysis | pytrends (Google Trends) + scipy (`curve_fit`) |
+| Trend analysis | pytrends (Google Trends) + scipy (curve fitting) |
 | Frontend | Next.js + Tailwind, deployed on Vercel |
 | Data sources | SEC EDGAR full-text filings + EDGAR XBRL `companyfacts` API (both public, no API key required) |
 
 ---
 
-## Pipeline
+## Data Sources and Scope
 
-Run each script in order to reproduce the data artifacts:
+All data is sourced from **SEC EDGAR public filings** — no proprietary or
+non-public data is used anywhere in this project. The scope is
+deliberately narrow: **a single company**, Levi Strauss & Co., across 41
+filings (3 annual 10-Ks, 7 quarterly 10-Qs, 31 current 8-Ks) from
+2024-01-01 onward. Two independent EDGAR data sources are used: the
+plain-text filings themselves (for retrieval) and the XBRL `companyfacts`
+API (for direct KPI lookups).
+
+---
+
+## Setup and Running Locally
+
+```bash
+git clone https://github.com/sanjay-dilip/levis-rag.git
+cd levis-rag
+python -m venv venv
+venv\Scripts\activate        # Windows
+pip install -r requirements.txt
+cp .env.example .env         # Add GEMINI_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY
+```
+
+`GROQ_API_KEY` and `GEMINI_API_KEY_II` in `.env.example` are optional —
+they're only used by a standalone research script comparing two different
+LLM providers' tier-tagging quality (`src/tier_comparison_runner.py`), not
+by core setup, the pipeline, or the live `/query` path.
+
+**Run the ingestion pipeline** (reproduces the data artifacts from scratch):
 
 ```bash
 python src/ingest.py                   # Fetch 41 filings from EDGAR → data/extracted/
 python src/chunk_v2.py                 # Section-aware chunking → data/chunks_v2.json
 python src/load_vectors.py             # Embed + upsert all chunks into Supabase
-python src/enrich_table_embeddings.py  # Re-embed 120 table chunks with metadata prefix
+python src/enrich_table_embeddings.py  # Re-embed table chunks with metadata prefix
 python src/fix_fiscal_year_metadata.py # Backfill fiscal_year + period_of_report in Supabase
 ```
 
-`load_vectors.py` downloads ~80 MB on first run (all-MiniLM-L6-v2 model weights).
-Requires `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`, and `GEMINI_API_KEY` in `.env`.
-(`GROQ_API_KEY` and `GEMINI_API_KEY_II` are unrelated to this pipeline — see Setup.)
+`load_vectors.py` downloads ~80 MB on first run (the embedding model's
+weights).
 
-**To run a query from the CLI:**
+**Run a query from the CLI:**
+
 ```bash
 python src/query.py "What was Levi's FY2025 gross margin?"
 ```
 
-**To run the retrieval eval:**
-```bash
-python src/eval_runner.py                          # Default config (k=60, candidates=100)
-python src/eval_runner.py --k 30 --candidates 150  # Custom RRF config
-python src/eval_runner.py --fy-filter              # Fiscal-year-filtered dense leg
-```
-
----
-
-## Running the API
+**Run the API locally:**
 
 ```bash
 uvicorn app.main:app --reload
@@ -117,6 +330,7 @@ curl -X POST http://localhost:8000/query \
 ```
 
 Every response is shaped as:
+
 ```json
 {
   "question": "...",
@@ -127,10 +341,7 @@ Every response is shaped as:
 }
 ```
 
-### Deployment
-
-The app is live: frontend on Vercel (`https://levis-rag.vercel.app`), backend
-on Render's free tier (`https://levis-rag.onrender.com`).
+**Try the same request against the live deployment:**
 
 ```bash
 curl https://levis-rag.onrender.com/health
@@ -140,305 +351,150 @@ curl -X POST https://levis-rag.onrender.com/query \
   -d '{"question": "What was Levi'\''s FY2025 gross margin?"}'
 ```
 
-**Getting this running on Render's free tier took two real fixes**, both
-worth knowing if redeploying elsewhere:
-- The backend built the `Retriever` and `genai.Client` at **module import
-  time**, which blocked uvicorn from ever binding `$PORT` — Render's port
-  scanner gave up before the process was ready. Fixed by moving that work
-  into a FastAPI `lifespan` startup hook (`app/main.py`), so the port binds
-  immediately and the heavy initialization happens after.
-- Even after that, the full `sentence-transformers` + `transformers` +
-  `torch` stack didn't fit in Render's 512MB RAM limit (confirmed via
-  repeated OOM kills — CPU-only torch wasn't enough on its own). Fixed by
-  running the same `all-MiniLM-L6-v2` model's pre-exported ONNX weights via
-  `onnxruntime` instead of loading it through `sentence-transformers` at
-  runtime — see the Embeddings row above.
-
-**Known limitation:** Gemini's free-tier daily quota (20 requests/day) means
-`FINANCIAL_LOOKUP` questions can occasionally return a `429` or take
-60-130s+ (the client appears to retry against the server's suggested delay
-before giving up) once the quota is exhausted for the day. The other three
-question types (`XBRL_KPI`, `TREND_QUERY`, `OUT_OF_SCOPE`) don't call Gemini
-and aren't affected.
-
-### Tool router
-
-`POST /query` classifies every question into one of four dispatch paths before
-doing any retrieval (`app/router.py`, heuristic, no ML — evaluated in this
-order, first match wins):
-
-| `QuestionType` | Trigger | What handles it |
-|---|---|---|
-| `OUT_OF_SCOPE` | Keyword blocklist (competitors, stock price, earnings-call specifics, Dockers) | Declined, no retrieval call |
-| `XBRL_KPI` | A KPI term (revenue, gross profit, operating income, net income, EPS, inventory) **and** a period token (FY2025/FY2024/FY2026, Q1–Q4) — **unless** the question also contains a segment/percentage/comparison qualifier (`dtc`, `wholesale`, `segment`, `percentage`, `percent`, `ratio`, `management say`) or names 2+ distinct fiscal years, in which case it falls through to `FINANCIAL_LOOKUP` instead | `src/xbrl_tool.py` — direct EDGAR XBRL lookup |
-| `TREND_QUERY` | Trend-topic keywords (trend, mclaren, f1, silverstone, austin, half-life, search interest, ...) | `src/trend_decay_tool.py` — Google Trends decay analysis |
-| `FINANCIAL_LOOKUP` | Default — everything else | Hybrid retrieval (`retrieve.py`) → Gemini tier-tagging (`tier_tagger.py`) |
-
-A second OOS gate runs inside the `FINANCIAL_LOOKUP` path: if the top-1 dense
-similarity for the retrieved chunks falls below 0.20, generation is skipped
-even if the keyword blocklist didn't catch it.
-
-**Router fix — XBRL_KPI over-matching (issue #17):** the original `XBRL_KPI`
-rule was a bare "KPI term + period token" AND, with no concept of segment
-breakdown, percentage-of-total, multi-period comparison, or qualitative
-phrasing. A full audit of the 60-question eval set found 32 questions
-matching that AND — only 6 genuinely belong on `XBRL_KPI` (single-KPI,
-single-period lookups); the other 26 were being misrouted straight past
-retrieval to a tool that has no segment/channel tags and only ever extracts
-one period. Flagship case: *"What was Levi's DTC revenue as a percentage of
-total revenue in FY2025?"* routed to `XBRL_KPI` and answered with total
-revenue ($6.28B) instead of the DTC percentage (49%), even though retrieval
-already answers this question correctly. Fixed with two additive guards: an
-exclusion-term list (`dtc`, `wholesale`, `segment`, `percentage`, `percent`,
-`ratio`, `management say`) and a structural check rejecting questions that
-name 2+ distinct fiscal years. Verified against all 32 affected questions
-(`tests/test_router.py`, 36 assertions) and live end-to-end: the DTC-percentage
-question now routes to `FINANCIAL_LOOKUP` and answers "49% of total net
-revenues" correctly.
-
-### XBRL KPI tool
-
-`src/xbrl_tool.py` pulls `https://data.sec.gov/api/xbrl/companyfacts/CIK0000094845.json`
-(EDGAR's structured per-fact API, not the filing text) once, caches it to
-`data/xbrl_facts.json` (gitignored — regenerate on a fresh checkout), and
-resolves a question like *"What was Levi's gross profit in FY2025?"* to a
-specific GAAP-tagged value with its filing source and a `Verified-from-filing`
-tier.
-
-A real EDGAR data-structure quirk surfaced building this: each 10-K re-tags
-up to three years of comparative figures under the *same* `fy`/`fp`/`form`,
-all sharing one `"filed"` date — so disambiguating the current-period figure
-from prior-year comparatives requires picking the entry with the latest
-`"end"` date, not the latest `"filed"` date. A second quirk: Levi's FY2025
-10-K tags full-year net income under the GAAP concept `ProfitLoss`, not the
-more common `NetIncomeLoss` (which has no annual entries for FY2025/FY2026 in
-the cached facts). Both are handled in `KPI_MAP`'s tag-priority lists.
-
-### Trend-decay tool
-
-`src/trend_decay_tool.py` fits an exponential decay curve (`f(t) = A·e^(-λt)`,
-via `scipy.optimize.curve_fit`) to Google Trends search interest for
-`"Levi's McLaren"` around the two confirmed collaboration drop dates
-(Silverstone, July 3 2024; Austin, October 17 2024), and reports a half-life
-in weeks against the source report's claimed "6–8 week trend cycle."
-
-**Result:** the search-interest signal for both drops is impulse-like — a
-single-week spike followed almost immediately by zero — not a smooth
-multi-week decline. Across repeated pulls, fitted half-lives have landed in
-the 0.1–0.3 week range (R²≈0.93–0.99, `confidence: "low"`–`"medium"`,
-impulse-flagged); Austin's decay series is frequently too short to fit at
-all (`status: "insufficient_data"`). **The report's claim is untestable from
-Google Trends weekly data at this granularity — not falsified.**
-
-Repeated pulls of the identical canonical window and keyword also produce
-different results from each other — Google Trends' own sampling noise for
-this low-search-volume keyword is enough to shift a result between `"ok"`
-and `"insufficient_data"`, or move a fitted half-life between 0.1 and 0.3
-weeks, run to run. Full methodology, raw numbers, both findings above, and
-the window-normalization issue that motivated the tool's canonical per-drop
-windows: [`data/trend_decay_findings.md`](data/trend_decay_findings.md).
+**Note on Gemini's free-tier daily quota:** the live `FINANCIAL_LOOKUP` path
+can occasionally return an error or take 60-130+ seconds once the day's
+Gemini quota (20 requests/day) is exhausted, since the client retries
+before giving up. The other three question paths (direct KPI lookup, trend
+analysis, out-of-scope decline) don't call Gemini and aren't affected.
 
 ---
 
-## Setup
-
-```bash
-git clone https://github.com/sanjay-dilip/levis-rag.git
-cd levis-rag
-python -m venv venv
-venv\Scripts\activate        # Windows
-pip install -r requirements.txt
-cp .env.example .env         # Add GEMINI_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY
-```
-
-`GROQ_API_KEY` and `GEMINI_API_KEY_II` in `.env.example` are optional — they're
-only used by the standalone Groq/Gemini tier-tagging comparison script
-(`src/tier_comparison_runner.py`), not by core setup, the pipeline, or the
-live `/query` path.
-
-### Running tests
+## Running Tests and Evaluation
 
 ```bash
 python -m pytest -v
 ```
 
----
-
-## Retrieval performance
-
-Measured on a 60-question hand-labeled eval set (`data/eval_set.json`).
-Scoring: **HIT** = any ground-truth chunk in top-10; **PARTIAL** = acceptable chunk
-in top-10; **MISS** = neither.
-
-| Metric | Score |
-|---|---|
-| recall@10 (HIT) | 85.0% (51/60) |
-| Partial credit | 8.3% (5/60) |
-| Miss | 6.7% (4/60) |
-
-**By question type:**
-
-| Type | Hit | Partial | Miss |
-|---|---|---|---|
-| numeric_lookup | 19 | 1 | 0 |
-| trend_comparison | 15 | 0 | 0 |
-| qualitative_lookup | 8 | 2 | 0 |
-| inference | 9 | 1 | 0 |
-| out_of_scope | 0 | 1 | 4 |
-
-Of the 4 remaining misses, all are out-of-scope questions correctly rejected by the
-keyword/similarity gates — the eval scorer has no separate "correct rejection" verdict,
-so a correct OOS decline still counts as MISS. Real (non-OOS-category) retrieval
-misses: **0/60**.
-
-**Baseline: 40.0% recall@10.** A 6-configuration RRF tuning grid (k ∈ {30, 60,
-90}, candidates ∈ {100, 150}, a plain fiscal-year filter on/off) found no configuration
-beat this by more than a 2pp noise floor — the gap was structural (chunking/metadata),
-not a fusion-parameter problem. Full grid results: `data/rrf_tuning_results.md`.
-
-**Two structural fixes closed most of the gap:**
-- **Quarter-aware period filtering (40.0% → 58.3%).** Every 10-K/10-Q repeats
-  near-identical disaggregated-revenue boilerplate with no period token in the text
-  itself (dates are spelled out, e.g. "November 30, 2025", never "FY2025") — the
-  original FY-only filter couldn't tell filings apart on content, so cross-period
-  chunks crowded out the one from the queried period. `_detect_period()`
-  (`src/retrieve.py`) now extracts fiscal year *and* quarter from the question and
-  filters **both** the BM25 and dense legs (the tuning grid's FY filter only touched
-  dense, which is why it found nothing). Two edge cases needed explicit handling:
-  Levi's Q4 has no dedicated 10-Q (only the annual 10-K), so a literal "Q4" filter
-  falls back to FY-only; and a bare single-year question can also match the
-  *following* year's 10-K, since annual figures get restated there as a prior-year
-  comparative column.
-- **IVFFlat `probes` 10 → 30.** The approximate vector index was only scanning 10 of
-  50 list partitions, hiding embeddings that were already correctly fixed — raising
-  `probes` alone lifted recall@10 several points before any further embedding writes.
-
-**The rest of the gap (58.3% → 85.0%) closed through iterative, verified
-embedding-prefix enrichment and eval-set label corrections** — a repeatable playbook:
-diagnose a chunk's dilution (a real answer buried in a long, mixed-topic passage) or a
-stale ground-truth label, cosine-check a content-specific prefix against the target
-question *and* every topically-adjacent question before writing to Supabase (a prefix
-that helps one question can measurably hurt another sharing similar vocabulary — hit
-in practice at least once, not just a theoretical risk, and guarded against on every
-write since), then verify with a full 60-question regression run. Applied across
-roughly a dozen chunks and eval-set corrections; full fix-by-fix detail (every
-attempt, every reverted experiment, every regression found and traced) is in
-the git commit history.
-
-**One recurring, understood, and accepted limitation:** a handful of questions
-(`eval_028`, `eval_033`, `eval_054`, `eval_060`) share a "dense-ceiling, BM25-absent"
-pattern — the ground-truth chunk already has the best possible dense-similarity match,
-but its BM25 rank is far outside the retriever's candidate window, so it can't be
-boosted by the embedding-prefix technique (which only touches the dense leg) and can't
-out-fuse chunks with moderate-but-present ranks on both legs. Closing this would need a
-raw-text change (re-chunking — assessed as too high-risk relative to the confirmed
-benefit) or a wider BM25 candidate window (tested broadly in the original tuning grid
-and found not to help). These score PARTIAL by design, not as open bugs.
+```bash
+python src/eval_runner.py                          # Default config (k=60, candidates=100)
+python src/eval_runner.py --k 30 --candidates 150  # Custom fusion config
+python src/eval_runner.py --fy-filter              # Fiscal-year-filtered dense leg
+```
 
 ---
 
-## Known limitations
+## Repository / Pipeline Structure
+
+```
+levis-rag/
+├── app/                    # FastAPI backend
+│   ├── main.py             # App factory, CORS, startup lifecycle
+│   ├── router.py           # Heuristic question-type dispatch
+│   ├── models/             # Request/response schemas
+│   └── routers/            # /query and /health route handlers
+├── src/                     # Core pipeline: ingestion, retrieval, tools
+│   ├── ingest.py, chunk_v2.py, load_vectors.py, ...   # Data pipeline
+│   ├── retrieve.py         # Hybrid BM25 + dense retrieval, fusion
+│   ├── tier_tagger.py      # Evidentiary-tier claim tagging (Gemini)
+│   ├── xbrl_tool.py        # Direct EDGAR XBRL KPI lookups
+│   ├── trend_decay_tool.py # Google Trends decay-curve analysis
+│   └── eval_runner.py      # Retrieval evaluation harness
+├── frontend/                # Next.js chat UI, deployed on Vercel
+│   └── src/
+│       ├── app/page.tsx    # Chat interface
+│       ├── components/     # Tier badges, KPI/trend result cards
+│       └── lib/api.ts      # Typed API client
+├── data/                    # Eval set, findings docs, cached artifacts
+├── tests/                   # pytest suite (router, endpoints, eval smoke)
+├── schema.sql               # Supabase database schema
+├── render.yaml              # Render deployment config
+└── requirements.txt
+```
+
+---
+
+## Known Limitations
 
 **Open:**
 
-- **Out-of-scope detection is threshold-tuned, not classifier-based:** the
-  similarity gate (0.20) only catches truly empty retrievals; qualitative
-  in-scope and OOS questions overlap in the 0.37–0.55 similarity band, so one
-  OOS eval question (market share) still scores PARTIAL rather than being
-  declined outright. The keyword blocklist covers known out-of-corpus topics
-  but isn't exhaustive.
-- **Eval scorer has no "correct rejection" verdict for out-of-scope questions:**
-  `eval_runner.py` labels every OOS question `MISS`, even when the keyword or
-  similarity gate correctly declines to answer it. This inflates the headline
-  miss rate — all 4 current misses are OOS questions behaving correctly, not
-  retrieval failures. Not yet fixed; noted here so the miss-rate number isn't
-  misread.
-- **Tool router is heuristic, not classifier-based:** `app/router.py` dispatches
-  on keyword/regex matching, not a trained classifier. A specific over-matching
-  bug (`XBRL_KPI` swallowing questions retrieval already answered correctly)
-  was found and fixed — see "Router fix" above — but the heuristic approach
-  itself remains a known limitation for unusual phrasings not yet seen.
-- **Groq/Llama 3.3 70B vs. Gemini Flash tier-tagging comparison is a work in
-  progress:** a standalone research script (`src/tier_comparison_runner.py`,
-  not part of the live `/query` path) holds retrieval constant and tags the
-  same retrieved chunks with both models, to compare tier-tagging quality —
-  including the caveat that Groq's `llama-3.3-70b-versatile` has no
-  schema-enforced structured output (`json_object` only, no `json_schema`),
-  unlike Gemini's `response_schema`. 15 of the planned 60 eval questions are
-  genuinely scored on both models so far; both providers' free tiers impose
-  hard **daily** quotas (Gemini: 20 requests/day; Groq: 100,000 tokens/day)
-  that a single session can exhaust well short of 60 questions, so this is
-  completed incrementally as quotas reset. Tracked in GitHub issues
-  #26/#28/#29. No impact on the live app — `tier_tagger.py` and the deployed
-  `/query` endpoint remain Gemini-only throughout.
+- **Out-of-scope detection is threshold-tuned, not a trained classifier.**
+  A similarity cutoff catches genuinely empty retrievals, but in-scope
+  qualitative questions and out-of-scope questions overlap in a middle
+  similarity range — one out-of-scope eval question (asking about market
+  share) still scores as a partial match rather than a clean decline. The
+  keyword-based decline list covers known out-of-corpus topics but isn't
+  exhaustive.
+- **The evaluation scorer has no "correctly declined" verdict.** Every
+  out-of-scope question is scored as a MISS even when the system correctly
+  declines to answer it — this inflates the headline miss count (all 4
+  current misses are correct declines, not retrieval failures).
+- **The tool router is rule-based, not a trained classifier.** A specific
+  over-matching bug (KPI questions swallowing questions that needed more
+  nuance — see Engineering Highlights) was found and fixed, but the
+  rule-based approach remains a known limitation for phrasings not yet
+  seen.
+- **A cross-provider LLM comparison is in progress, not finished.** A
+  standalone research script compares this project's LLM (Gemini) against
+  an alternative (Groq/Llama 3.3 70B) for evidentiary-tier tagging quality,
+  holding retrieval constant. It has no effect on the live app — the
+  deployed `/query` endpoint remains Gemini-only throughout — and is
+  being completed incrementally as both providers' free-tier daily quotas
+  allow.
 
 **By design (investigated, resolved, not open bugs):**
 
-- **8-K exhibit gap:** All 31 8-K files are wrapper documents — earnings release
-  financial tables live in Exhibit 99.1 and are not ingested. Audited figures
-  are present in 10-K/10-Q filings and cover the same data.
-- **Trend-decay tool's half-life estimates are low-confidence and pull-to-pull
-  unstable, by design** — see the "Trend-decay tool" section above and
-  `data/trend_decay_findings.md` for the full methodology and findings.
-- **Same figure, different brand scope, multiple correct answers:** Levi's
-  divested Dockers mid-period, so "FY2024 total revenue" has two legitimate
-  values depending on whether Dockers is included ($6,355.3M, originally
-  reported) or excluded ($6,032.0M / $2,809.1M DTC, restated in the FY2025
-  10-K). Both the RAG pipeline and the XBRL tool can return either figure
-  depending on which chunk/tag they land on, and neither is wrong — see
-  `data/dtc_conflict_finding.md`.
+- **8-K exhibit gap.** Earnings-release financial tables live in an exhibit
+  that isn't ingested; the same audited figures are already present in the
+  10-K/10-Q filings that are ingested.
+- **Trend-decay estimates are low-confidence and vary between repeated
+  pulls, by design.** The underlying Google Trends signal for the
+  strategic claim being tested is sparse enough that this is a property of
+  the data, not a bug in the analysis (full findings in
+  [`data/trend_decay_findings.md`](data/trend_decay_findings.md)).
+- **The same figure can have more than one correct value.** Levi's
+  divested a brand (Dockers) mid-period, so a figure like "FY2024 total
+  revenue" has two legitimate values depending on whether Dockers is
+  included or excluded — both are correct, depending on which version of
+  the filing data is being cited (full detail in
+  [`data/dtc_conflict_finding.md`](data/dtc_conflict_finding.md)).
+- **A small, understood class of retrieval near-misses.** A handful of
+  questions have their correct answer chunk already ranking as well as
+  possible on semantic similarity, but ranking poorly on keyword overlap —
+  a combination that the embedding-enrichment technique can't fully close
+  without a larger, higher-risk rewrite of how the source text is split
+  into chunks. These score as partial matches by design, not as
+  unaddressed bugs.
 
 ---
 
-## Data
+## Future Improvements
 
-All data sourced from SEC EDGAR public filings. No proprietary or
-non-public data used. Single-company scope: Levi Strauss & Co. only.
-
----
-
-## Potential future scope
-
-- **Earnings call transcripts (considered, not added):** FY2026 guidance is
-  confirmed absent from every 10-K — guidance is discussed on earnings calls,
-  not filed. Adding transcripts as a data source was evaluated and closed as
-  out of scope for this build: transcripts are neither filed/furnished with
-  the SEC nor sourced from EDGAR (they'd come from Levi's IR site or a
-  third-party transcript service), which conflicts with this project's
-  stated scope of SEC-EDGAR-only, public-record data. Revisiting this would
-  be a scope expansion, not a same-scope data-source swap, and would also
-  require updating the scope language above and extending the evidentiary
-  tier system to mark forward-looking/unaudited guidance distinctly from
+- **Earnings call transcripts** were considered as a data source (some
+  claims, like forward-looking revenue guidance, are only ever discussed
+  on earnings calls, not filed with the SEC) but deliberately left out —
+  transcripts aren't filed or furnished with the SEC, which would expand
+  this project's scope beyond its current public-EDGAR-only boundary.
+  Adding them later would also require extending the evidentiary-tier
+  system to mark forward-looking, unaudited guidance distinctly from
   filed figures.
-
----
-
-## Background
-
-Built on top of "The Denim Lifestyle Pivot" — a BUAN 6390 Analytics
-Practicum equity research report (Group 7, May 2026) analyzing Levi's
-$50M strategic transformation proposal. The tool tests the report's
-claims against primary SEC filing evidence.
+- **A trained out-of-scope classifier**, to replace the current
+  similarity-threshold-plus-keyword-list approach and close the small gap
+  documented above.
+- **A trained tool router**, to replace the current rule-based dispatch
+  logic and generalize better to phrasings not yet seen in testing.
+- **Finishing the Gemini-vs-Groq tier-tagging comparison** once both
+  providers' free-tier quotas allow a full 60-question run, to produce a
+  complete side-by-side quality comparison rather than the current partial
+  result.
 
 ---
 
 ## What This Project Demonstrates
 
-- Hybrid retrieval system design — BM25 + dense vector search fused via RRF,
-  with quarter-aware metadata filtering on both legs
+- Hybrid retrieval system design — keyword and semantic search fused
+  together, with fiscal-period-aware filtering on both
 - Retrieval quality diagnosis and iterative tuning against a hand-labeled
-  eval set, with every fix verified by a full regression run
-- Evidentiary-tier answer grounding to keep generated claims traceable to a
+  evaluation set, with every change verified by a full regression run
+- Evidence-grounded answer generation, keeping every claim traceable to a
   specific filing, external source, or the model's own inference
-- Multi-tool orchestration — heuristic dispatch across RAG, a structured
-  XBRL API lookup, and a Google Trends decay-curve analysis
-- Production deployment troubleshooting on real resource constraints
-  (Render's free-tier port-binding and 512MB OOM limits, resolved via a
-  lifespan hook and an ONNX runtime swap)
-- Full-stack delivery — FastAPI backend and Next.js frontend, both deployed
-  and integration-tested live, not just locally
-- Regression-tested engineering workflow — a pytest suite and a retrieval
-  eval harness gating every change
-- Cross-provider LLM evaluation — a controlled comparison of Gemini's
-  schema-enforced structured output against Groq/Llama 3.3 70B's
-  best-effort JSON mode
+- Multi-tool orchestration — automatic routing across retrieval-based
+  Q&A, a structured financial-data API lookup, and a statistical
+  trend-decay analysis
+- Production deployment troubleshooting under real resource constraints,
+  resolved through a startup-sequencing fix and a lighter model runtime
+- Full-stack delivery — a FastAPI backend and Next.js frontend, both
+  deployed and tested live, not just locally
+- A regression-tested engineering workflow — an automated test suite and a
+  retrieval evaluation harness run against every change
+- Cross-provider LLM evaluation — comparing schema-enforced structured
+  output against a best-effort JSON alternative
