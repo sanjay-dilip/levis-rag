@@ -1593,22 +1593,22 @@
       636
     ],
     "gemini": {
-      "answer": "Levi's inventory levels increased between FY2024 and FY2025. Specifically, inventories rose from $1,131.3 million as of December 1, 2024, to $1,237.7 million as of November 30, 2025. This represents an increase of $106.4 million, or approximately 9.4%.",
+      "answer": "Levi's consolidated inventories increased from $1,131.3 million at the end of FY2024 (December 1, 2024) to $1,237.7 million at the end of FY2025 (November 30, 2025). This represents an absolute increase of $106.4 million, or approximately 9.41%.",
       "claims": [
         {
-          "claim_text": "inventories rose from $1,131.3 million as of December 1, 2024",
-          "tier": "Verified-from-filing",
-          "supporting_chunk_id": 632,
-          "fiscal_year": "FY2024"
-        },
-        {
-          "claim_text": "to $1,237.7 million as of November 30, 2025",
+          "claim_text": "Levi's consolidated inventories increased from $1,131.3 million at the end of FY2024 (December 1, 2024) to $1,237.7 million at the end of FY2025 (November 30, 2025).",
           "tier": "Verified-from-filing",
           "supporting_chunk_id": 632,
           "fiscal_year": "FY2025"
         },
         {
-          "claim_text": "This represents an increase of $106.4 million, or approximately 9.4%.",
+          "claim_text": "This represents an absolute increase of $106.4 million,",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 632,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "or approximately 9.41%.",
           "tier": "Model-inference",
           "supporting_chunk_id": 632,
           "fiscal_year": "FY2025"
@@ -1616,23 +1616,23 @@
       ]
     },
     "groq": {
-      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93063, Requested 9182. Please try again in 32m19.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "answer": "Levi's inventory levels increased from $1,131.3 million in FY2024 to $1,237.7 million in FY2025.",
       "claims": [
         {
-          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93063, Requested 9182. Please try again in 32m19.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
-          "tier": "Model-inference",
-          "supporting_chunk_id": -1,
-          "fiscal_year": null
+          "claim_text": "Levi's inventory levels increased from $1,131.3 million in FY2024 to $1,237.7 million in FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 632,
+          "fiscal_year": "FY2025"
         }
       ]
     },
     "groq_rate_limit_headers": {
       "x-ratelimit-limit-requests": "1000",
       "x-ratelimit-limit-tokens": "12000",
-      "x-ratelimit-remaining-requests": "996",
-      "x-ratelimit-remaining-tokens": "12000",
-      "x-ratelimit-reset-requests": "5m45.6s",
-      "x-ratelimit-reset-tokens": "1ms"
+      "x-ratelimit-remaining-requests": "999",
+      "x-ratelimit-remaining-tokens": "2818",
+      "x-ratelimit-reset-requests": "1m26.4s",
+      "x-ratelimit-reset-tokens": "45.91s"
     }
   },
   "eval_027": {
@@ -1652,35 +1652,47 @@
       1076
     ],
     "gemini": {
-      "answer": "Levi's management states that putting \"DTC First\" is one of their critical strategies to achieve key long-term objectives, which include strengthening their brands globally to deliver sustainable profitable growth and generate industry-leading shareholder returns. Additionally, management believes that retail stores dedicated to their brands are important for the growth, visibility, availability, and commercial success of their brands, and that these stores represent an increasingly important part of their \"DTC First\" strategy.",
+      "answer": "Levi's management states that putting \"DTC First\" is one of its critical strategies to achieve its key long-term objectives, which are to strengthen its brands globally in order to deliver sustainable profitable growth and generate industry-leading shareholder returns. Management believes that retail stores dedicated to its brands are important for the growth, visibility, availability, and commercial success of these brands, making them an increasingly important part of the \"DTC First\" strategy. Furthermore, management intends to achieve these strategies through operational excellence and a \"one team\" mindset.",
       "claims": [
         {
-          "claim_text": "putting \"DTC First\" is one of their critical strategies to achieve key long-term objectives, which include strengthening their brands globally to deliver sustainable profitable growth and generate industry-leading shareholder returns",
+          "claim_text": "putting \"DTC First\" is one of its critical strategies to achieve its key long-term objectives, which are to strengthen its brands globally in order to deliver sustainable profitable growth and generate industry-leading shareholder returns",
           "tier": "Management-qualitative-statement",
           "supporting_chunk_id": 596,
           "fiscal_year": "FY2025"
         },
         {
-          "claim_text": "management believes that retail stores dedicated to their brands are important for the growth, visibility, availability, and commercial success of their brands",
+          "claim_text": "Management believes that retail stores dedicated to its brands are important for the growth, visibility, availability, and commercial success of these brands",
           "tier": "Management-qualitative-statement",
           "supporting_chunk_id": 528,
           "fiscal_year": "FY2025"
         },
         {
-          "claim_text": "these stores represent an increasingly important part of their \"DTC First\" strategy",
+          "claim_text": "making them an increasingly important part of the \"DTC First\" strategy",
           "tier": "Management-qualitative-statement",
           "supporting_chunk_id": 528,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "management intends to achieve these strategies through operational excellence and a \"one team\" mindset",
+          "tier": "Management-qualitative-statement",
+          "supporting_chunk_id": 596,
           "fiscal_year": "FY2025"
         }
       ]
     },
     "groq": {
-      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 92916, Requested 8079. Please try again in 14m19.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "answer": "Levi's management believes that retail stores dedicated to its brands are important for growth, visibility, availability, and commercial success, and they are an increasingly important part of its 'DTC First' strategy. The company intends to achieve its long-term objectives through operational excellence and a one-team mindset, with critical strategies including being a brand-led business, putting DTC first, and further powering the portfolio by diversifying across geographies, categories, genders, and channels.",
       "claims": [
         {
-          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 92916, Requested 8079. Please try again in 14m19.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
-          "tier": "Model-inference",
-          "supporting_chunk_id": -1,
+          "claim_text": "Levi's management believes that retail stores dedicated to its brands are important for growth, visibility, availability, and commercial success, and they are an increasingly important part of its 'DTC First' strategy.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 528,
+          "fiscal_year": null
+        },
+        {
+          "claim_text": "The company intends to achieve its long-term objectives through operational excellence and a one-team mindset, with critical strategies including being a brand-led business, putting DTC first, and further powering the portfolio by diversifying across geographies, categories, genders, and channels.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 596,
           "fiscal_year": null
         }
       ]
@@ -1688,10 +1700,271 @@
     "groq_rate_limit_headers": {
       "x-ratelimit-limit-requests": "1000",
       "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "998",
+      "x-ratelimit-remaining-tokens": "3909",
+      "x-ratelimit-reset-requests": "2m52.8s",
+      "x-ratelimit-reset-tokens": "40.455s"
+    }
+  },
+  "eval_028": {
+    "question": "What are the primary risk factors Levi's discloses in its FY2025 10-K?",
+    "expected_tier": "Management-qualitative-statement",
+    "question_type": "qualitative_lookup",
+    "retrieved_chunk_ids": [
+      1325,
+      1045,
+      1246,
+      1137,
+      1319,
+      1240,
+      1039,
+      1131,
+      538,
+      1276
+    ],
+    "gemini": {
+      "answer": "According to the Levi Strauss & Co. FY2025 10-K, the primary risk factors related to uncertain or deteriorating economic and financial market conditions include:\n\n1. **Discretionary Spending Declines**: Sales are heavily dependent on discretionary consumer spending. Reductions in this spending can lower demand, increase inventories, lead to lower retailer orders or cancellations, lower revenues, and cause pricing pressure or lower gross margins.\n2. **Access to Capital**: The company may face difficulties accessing financing in credit and capital markets at reasonable rates.\n3. **Foreign Currency Fluctuations**: Performing transactions in multiple currencies exposes the company to foreign exchange rate volatility against the U.S. Dollar, impacting reported operating results.\n4. **Commodity and Raw Material Volatility**: Price fluctuations and availability of commodities and raw materials (such as cotton) can adversely affect costs, margins, and profitability.\n5. **Political and Sourcing Disruptions**: Domestic and international political environments\u2014including volatile trade relations, localized conflicts, shipping lane disruptions, and civil unrest\u2014create global economic uncertainty. This can impact production and distribution lead times, increase costs, and affect the ability to meet customer demand.\n6. **Trade Policies and Tariffs**: Changes in trade regulations or new/increased tariffs can elevate the costs of imported materials and finished goods, which may negatively impact customer demand and sales if prices are raised.\n7. **Financial Health of Retailers and Manufacturers**: If retailers experience declining revenues or financing issues, it can lead to reduced orders, order cancellations, late payments, bad debt, or insolvencies. Similarly, financing challenges for contract manufacturers can result in shipping delays or non-deliveries.\n8. **Global Exposure**: As a global business with significant international revenues and earnings, Levi's is highly exposed to foreign currency risks as well as political and economic risks.",
+      "claims": [
+        {
+          "claim_text": "Sales are heavily dependent on discretionary consumer spending. Reductions in this spending can lower demand, increase inventories, lead to lower retailer orders or cancellations, lower revenues, and cause pricing pressure or lower gross margins.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "The company may face difficulties accessing financing in credit and capital markets at reasonable rates.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Performing transactions in multiple currencies exposes the company to foreign exchange rate volatility against the U.S. Dollar, impacting reported operating results.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Price fluctuations and availability of commodities and raw materials (such as cotton) can adversely affect costs, margins, and profitability.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Domestic and international political environments\u2014including volatile trade relations, localized conflicts, shipping lane disruptions, and civil unrest\u2014create global economic uncertainty. This can impact production and distribution lead times, increase costs, and affect the ability to meet customer demand.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Changes in trade regulations or new/increased tariffs can elevate the costs of imported materials and finished goods, which may negatively impact customer demand and sales if prices are raised.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "If retailers experience declining revenues or financing issues, it can lead to reduced orders, order cancellations, late payments, bad debt, or insolvencies. Similarly, financing challenges for contract manufacturers can result in shipping delays or non-deliveries.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "As a global business with significant international revenues and earnings, Levi's is highly exposed to foreign currency risks as well as political and economic risks.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The primary risk factors Levi's discloses in its FY2025 10-K include declines in consumer spending, inability to access financing, exposure to fluctuations in foreign currency exchange rates, volatility in commodity and raw material prices, uncertainty surrounding trade policies and regulations, and potential insolvency of retailers or contract manufacturers.",
+      "claims": [
+        {
+          "claim_text": "The primary risk factors Levi's discloses in its FY2025 10-K include declines in consumer spending",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "inability to access financing",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "exposure to fluctuations in foreign currency exchange rates",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "volatility in commodity and raw material prices",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "uncertainty surrounding trade policies and regulations",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "potential insolvency of retailers or contract manufacturers",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
       "x-ratelimit-remaining-requests": "997",
-      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-remaining-tokens": "9117",
       "x-ratelimit-reset-requests": "4m19.2s",
-      "x-ratelimit-reset-tokens": "1ms"
+      "x-ratelimit-reset-tokens": "14.415s"
+    }
+  },
+  "eval_029": {
+    "question": "How does Levi's describe its competitive position in denim?",
+    "expected_tier": "Management-qualitative-statement",
+    "question_type": "qualitative_lookup",
+    "retrieved_chunk_ids": [
+      523,
+      400,
+      40,
+      279,
+      276,
+      1169,
+      462,
+      37,
+      1276,
+      743
+    ],
+    "gemini": {
+      "answer": "Levi's describes itself as a global leader in the denim industry. According to its SEC filings, the Levi's\u00ae brand is \"the #1 brand globally in jeanswear (measured by total retail sales).\" Its product line includes \"the iconic 501\u00ae jean, the original and best-selling five-pocket jean of all time.\" \n\nStrategically, the company intends to maintain this position by continuing \"men\u2019s bottoms denim leadership globally,\" while simultaneously \"driving outsized growth in women's and tops through a sharpened focus on denim lifestyle, building end-to-end capability in key lifestyle apparel categories beyond jeans.\"",
+      "claims": [
+        {
+          "claim_text": "Levi's\u00ae is an authentic and original lifestyle brand and the #1 brand globally in jeanswear (measured by total retail sales).",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 279,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "The line includes the iconic 501\u00ae jean, the original and best-selling five-pocket jean of all time.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 279,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "We will continue men\u2019s bottoms denim leadership globally",
+          "tier": "Management-qualitative-statement",
+          "supporting_chunk_id": 523,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "driving outsized growth in women's and tops through a sharpened focus on denim lifestyle, building end-to-end capability in key lifestyle apparel categories beyond jeans.",
+          "tier": "Management-qualitative-statement",
+          "supporting_chunk_id": 523,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's describes itself as the #1 brand globally in jeanswear, measured by total retail sales, with its Levi's brand being an authentic and original lifestyle brand that has become one of the most recognizable garments in the world.",
+      "claims": [
+        {
+          "claim_text": "Levi's describes itself as the #1 brand globally in jeanswear, measured by total retail sales,",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 279,
+          "fiscal_year": null
+        },
+        {
+          "claim_text": "with its Levi's brand being an authentic and original lifestyle brand that has become one of the most recognizable garments in the world.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 279,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "996",
+      "x-ratelimit-remaining-tokens": "2930",
+      "x-ratelimit-reset-requests": "5m45.6s",
+      "x-ratelimit-reset-tokens": "45.35s"
+    }
+  },
+  "eval_030": {
+    "question": "What did Levi's management say about tariff headwinds in FY2025?",
+    "expected_tier": "Management-qualitative-statement",
+    "question_type": "qualitative_lookup",
+    "retrieved_chunk_ids": [
+      1299,
+      686,
+      606,
+      1022,
+      560,
+      1108,
+      538,
+      522,
+      1009,
+      604
+    ],
+    "gemini": {
+      "answer": "During fiscal year 2025, Levi's management discussed several tariff headwinds:\n1. Under the gross profit analysis for FY2025 (year ended November 30, 2025), management noted that while the overall gross margin increased, this expansion was partially offset by the impact of tariffs.\n2. In the risk factor disclosures of the FY2025 10-K, management highlighted that the U.S. government had recently imposed broad \"reciprocal\" tariffs of 10% or more on goods imported into the United States from most U.S. trading partners, which led to increased costs for imported materials and inputs from multiple countries.\n3. Management also noted that trade policies and regulations, including new, increased, or continuing uncertainty around tariffs, could raise the cost of imported materials and finished goods, potentially reducing consumer demand and adversely affecting results of operations.",
+      "claims": [
+        {
+          "claim_text": "Under the gross profit analysis for FY2025 (year ended November 30, 2025), management noted that while the overall gross margin increased, this expansion was partially offset by the impact of tariffs.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "management highlighted that the U.S. government had recently imposed broad \"reciprocal\" tariffs of 10% or more on goods imported into the United States from most U.S. trading partners, which led to increased costs for imported materials and inputs from multiple countries.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 560,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Management also noted that trade policies and regulations, including new, increased, or continuing uncertainty around tariffs, could raise the cost of imported materials and finished goods, potentially reducing consumer demand and adversely affecting results of operations.",
+          "tier": "Management-qualitative-statement",
+          "supporting_chunk_id": 538,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's management stated that reciprocal tariffs previously imposed on products imported into the U.S. from most jurisdictions, along with retaliatory actions by other countries, have created an uncertain environment for global trade. The management also mentioned that the cost of their inventory in the U.S. has increased and may increase further in the future due to these tariff actions.",
+      "claims": [
+        {
+          "claim_text": "Levi's management stated that reciprocal tariffs previously imposed on products imported into the U.S. from most jurisdictions, along with retaliatory actions by other countries, have created an uncertain environment for global trade.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1299,
+          "fiscal_year": "FY2026"
+        },
+        {
+          "claim_text": "The cost of their inventory in the U.S. has increased and may increase further in the future due to these tariff actions.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1299,
+          "fiscal_year": "FY2026"
+        },
+        {
+          "claim_text": "Levi's management said about tariff headwinds in FY2025",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "995",
+      "x-ratelimit-remaining-tokens": "3142",
+      "x-ratelimit-reset-requests": "7m12s",
+      "x-ratelimit-reset-tokens": "44.29s"
     }
   }
 }
