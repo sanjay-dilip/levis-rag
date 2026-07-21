@@ -1966,5 +1966,872 @@
       "x-ratelimit-reset-requests": "7m12s",
       "x-ratelimit-reset-tokens": "44.29s"
     }
+  },
+  "eval_031": {
+    "question": "What is Levi's stated approach to inventory management?",
+    "expected_tier": "Management-qualitative-statement",
+    "question_type": "qualitative_lookup",
+    "retrieved_chunk_ids": [
+      545,
+      122,
+      369,
+      632,
+      593,
+      357,
+      1202,
+      453,
+      38,
+      637
+    ],
+    "gemini": {
+      "answer": "Levi Strauss & Co.'s approach to inventory management spans accounting valuation, operational strategies, and risk mitigation:\n\n1. **Accounting Valuation and Costing**: Inventory consists almost entirely of finished goods. Levi's values its inventories at the lower of cost or net realizable value, using the first-in, first-out (FIFO) method to determine cost. This cost includes product costs, labor and related overhead, inbound freight, internal transfers, and the operating costs of its manufacturing facility (including depreciation).\n\n2. **Net Realizable Value Determination**: Net realizable value is determined by estimating expected selling prices based on historical recovery rates for slow-moving and obsolete inventory, alongside other factors such as market conditions, expected distribution channels, and current consumer preferences.\n\n3. **Operational and Demand Integration**: Strategically, Levi's focuses on improving its speed to market and responding quickly to changes in consumer demand to enhance inventory turns, working capital, and its cash conversion cycle. Accurate forecasting of consumer demand is critical, as failing to do so can lead to excess inventory (resulting in write-downs and markdowns) or inventory shortages (resulting in shipping delays and damaged brand relationships).",
+      "claims": [
+        {
+          "claim_text": "Inventory is almost entirely finished goods.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 637,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "The Company values inventories at the lower of cost or net realizable value.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 637,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Inventory cost is determined using the first-in first-out method.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 637,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "The Company includes product costs, labor and related overhead, inbound freight, internal transfers, and the cost of operating its manufacturing facility, including the related depreciation expense, in the cost of inventories.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 637,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "The Company determines inventory net realizable value by estimating expected selling prices based on the Company's historical recovery rates for slow-moving and obsolete inventory and other factors, such as market conditions, expected channel of distribution and current consumer preferences.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 637,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Strategically, Levi's focuses on improving its speed to market and responding quickly to changes in consumer demand to enhance inventory turns, working capital, and its cash conversion cycle.",
+          "tier": "Management-qualitative-statement",
+          "supporting_chunk_id": 38,
+          "fiscal_year": "FY2023"
+        },
+        {
+          "claim_text": "Accurate forecasting of consumer demand is critical, as failing to do so can lead to excess inventory (resulting in write-downs and markdowns) or inventory shortages (resulting in shipping delays and damaged brand relationships).",
+          "tier": "Management-qualitative-statement",
+          "supporting_chunk_id": 545,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's approach to inventory management involves valuing inventories at the lower of cost or net realizable value, with inventory cost determined using the first-in first-out method. The company includes product costs, labor, and related overhead in the cost of inventories and determines inventory net realizable value by estimating expected selling prices based on historical recovery rates for slow-moving and obsolete inventory and other factors.",
+      "claims": [
+        {
+          "claim_text": "Levi's approach to inventory management involves valuing inventories at the lower of cost or net realizable value",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 637,
+          "fiscal_year": null
+        },
+        {
+          "claim_text": "inventory cost is determined using the first-in first-out method",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 637,
+          "fiscal_year": null
+        },
+        {
+          "claim_text": "The company includes product costs, labor, and related overhead in the cost of inventories",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 637,
+          "fiscal_year": null
+        },
+        {
+          "claim_text": "The company determines inventory net realizable value by estimating expected selling prices based on historical recovery rates for slow-moving and obsolete inventory and other factors",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 637,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "995",
+      "x-ratelimit-remaining-tokens": "3064",
+      "x-ratelimit-reset-requests": "7m12s",
+      "x-ratelimit-reset-tokens": "44.68s"
+    }
+  },
+  "eval_032": {
+    "question": "What was Levi's implied COGS for FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "inference",
+    "retrieved_chunk_ids": [
+      686,
+      1276,
+      1169,
+      602,
+      995,
+      1022,
+      604,
+      525,
+      1089,
+      609
+    ],
+    "gemini": {
+      "answer": "For the fiscal year ended November 30, 2025 (FY2025), Levi Strauss & Co.'s cost of goods sold was explicitly reported as $2,404.2 million. This figure is also mathematically implied by subtracting the reported gross profit of $3,877.8 million from the total net revenues of $6,282.0 million.",
+      "claims": [
+        {
+          "claim_text": "For the fiscal year ended November 30, 2025 (FY2025), Levi Strauss & Co.'s cost of goods sold was explicitly reported as $2,404.2 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "This figure is also mathematically implied by subtracting the reported gross profit of $3,877.8 million from the total net revenues of $6,282.0 million.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The implied COGS for FY2025 can be calculated by subtracting the gross profit from the net revenues. According to the provided chunks, the net revenues for FY2025 were $6,282.0 million and the gross profit was $3,877.8 million. Therefore, the implied COGS for FY2025 would be $6,282.0 million - $3,877.8 million = $2,404.2 million.",
+      "claims": [
+        {
+          "claim_text": "The implied COGS for FY2025 can be calculated by subtracting the gross profit from the net revenues.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "the net revenues for FY2025 were $6,282.0 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "the gross profit was $3,877.8 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "the implied COGS for FY2025 would be $2,404.2 million",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "994",
+      "x-ratelimit-remaining-tokens": "3612",
+      "x-ratelimit-reset-requests": "8m38.4s",
+      "x-ratelimit-reset-tokens": "41.94s"
+    }
+  },
+  "eval_033": {
+    "question": "What was Levi's DTC revenue as a percentage of total revenue in FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      1019,
+      1304,
+      1206,
+      603,
+      604,
+      1022,
+      602,
+      1101,
+      1105,
+      1020
+    ],
+    "gemini": {
+      "answer": "For the fiscal year ended November 30, 2025 (FY2025), Levi's Direct to Consumer (DTC) revenue comprised 49% of total net revenues on a reported basis, with DTC net revenues of $3,076.8 million out of total net revenues of $6,282.0 million.",
+      "claims": [
+        {
+          "claim_text": "For the fiscal year ended November 30, 2025 (FY2025), Levi's Direct to Consumer (DTC) revenue comprised 49% of total net revenues on a reported basis",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 603,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "DTC net revenues for the year ended November 30, 2025, were $3,076.8 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "total net revenues for the year ended November 30, 2025, were $6,282.0 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's DTC revenue as a percentage of total revenue in FY2025 was 49%.",
+      "claims": [
+        {
+          "claim_text": "Levi's DTC revenue as a percentage of total revenue in FY2025 was 49%.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 603,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "993",
+      "x-ratelimit-remaining-tokens": "1697",
+      "x-ratelimit-reset-requests": "10m4.8s",
+      "x-ratelimit-reset-tokens": "51.515s"
+    }
+  },
+  "eval_034": {
+    "question": "What was Levi's revenue per percentage point of gross margin in FY2025?",
+    "expected_tier": "Model-inference",
+    "question_type": "inference",
+    "retrieved_chunk_ids": [
+      604,
+      1101,
+      1202,
+      1017,
+      1022,
+      606,
+      1304,
+      1206,
+      611,
+      1106
+    ],
+    "gemini": {
+      "answer": "In fiscal year 2025 (ended November 30, 2025), Levi's net revenues were $6,282.0 million and its gross margin was 61.7%. Dividing the net revenues of $6,282.0 million by the gross margin of 61.7 percentage points yields approximately $101.82 million of revenue per percentage point of gross margin.",
+      "claims": [
+        {
+          "claim_text": "In fiscal year 2025 (ended November 30, 2025), Levi's net revenues were $6,282.0 million",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "its gross margin was 61.7%",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Dividing the net revenues of $6,282.0 million by the gross margin of 61.7 percentage points yields approximately $101.82 million of revenue per percentage point of gross margin.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The information provided does not contain enough data to calculate Levi's revenue per percentage point of gross margin in FY2025.",
+      "claims": [
+        {
+          "claim_text": "The information provided does not contain enough data to calculate Levi's revenue per percentage point of gross margin in FY2025.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "993",
+      "x-ratelimit-remaining-tokens": "1616",
+      "x-ratelimit-reset-requests": "10m4.8s",
+      "x-ratelimit-reset-tokens": "51.919s"
+    }
+  },
+  "eval_035": {
+    "question": "How much did Levi's gross margin improve in basis points between FY2024 and FY2025?",
+    "expected_tier": "Model-inference",
+    "question_type": "inference",
+    "retrieved_chunk_ids": [
+      604,
+      1017,
+      1202,
+      606,
+      1022,
+      1106,
+      1301,
+      1304,
+      1108,
+      686
+    ],
+    "gemini": {
+      "answer": "Levi's consolidated gross margin improved from 60.6% in FY2024 (year ended December 1, 2024) to 61.7% in FY2025 (year ended November 30, 2025). This represents an increase of 1.1 percentage points, which is equivalent to an improvement of 110 basis points. According to the filing, the gross margin increase was primarily driven by favorable channel mix, price increases, and lower product costs, and was partially offset by the impact of tariffs. Additionally, currency, including both transaction and translation impacts, favorably impacted gross margin by approximately 40 basis points.",
+      "claims": [
+        {
+          "claim_text": "Levi's consolidated gross margin improved from 60.6% in FY2024 (year ended December 1, 2024) to 61.7% in FY2025 (year ended November 30, 2025).",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "This represents an increase of 1.1 percentage points, which is equivalent to an improvement of 110 basis points.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "According to the filing, the gross margin increase was primarily driven by favorable channel mix, price increases, and lower product costs, and was partially offset by the impact of tariffs.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Additionally, currency, including both transaction and translation impacts, favorably impacted gross margin by approximately 40 basis points.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's gross margin improved by 110 basis points between FY2024 and FY2025.",
+      "claims": [
+        {
+          "claim_text": "Levi's gross margin improved by 110 basis points between FY2024 and FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "993",
+      "x-ratelimit-remaining-tokens": "2296",
+      "x-ratelimit-reset-requests": "10m4.8s",
+      "x-ratelimit-reset-tokens": "48.519s"
+    }
+  },
+  "eval_036": {
+    "question": "What would Levi's net revenue have been if DTC grew at the same rate as wholesale in FY2025?",
+    "expected_tier": "Model-inference",
+    "question_type": "inference",
+    "retrieved_chunk_ids": [
+      603,
+      1019,
+      1206,
+      1009,
+      1304,
+      1105,
+      1303,
+      1020,
+      686,
+      1104
+    ],
+    "gemini": {
+      "answer": "To determine what Levi's total net revenue would have been if DTC grew at the same rate as wholesale in FY2025, we can calculate the growth rate using the disaggregated revenue figures from the FY2025 annual filing:\n\n1. **FY2024 Reported Revenues**:\n   - Wholesale Net Revenues: $3,222.9 million\n   - DTC Net Revenues: $2,809.1 million\n\n2. **FY2025 Reported Revenues**:\n   - Wholesale Net Revenues: $3,205.2 million\n   - DTC Net Revenues: $3,076.8 million\n\n3. **Wholesale Growth Rate Calculation**:\n   - The reported growth rate for wholesale in FY2025 is: (($3,205.2 million - $3,222.9 million) / $3,222.9 million) = -17.7 million / $3,222.9 million \u2248 -0.54919% (a decline of approximately 0.55%).\n\n4. **Hypothetical DTC Revenue in FY2025**:\n   - If DTC grew at this same rate of -0.54919% from its FY2024 base of $2,809.1 million, the hypothetical DTC revenue for FY2025 would be: $2,809.1 million * (1 - 0.0054919) \u2248 $2,793.67 million.\n\n5. **Hypothetical Total Net Revenue in FY2025**:\n   - Combining the actual FY2025 wholesale revenues with the hypothetical DTC revenues yields: $3,205.2 million (actual wholesale) + $2,793.67 million (hypothetical DTC) \u2248 $5,998.87 million.\n\nThus, if DTC had grown at the same rate as wholesale in FY2025, Levi's total net revenue would have been approximately **$5,998.87 million** (instead of the reported $6,282.0 million).",
+      "claims": [
+        {
+          "claim_text": "For the year ended December 1, 2024, Levi's reported wholesale net revenues of $3,222.9 million and DTC net revenues of $2,809.1 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "For the year ended November 30, 2025, Levi's reported wholesale net revenues of $3,205.2 million and DTC net revenues of $3,076.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "The reported growth rate for wholesale in FY2025 is: (($3,205.2 million - $3,222.9 million) / $3,222.9 million) = -17.7 million / $3,222.9 million \u2248 -0.54919% (a decline of approximately 0.55%).",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "If DTC grew at this same rate of -0.54919% from its FY2024 base of $2,809.1 million, the hypothetical DTC revenue for FY2025 would be: $2,809.1 million * (1 - 0.0054919) \u2248 $2,793.67 million.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Combining the actual FY2025 wholesale revenues with the hypothetical DTC revenues yields: $3,205.2 million (actual wholesale) + $2,793.67 million (hypothetical DTC) \u2248 $5,998.87 million.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The retrieved context does not contain enough information to answer the question.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain enough information to answer the question.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "995",
+      "x-ratelimit-remaining-tokens": "2546",
+      "x-ratelimit-reset-requests": "7m12s",
+      "x-ratelimit-reset-tokens": "47.27s"
+    }
+  },
+  "eval_037": {
+    "question": "What is Levi's FY2026 revenue guidance?",
+    "expected_tier": "Not-in-corpus",
+    "question_type": "out_of_scope",
+    "retrieved_chunk_ids": [
+      1290,
+      1276,
+      1279,
+      1295,
+      1304,
+      1301,
+      1293,
+      1277,
+      1306,
+      1311
+    ],
+    "gemini": {
+      "answer": "The provided retrieved context does not contain information regarding Levi Strauss & Co.'s full-year FY2026 revenue guidance.",
+      "claims": [
+        {
+          "claim_text": "The provided retrieved context does not contain information regarding Levi Strauss & Co.'s full-year FY2026 revenue guidance.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2026"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The retrieved context does not contain enough information to answer the question about Levi's FY2026 revenue guidance.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain enough information to answer the question about Levi's FY2026 revenue guidance.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2026"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "999",
+      "x-ratelimit-remaining-tokens": "4505",
+      "x-ratelimit-reset-requests": "1m26.4s",
+      "x-ratelimit-reset-tokens": "37.475s"
+    }
+  },
+  "eval_038": {
+    "question": "What is Levi's current stock price?",
+    "expected_tier": "Not-in-corpus",
+    "question_type": "out_of_scope",
+    "retrieved_chunk_ids": [
+      208,
+      453,
+      122,
+      369,
+      125,
+      1295,
+      686,
+      828,
+      632,
+      765
+    ],
+    "gemini": {
+      "answer": "The retrieved context does not contain information regarding Levi's current stock price.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain information regarding Levi's current stock price.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The retrieved context does not contain enough information to answer the question about Levi's current stock price.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain enough information to answer the question about Levi's current stock price.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "998",
+      "x-ratelimit-remaining-tokens": "4137",
+      "x-ratelimit-reset-requests": "2m52.8s",
+      "x-ratelimit-reset-tokens": "39.315s"
+    }
+  },
+  "eval_039": {
+    "question": "What is VF Corporation's gross margin?",
+    "expected_tier": "Not-in-corpus",
+    "question_type": "out_of_scope",
+    "retrieved_chunk_ids": [
+      768,
+      937,
+      1209,
+      1017,
+      1284,
+      1084,
+      1182,
+      769,
+      131,
+      1106
+    ],
+    "gemini": {
+      "answer": "The retrieved context does not contain information regarding VF Corporation's gross margin, as all provided documents pertain exclusively to Levi Strauss & Co.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain information regarding VF Corporation's gross margin, as all provided documents pertain exclusively to Levi Strauss & Co.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The question does not contain enough information to answer about VF Corporation's gross margin.",
+      "claims": [
+        {
+          "claim_text": "The question does not contain enough information to answer about VF Corporation's gross margin.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "997",
+      "x-ratelimit-remaining-tokens": "2311",
+      "x-ratelimit-reset-requests": "4m19.2s",
+      "x-ratelimit-reset-tokens": "48.445s"
+    }
+  },
+  "eval_040": {
+    "question": "What did the Levi's CEO say on the Q4 FY2025 earnings call?",
+    "expected_tier": "Not-in-corpus",
+    "question_type": "out_of_scope",
+    "retrieved_chunk_ids": [
+      686,
+      602,
+      1202,
+      1276,
+      1009,
+      1169,
+      523,
+      1275,
+      600,
+      695
+    ],
+    "gemini": {
+      "answer": "The retrieved context does not contain transcripts, quotes, or details regarding what the Levi's CEO said on the Q4 FY2025 earnings call.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain transcripts, quotes, or details regarding what the Levi's CEO said on the Q4 FY2025 earnings call.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The retrieved context does not contain enough information to answer what the Levi's CEO said on the Q4 FY2025 earnings call.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain enough information to answer what the Levi's CEO said on the Q4 FY2025 earnings call.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "996",
+      "x-ratelimit-remaining-tokens": "2978",
+      "x-ratelimit-reset-requests": "5m45.6s",
+      "x-ratelimit-reset-tokens": "45.11s"
+    }
+  },
+  "eval_041": {
+    "question": "What is Levi's market share in the global denim market?",
+    "expected_tier": "Not-in-corpus",
+    "question_type": "out_of_scope",
+    "retrieved_chunk_ids": [
+      523,
+      276,
+      40,
+      208,
+      453,
+      45,
+      37,
+      686,
+      279,
+      525
+    ],
+    "gemini": {
+      "answer": "The retrieved SEC filings do not contain information regarding Levi's specific percentage market share in the global denim market. The context only states that the Levi's brand is the #1 brand globally in jeanswear as measured by total retail sales.",
+      "claims": [
+        {
+          "claim_text": "The retrieved SEC filings do not contain information regarding Levi's specific percentage market share in the global denim market.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The exact market share of Levi's in the global denim market is not provided in the retrieved context. However, it is mentioned that Levi's is the #1 brand globally in jeanswear, measured by total retail sales.",
+      "claims": [
+        {
+          "claim_text": "Levi's is the #1 brand globally in jeanswear, measured by total retail sales.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 279,
+          "fiscal_year": null
+        },
+        {
+          "claim_text": "The exact market share of Levi's in the global denim market is not provided in the retrieved context.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "995",
+      "x-ratelimit-remaining-tokens": "3748",
+      "x-ratelimit-reset-requests": "7m12s",
+      "x-ratelimit-reset-tokens": "41.26s"
+    }
+  },
+  "eval_042": {
+    "question": "What was Levi's total net revenue in Q1 FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      1019,
+      1009,
+      1022,
+      995,
+      1021,
+      1020,
+      1017,
+      1032,
+      1000,
+      993
+    ],
+    "gemini": {
+      "answer": "In Q1 FY2025 (the three months ended March 2, 2025), Levi Strauss & Co. reported total net revenues of $1,526.8 million.",
+      "claims": [
+        {
+          "claim_text": "In Q1 FY2025 (the three months ended March 2, 2025), Levi Strauss & Co. reported total net revenues of $1,526.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 993,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's total net revenue in Q1 FY2025 was $1,526.8 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's total net revenue in Q1 FY2025 was $1,526.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1019,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "994",
+      "x-ratelimit-remaining-tokens": "2136",
+      "x-ratelimit-reset-requests": "8m38.4s",
+      "x-ratelimit-reset-tokens": "49.32s"
+    }
+  },
+  "eval_043": {
+    "question": "What was Levi's Americas segment revenue in Q3 FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      1191,
+      1195,
+      1169,
+      1205,
+      1173,
+      1206,
+      1209,
+      1202,
+      1213,
+      1194
+    ],
+    "gemini": {
+      "answer": "In Q3 FY2025 (the three months ended August 31, 2025), Levi's Americas segment net revenue was $806.4 million. Of this total, wholesale channel revenues were $472.7 million and direct-to-consumer channel revenues were $333.7 million.",
+      "claims": [
+        {
+          "claim_text": "In Q3 FY2025 (the three months ended August 31, 2025), Levi's Americas segment net revenue was $806.4 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1195,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Of this total, wholesale channel revenues were $472.7 million and direct-to-consumer channel revenues were $333.7 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1191,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's Americas segment revenue in Q3 FY2025 was $806.4 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's Americas segment revenue in Q3 FY2025 was $806.4 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1191,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "993",
+      "x-ratelimit-remaining-tokens": "4243",
+      "x-ratelimit-reset-requests": "10m4.8s",
+      "x-ratelimit-reset-tokens": "38.785s"
+    }
+  },
+  "eval_044": {
+    "question": "What was Levi's DTC revenue in Q2 FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      1104,
+      1106,
+      1105,
+      1101,
+      1108,
+      1092,
+      1076,
+      1110,
+      1095,
+      1098
+    ],
+    "gemini": {
+      "answer": "In the second quarter of FY2025 (three months ended June 1, 2025), Levi's Direct-to-Consumer (DTC) net revenue was $716.1 million. This includes $305.0 million from the Americas, $224.7 million from Europe, $162.2 million from Asia, and $24.2 million from Beyond Yoga.",
+      "claims": [
+        {
+          "claim_text": "In the second quarter of FY2025 (three months ended June 1, 2025), Levi's Direct-to-Consumer (DTC) net revenue was $716.1 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1104,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "This includes $305.0 million from the Americas, $224.7 million from Europe, $162.2 million from Asia, and $24.2 million from Beyond Yoga.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1092,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93806, Requested 9564. Please try again in 48m31.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93806, Requested 9564. Please try again in 48m31.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "993",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "10m4.8s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
+  },
+  "eval_045": {
+    "question": "What was Levi's total net revenue in Q1 FY2026?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      1290,
+      1295,
+      1304,
+      1303,
+      1279,
+      1276,
+      1294,
+      1305,
+      1301,
+      1306
+    ],
+    "gemini": {
+      "answer": "For the first quarter of FY2026 (three months ended March 1, 2026), Levi Strauss & Co. reported total net revenues of $1,742.5 million.",
+      "claims": [
+        {
+          "claim_text": "For the first quarter of FY2026 (three months ended March 1, 2026), Levi Strauss & Co. reported total net revenues of $1,742.5 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1290,
+          "fiscal_year": "FY2026"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93715, Requested 7939. Please try again in 23m49.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93715, Requested 7939. Please try again in 23m49.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "994",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "8m38.4s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
   }
 }
