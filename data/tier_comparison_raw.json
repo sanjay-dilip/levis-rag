@@ -2410,10 +2410,10 @@
       1311
     ],
     "gemini": {
-      "answer": "The retrieved financial context does not contain information regarding Levi Strauss & Co.'s revenue guidance for the fiscal year 2026.",
+      "answer": "The provided retrieved context does not contain information regarding Levi Strauss & Co.'s full-year FY2026 revenue guidance.",
       "claims": [
         {
-          "claim_text": "The retrieved financial context does not contain information regarding Levi Strauss & Co.'s revenue guidance for the fiscal year 2026.",
+          "claim_text": "The provided retrieved context does not contain information regarding Levi Strauss & Co.'s full-year FY2026 revenue guidance.",
           "tier": "Model-inference",
           "supporting_chunk_id": -1,
           "fiscal_year": "FY2026"
@@ -2421,23 +2421,23 @@
       ]
     },
     "groq": {
-      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95910, Requested 7495. Please try again in 49m1.919999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "answer": "The retrieved context does not contain enough information to answer the question about Levi's FY2026 revenue guidance.",
       "claims": [
         {
-          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95910, Requested 7495. Please try again in 49m1.919999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "claim_text": "The retrieved context does not contain enough information to answer the question about Levi's FY2026 revenue guidance.",
           "tier": "Model-inference",
           "supporting_chunk_id": -1,
-          "fiscal_year": null
+          "fiscal_year": "FY2026"
         }
       ]
     },
     "groq_rate_limit_headers": {
       "x-ratelimit-limit-requests": "1000",
       "x-ratelimit-limit-tokens": "12000",
-      "x-ratelimit-remaining-requests": "995",
-      "x-ratelimit-remaining-tokens": "12000",
-      "x-ratelimit-reset-requests": "7m12s",
-      "x-ratelimit-reset-tokens": "1ms"
+      "x-ratelimit-remaining-requests": "999",
+      "x-ratelimit-remaining-tokens": "4505",
+      "x-ratelimit-reset-requests": "1m26.4s",
+      "x-ratelimit-reset-tokens": "37.475s"
     }
   },
   "eval_038": {
@@ -2457,10 +2457,10 @@
       765
     ],
     "gemini": {
-      "answer": "I am sorry, but the retrieved context does not contain enough information to determine Levi's current stock price.",
+      "answer": "The retrieved context does not contain information regarding Levi's current stock price.",
       "claims": [
         {
-          "claim_text": "The retrieved context does not contain enough information to determine Levi's current stock price.",
+          "claim_text": "The retrieved context does not contain information regarding Levi's current stock price.",
           "tier": "Model-inference",
           "supporting_chunk_id": -1,
           "fiscal_year": null
@@ -2468,10 +2468,10 @@
       ]
     },
     "groq": {
-      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95819, Requested 7863. Please try again in 53m1.248s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "answer": "The retrieved context does not contain enough information to answer the question about Levi's current stock price.",
       "claims": [
         {
-          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95819, Requested 7863. Please try again in 53m1.248s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "claim_text": "The retrieved context does not contain enough information to answer the question about Levi's current stock price.",
           "tier": "Model-inference",
           "supporting_chunk_id": -1,
           "fiscal_year": null
@@ -2481,10 +2481,10 @@
     "groq_rate_limit_headers": {
       "x-ratelimit-limit-requests": "1000",
       "x-ratelimit-limit-tokens": "12000",
-      "x-ratelimit-remaining-requests": "996",
-      "x-ratelimit-remaining-tokens": "12000",
-      "x-ratelimit-reset-requests": "5m45.6s",
-      "x-ratelimit-reset-tokens": "1ms"
+      "x-ratelimit-remaining-requests": "998",
+      "x-ratelimit-remaining-tokens": "4137",
+      "x-ratelimit-reset-requests": "2m52.8s",
+      "x-ratelimit-reset-tokens": "39.315s"
     }
   },
   "eval_039": {
@@ -2504,10 +2504,10 @@
       1106
     ],
     "gemini": {
-      "answer": "I am sorry, but the retrieved context does not contain enough information to answer the question, as it does not mention VF Corporation or its gross margin.",
+      "answer": "The retrieved context does not contain information regarding VF Corporation's gross margin, as all provided documents pertain exclusively to Levi Strauss & Co.",
       "claims": [
         {
-          "claim_text": "the retrieved context does not contain enough information to answer the question, as it does not mention VF Corporation or its gross margin.",
+          "claim_text": "The retrieved context does not contain information regarding VF Corporation's gross margin, as all provided documents pertain exclusively to Levi Strauss & Co.",
           "tier": "Model-inference",
           "supporting_chunk_id": -1,
           "fiscal_year": null
@@ -2515,10 +2515,10 @@
       ]
     },
     "groq": {
-      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95729, Requested 9689. Please try again in 1h18m1.152s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "answer": "The question does not contain enough information to answer about VF Corporation's gross margin.",
       "claims": [
         {
-          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95729, Requested 9689. Please try again in 1h18m1.152s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "claim_text": "The question does not contain enough information to answer about VF Corporation's gross margin.",
           "tier": "Model-inference",
           "supporting_chunk_id": -1,
           "fiscal_year": null
@@ -2529,8 +2529,308 @@
       "x-ratelimit-limit-requests": "1000",
       "x-ratelimit-limit-tokens": "12000",
       "x-ratelimit-remaining-requests": "997",
-      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-remaining-tokens": "2311",
       "x-ratelimit-reset-requests": "4m19.2s",
+      "x-ratelimit-reset-tokens": "48.445s"
+    }
+  },
+  "eval_040": {
+    "question": "What did the Levi's CEO say on the Q4 FY2025 earnings call?",
+    "expected_tier": "Not-in-corpus",
+    "question_type": "out_of_scope",
+    "retrieved_chunk_ids": [
+      686,
+      602,
+      1202,
+      1276,
+      1009,
+      1169,
+      523,
+      1275,
+      600,
+      695
+    ],
+    "gemini": {
+      "answer": "The retrieved context does not contain transcripts, quotes, or details regarding what the Levi's CEO said on the Q4 FY2025 earnings call.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain transcripts, quotes, or details regarding what the Levi's CEO said on the Q4 FY2025 earnings call.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The retrieved context does not contain enough information to answer what the Levi's CEO said on the Q4 FY2025 earnings call.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain enough information to answer what the Levi's CEO said on the Q4 FY2025 earnings call.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "996",
+      "x-ratelimit-remaining-tokens": "2978",
+      "x-ratelimit-reset-requests": "5m45.6s",
+      "x-ratelimit-reset-tokens": "45.11s"
+    }
+  },
+  "eval_041": {
+    "question": "What is Levi's market share in the global denim market?",
+    "expected_tier": "Not-in-corpus",
+    "question_type": "out_of_scope",
+    "retrieved_chunk_ids": [
+      523,
+      276,
+      40,
+      208,
+      453,
+      45,
+      37,
+      686,
+      279,
+      525
+    ],
+    "gemini": {
+      "answer": "The retrieved SEC filings do not contain information regarding Levi's specific percentage market share in the global denim market. The context only states that the Levi's brand is the #1 brand globally in jeanswear as measured by total retail sales.",
+      "claims": [
+        {
+          "claim_text": "The retrieved SEC filings do not contain information regarding Levi's specific percentage market share in the global denim market.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The exact market share of Levi's in the global denim market is not provided in the retrieved context. However, it is mentioned that Levi's is the #1 brand globally in jeanswear, measured by total retail sales.",
+      "claims": [
+        {
+          "claim_text": "Levi's is the #1 brand globally in jeanswear, measured by total retail sales.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 279,
+          "fiscal_year": null
+        },
+        {
+          "claim_text": "The exact market share of Levi's in the global denim market is not provided in the retrieved context.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "995",
+      "x-ratelimit-remaining-tokens": "3748",
+      "x-ratelimit-reset-requests": "7m12s",
+      "x-ratelimit-reset-tokens": "41.26s"
+    }
+  },
+  "eval_042": {
+    "question": "What was Levi's total net revenue in Q1 FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      1019,
+      1009,
+      1022,
+      995,
+      1021,
+      1020,
+      1017,
+      1032,
+      1000,
+      993
+    ],
+    "gemini": {
+      "answer": "In Q1 FY2025 (the three months ended March 2, 2025), Levi Strauss & Co. reported total net revenues of $1,526.8 million.",
+      "claims": [
+        {
+          "claim_text": "In Q1 FY2025 (the three months ended March 2, 2025), Levi Strauss & Co. reported total net revenues of $1,526.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 993,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's total net revenue in Q1 FY2025 was $1,526.8 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's total net revenue in Q1 FY2025 was $1,526.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1019,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "994",
+      "x-ratelimit-remaining-tokens": "2136",
+      "x-ratelimit-reset-requests": "8m38.4s",
+      "x-ratelimit-reset-tokens": "49.32s"
+    }
+  },
+  "eval_043": {
+    "question": "What was Levi's Americas segment revenue in Q3 FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      1191,
+      1195,
+      1169,
+      1205,
+      1173,
+      1206,
+      1209,
+      1202,
+      1213,
+      1194
+    ],
+    "gemini": {
+      "answer": "In Q3 FY2025 (the three months ended August 31, 2025), Levi's Americas segment net revenue was $806.4 million. Of this total, wholesale channel revenues were $472.7 million and direct-to-consumer channel revenues were $333.7 million.",
+      "claims": [
+        {
+          "claim_text": "In Q3 FY2025 (the three months ended August 31, 2025), Levi's Americas segment net revenue was $806.4 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1195,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Of this total, wholesale channel revenues were $472.7 million and direct-to-consumer channel revenues were $333.7 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1191,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's Americas segment revenue in Q3 FY2025 was $806.4 million.",
+      "claims": [
+        {
+          "claim_text": "Levi's Americas segment revenue in Q3 FY2025 was $806.4 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1191,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "993",
+      "x-ratelimit-remaining-tokens": "4243",
+      "x-ratelimit-reset-requests": "10m4.8s",
+      "x-ratelimit-reset-tokens": "38.785s"
+    }
+  },
+  "eval_044": {
+    "question": "What was Levi's DTC revenue in Q2 FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      1104,
+      1106,
+      1105,
+      1101,
+      1108,
+      1092,
+      1076,
+      1110,
+      1095,
+      1098
+    ],
+    "gemini": {
+      "answer": "In the second quarter of FY2025 (three months ended June 1, 2025), Levi's Direct-to-Consumer (DTC) net revenue was $716.1 million. This includes $305.0 million from the Americas, $224.7 million from Europe, $162.2 million from Asia, and $24.2 million from Beyond Yoga.",
+      "claims": [
+        {
+          "claim_text": "In the second quarter of FY2025 (three months ended June 1, 2025), Levi's Direct-to-Consumer (DTC) net revenue was $716.1 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1104,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "This includes $305.0 million from the Americas, $224.7 million from Europe, $162.2 million from Asia, and $24.2 million from Beyond Yoga.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1092,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93806, Requested 9564. Please try again in 48m31.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93806, Requested 9564. Please try again in 48m31.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "993",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "10m4.8s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
+  },
+  "eval_045": {
+    "question": "What was Levi's total net revenue in Q1 FY2026?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      1290,
+      1295,
+      1304,
+      1303,
+      1279,
+      1276,
+      1294,
+      1305,
+      1301,
+      1306
+    ],
+    "gemini": {
+      "answer": "For the first quarter of FY2026 (three months ended March 1, 2026), Levi Strauss & Co. reported total net revenues of $1,742.5 million.",
+      "claims": [
+        {
+          "claim_text": "For the first quarter of FY2026 (three months ended March 1, 2026), Levi Strauss & Co. reported total net revenues of $1,742.5 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1290,
+          "fiscal_year": "FY2026"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93715, Requested 7939. Please try again in 23m49.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93715, Requested 7939. Please try again in 23m49.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "994",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "8m38.4s",
       "x-ratelimit-reset-tokens": "1ms"
     }
   }
