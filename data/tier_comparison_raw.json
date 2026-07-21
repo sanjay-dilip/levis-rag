@@ -2321,5 +2321,217 @@
       "x-ratelimit-reset-requests": "10m4.8s",
       "x-ratelimit-reset-tokens": "48.519s"
     }
+  },
+  "eval_036": {
+    "question": "What would Levi's net revenue have been if DTC grew at the same rate as wholesale in FY2025?",
+    "expected_tier": "Model-inference",
+    "question_type": "inference",
+    "retrieved_chunk_ids": [
+      603,
+      1019,
+      1206,
+      1009,
+      1304,
+      1105,
+      1303,
+      1020,
+      686,
+      1104
+    ],
+    "gemini": {
+      "answer": "To determine what Levi's total net revenue would have been if DTC grew at the same rate as wholesale in FY2025, we can calculate the growth rate using the disaggregated revenue figures from the FY2025 annual filing:\n\n1. **FY2024 Reported Revenues**:\n   - Wholesale Net Revenues: $3,222.9 million\n   - DTC Net Revenues: $2,809.1 million\n\n2. **FY2025 Reported Revenues**:\n   - Wholesale Net Revenues: $3,205.2 million\n   - DTC Net Revenues: $3,076.8 million\n\n3. **Wholesale Growth Rate Calculation**:\n   - The reported growth rate for wholesale in FY2025 is: (($3,205.2 million - $3,222.9 million) / $3,222.9 million) = -17.7 million / $3,222.9 million \u2248 -0.54919% (a decline of approximately 0.55%).\n\n4. **Hypothetical DTC Revenue in FY2025**:\n   - If DTC grew at this same rate of -0.54919% from its FY2024 base of $2,809.1 million, the hypothetical DTC revenue for FY2025 would be: $2,809.1 million * (1 - 0.0054919) \u2248 $2,793.67 million.\n\n5. **Hypothetical Total Net Revenue in FY2025**:\n   - Combining the actual FY2025 wholesale revenues with the hypothetical DTC revenues yields: $3,205.2 million (actual wholesale) + $2,793.67 million (hypothetical DTC) \u2248 $5,998.87 million.\n\nThus, if DTC had grown at the same rate as wholesale in FY2025, Levi's total net revenue would have been approximately **$5,998.87 million** (instead of the reported $6,282.0 million).",
+      "claims": [
+        {
+          "claim_text": "For the year ended December 1, 2024, Levi's reported wholesale net revenues of $3,222.9 million and DTC net revenues of $2,809.1 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2024"
+        },
+        {
+          "claim_text": "For the year ended November 30, 2025, Levi's reported wholesale net revenues of $3,205.2 million and DTC net revenues of $3,076.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "The reported growth rate for wholesale in FY2025 is: (($3,205.2 million - $3,222.9 million) / $3,222.9 million) = -17.7 million / $3,222.9 million \u2248 -0.54919% (a decline of approximately 0.55%).",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "If DTC grew at this same rate of -0.54919% from its FY2024 base of $2,809.1 million, the hypothetical DTC revenue for FY2025 would be: $2,809.1 million * (1 - 0.0054919) \u2248 $2,793.67 million.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Combining the actual FY2025 wholesale revenues with the hypothetical DTC revenues yields: $3,205.2 million (actual wholesale) + $2,793.67 million (hypothetical DTC) \u2248 $5,998.87 million.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": 686,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The retrieved context does not contain enough information to answer the question.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain enough information to answer the question.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "995",
+      "x-ratelimit-remaining-tokens": "2546",
+      "x-ratelimit-reset-requests": "7m12s",
+      "x-ratelimit-reset-tokens": "47.27s"
+    }
+  },
+  "eval_037": {
+    "question": "What is Levi's FY2026 revenue guidance?",
+    "expected_tier": "Not-in-corpus",
+    "question_type": "out_of_scope",
+    "retrieved_chunk_ids": [
+      1290,
+      1276,
+      1279,
+      1295,
+      1304,
+      1301,
+      1293,
+      1277,
+      1306,
+      1311
+    ],
+    "gemini": {
+      "answer": "The retrieved financial context does not contain information regarding Levi Strauss & Co.'s revenue guidance for the fiscal year 2026.",
+      "claims": [
+        {
+          "claim_text": "The retrieved financial context does not contain information regarding Levi Strauss & Co.'s revenue guidance for the fiscal year 2026.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2026"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95910, Requested 7495. Please try again in 49m1.919999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95910, Requested 7495. Please try again in 49m1.919999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "995",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "7m12s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
+  },
+  "eval_038": {
+    "question": "What is Levi's current stock price?",
+    "expected_tier": "Not-in-corpus",
+    "question_type": "out_of_scope",
+    "retrieved_chunk_ids": [
+      208,
+      453,
+      122,
+      369,
+      125,
+      1295,
+      686,
+      828,
+      632,
+      765
+    ],
+    "gemini": {
+      "answer": "I am sorry, but the retrieved context does not contain enough information to determine Levi's current stock price.",
+      "claims": [
+        {
+          "claim_text": "The retrieved context does not contain enough information to determine Levi's current stock price.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95819, Requested 7863. Please try again in 53m1.248s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95819, Requested 7863. Please try again in 53m1.248s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "996",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "5m45.6s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
+  },
+  "eval_039": {
+    "question": "What is VF Corporation's gross margin?",
+    "expected_tier": "Not-in-corpus",
+    "question_type": "out_of_scope",
+    "retrieved_chunk_ids": [
+      768,
+      937,
+      1209,
+      1017,
+      1284,
+      1084,
+      1182,
+      769,
+      131,
+      1106
+    ],
+    "gemini": {
+      "answer": "I am sorry, but the retrieved context does not contain enough information to answer the question, as it does not mention VF Corporation or its gross margin.",
+      "claims": [
+        {
+          "claim_text": "the retrieved context does not contain enough information to answer the question, as it does not mention VF Corporation or its gross margin.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95729, Requested 9689. Please try again in 1h18m1.152s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 95729, Requested 9689. Please try again in 1h18m1.152s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "997",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "4m19.2s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
   }
 }
