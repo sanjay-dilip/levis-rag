@@ -2751,40 +2751,34 @@
       1098
     ],
     "gemini": {
-      "answer": "In the second quarter of FY2025 (three months ended June 1, 2025), Levi's Direct-to-Consumer (DTC) net revenue was $716.1 million. This includes $305.0 million from the Americas, $224.7 million from Europe, $162.2 million from Asia, and $24.2 million from Beyond Yoga.",
+      "answer": "In the second quarter of FY2025 (three months ended June 1, 2025), Levi Strauss & Co.'s Direct-to-Consumer (DTC) net revenue was $716.1 million.",
       "claims": [
         {
-          "claim_text": "In the second quarter of FY2025 (three months ended June 1, 2025), Levi's Direct-to-Consumer (DTC) net revenue was $716.1 million.",
+          "claim_text": "In the second quarter of FY2025 (three months ended June 1, 2025), Levi Strauss & Co.'s Direct-to-Consumer (DTC) net revenue was $716.1 million.",
           "tier": "Verified-from-filing",
           "supporting_chunk_id": 1104,
-          "fiscal_year": "FY2025"
-        },
-        {
-          "claim_text": "This includes $305.0 million from the Americas, $224.7 million from Europe, $162.2 million from Asia, and $24.2 million from Beyond Yoga.",
-          "tier": "Verified-from-filing",
-          "supporting_chunk_id": 1092,
           "fiscal_year": "FY2025"
         }
       ]
     },
     "groq": {
-      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93806, Requested 9564. Please try again in 48m31.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "answer": "Levi's DTC revenue in Q2 FY2025 was $716.1 million.",
       "claims": [
         {
-          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93806, Requested 9564. Please try again in 48m31.68s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
-          "tier": "Model-inference",
-          "supporting_chunk_id": -1,
-          "fiscal_year": null
+          "claim_text": "Levi's DTC revenue in Q2 FY2025 was $716.1 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1104,
+          "fiscal_year": "FY2025"
         }
       ]
     },
     "groq_rate_limit_headers": {
       "x-ratelimit-limit-requests": "1000",
       "x-ratelimit-limit-tokens": "12000",
-      "x-ratelimit-remaining-requests": "993",
-      "x-ratelimit-remaining-tokens": "12000",
-      "x-ratelimit-reset-requests": "10m4.8s",
-      "x-ratelimit-reset-tokens": "1ms"
+      "x-ratelimit-remaining-requests": "999",
+      "x-ratelimit-remaining-tokens": "2607",
+      "x-ratelimit-reset-requests": "1m26.4s",
+      "x-ratelimit-reset-tokens": "46.965s"
     }
   },
   "eval_045": {
@@ -2815,23 +2809,23 @@
       ]
     },
     "groq": {
-      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93715, Requested 7939. Please try again in 23m49.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "answer": "Levi's total net revenue in Q1 FY2026 was $1,742.5 million.",
       "claims": [
         {
-          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 93715, Requested 7939. Please try again in 23m49.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
-          "tier": "Model-inference",
-          "supporting_chunk_id": -1,
-          "fiscal_year": null
+          "claim_text": "Levi's total net revenue in Q1 FY2026 was $1,742.5 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1290,
+          "fiscal_year": "FY2026"
         }
       ]
     },
     "groq_rate_limit_headers": {
       "x-ratelimit-limit-requests": "1000",
       "x-ratelimit-limit-tokens": "12000",
-      "x-ratelimit-remaining-requests": "994",
-      "x-ratelimit-remaining-tokens": "12000",
-      "x-ratelimit-reset-requests": "8m38.4s",
-      "x-ratelimit-reset-tokens": "1ms"
+      "x-ratelimit-remaining-requests": "998",
+      "x-ratelimit-remaining-tokens": "4061",
+      "x-ratelimit-reset-requests": "2m52.8s",
+      "x-ratelimit-reset-tokens": "39.695s"
     }
   }
 }
