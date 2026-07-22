@@ -2827,5 +2827,695 @@
       "x-ratelimit-reset-requests": "2m52.8s",
       "x-ratelimit-reset-tokens": "39.695s"
     }
+  },
+  "eval_046": {
+    "question": "What was Levi's gross margin in Q1 FY2024?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "numeric_lookup",
+    "retrieved_chunk_ids": [
+      769,
+      768,
+      772,
+      753,
+      774,
+      778,
+      763,
+      773,
+      741,
+      777
+    ],
+    "gemini": {
+      "answer": "Levi Strauss & Co.'s gross margin in Q1 FY2024 (for the three months ended February 25, 2024) was 58.2%.",
+      "claims": [
+        {
+          "claim_text": "Levi Strauss & Co.'s gross margin in Q1 FY2024 (for the three months ended February 25, 2024) was 58.2%.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 768,
+          "fiscal_year": "FY2024"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's gross margin in Q1 FY2024 was 58.2%.",
+      "claims": [
+        {
+          "claim_text": "Levi's gross margin in Q1 FY2024 was 58.2%.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 768,
+          "fiscal_year": "FY2024"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "999",
+      "x-ratelimit-remaining-tokens": "1701",
+      "x-ratelimit-reset-requests": "1m26.4s",
+      "x-ratelimit-reset-tokens": "51.495s"
+    }
+  },
+  "eval_047": {
+    "question": "How did Levi's total net revenue change from Q1 FY2024 to Q1 FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "trend_comparison",
+    "retrieved_chunk_ids": [
+      1009,
+      1019,
+      1022,
+      1020,
+      1017,
+      995,
+      994,
+      1021,
+      1032,
+      1011
+    ],
+    "gemini": {
+      "answer": "For Q1 FY2025 (three months ended March 2, 2025), Levi Strauss & Co.'s total reported net revenues were $1,526.8 million, representing a 3.1% increase compared to $1,480.2 million in Q1 FY2024 (three months ended February 25, 2024). On an organic net revenues basis, total net revenues grew 8.6% from $1,404.1 million in Q1 FY2024 to $1,524.5 million in Q1 FY2025. Currency translation negatively impacted net revenues by approximately $46 million, while divestitures of the Denizen business and footwear category unfavorably impacted net revenues by $11.9 million and $16.0 million, respectively.",
+      "claims": [
+        {
+          "claim_text": "For Q1 FY2025 (three months ended March 2, 2025), Levi Strauss & Co.'s total reported net revenues were $1,526.8 million, representing a 3.1% increase compared to $1,480.2 million in Q1 FY2024 (three months ended February 25, 2024).",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1019,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "On an organic net revenues basis, total net revenues grew 8.6% from $1,404.1 million in Q1 FY2024 to $1,524.5 million in Q1 FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1032,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Currency translation negatively impacted net revenues by approximately $46 million, while divestitures of the Denizen business and footwear category unfavorably impacted net revenues by $11.9 million and $16.0 million, respectively.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1019,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's total net revenue increased from $1,480.2 million in Q1 FY2024 to $1,526.8 million in Q1 FY2025, representing a 3.1% increase.",
+      "claims": [
+        {
+          "claim_text": "Levi's total net revenue increased from $1,480.2 million in Q1 FY2024 to $1,526.8 million in Q1 FY2025, representing a 3.1% increase.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1009,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "999",
+      "x-ratelimit-remaining-tokens": "2069",
+      "x-ratelimit-reset-requests": "1m26.4s",
+      "x-ratelimit-reset-tokens": "49.655s"
+    }
+  },
+  "eval_048": {
+    "question": "How did Levi's total net revenue change from Q3 FY2024 to Q3 FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "trend_comparison",
+    "retrieved_chunk_ids": [
+      1191,
+      1206,
+      1209,
+      1207,
+      1169,
+      1202,
+      1205,
+      1233,
+      1175,
+      1195
+    ],
+    "gemini": {
+      "answer": "On an as-reported basis, Levi Strauss & Co.'s total net revenues increased by 7.0% from $1,443.1 million in Q3 FY2024 (three months ended August 25, 2024) to $1,543.4 million in Q3 FY2025 (three months ended August 31, 2025). On an organic net revenues basis, total net revenues increased by 6.9% from $1,444.4 million in Q3 FY2024 to $1,543.4 million in Q3 FY2025.",
+      "claims": [
+        {
+          "claim_text": "On an as-reported basis, Levi Strauss & Co.'s total net revenues increased by 7.0% from $1,443.1 million in Q3 FY2024 (three months ended August 25, 2024) to $1,543.4 million in Q3 FY2025 (three months ended August 31, 2025).",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1206,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "On an organic net revenues basis, total net revenues increased by 6.9% from $1,444.4 million in Q3 FY2024 to $1,543.4 million in Q3 FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1233,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's total net revenue increased by 7.0% from $1,443.1 million in Q3 FY2024 to $1,543.4 million in Q3 FY2025.",
+      "claims": [
+        {
+          "claim_text": "Levi's total net revenue increased by 7.0% from $1,443.1 million in Q3 FY2024 to $1,543.4 million in Q3 FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1191,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "998",
+      "x-ratelimit-remaining-tokens": "2245",
+      "x-ratelimit-reset-requests": "2m52.8s",
+      "x-ratelimit-reset-tokens": "48.775s"
+    }
+  },
+  "eval_049": {
+    "question": "How did Levi's total net revenue change from Q1 FY2025 to Q1 FY2026?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "trend_comparison",
+    "retrieved_chunk_ids": [
+      1290,
+      1304,
+      1303,
+      1279,
+      1295,
+      1276,
+      1306,
+      1294,
+      1301,
+      1275
+    ],
+    "gemini": {
+      "answer": "Levi's total net revenue increased from $1,526.8 million in Q1 FY2025 (three months ended March 2, 2025) to $1,742.5 million in Q1 FY2026 (three months ended March 1, 2026). This represents a reported increase of 14.1% and an organic net revenue increase of 9.2%. Additionally, currency translation had a favorable impact of approximately $71 million on total net revenues for the quarter.",
+      "claims": [
+        {
+          "claim_text": "Levi's total net revenue increased from $1,526.8 million in Q1 FY2025 (three months ended March 2, 2025) to $1,742.5 million in Q1 FY2026 (three months ended March 1, 2026).",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1290,
+          "fiscal_year": "FY2026"
+        },
+        {
+          "claim_text": "This represents a reported increase of 14.1% and an organic net revenue increase of 9.2%.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1303,
+          "fiscal_year": "FY2026"
+        },
+        {
+          "claim_text": "Additionally, currency translation had a favorable impact of approximately $71 million on total net revenues for the quarter.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1303,
+          "fiscal_year": "FY2026"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's total net revenue increased by 14.1% from $1,526.8 million in Q1 FY2025 to $1,742.5 million in Q1 FY2026.",
+      "claims": [
+        {
+          "claim_text": "Levi's total net revenue increased by 14.1% from $1,526.8 million in Q1 FY2025 to $1,742.5 million in Q1 FY2026.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1303,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "997",
+      "x-ratelimit-remaining-tokens": "3719",
+      "x-ratelimit-reset-requests": "4m19.2s",
+      "x-ratelimit-reset-tokens": "41.405s"
+    }
+  },
+  "eval_050": {
+    "question": "How did Levi's operating income change from Q2 FY2024 to Q2 FY2025?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "trend_comparison",
+    "retrieved_chunk_ids": [
+      1108,
+      1101,
+      1106,
+      1114,
+      1095,
+      1102,
+      1080,
+      1094,
+      1075,
+      1110
+    ],
+    "gemini": {
+      "answer": "For the second quarter of FY2025 (three months ended June 1, 2025), Levi's total operating income increased to $108.0 million from $20.9 million in Q2 FY2024 (three months ended May 26, 2024). Operating margin expanded from 1.5% in Q2 FY2024 to 7.5% in Q2 FY2025. Total segment operating income grew from $213.7 million in Q2 FY2024 to $252.3 million in Q2 FY2025. Additionally, Adjusted EBIT increased 38.7% to $119.3 million in Q2 FY2025 from $86.0 million in Q2 FY2024.",
+      "claims": [
+        {
+          "claim_text": "For the second quarter of FY2025 (three months ended June 1, 2025), Levi's total operating income increased to $108.0 million from $20.9 million in Q2 FY2024 (three months ended May 26, 2024).",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1108,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Operating margin expanded from 1.5% in Q2 FY2024 to 7.5% in Q2 FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1101,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Total segment operating income grew from $213.7 million in Q2 FY2024 to $252.3 million in Q2 FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1095,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Additionally, Adjusted EBIT increased 38.7% to $119.3 million in Q2 FY2025 from $86.0 million in Q2 FY2024.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1101,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's operating income increased from $20.9 million in Q2 FY2024 to $108.0 million in Q2 FY2025.",
+      "claims": [
+        {
+          "claim_text": "Levi's operating income increased from $20.9 million in Q2 FY2024 to $108.0 million in Q2 FY2025.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1108,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "996",
+      "x-ratelimit-remaining-tokens": "2656",
+      "x-ratelimit-reset-requests": "5m45.6s",
+      "x-ratelimit-reset-tokens": "46.72s"
+    }
+  },
+  "eval_051": {
+    "question": "How did Levi's Asia segment revenue change from Q1 FY2025 to Q1 FY2026?",
+    "expected_tier": "Verified-from-filing",
+    "question_type": "trend_comparison",
+    "retrieved_chunk_ids": [
+      1290,
+      1306,
+      1295,
+      1294,
+      1279,
+      1304,
+      1303,
+      1293,
+      1305,
+      1276
+    ],
+    "gemini": {
+      "answer": "In Q1 FY2026 (three months ended March 1, 2026), Levi's Asia segment net revenues were $347.5 million, compared to $308.1 million in Q1 FY2025 (three months ended March 2, 2025). This represents an increase of $39.4 million, or approximately 12.8%. By channel, Asia direct-to-consumer (DTC) revenues grew from $173.1 million to $204.3 million, and wholesale revenues grew from $135.0 million to $143.2 million. Currency translation did not have a significant impact on Asia net revenues for the quarter. The DTC growth was driven by store performance, expansion (including 38 more company-operated stores), higher average revenues per unit, and higher volumes, while wholesale growth was primarily driven by higher units sold.",
+      "claims": [
+        {
+          "claim_text": "In Q1 FY2026 (three months ended March 1, 2026), Levi's Asia segment net revenues were $347.5 million, compared to $308.1 million in Q1 FY2025 (three months ended March 2, 2025).",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1290,
+          "fiscal_year": "FY2026"
+        },
+        {
+          "claim_text": "This represents an increase of $39.4 million, or approximately 12.8%.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2026"
+        },
+        {
+          "claim_text": "By channel, Asia direct-to-consumer (DTC) revenues grew from $173.1 million to $204.3 million, and wholesale revenues grew from $135.0 million to $143.2 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1290,
+          "fiscal_year": "FY2026"
+        },
+        {
+          "claim_text": "Currency translation did not have a significant impact on Asia net revenues for the quarter.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1303,
+          "fiscal_year": "FY2026"
+        },
+        {
+          "claim_text": "The DTC growth was driven by store performance, expansion (including 38 more company-operated stores), higher average revenues per unit, and higher volumes, while wholesale growth was primarily driven by higher units sold.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1303,
+          "fiscal_year": "FY2026"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's Asia segment revenue increased from $308.1 million in Q1 FY2025 to $347.5 million in Q1 FY2026.",
+      "claims": [
+        {
+          "claim_text": "Levi's Asia segment revenue increased from $308.1 million in Q1 FY2025 to $347.5 million in Q1 FY2026.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1290,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "995",
+      "x-ratelimit-remaining-tokens": "4020",
+      "x-ratelimit-reset-requests": "7m12s",
+      "x-ratelimit-reset-tokens": "39.9s"
+    }
+  },
+  "eval_052": {
+    "question": "What did Levi's management say about the April 2025 U.S. tariffs in Q1 FY2025?",
+    "expected_tier": "Management-qualitative-statement",
+    "question_type": "qualitative_lookup",
+    "retrieved_chunk_ids": [
+      1035,
+      1015,
+      1022,
+      1009,
+      996,
+      995,
+      1007,
+      1037,
+      1013,
+      1016
+    ],
+    "gemini": {
+      "answer": "On April 2, 2025, the U.S. government announced additional tariffs on goods imported to the U.S. Levi's management stated that they continue to analyze the impact of these tariffs on their business and actions they can take to minimize their impact. Management expects these new tariffs to have a material impact on the company's results of operations in fiscal year 2025.",
+      "claims": [
+        {
+          "claim_text": "On April 2, 2025, the U.S. government announced additional tariffs on goods imported to the U.S.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1015,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Levi's management stated that they continue to analyze the impact of these tariffs on their business and actions they can take to minimize their impact.",
+          "tier": "Management-qualitative-statement",
+          "supporting_chunk_id": 1015,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Management expects these new tariffs to have a material impact on the company's results of operations in fiscal year 2025.",
+          "tier": "Management-qualitative-statement",
+          "supporting_chunk_id": 1015,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's management stated that on April 2, 2025, the U.S. government announced additional tariffs on goods imported to the U.S. and they continue to analyze the impact of these tariffs on their business and actions they can take to minimize their impact.",
+      "claims": [
+        {
+          "claim_text": "Levi's management stated that on April 2, 2025, the U.S. government announced additional tariffs on goods imported to the U.S.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1015,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "they continue to analyze the impact of these tariffs on their business and actions they can take to minimize their impact",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1015,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "994",
+      "x-ratelimit-remaining-tokens": "4536",
+      "x-ratelimit-reset-requests": "8m38.4s",
+      "x-ratelimit-reset-tokens": "37.32s"
+    }
+  },
+  "eval_053": {
+    "question": "What did Levi's management say about inventory levels in Q3 FY2025?",
+    "expected_tier": "Management-qualitative-statement",
+    "question_type": "qualitative_lookup",
+    "retrieved_chunk_ids": [
+      1169,
+      1170,
+      1202,
+      1191,
+      1211,
+      1173,
+      1207,
+      1236,
+      1214,
+      1240
+    ],
+    "gemini": {
+      "answer": "In Q3 FY2025, inventory increased 12% compared to the third quarter of 2024, excluding the Dockers business. Management stated that this increase was in preparation for sales for the remainder of the year and from earlier receipts in order to mitigate potential impacts from tariffs.",
+      "claims": [
+        {
+          "claim_text": "In Q3 FY2025, inventory increased 12% compared to the third quarter of 2024, excluding the Dockers business.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1202,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Management stated that this increase was in preparation for sales for the remainder of the year and from earlier receipts in order to mitigate potential impacts from tariffs.",
+          "tier": "Management-qualitative-statement",
+          "supporting_chunk_id": 1202,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "Levi's management stated that inventory levels increased by 12% in Q3 FY2025, excluding the Dockers business, in preparation for sales for the remainder of the year and from earlier receipts in order to mitigate potential impacts from tariffs.",
+      "claims": [
+        {
+          "claim_text": "Levi's management stated that inventory levels increased by 12% in Q3 FY2025, excluding the Dockers business, in preparation for sales for the remainder of the year and from earlier receipts in order to mitigate potential impacts from tariffs.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1202,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "993",
+      "x-ratelimit-remaining-tokens": "5505",
+      "x-ratelimit-reset-requests": "10m4.8s",
+      "x-ratelimit-reset-tokens": "32.475s"
+    }
+  },
+  "eval_054": {
+    "question": "What was Levi's implied Q4 FY2025 DTC revenue?",
+    "expected_tier": "Model-inference",
+    "question_type": "inference",
+    "retrieved_chunk_ids": [
+      603,
+      1019,
+      1304,
+      604,
+      602,
+      686,
+      1303,
+      596,
+      1104,
+      1206
+    ],
+    "gemini": {
+      "answer": "For full-year FY2025, Levi's reported total DTC net revenue of $3,076.8 million. For the first six months of FY2025, total DTC revenue was $1,503.6 million ($787.5 million in Q1 and $716.1 million in Q2). In Q3 FY2025, DTC comprised 46% of total net revenues of $1,543.4 million, which is approximately $710.0 million (or 49% of nine-month total net revenues of $4,516.2 million, which is $2,212.9 million). Subtracting the nine-month DTC total (~$2,212.9 million to $2,213.6 million) from full-year FY2025 DTC revenue ($3,076.8 million) yields an implied Q4 FY2025 DTC revenue of approximately $863.2 million to $863.9 million.",
+      "claims": [
+        {
+          "claim_text": "For full-year FY2025, Levi's reported total DTC net revenue of $3,076.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 602,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "For the first six months of FY2025, total DTC revenue was $1,503.6 million ($787.5 million in Q1 and $716.1 million in Q2).",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1104,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "In Q3 FY2025, DTC comprised 46% of total net revenues of $1,543.4 million, which is approximately $710.0 million (or 49% of nine-month total net revenues of $4,516.2 million, which is $2,212.9 million).",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "Subtracting the nine-month DTC total (~$2,212.9 million to $2,213.6 million) from full-year FY2025 DTC revenue ($3,076.8 million) yields an implied Q4 FY2025 DTC revenue of approximately $863.2 million to $863.9 million.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "The implied Q4 FY2025 DTC revenue for Levi's cannot be determined from the provided context as it does not contain enough information to calculate this figure.",
+      "claims": [
+        {
+          "claim_text": "The implied Q4 FY2025 DTC revenue for Levi's cannot be determined from the provided context as it does not contain enough information to calculate this figure.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "992",
+      "x-ratelimit-remaining-tokens": "2280",
+      "x-ratelimit-reset-requests": "11m31.2s",
+      "x-ratelimit-reset-tokens": "48.6s"
+    }
+  },
+  "eval_055": {
+    "question": "What was Levi's DTC revenue as a percentage of total revenue in Q1 FY2026?",
+    "expected_tier": "Model-inference",
+    "question_type": "inference",
+    "retrieved_chunk_ids": [
+      1304,
+      1303,
+      1279,
+      1290,
+      1305,
+      1295,
+      1276,
+      1301,
+      1302,
+      1308
+    ],
+    "gemini": {
+      "answer": "In Q1 FY2026 (the three months ended March 1, 2026), Direct-to-Consumer (DTC) net revenues comprised 52% of total net revenues on a reported basis. Total DTC net revenues were $911.5 million out of total net revenues of $1,742.5 million for the quarter.",
+      "claims": [
+        {
+          "claim_text": "In Q1 FY2026 (the three months ended March 1, 2026), Direct-to-Consumer (DTC) net revenues comprised 52% of total net revenues on a reported basis.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1304,
+          "fiscal_year": "FY2026"
+        },
+        {
+          "claim_text": "Total DTC net revenues were $911.5 million out of total net revenues of $1,742.5 million for the quarter.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1290,
+          "fiscal_year": "FY2026"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 96564, Requested 8643. Please try again in 1h14m58.848s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 96564, Requested 8643. Please try again in 1h14m58.848s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "992",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "11m31.2s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
+  },
+  "eval_056": {
+    "question": "By how much did Levi's Asia segment revenue grow from Q3 FY2024 to Q3 FY2025?",
+    "expected_tier": "Model-inference",
+    "question_type": "inference",
+    "retrieved_chunk_ids": [
+      1191,
+      1206,
+      1195,
+      1209,
+      1207,
+      1205,
+      1202,
+      1169,
+      1173,
+      1176
+    ],
+    "gemini": {
+      "answer": "In Q3 FY2025 (three months ended August 31, 2025), Levi's Asia segment net revenues were $277.7 million, compared to $247.1 million in Q3 FY2024 (three months ended August 25, 2024). This represents an increase of $30.6 million, or approximately 12.38%.",
+      "claims": [
+        {
+          "claim_text": "In Q3 FY2025 (three months ended August 31, 2025), Levi's Asia segment net revenues were $277.7 million, compared to $247.1 million in Q3 FY2024 (three months ended August 25, 2024).",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 1195,
+          "fiscal_year": "FY2025"
+        },
+        {
+          "claim_text": "This represents an increase of $30.6 million, or approximately 12.38%.",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 96468, Requested 9088. Please try again in 1h20m0.384s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 96468, Requested 9088. Please try again in 1h20m0.384s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "993",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "10m4.8s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
+  },
+  "eval_057": {
+    "question": "What was Levi's gross profit in dollars for FY2025?",
+    "expected_tier": "Model-inference",
+    "question_type": "inference",
+    "retrieved_chunk_ids": [
+      604,
+      1106,
+      1304,
+      1022,
+      606,
+      1202,
+      1206,
+      1017,
+      686,
+      1101
+    ],
+    "gemini": {
+      "answer": "For the fiscal year ended November 30, 2025 (FY2025), Levi Strauss & Co. reported a consolidated gross profit of $3,877.8 million.",
+      "claims": [
+        {
+          "claim_text": "For the fiscal year ended November 30, 2025 (FY2025), Levi Strauss & Co. reported a consolidated gross profit of $3,877.8 million.",
+          "tier": "Verified-from-filing",
+          "supporting_chunk_id": 604,
+          "fiscal_year": "FY2025"
+        }
+      ]
+    },
+    "groq": {
+      "answer": "429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 96375, Requested 9801. Please try again in 1h28m56.064s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+      "claims": [
+        {
+          "claim_text": "Parse failure: 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completions | body: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kxpgxdjeftps8zcx21v5why1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 96375, Requested 9801. Please try again in 1h28m56.064s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n",
+          "tier": "Model-inference",
+          "supporting_chunk_id": -1,
+          "fiscal_year": null
+        }
+      ]
+    },
+    "groq_rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "12000",
+      "x-ratelimit-remaining-requests": "994",
+      "x-ratelimit-remaining-tokens": "12000",
+      "x-ratelimit-reset-requests": "8m38.4s",
+      "x-ratelimit-reset-tokens": "1ms"
+    }
   }
 }
