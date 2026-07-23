@@ -200,8 +200,11 @@ supplement:
    own prompt/schema, independent of anything about Groq.
 
 If Groq or a similar unenforced-schema model were ever used for a
-production-facing tagging path, `tier_tagger_groq.py`'s existing post-hoc
-validation layer (required keys, tier enum membership, int chunk id) would
-need to be extended to actively re-route or reject predictions that skip an
-entire valid enum value class, not just catch malformed JSON — this run is
-the concrete evidence that gap is real, not hypothetical.
+production-facing tagging path, this run is concrete evidence not to trust
+it for full categorical coverage on the strength of a single call — a
+per-request validator (`tier_tagger_groq.py`'s existing one included)
+structurally cannot detect a systematically-avoided enum value, since that's
+a pattern only visible in aggregate, across many calls, against ground
+truth; no single JSON response reveals it. The practical mitigation would
+be spot-checking against known-category examples or an ensemble/majority-
+vote across repeated calls, not a stronger per-response schema check.
