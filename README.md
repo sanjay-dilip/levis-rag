@@ -241,15 +241,12 @@ significant problems and fixes:
 
 ---
 
-## Screenshots or Demo
+## Demo
 
 The fastest way to see the system working is the live app itself:
 
 - **Frontend (chat UI):** https://levis-rag.vercel.app
 - **Backend API:** https://levis-rag.onrender.com (`GET /health`, `POST /query`)
-
-_Screenshots are not yet included in this repository — the live links above
-show the working chat interface, tier badges, and citation panel directly._
 
 ---
 
