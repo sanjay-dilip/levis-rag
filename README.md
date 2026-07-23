@@ -12,7 +12,7 @@ evidence rather than invented) tool for evidence-tiered analysis of Levi
 Strauss & Co.'s publicly available SEC EDGAR filings and strategic
 narrative.
 
-**Live app:** https://levis-rag.vercel.app
+**Live app:** https://levis-rag.vercel.app<br>
 **Backend API:** https://levis-rag.onrender.com (`GET /health`, `POST /query`)
 
 ---
