@@ -1,0 +1,421 @@
+{
+  "n_questions_scored": 60,
+  "gemini": {
+    "raw_confusion_matrix": {
+      "Verified-from-filing": {
+        "Verified-from-filing": 29,
+        "Model-inference": 8
+      },
+      "Management-qualitative-statement": {
+        "Model-inference": 2,
+        "Management-qualitative-statement": 6,
+        "Verified-from-filing": 1
+      },
+      "Model-inference": {
+        "Model-inference": 5,
+        "Verified-from-filing": 4
+      },
+      "Not-in-corpus": {
+        "Model-inference": 5
+      }
+    },
+    "collapsed_precision_recall": {
+      "Verified-from-filing": {
+        "precision": 0.8529411764705882,
+        "recall": 0.7837837837837838,
+        "support": 37,
+        "tp": 29,
+        "fp": 5,
+        "fn": 8
+      },
+      "Management-qualitative-statement": {
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "support": 9,
+        "tp": 6,
+        "fp": 0,
+        "fn": 3
+      },
+      "Third-party-benchmark": {
+        "precision": null,
+        "recall": null,
+        "support": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "Model-inference": {
+        "precision": 0.5,
+        "recall": 0.7142857142857143,
+        "support": 14,
+        "tp": 10,
+        "fp": 10,
+        "fn": 4
+      },
+      "NO_CLAIMS_OR_PARSE_FAILURE": {
+        "precision": null,
+        "recall": null,
+        "support": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    "accuracy": 0.75,
+    "n_questions": 60,
+    "parse_failures": 0,
+    "hallucination_rate": 0.16875,
+    "hallucination_flags": [
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "1375.5million"
+        ],
+        "question_id": "eval_003",
+        "claim_text": "DTC revenue in the Americas was $1,375.5 million."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "942.7million"
+        ],
+        "question_id": "eval_003",
+        "claim_text": "DTC revenue in Europe was $942.7 million."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "656.7million"
+        ],
+        "question_id": "eval_003",
+        "claim_text": "DTC revenue in Asia was $656.7 million."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "101.9million"
+        ],
+        "question_id": "eval_003",
+        "claim_text": "DTC revenue for Beyond Yoga\u00ae was $101.9 million."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "3205.2million"
+        ],
+        "question_id": "eval_004",
+        "claim_text": "Levi Strauss & Co. reported total wholesale net revenues of $3,205.2 million"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "1921.5million"
+        ],
+        "question_id": "eval_004",
+        "claim_text": "Americas: $1,921.5 million"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "756.6million"
+        ],
+        "question_id": "eval_004",
+        "claim_text": "Europe: $756.6 million"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "477.7million"
+        ],
+        "question_id": "eval_004",
+        "claim_text": "Asia: $477.7 million"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "49.4million"
+        ],
+        "question_id": "eval_004",
+        "claim_text": "Beyond Yoga\u00ae: $49.4 million"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 602,
+        "ungrounded_numbers": [
+          "502.0million"
+        ],
+        "question_id": "eval_006",
+        "claim_text": "This includes net income from continuing operations of $502.0 million"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 602,
+        "ungrounded_numbers": [
+          "76.1million"
+        ],
+        "question_id": "eval_006",
+        "claim_text": "and net income from discontinued operations (net of taxes) of $76.1 million."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 696,
+        "ungrounded_numbers": [
+          "3297.0million"
+        ],
+        "question_id": "eval_007",
+        "claim_text": "net revenues for the Levi's Brands Americas segment were $3,297.0 million."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "756.6million",
+          "942.7million"
+        ],
+        "question_id": "eval_008",
+        "claim_text": "this consisted of $756.6 million from wholesale and $942.7 million from direct-to-consumer channels."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "477.7million"
+        ],
+        "question_id": "eval_009",
+        "claim_text": "This total consists of $477.7 million from the wholesale channel"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "656.7million"
+        ],
+        "question_id": "eval_009",
+        "claim_text": "and $656.7 million from the direct-to-consumer channel."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 604,
+        "ungrounded_numbers": [
+          "6032.0million",
+          "2374.9million",
+          "3657.1million"
+        ],
+        "question_id": "eval_012",
+        "claim_text": "This was based on consolidated net revenues of $6,032.0 million, cost of goods sold of $2,374.9 million, and a consolidated gross profit of $3,657.1 million."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 453,
+        "ungrounded_numbers": [
+          "1280.8million",
+          "861.5million",
+          "589.1million",
+          "192.4million"
+        ],
+        "question_id": "eval_014",
+        "claim_text": "which consisted of $1,280.8 million in the Americas, $861.5 million in Europe, $589.1 million in Asia, and $192.4 million in Other Brands (which included Dockers and Beyond Yoga)."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "1280.8million",
+          "861.5million",
+          "589.1million",
+          "77.7million"
+        ],
+        "question_id": "eval_014",
+        "claim_text": "which consisted of $1,280.8 million in the Americas, $861.5 million in Europe, $589.1 million in Asia, and $77.7 million in Beyond Yoga."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 604,
+        "ungrounded_numbers": [
+          "1.1",
+          "110"
+        ],
+        "question_id": "eval_016",
+        "claim_text": "representing an increase of 1.1 percentage points (or 110 basis points)"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 686,
+        "ungrounded_numbers": [
+          "17.7million"
+        ],
+        "question_id": "eval_018",
+        "claim_text": "an absolute decrease of $17.7 million"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 122,
+        "ungrounded_numbers": [
+          "3515.7million",
+          "6179.0million"
+        ],
+        "question_id": "eval_023",
+        "claim_text": "represents a gross profit of $3,515.7 million on total net revenues of $6,179.0 million"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 632,
+        "ungrounded_numbers": [
+          "106.4million"
+        ],
+        "question_id": "eval_026",
+        "claim_text": "This represents an absolute increase of $106.4 million,"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 632,
+        "ungrounded_numbers": [
+          "9.41%"
+        ],
+        "question_id": "eval_026",
+        "claim_text": "or approximately 9.41%."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 604,
+        "ungrounded_numbers": [
+          "3877.8million",
+          "6282.0million"
+        ],
+        "question_id": "eval_032",
+        "claim_text": "This figure is also mathematically implied by subtracting the reported gross profit of $3,877.8 million from the total net revenues of $6,282.0 million."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 604,
+        "ungrounded_numbers": [
+          "1.1",
+          "110"
+        ],
+        "question_id": "eval_035",
+        "claim_text": "This represents an increase of 1.1 percentage points, which is equivalent to an improvement of 110 basis points."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 1191,
+        "ungrounded_numbers": [
+          "472.7million",
+          "333.7million"
+        ],
+        "question_id": "eval_043",
+        "claim_text": "Of this total, wholesale channel revenues were $472.7 million and direct-to-consumer channel revenues were $333.7 million."
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 1290,
+        "ungrounded_numbers": [
+          "173.1million",
+          "204.3million",
+          "135.0million",
+          "143.2million"
+        ],
+        "question_id": "eval_051",
+        "claim_text": "By channel, Asia direct-to-consumer (DTC) revenues grew from $173.1 million to $204.3 million, and wholesale revenues grew from $135.0 million to $143.2 million."
+      }
+    ],
+    "total_citing_claims": 160,
+    "hallucination_flag_count": 27
+  },
+  "groq": {
+    "raw_confusion_matrix": {
+      "Verified-from-filing": {
+        "Verified-from-filing": 34,
+        "Model-inference": 3
+      },
+      "Management-qualitative-statement": {
+        "Model-inference": 3,
+        "Verified-from-filing": 6
+      },
+      "Model-inference": {
+        "Model-inference": 4,
+        "Verified-from-filing": 5
+      },
+      "Not-in-corpus": {
+        "Model-inference": 5
+      }
+    },
+    "collapsed_precision_recall": {
+      "Verified-from-filing": {
+        "precision": 0.7555555555555555,
+        "recall": 0.918918918918919,
+        "support": 37,
+        "tp": 34,
+        "fp": 11,
+        "fn": 3
+      },
+      "Management-qualitative-statement": {
+        "precision": null,
+        "recall": 0.0,
+        "support": 9,
+        "tp": 0,
+        "fp": 0,
+        "fn": 9
+      },
+      "Third-party-benchmark": {
+        "precision": null,
+        "recall": null,
+        "support": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "Model-inference": {
+        "precision": 0.6,
+        "recall": 0.6428571428571429,
+        "support": 14,
+        "tp": 9,
+        "fp": 6,
+        "fn": 5
+      },
+      "NO_CLAIMS_OR_PARSE_FAILURE": {
+        "precision": null,
+        "recall": null,
+        "support": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    "accuracy": 0.7166666666666667,
+    "n_questions": 60,
+    "parse_failures": 0,
+    "hallucination_rate": 0.03076923076923077,
+    "hallucination_flags": [
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 538,
+        "ungrounded_numbers": [
+          "2025",
+          "10"
+        ],
+        "question_id": "eval_028",
+        "claim_text": "The primary risk factors Levi's discloses in its FY2025 10-K include declines in consumer spending"
+      },
+      {
+        "method": "numeric_grounding",
+        "chunk_id": 604,
+        "ungrounded_numbers": [
+          "3877.8million"
+        ],
+        "question_id": "eval_032",
+        "claim_text": "the gross profit was $3,877.8 million"
+      }
+    ],
+    "total_citing_claims": 65,
+    "hallucination_flag_count": 2
+  }
+}
