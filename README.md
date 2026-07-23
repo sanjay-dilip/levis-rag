@@ -12,7 +12,7 @@ evidence rather than invented) tool for evidence-tiered analysis of Levi
 Strauss & Co.'s publicly available SEC EDGAR filings and strategic
 narrative.
 
-**Live app:** https://levis-rag.vercel.app
+**Live app:** https://levis-rag.vercel.app<br>
 **Backend API:** https://levis-rag.onrender.com (`GET /health`, `POST /query`)
 
 ---
@@ -20,7 +20,7 @@ narrative.
 ## Overview
 
 This project answers natural-language financial questions about a single
-public company — Levi Strauss & Co. (SEC CIK: 0000094845) — using only its
+public company (Levi Strauss & Co., SEC CIK: 0000094845), using only its
 official SEC filings (10-K annual reports, 10-Q quarterly reports, 8-K
 current reports) as source material.
 
@@ -55,15 +55,15 @@ Practicum equity research report (Group 7, May 2026) that analyzed a $50M
 strategic transformation proposal for Levi Strauss & Co., including several
 strategic and market-trend claims about the brand.
 
-Reports like that make claims — about growth strategy, market position,
-consumer trends — that sound plausible but aren't always checked against
+Reports like that make claims about growth strategy, market position, and
+consumer trends that sound plausible but aren't always checked against
 the company's own primary evidence. I wanted to test that idea directly: can
 those claims be verified, refuted, or shown to be untestable using only
 what Levi's has actually filed with the SEC and what's independently
-observable (like public search-interest data)? Building the tool to answer
-that question turned into a full applied AI engineering exercise — hybrid
+observable, like public search-interest data? Building the tool to answer
+that question turned into a full applied AI engineering exercise (hybrid
 retrieval, evidence grounding, tool orchestration, evaluation-driven
-tuning, and production deployment — documented throughout this README.
+tuning, and production deployment), documented throughout this README.
 
 ---
 
@@ -141,7 +141,7 @@ flowchart LR
    tool, sent to the trend-analysis tool, or sent to retrieval.
 4. **Retrieval** — for the default path, both the keyword and vector search
    run in parallel, filtered to the fiscal period the question actually
-   asks about, and their rankings are merged (Reciprocal Rank Fusion — a
+   asks about, and their rankings are merged (Reciprocal Rank Fusion, a
    way of combining two ranked lists so a chunk that ranks well in *either*
    method surfaces near the top).
 5. **Answer generation and evidence tagging** — the retrieved chunks are
@@ -176,10 +176,10 @@ structural, not a tuning problem (see Engineering Highlights below for the
 fixes that closed it).
 
 **Important caveat on the remaining 4 misses:** all four are out-of-scope
-questions that the system correctly declines to answer — but the automated
+questions that the system correctly declines to answer, but the automated
 scorer has no separate "correctly rejected" verdict, so a correct decline
 still counts as a MISS. Once that's accounted for, **real retrieval
-misses are effectively 0 out of 60** — everything the system is actually
+misses are effectively 0 out of 60**: everything the system is actually
 supposed to retrieve, it retrieves.
 
 ---
@@ -207,13 +207,13 @@ significant problems and fixes:
   matched. Widening that search sample recovered several points of
   recall with no other changes.
 - **Targeted embedding enrichment (recall@10 58.3% → 85.0%).** Some correct
-  answer chunks were "diluted" — a real answer buried inside a long,
-  mixed-topic financial table — so they scored poorly on semantic
+  answer chunks were "diluted" (a real answer buried inside a long,
+  mixed-topic financial table), so they scored poorly on semantic
   similarity even though the right text was present. The fix was a
   repeatable playbook: identify the diluted chunk, test a content-specific
   rewording against the target question *and* every other question that
   shares similar vocabulary (to catch cases where fixing one answer could
-  accidentally out-rank a different, unrelated one — which happened at
+  accidentally out-rank a different, unrelated one, which happened at
   least once and was caught before shipping), then verify with a full
   60-question regression before keeping the change.
 - **Tool router correction.** The router originally sent any question
@@ -241,15 +241,12 @@ significant problems and fixes:
 
 ---
 
-## Screenshots or Demo
+## Demo
 
 The fastest way to see the system working is the live app itself:
 
 - **Frontend (chat UI):** https://levis-rag.vercel.app
 - **Backend API:** https://levis-rag.onrender.com (`GET /health`, `POST /query`)
-
-_Screenshots are not yet included in this repository — the live links above
-show the working chat interface, tier badges, and citation panel directly._
 
 ---
 
@@ -452,11 +449,11 @@ levis-rag/
   60-question eval set. Overall accuracy was close (Gemini 75.0% vs. Groq
   71.7%), but Groq never once assigned the
   `Management-qualitative-statement` tier across any of the 9 questions
-  expecting it — a direct consequence of Groq offering no schema-enforced
+  expecting it, a direct consequence of Groq offering no schema-enforced
   structured output for this model (only best-effort JSON, with the
-  schema described in the prompt rather than mechanically enforced), not
-  a language-quality gap. Has no effect on the live app — the deployed
-  `/query` endpoint remains Gemini-only. Full results:
+  schema described in the prompt rather than mechanically enforced)
+  rather than a language-quality gap. Has no effect on the live app: the
+  deployed `/query` endpoint remains Gemini-only. Full results:
   [`data/tier_comparison_report.md`](data/tier_comparison_report.md).
 
 ---
