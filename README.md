@@ -423,13 +423,6 @@ levis-rag/
   nuance — see Engineering Highlights) was found and fixed, but the
   rule-based approach remains a known limitation for phrasings not yet
   seen.
-- **A cross-provider LLM comparison is in progress, not finished.** A
-  standalone research script compares this project's LLM (Gemini) against
-  an alternative (Groq/Llama 3.3 70B) for evidentiary-tier tagging quality,
-  holding retrieval constant. It has no effect on the live app — the
-  deployed `/query` endpoint remains Gemini-only throughout — and is
-  being completed incrementally as both providers' free-tier daily quotas
-  allow.
 
 **By design (investigated, resolved, not open bugs):**
 
@@ -454,6 +447,17 @@ levis-rag/
   without a larger, higher-risk rewrite of how the source text is split
   into chunks. These score as partial matches by design, not as
   unaddressed bugs.
+- **Groq/Llama 3.3 70B was benchmarked against Gemini for evidentiary-tier
+  tagging quality**, holding retrieval constant across the full
+  60-question eval set. Overall accuracy was close (Gemini 75.0% vs. Groq
+  71.7%), but Groq never once assigned the
+  `Management-qualitative-statement` tier across any of the 9 questions
+  expecting it — a direct consequence of Groq offering no schema-enforced
+  structured output for this model (only best-effort JSON, with the
+  schema described in the prompt rather than mechanically enforced), not
+  a language-quality gap. Has no effect on the live app — the deployed
+  `/query` endpoint remains Gemini-only. Full results:
+  [`data/tier_comparison_report.md`](data/tier_comparison_report.md).
 
 ---
 
@@ -472,10 +476,6 @@ levis-rag/
   documented above.
 - **A trained tool router**, to replace the current rule-based dispatch
   logic and generalize better to phrasings not yet seen in testing.
-- **Finishing the Gemini-vs-Groq tier-tagging comparison** once both
-  providers' free-tier quotas allow a full 60-question run, to produce a
-  complete side-by-side quality comparison rather than the current partial
-  result.
 
 ---
 
