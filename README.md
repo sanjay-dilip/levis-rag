@@ -154,6 +154,81 @@ flowchart LR
 
 ---
 
+## Architecture
+
+The diagram above is the narrative version. This section is the precise,
+current-state one — verified directly against the deployed code (not the
+original project scope doc) — split into two layers that run at genuinely
+different times.
+
+### Request-time path (what runs on a live `POST /query` call)
+
+```mermaid
+flowchart TB
+    FE["Next.js frontend (Vercel)<br/>frontend/src/app/page.tsx"]
+    FE -->|"POST /query { question }"| API["FastAPI backend (Render)<br/>app/main.py"]
+    API --> Router{"app/router.py<br/>classify_question()"}
+
+    Router -->|OUT_OF_SCOPE| OOS["Decline, no lookup"]
+    Router -->|XBRL_KPI| XBRL["src/xbrl_tool.py<br/>get_kpi()"]
+    Router -->|TREND_QUERY| Trend["src/trend_decay_tool.py<br/>analyze_drop()"]
+    Router -->|FINANCIAL_LOOKUP| Retrieve["src/retrieve.py<br/>BM25 (in-process) + dense (RPC), fused via RRF"]
+
+    XBRL -->|HTTPS| EDGARXBRL[("SEC EDGAR<br/>XBRL companyfacts API")]
+    Trend -->|"HTTPS, via pytrends"| GTrends[("Google Trends")]
+    Retrieve -->|"match_chunks() RPC"| Supabase[("Supabase Postgres<br/>+ pgvector")]
+
+    Retrieve --> Tag["src/tier_tagger.py<br/>tag_claims()"]
+    Tag -->|"GEMINI_API_KEY (production)"| Gemini[("Gemini<br/>gemini-flash-latest")]
+
+    OOS --> Resp["QueryResponse<br/>answer + tiered claims + chunks"]
+    XBRL --> Resp
+    Trend --> Resp
+    Tag --> Resp
+    Resp --> FE
+```
+
+- The router (`app/router.py`) is a first-match-wins heuristic, not a
+  trained classifier — four dispatch paths, checked in this order:
+  `OUT_OF_SCOPE` → `XBRL_KPI` → `TREND_QUERY` → `FINANCIAL_LOOKUP`.
+- Each path's external dependency is genuinely different: `XBRL_KPI` calls
+  EDGAR's structured XBRL API directly (no LLM, no retrieval); `TREND_QUERY`
+  calls Google Trends via `pytrends`; `FINANCIAL_LOOKUP` is the only path
+  that touches both Supabase (dense vector search) and Gemini (evidentiary
+  claim tagging) — the BM25 leg runs in-process against the FastAPI
+  server's own in-memory copy of `data/chunks_v2.json`, loaded once at
+  startup, not queried externally.
+- `GEMINI_API_KEY` is production's key, exclusively — `app/routers/query.py`
+  is the only place it's read. The frontend's own code only ever calls
+  `POST /query`; `GET /health` exists as a liveness endpoint (used for
+  deploy checks and cold-start monitoring) but isn't called by the chat UI
+  itself.
+
+### Offline / enrichment path (runs before deployment, not per request)
+
+```mermaid
+flowchart LR
+    EDGAR[("SEC EDGAR<br/>filing index + documents")] -->|src/ingest.py| Extract["Extracted .txt<br/>data/extracted/"]
+    Extract -->|src/chunk_v2.py| Chunks["Section-aware chunks<br/>data/chunks_v2.json"]
+    Chunks -->|"src/load_vectors.py<br/>(SentenceTransformer, local)"| Embed["Chunk embeddings"]
+    Embed -->|upsert| Supabase2[("Supabase Postgres<br/>+ pgvector")]
+    Chunks -.->|"src/enrich_table_embeddings.py<br/>src/fix_misclassified_table_chunks.py<br/>(targeted re-embedding, ongoing maintenance)"| Supabase2
+```
+
+- This pipeline produces the two things the request-time path reads:
+  `data/chunks_v2.json` (loaded into the FastAPI process at startup, for
+  BM25) and the Supabase `chunks` table (queried live, for the dense leg).
+  It runs once per ingestion/re-embedding pass, not on any user request.
+- Note the deployed API's embedding *runtime* differs from this pipeline's:
+  ingestion embeds locally via `sentence-transformers`, but the live
+  request path (`src/retrieve.py`) encodes each incoming question through
+  an exported ONNX build of the same model instead, to fit the hosting
+  tier's memory limit — verified numerically identical (cosine 1.0, 3 test
+  strings) before switching, so this doesn't affect what gets indexed vs.
+  what gets queried.
+
+---
+
 ## Results and Evaluation
 
 Retrieval quality is measured against a 60-question hand-labeled evaluation
