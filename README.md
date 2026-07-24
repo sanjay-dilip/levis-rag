@@ -159,8 +159,7 @@ flowchart LR
 The diagram above is the narrative version. This section is the precise,
 current-state one — verified directly against the deployed code (not the
 original project scope doc) — split into two layers that run at genuinely
-different times, plus one explicit callout for work that looks related but
-isn't part of the request path at all.
+different times.
 
 ### Request-time path (what runs on a live `POST /query` call)
 
@@ -227,17 +226,6 @@ flowchart LR
   tier's memory limit — verified numerically identical (cosine 1.0)
   before switching, so this doesn't affect what gets indexed vs. what gets
   queried.
-
-### Not part of the request path — the Groq comparison
-
-`src/tier_comparison_runner.py`/`tier_tagger_groq.py` (an offline
-evidentiary-tier tagging benchmark against Groq/Llama 3.3 70B) are missing
-from both diagrams above on purpose, not by omission. They're standalone
-research artifacts, never imported by `app/`, and they authenticate with
-`GEMINI_API_KEY_II` — a second, genuinely separate Google AI Studio
-project's key, distinct from production's `GEMINI_API_KEY` — precisely so
-this comparison's own API usage can never compete with or affect the live
-`/query` path. Full results: [`data/tier_comparison_report.md`](data/tier_comparison_report.md).
 
 ---
 
