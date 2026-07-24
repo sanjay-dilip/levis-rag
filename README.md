@@ -420,6 +420,14 @@ levis-rag/
   nuance — see Engineering Highlights) was found and fixed, but the
   rule-based approach remains a known limitation for phrasings not yet
   seen.
+- **A merge to `master` is not the same claim as "live in production."**
+  Render's auto-deploy has silently failed to fire at least once in this
+  project's history — a merged router fix sat stale in production through
+  several further merges until a manual redeploy was triggered via the
+  Render dashboard. Code changes (as opposed to Supabase-only data fixes,
+  which take effect immediately since the backend queries Supabase live)
+  now get an explicit "confirmed live in production," not just "merged,"
+  before being considered done.
 
 **By design (investigated, resolved, not open bugs):**
 
