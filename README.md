@@ -223,9 +223,9 @@ flowchart LR
   ingestion embeds locally via `sentence-transformers`, but the live
   request path (`src/retrieve.py`) encodes each incoming question through
   an exported ONNX build of the same model instead, to fit the hosting
-  tier's memory limit — verified numerically identical (cosine 1.0)
-  before switching, so this doesn't affect what gets indexed vs. what gets
-  queried.
+  tier's memory limit — verified numerically identical (cosine 1.0, 3 test
+  strings) before switching, so this doesn't affect what gets indexed vs.
+  what gets queried.
 
 ---
 
