@@ -323,6 +323,8 @@ The fastest way to see the system working is the live app itself:
 - **Frontend (chat UI):** https://levis-rag.vercel.app
 - **Backend API:** https://levis-rag.onrender.com (`GET /health`, `POST /query`)
 
+For a guided walkthrough instead, watch the demo video: https://youtu.be/g7cVMbc6_UE
+
 ---
 
 ## Tech Stack
